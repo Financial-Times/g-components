@@ -6,7 +6,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf, addDecorator } from '@storybook/react';
-import { withKnobs, text, boolean, select, array } from '@storybook/addon-knobs';
+import {
+  withKnobs, text, boolean, select, array,
+} from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import { TopAd, MiddleAd } from '../components/ads';
 import Analytics from '../components/analytics';
@@ -20,6 +22,7 @@ import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
 import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
+import Sticky from '../components/sticky';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -671,7 +674,7 @@ storiesOf('DataTable', module).add('default', () => (
       {
         contents: 'Year',
         columnType: 'number',
-        columnName: 'appointed'
+        columnName: 'appointed',
       },
       {
         contents: 'Editor',
@@ -703,13 +706,99 @@ storiesOf('DataFilter', module).add('default', () => (
     selectFrom={text('selectFrom', 'name')}
     searchOver={array('searchOver', [])}
     searchPlaceholder={text('searchPlaceholder', null)}
-    data={[
-      { name: 'John' },
-      { name: 'Paul' },
-      { name: 'George' },
-      { name: 'Ringo' },
-    ]}
+    data={[{ name: 'John' }, { name: 'Paul' }, { name: 'George' }, { name: 'Ringo' }]}
     isAllSelectable={boolean('isAllSelectable', false)}
     isRadioSelectable={boolean('isRadioSelectable', false)}
   />
+));
+
+storiesOf('Sticky', module).add('default', () => (
+  <div
+    style={{
+      backgroundColor: 'rgba(155, 155, 155, 0.7)',
+      marginBottom: '100vh',
+      marginTop: '20vh',
+    }}
+  >
+    <Sticky
+      graphic={({ percentage, inView }) => (
+        <h1 style={{ backgroundColor: '#969696', padding: '1em' }}>
+          Percentage:
+          {' '}
+          {(percentage * 100).toFixed(1)}
+          %
+          {' '}
+          <br />
+          {' '}
+In viewport:
+          {' '}
+          {inView ? 'yes' : 'no'}
+        </h1>
+      )}
+      article={({ percentage, inView }) => (
+        <div style={{ fontSize: '500%' }}>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+          <h1>
+Lorem ipsum
+          </h1>
+        </div>
+      )}
+    />
+  </div>
 ));

@@ -22,6 +22,7 @@
   },
   "dependencies": {
     "d3-time-format": "^2.1.1",
+    "react-scroll-percentage": "^2.0.0",
     "remove-markdown": "^0.3.0"
   },
   "devDependencies": {
