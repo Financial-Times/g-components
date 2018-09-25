@@ -26,6 +26,12 @@ import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
 import '../shared/critical-path.scss';
 
+global.IntersectionObserver = jest.fn().mockImplementation(() => ({
+  observe: () => ({}),
+  unobserve: () => ({}),
+  disconnect: () => ({}),
+}));
+
 const defaultFlags = {
   prod: false,
   errorReporting: true,

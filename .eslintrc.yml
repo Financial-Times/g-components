@@ -9,6 +9,7 @@ rules:
   react/jsx-filename-extension: [0]
 env:
   browser: true
+  jest: true
 parser: babel-eslint
 settings:
   import/resolver:
