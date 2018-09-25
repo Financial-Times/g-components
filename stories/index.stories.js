@@ -10,6 +10,7 @@ import {
   withKnobs, text, boolean, select, array,
 } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
+import Observer from 'react-scroll-percentage';
 import { TopAd, MiddleAd } from '../components/ads';
 import Analytics from '../components/analytics';
 import ArticleHead from '../components/article-head';
@@ -712,93 +713,186 @@ storiesOf('DataFilter', module).add('default', () => (
   />
 ));
 
-storiesOf('Sticky', module).add('default', () => (
-  <div
-    style={{
-      backgroundColor: 'rgba(155, 155, 155, 0.7)',
-      marginBottom: '100vh',
-      marginTop: '20vh',
-    }}
-  >
-    <Sticky
-      graphic={({ percentage, inView }) => (
-        <h1 style={{ backgroundColor: '#969696', padding: '1em' }}>
-          Percentage:
-          {' '}
-          {(percentage * 100).toFixed(1)}
-          %
-          {' '}
-          <br />
-          {' '}
+storiesOf('Sticky', module)
+  .add(
+    'default',
+    () => (
+      <div
+        style={{
+          backgroundColor: 'rgba(155, 155, 155, 0.7)',
+          marginBottom: '100vh',
+          marginTop: '20vh',
+        }}
+      >
+        <Sticky
+          graphic={({ percentage, inView }) => (
+            <h1 style={{ backgroundColor: '#969696', padding: '1em' }}>
+              Percentage:
+              {' '}
+              {(percentage * 100).toFixed(1)}
+              %
+              {' '}
+              <br />
+              {' '}
 In viewport:
-          {' '}
-          {inView ? 'yes' : 'no'}
-        </h1>
-      )}
-      article={({ percentage, inView }) => (
-        <div style={{ fontSize: '500%' }}>
-          <h1>
+              {' '}
+              {inView ? 'yes' : 'no'}
+            </h1>
+          )}
+          article={({ percentage, inView }) => (
+            <div style={{ fontSize: '500%' }}>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-          <h1>
+              </h1>
+              <h1>
 Lorem ipsum
-          </h1>
-        </div>
-      )}
-    />
-  </div>
-));
+              </h1>
+            </div>
+          )}
+        />
+      </div>
+    ),
+    {
+      info: `
+  <Sticky> can be used to do sticky-positioned scrolling interactive graphics,
+    as popularised by The Pudding. The key thing to remember is that <Sticky>
+    takes two props, each of which is an element-returning function:
+    - article({percentage, inView, updateGraphic})
+      -- \`Percentage\` is total % of container element scrolled
+      -- \`inView\` is whether the container is in the viewport
+      -- \`updateGraphic\` is a function that can be used to pass a label to the
+        container element's state (and then on to the graphic itself).
+    - graphic({percentage, inView, current})
+      -- \`Percentage\` is total % of container element scrolled
+      -- \`inView\` is whether the container is in the viewport
+      -- \`current\` is the label currently set by the article in terms of what's visible
+
+      See the "complex case" story for how to use updateGraphic
+`,
+    },
+  )
+  .add(
+    'Complex case',
+    () => (
+      <div
+        style={{
+          backgroundColor: 'rgba(155, 155, 155, 0.7)',
+          marginBottom: '100vh',
+          marginTop: '20vh',
+        }}
+      >
+        <Sticky
+          graphic={({ percentage, inView, current }) => (
+            <h1 style={{ backgroundColor: '#969696', padding: '1em' }}>
+              Percentage:
+              {' '}
+              {(percentage * 100).toFixed(1)}
+              %
+              {' '}
+              <br />
+              {' '}
+Frame is in viewport:
+              {' '}
+              {inView ? 'yes' : 'no'}
+              <br />
+              {' '}
+Currently viewing line:
+              {/* prettier-ignore */}
+              {' '}
+              {current}
+            </h1>
+          )}
+          article={({ updateGraphic }) => (
+            <div style={{ fontSize: '500%' }}>
+              {['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'].map(
+                (label, idx) => (
+                  <Observer>
+                    {({ inView }) => {
+                      if (inView) updateGraphic(idx);
+                      return (
+                        <h1>
+                          {label}
+                        </h1>
+                      );
+                    }}
+                  </Observer>
+                ),
+              )}
+            </div>
+          )}
+        />
+      </div>
+    ),
+    {
+      info: `
+    <Sticky> can be used to do sticky-positioned scrolling interactive graphics,
+      as popularised by The Pudding. The key thing to remember is that <Sticky>
+      takes two props, each of which is an element-returning function:
+      - article({percentage, inView, updateGraphic})
+        -- \`Percentage\` is total % of container element scrolled
+        -- \`inView\` is whether the container is in the viewport
+        -- \`updateGraphic\` is a function that can be used to pass a label to the
+          container element's state (and then on to the graphic itself).
+      - graphic({percentage, inView, current})
+        -- \`Percentage\` is total % of container element scrolled
+        -- \`inView\` is whether the container is in the viewport
+        -- \`current\` is the label currently set by the article in terms of what's visible
+
+        See the "complex case" story for how to use updateGraphic
+  `,
+    },
+  );
