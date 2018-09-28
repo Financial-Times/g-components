@@ -17,7 +17,7 @@ import Comments from '../components/comments';
 import Footer from '../components/footer';
 import Header from '../components/header';
 // import HtmlHead from '../components/html-head';
-import { /* Layout, */ GridContainer, GridRow, GridChild } from '../components/layout';
+// import Layout, { GridContainer, GridRow, GridChild } from '../components/layout';
 import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
 import DataTable from '../components/data-table';
@@ -183,431 +183,431 @@ DemoCell.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-storiesOf('Grid components', module).add('default grid', () => [
-  /* Constant column spans */
-  <GridContainer key="1">
-    <GridRow>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-      <GridChild span={1}>
-        <DemoCell>
-1
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span={2}>
-        <DemoCell>
-2
-        </DemoCell>
-      </GridChild>
-      <GridChild span={2}>
-        <DemoCell>
-2
-        </DemoCell>
-      </GridChild>
-      <GridChild span={2}>
-        <DemoCell>
-2
-        </DemoCell>
-      </GridChild>
-      <GridChild span={2}>
-        <DemoCell>
-2
-        </DemoCell>
-      </GridChild>
-      <GridChild span={2}>
-        <DemoCell>
-2
-        </DemoCell>
-      </GridChild>
-      <GridChild span={2}>
-        <DemoCell>
-2
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span={3}>
-        <DemoCell>
-3
-        </DemoCell>
-      </GridChild>
-      <GridChild span={3}>
-        <DemoCell>
-3
-        </DemoCell>
-      </GridChild>
-      <GridChild span={3}>
-        <DemoCell>
-3
-        </DemoCell>
-      </GridChild>
-      <GridChild span={3}>
-        <DemoCell>
-3
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span={4}>
-        <DemoCell>
-4
-        </DemoCell>
-      </GridChild>
-      <GridChild span={4}>
-        <DemoCell>
-4
-        </DemoCell>
-      </GridChild>
-      <GridChild span={4}>
-        <DemoCell>
-4
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow compact>
-      <GridChild span={6}>
-        <DemoCell>
-6 (compact)
-        </DemoCell>
-      </GridChild>
-      <GridChild span={6}>
-        <DemoCell>
-6 (compact)
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span={12}>
-        <DemoCell>
-12
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-
-    {/* Responsive column spans */}
-    <GridRow>
-      <GridChild span="8 S12 M8">
-        <DemoCell>
-          <span data-demo-highlight="default">
-8
-          </span>
-          <span data-demo-highlight="S">
-S12
-          </span>
-          <span data-demo-highlight="M L XL">
-M8
-          </span>
-
-          <GridRow>
-            <GridChild span="6 S12 M6 XL3">
-              <DemoCell>
-                <span data-demo-highlight="default">
-6
-                </span>
-                <span data-demo-highlight="S">
-S12
-                </span>
-                <span data-demo-highlight="M L">
-M6
-                </span>
-                <span data-demo-highlight="XL">
-XL3
-                </span>
-              </DemoCell>
-            </GridChild>
-            <GridChild span="6 S12 M6 XL3">
-              <DemoCell>
-                <span data-demo-highlight="default">
-6
-                </span>
-                <span data-demo-highlight="S">
-S12
-                </span>
-                <span data-demo-highlight="M L">
-M6
-                </span>
-                <span data-demo-highlight="XL">
-XL3
-                </span>
-              </DemoCell>
-            </GridChild>
-            <GridChild span="6 S12 M6 XL3">
-              <DemoCell>
-                <span data-demo-highlight="default">
-6
-                </span>
-                <span data-demo-highlight="S">
-S12
-                </span>
-                <span data-demo-highlight="M L">
-M6
-                </span>
-                <span data-demo-highlight="XL">
-XL3
-                </span>
-              </DemoCell>
-            </GridChild>
-            <GridChild span="6 S12 M6 XL3">
-              <DemoCell>
-                <span data-demo-highlight="default">
-6
-                </span>
-                <span data-demo-highlight="S">
-S12
-                </span>
-                <span data-demo-highlight="M L">
-M6
-                </span>
-                <span data-demo-highlight="XL">
-XL3
-                </span>
-              </DemoCell>
-            </GridChild>
-          </GridRow>
-        </DemoCell>
-      </GridChild>
-      <GridChild span="4 S12 M4">
-        <DemoCell>
-          <span data-demo-highlight="default">
-4
-          </span>
-          <span data-demo-highlight="S">
-S12
-          </span>
-          <span data-demo-highlight="M L XL">
-M4
-          </span>
-
-          <GridRow>
-            <GridChild span="12 L7 XL6">
-              <DemoCell>
-                <span data-demo-highlight="default S M">
-12
-                </span>
-                <span data-demo-highlight="L">
-L7
-                </span>
-                <span data-demo-highlight="XL">
-XL6
-                </span>
-              </DemoCell>
-            </GridChild>
-            <GridChild span="12 L5 XL6">
-              <DemoCell>
-                {/* <span data-demo-highlight="default S M"> */}
-                <DemoCellHighlight>
-12
-                </DemoCellHighlight>
-                {/* <span data-demo-highlight="L"> */}
-                <DemoCellHighlight>
-L5
-                </DemoCellHighlight>
-                {/* <span data-demo-highlight="XL"> */}
-                <DemoCellHighlight>
-XL6
-                </DemoCellHighlight>
-              </DemoCell>
-            </GridChild>
-          </GridRow>
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-
-    {/* Human friendly modifiers */}
-    <GridRow>
-      <GridChild span="one-half">
-        <DemoCell>
-one-half
-        </DemoCell>
-      </GridChild>
-      <GridChild span="one-quarter">
-        <DemoCell>
-one-quarter
-        </DemoCell>
-      </GridChild>
-      <GridChild span="one-quarter">
-        <DemoCell>
-one-quarter
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span="one-third">
-        <DemoCell>
-one-third
-        </DemoCell>
-      </GridChild>
-      <GridChild span="two-thirds">
-        <DemoCell>
-two-thirds
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span="one-third push8">
-        <DemoCell>
-one-third push8 (first in source)
-        </DemoCell>
-      </GridChild>
-      <GridChild span="two-thirds pull4">
-        <DemoCell>
-two-thirds pull4 (last in source)
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span="one-third center">
-        <DemoCell>
-one-third center
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-
-    {/* Stacked, wrapping columns */}
-    <GridRow>
-      <GridChild span="one-half">
-        <DemoCell>
-one-half
-        </DemoCell>
-      </GridChild>
-      <GridChild span="one-quarter">
-        <DemoCell>
-one-quarter
-        </DemoCell>
-      </GridChild>
-      <GridChild span="one-quarter">
-        <DemoCell>
-one-quarter
-        </DemoCell>
-      </GridChild>
-      <GridChild span="one-quarter">
-        <DemoCell>
-one-quarter
-        </DemoCell>
-      </GridChild>
-      <GridChild span="one-quarter">
-        <DemoCell>
-one-quarter
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span="one-third">
-        <DemoCell>
-one-third
-        </DemoCell>
-      </GridChild>
-      <GridChild span="one-third">
-        <DemoCell>
-one-third
-        </DemoCell>
-      </GridChild>
-      <GridChild span="two-thirds">
-        <DemoCell>
-two-thirds
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow>
-      <GridChild span="full-width">
-        <DemoCell>
-full-width
-        </DemoCell>
-      </GridChild>
-      <GridChild span="full-width">
-        <DemoCell>
-full-width
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-  </GridContainer>,
-
-  <p key="2" style={{ textAlign: 'center' }}>
-    With container bleed:
-  </p>,
-
-  <GridContainer key="3" bleed>
-    <GridRow>
-      <GridChild span={6}>
-        <DemoCell>
-6
-        </DemoCell>
-      </GridChild>
-      <GridChild span={6}>
-        <DemoCell>
-6
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-    <GridRow compact>
-      <GridChild span={6}>
-        <DemoCell>
-6 (compact)
-        </DemoCell>
-      </GridChild>
-      <GridChild span={6}>
-        <DemoCell>
-6 (compact)
-        </DemoCell>
-      </GridChild>
-    </GridRow>
-  </GridContainer>,
-]);
+// storiesOf('Grid components', module).add('default grid', () => [
+//   /* Constant column spans */
+//   <GridContainer key="1">
+//     <GridRow>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={1}>
+//         <DemoCell>
+// 1
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span={2}>
+//         <DemoCell>
+// 2
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={2}>
+//         <DemoCell>
+// 2
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={2}>
+//         <DemoCell>
+// 2
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={2}>
+//         <DemoCell>
+// 2
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={2}>
+//         <DemoCell>
+// 2
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={2}>
+//         <DemoCell>
+// 2
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span={3}>
+//         <DemoCell>
+// 3
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={3}>
+//         <DemoCell>
+// 3
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={3}>
+//         <DemoCell>
+// 3
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={3}>
+//         <DemoCell>
+// 3
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span={4}>
+//         <DemoCell>
+// 4
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={4}>
+//         <DemoCell>
+// 4
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={4}>
+//         <DemoCell>
+// 4
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow compact>
+//       <GridChild span={6}>
+//         <DemoCell>
+// 6 (compact)
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={6}>
+//         <DemoCell>
+// 6 (compact)
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span={12}>
+//         <DemoCell>
+// 12
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//
+//     {/* Responsive column spans */}
+//     <GridRow>
+//       <GridChild span="8 S12 M8">
+//         <DemoCell>
+//           <span data-demo-highlight="default">
+// 8
+//           </span>
+//           <span data-demo-highlight="S">
+// S12
+//           </span>
+//           <span data-demo-highlight="M L XL">
+// M8
+//           </span>
+//
+//           <GridRow>
+//             <GridChild span="6 S12 M6 XL3">
+//               <DemoCell>
+//                 <span data-demo-highlight="default">
+// 6
+//                 </span>
+//                 <span data-demo-highlight="S">
+// S12
+//                 </span>
+//                 <span data-demo-highlight="M L">
+// M6
+//                 </span>
+//                 <span data-demo-highlight="XL">
+// XL3
+//                 </span>
+//               </DemoCell>
+//             </GridChild>
+//             <GridChild span="6 S12 M6 XL3">
+//               <DemoCell>
+//                 <span data-demo-highlight="default">
+// 6
+//                 </span>
+//                 <span data-demo-highlight="S">
+// S12
+//                 </span>
+//                 <span data-demo-highlight="M L">
+// M6
+//                 </span>
+//                 <span data-demo-highlight="XL">
+// XL3
+//                 </span>
+//               </DemoCell>
+//             </GridChild>
+//             <GridChild span="6 S12 M6 XL3">
+//               <DemoCell>
+//                 <span data-demo-highlight="default">
+// 6
+//                 </span>
+//                 <span data-demo-highlight="S">
+// S12
+//                 </span>
+//                 <span data-demo-highlight="M L">
+// M6
+//                 </span>
+//                 <span data-demo-highlight="XL">
+// XL3
+//                 </span>
+//               </DemoCell>
+//             </GridChild>
+//             <GridChild span="6 S12 M6 XL3">
+//               <DemoCell>
+//                 <span data-demo-highlight="default">
+// 6
+//                 </span>
+//                 <span data-demo-highlight="S">
+// S12
+//                 </span>
+//                 <span data-demo-highlight="M L">
+// M6
+//                 </span>
+//                 <span data-demo-highlight="XL">
+// XL3
+//                 </span>
+//               </DemoCell>
+//             </GridChild>
+//           </GridRow>
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="4 S12 M4">
+//         <DemoCell>
+//           <span data-demo-highlight="default">
+// 4
+//           </span>
+//           <span data-demo-highlight="S">
+// S12
+//           </span>
+//           <span data-demo-highlight="M L XL">
+// M4
+//           </span>
+//
+//           <GridRow>
+//             <GridChild span="12 L7 XL6">
+//               <DemoCell>
+//                 <span data-demo-highlight="default S M">
+// 12
+//                 </span>
+//                 <span data-demo-highlight="L">
+// L7
+//                 </span>
+//                 <span data-demo-highlight="XL">
+// XL6
+//                 </span>
+//               </DemoCell>
+//             </GridChild>
+//             <GridChild span="12 L5 XL6">
+//               <DemoCell>
+//                 {/* <span data-demo-highlight="default S M"> */}
+//                 <DemoCellHighlight>
+// 12
+//                 </DemoCellHighlight>
+//                 {/* <span data-demo-highlight="L"> */}
+//                 <DemoCellHighlight>
+// L5
+//                 </DemoCellHighlight>
+//                 {/* <span data-demo-highlight="XL"> */}
+//                 <DemoCellHighlight>
+// XL6
+//                 </DemoCellHighlight>
+//               </DemoCell>
+//             </GridChild>
+//           </GridRow>
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//
+//     {/* Human friendly modifiers */}
+//     <GridRow>
+//       <GridChild span="one-half">
+//         <DemoCell>
+// one-half
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="one-quarter">
+//         <DemoCell>
+// one-quarter
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="one-quarter">
+//         <DemoCell>
+// one-quarter
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span="one-third">
+//         <DemoCell>
+// one-third
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="two-thirds">
+//         <DemoCell>
+// two-thirds
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span="one-third push8">
+//         <DemoCell>
+// one-third push8 (first in source)
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="two-thirds pull4">
+//         <DemoCell>
+// two-thirds pull4 (last in source)
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span="one-third center">
+//         <DemoCell>
+// one-third center
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//
+//     {/* Stacked, wrapping columns */}
+//     <GridRow>
+//       <GridChild span="one-half">
+//         <DemoCell>
+// one-half
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="one-quarter">
+//         <DemoCell>
+// one-quarter
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="one-quarter">
+//         <DemoCell>
+// one-quarter
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="one-quarter">
+//         <DemoCell>
+// one-quarter
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="one-quarter">
+//         <DemoCell>
+// one-quarter
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span="one-third">
+//         <DemoCell>
+// one-third
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="one-third">
+//         <DemoCell>
+// one-third
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="two-thirds">
+//         <DemoCell>
+// two-thirds
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow>
+//       <GridChild span="full-width">
+//         <DemoCell>
+// full-width
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span="full-width">
+//         <DemoCell>
+// full-width
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//   </GridContainer>,
+//
+//   <p key="2" style={{ textAlign: 'center' }}>
+//     With container bleed:
+//   </p>,
+//
+//   <GridContainer key="3" bleed>
+//     <GridRow>
+//       <GridChild span={6}>
+//         <DemoCell>
+// 6
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={6}>
+//         <DemoCell>
+// 6
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//     <GridRow compact>
+//       <GridChild span={6}>
+//         <DemoCell>
+// 6 (compact)
+//         </DemoCell>
+//       </GridChild>
+//       <GridChild span={6}>
+//         <DemoCell>
+// 6 (compact)
+//         </DemoCell>
+//       </GridChild>
+//     </GridRow>
+//   </GridContainer>,
+// ]);
 
 // Ads
 storiesOf('Ads', module).add('Top ad', () => <TopAd />);
