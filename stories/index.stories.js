@@ -88,73 +88,62 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
 addDecorator(withKnobs);
 addDecorator(withInfo);
 
-// Layout
-storiesOf('Layout', module)
-  .add(
-    'default',
-    () => (
-      <Layout
-        flags={DEFAULT.flags}
-        headline={text('Headline', DEFAULT.headline)}
-        title={text('Title', DEFAULT.title)}
-        topic={DEFAULT.topic}
-        url={text('Url', DEFAULT.url)}
-        publishedDate={DEFAULT.pubdate}
-        buildTime={DEFAULT.buildTime}
-        ads={DEFAULT.ads}
-      >
-        {[
-          ...text('Content', lorem)
-            .split(/\n\n/)
-            .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
-          <MiddleAd />,
-          <div
-            className="o-ads o-ads--center o-ads--background o-ads--reserve-250"
-            data-o-ads-name="mid-ad"
-            data-o-ads-targeting="pos=mid;"
-            data-o-ads-formats-default="Responsive"
-            data-o-ads-formats-small="MediumRectangle,Responsive"
-            data-o-ads-formats-medium="MediumRectangle,Responsive"
-            data-o-ads-formats-large="MediumRectangle,Responsive"
-            data-o-ads-formats-extra="MediumRectangle,Responsive"
-            aria-hidden="true"
-          />,
-        ]}
-      </Layout>
-    ),
-    {
-      info: `
-    <Layout /> is the primary component you'll work with in Starter Kit.
-    All the other components in this story are already included with it, and it's
-    the default export of g-components. To use it, you supply it children, which
-    get wrapped as the main article body. Make sure to wrap paragraphs in <p> tags
-    to maintain typographic styles.
-  `,
-    },
-  )
-  .add('With custom children', () => (
-    <Layout
-      flags={DEFAULT.flags}
-      headline={text('Headline', DEFAULT.headline)}
-      title={text('Title', DEFAULT.title)}
-      topic={DEFAULT.topic}
-      url={text('Url', DEFAULT.url)}
-      publishedDate={DEFAULT.pubdate}
-      buildTime={DEFAULT.buildTime}
-    >
-      <GridContainer>
-        <GridRow>
-          <GridChild>
-            <div>
-              {text('Content', lorem)
-                .split(/\n\n/)
-                .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
-            </div>
-          </GridChild>
-        </GridRow>
-      </GridContainer>
-    </Layout>
-  ));
+// // Layout
+// storiesOf('Layout', module)
+//   .add(
+//     'default',
+//     () => (
+//       <Layout
+//         flags={DEFAULT.flags}
+//         headline={text('Headline', DEFAULT.headline)}
+//         title={text('Title', DEFAULT.title)}
+//         topic={DEFAULT.topic}
+//         url={text('Url', DEFAULT.url)}
+//         publishedDate={DEFAULT.pubdate}
+//         buildTime={DEFAULT.buildTime}
+//         ads={DEFAULT.ads}
+//       >
+//         {[
+//           ...text('Content', lorem)
+//             .split(/\n\n/)
+//             .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+//           <MiddleAd />,
+//         ]}
+//       </Layout>
+//     ),
+//     {
+//       info: `
+//     <Layout /> is the primary component you'll work with in Starter Kit.
+//     All the other components in this story are already included with it, and it's
+//     the default export of g-components. To use it, you supply it children, which
+//     get wrapped as the main article body. Make sure to wrap paragraphs in <p> tags
+//     to maintain typographic styles.
+//   `,
+//     },
+//   )
+//   .add('With custom children', () => (
+//     <Layout
+//       flags={DEFAULT.flags}
+//       headline={text('Headline', DEFAULT.headline)}
+//       title={text('Title', DEFAULT.title)}
+//       topic={DEFAULT.topic}
+//       url={text('Url', DEFAULT.url)}
+//       publishedDate={DEFAULT.pubdate}
+//       buildTime={DEFAULT.buildTime}
+//     >
+//       <GridContainer>
+//         <GridRow>
+//           <GridChild>
+//             <div>
+//               {text('Content', lorem)
+//                 .split(/\n\n/)
+//                 .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
+//             </div>
+//           </GridChild>
+//         </GridRow>
+//       </GridContainer>
+//     </Layout>
+//   ));
 
 const DemoCell = ({ children }) => (
   <div

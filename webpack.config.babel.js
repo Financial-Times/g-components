@@ -46,7 +46,7 @@ module.exports = (mode = 'production') => ({
   module: {
     rules: [
       {
-        test: /\.jsx?/,
+        test: /\.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
@@ -74,7 +74,7 @@ module.exports = (mode = 'production') => ({
         ],
       },
       {
-        test: /\.txt/,
+        test: /\.txt$/,
         loader: 'raw-loader',
       },
     ],
