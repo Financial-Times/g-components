@@ -17,7 +17,7 @@ import Comments from '../components/comments';
 import Footer from '../components/footer';
 import Header from '../components/header';
 // import HtmlHead from '../components/html-head';
-import Layout, { GridContainer, GridRow, GridChild } from '../components/layout';
+import { /* Layout, */ GridContainer, GridRow, GridChild } from '../components/layout';
 import OnwardJourney from '../components/onwardjourney';
 import Share from '../components/share';
 import DataTable from '../components/data-table';
