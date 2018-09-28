@@ -82,7 +82,7 @@ class Layout extends PureComponent {
         });
 
         const slots = Array.from(document.querySelectorAll('.o-ads, [data-o-ads-name]'));
-        slots.forEach(initialised.slots.initSlot.bind(ads.slots));
+        slots.forEach(initialised.slots.initSlot.bind(initialised.slots));
       }
     } catch (e) {
       console.error(e);
