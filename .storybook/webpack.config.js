@@ -22,7 +22,7 @@ module.exports = (baseConfig, env, defaultConfig) => {
     module: {
       rules: [
         {
-          test: /\.jsx?/,
+          test: /\.jsx?$/,
           loader: 'babel-loader',
           exclude: /node_modules/,
           options: {

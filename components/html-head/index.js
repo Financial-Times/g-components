@@ -9,7 +9,6 @@ import Analytics from '../analytics';
 import { getMainImage } from '../../shared/helpers';
 import {
   flagsPropType,
-  StringBoolPropType,
   mainImagePropType,
   trackingPropType,
   topicPropType,
@@ -21,27 +20,6 @@ import {
 
 class HtmlHead extends PureComponent {
   static displayName = 'GHtmlHead';
-
-  async componentDidMount() {
-    try {
-      const OAds = await import('o-ads/main.js');
-      const { flags } = this.props;
-      const { ads } = this.props;
-
-      if (flags.ads) {
-        OAds.init({
-          gpt: {
-            network: 5887,
-            site: ads.gptSite,
-            zone: ads.gptZone,
-          },
-          dfp_targeting: ads.dfpTargeting,
-        });
-      }
-    } catch (e) {
-      console.error(e);
-    }
-  }
 
   render() {
     const {
@@ -236,11 +214,6 @@ class HtmlHead extends PureComponent {
 }
 
 HtmlHead.propTypes = {
-  ads: PropTypes.shape({
-    gptSite: PropTypes.string.isRequired,
-    gptZone: StringBoolPropType.isRequired,
-    dfpTargeting: StringBoolPropType.isRequired,
-  }),
   dataMeta: dataMetaPropType,
   description: PropTypes.string,
   facebookDescription: PropTypes.string,
@@ -271,11 +244,6 @@ const DEFAULTS = {
 };
 
 HtmlHead.defaultProps = {
-  ads: {
-    gptSite: 'ft.com', // Ad unit hierarchy makes ads more granular.
-    gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
-    dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
-  },
   dataMeta: undefined,
   mainImage: {
     uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',

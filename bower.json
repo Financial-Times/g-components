@@ -25,11 +25,14 @@
     "o-teaser": "^2.2.2",
     "o-comments": "^4.0.7",
     "o-share": "^6.1.0",
-    "o-ads": "^8.0.0",
+    "o-ads": "^10.0.1",
     "o-date": "^2.10.3",
     "o-errors": "^3.6.1",
     "o-tracking": "^1.2.3",
     "o-table": "^6.9.1",
     "o-forms": "^5.8.2"
+  },
+  "resolutions": {
+    "o-ads": "^10.0.1"
   }
 }

@@ -55,6 +55,11 @@ const DEFAULT = {
   uuid: 'xxx-xxx-xxx',
   pubdate: new Date('2018-07-25T17:43:37.00Z').toISOString(),
   buildTime: new Date('2018-07-25T17:43:37.00Z').toISOString(),
+  ads: {
+    gptSite: 'test.5887.origami', // Ad unit hierarchy makes ads more granular.
+    gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
+    dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
+  },
 };
 
 const lorem = `Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.
@@ -96,10 +101,25 @@ storiesOf('Layout', module)
         url={text('Url', DEFAULT.url)}
         publishedDate={DEFAULT.pubdate}
         buildTime={DEFAULT.buildTime}
+        ads={DEFAULT.ads}
       >
-        {text('Content', lorem)
-          .split(/\n\n/)
-          .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>)}
+        {[
+          ...text('Content', lorem)
+            .split(/\n\n/)
+            .map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+          <MiddleAd />,
+          <div
+            className="o-ads o-ads--center o-ads--background o-ads--reserve-250"
+            data-o-ads-name="mid-ad"
+            data-o-ads-targeting="pos=mid;"
+            data-o-ads-formats-default="Responsive"
+            data-o-ads-formats-small="MediumRectangle,Responsive"
+            data-o-ads-formats-medium="MediumRectangle,Responsive"
+            data-o-ads-formats-large="MediumRectangle,Responsive"
+            data-o-ads-formats-extra="MediumRectangle,Responsive"
+            aria-hidden="true"
+          />,
+        ]}
       </Layout>
     ),
     {
