@@ -6,6 +6,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { makeCancelable } from '../../shared/helpers';
+import './styles.scss';
 
 class OnwardJourney extends React.Component {
   static displayName = 'GOnwardJourney';
