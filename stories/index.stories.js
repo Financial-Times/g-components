@@ -52,7 +52,7 @@ const DEFAULT = {
   },
   headline: text('Headline', 'New Starter Kit site'),
   title: 'New Starter Kit site',
-  uuid: 'xxx-xxx-xxx',
+  id: '3a499586-b2e0-11e4-a058-00144feab7de',
   pubdate: new Date('2018-07-25T17:43:37.00Z').toISOString(),
   buildTime: new Date('2018-07-25T17:43:37.00Z').toISOString(),
   ads: {
@@ -102,6 +102,7 @@ storiesOf('Layout', module)
         publishedDate={DEFAULT.pubdate}
         buildTime={DEFAULT.buildTime}
         ads={DEFAULT.ads}
+        id={DEFAULT.id}
       >
         {[
           ...text('Content', lorem)

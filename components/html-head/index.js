@@ -22,6 +22,7 @@ class HtmlHead extends PureComponent {
 
   render() {
     const {
+      children,
       flags,
       dataMeta,
       description,
@@ -29,6 +30,7 @@ class HtmlHead extends PureComponent {
       facebookHeadline,
       facebookImage,
       headline,
+      headTags,
       mainImage,
       socialDescription,
       socialHeadline,
@@ -47,8 +49,9 @@ class HtmlHead extends PureComponent {
     } = this.props;
     const polyfillFeatures = ['default', 'fetch'].join(',');
     const mainImageUrl = getMainImage(mainImage);
+    const Tag = headTags ? 'head' : Fragment;
     return (
-      <head>
+      <Tag>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -205,12 +208,16 @@ class HtmlHead extends PureComponent {
         <meta property="fb:pages" content="622419751233155" />
         <meta property="fb:pages" content="23117544640" />
         <meta property="fb:pages" content="293710391064899" />
-      </head>
+
+        {/* Finally, render all children */}
+        {children}
+      </Tag>
     );
   }
 }
 
 HtmlHead.propTypes = {
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.node), PropTypes.node]),
   dataMeta: dataMetaPropType,
   description: PropTypes.string,
   facebookDescription: PropTypes.string,
@@ -218,6 +225,7 @@ HtmlHead.propTypes = {
   facebookImage: PropTypes.string,
   flags: flagsPropType,
   headline: PropTypes.string.isRequired,
+  headTags: PropTypes.bool,
   mainImage: mainImagePropType,
   socialDescription: PropTypes.string,
   socialHeadline: PropTypes.string,
@@ -241,6 +249,7 @@ const DEFAULTS = {
 };
 
 HtmlHead.defaultProps = {
+  children: null,
   dataMeta: undefined,
   mainImage: {
     uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
@@ -248,6 +257,7 @@ HtmlHead.defaultProps = {
   flags: {},
   topic: {},
   description: DEFAULTS.desc,
+  headTags: true,
   facebookDescription: '',
   facebookHeadline: '',
   facebookImage: '',
