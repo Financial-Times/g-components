@@ -498,7 +498,7 @@ exports[`Storyshots Analytics default 1`] = `
     <noscript
       data-o-component="o-tracking"
     >
-      &lt;img src="https://spoor-api.ft.com/px.gif?data=%7B%22action%22%3A%22view%22%2C%22category%22%3A%22page%22%2C%22context%22%3A%7B%22content%22%3A%7B%22asset_type%22%3A%22interactive%22%2C%22uuid%22%3A%22xxx-xxx-xxx%22%7D%2C%22product%22%3A%22IG%22%7D%2C%22system%22%3A%7B%22is_live%22%3Afalse%2C%22apiKey%22%3A%22qUb9maKfKbtpRsdp0p2J7uWxRPGJEP%22%2C%22source%22%3A%22o-tracking-ns%22%2C%22version%22%3A%221.0.0%22%7D%7D" height="1" width="1" /&gt;
+      &lt;img src="https://spoor-api.ft.com/px.gif?data=%7B%22action%22%3A%22view%22%2C%22category%22%3A%22page%22%2C%22context%22%3A%7B%22content%22%3A%7B%22asset_type%22%3A%22interactive%22%7D%2C%22product%22%3A%22IG%22%7D%2C%22system%22%3A%7B%22is_live%22%3Afalse%2C%22apiKey%22%3A%22qUb9maKfKbtpRsdp0p2J7uWxRPGJEP%22%2C%22source%22%3A%22o-tracking-ns%22%2C%22version%22%3A%221.0.0%22%7D%7D" height="1" width="1" /&gt;
     </noscript>
     <script
       dangerouslySetInnerHTML={
@@ -755,33 +755,6 @@ You need to just simply import it whereever.
                   GAnalytics
                 </span>
                 <span>
-                  <span>
-                     
-                    <span
-                      style={Object {}}
-                    >
-                      id
-                    </span>
-                    <span>
-                      =
-                      <span
-                        style={Object {}}
-                      >
-                        "
-                        <span
-                          style={
-                            Object {
-                              "color": "#22a",
-                              "wordBreak": "break-word",
-                            }
-                          }
-                        >
-                          xxx-xxx-xxx
-                        </span>
-                        "
-                      </span>
-                    </span>
-                  </span>
                   <span>
                      
                     <span
@@ -5073,7 +5046,7 @@ exports[`Storyshots Footer default 1`] = `
           <small>
             Markets data delayed by at least 15 minutes. © THE FINANCIAL TIMES LTD
              
-            2018
+            2019
             . 
             <abbr
               aria-label="F T"
@@ -5855,7 +5828,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                      
                     Limited
                      
-                    2018
+                    2019
                     . All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.
                   </small>
                 </div>
@@ -6148,7 +6121,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
           <small>
             Markets data delayed by at least 15 minutes. © THE FINANCIAL TIMES LTD
              
-            2018
+            2019
             . 
             <abbr
               aria-label="F T"
@@ -7869,7 +7842,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
                      
                     Limited
                      
-                    2018
+                    2019
                     . All rights reserved. You may share using our article tools. Please don't cut articles from FT.com and redistribute by email or post to the web.
                   </small>
                 </div>
@@ -8162,7 +8135,7 @@ soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent
           <small>
             Markets data delayed by at least 15 minutes. © THE FINANCIAL TIMES LTD
              
-            2018
+            2019
             . 
             <abbr
               aria-label="F T"
@@ -8812,6 +8785,36 @@ to maintain typographic styles.
                             }
                           </span>
                           }
+                        </span>
+                      </span>
+                    </span>
+                    <span>
+                      <span>
+                        <br />
+                          
+                      </span>
+                      <span
+                        style={Object {}}
+                      >
+                        id
+                      </span>
+                      <span>
+                        =
+                        <span
+                          style={Object {}}
+                        >
+                          "
+                          <span
+                            style={
+                              Object {
+                                "color": "#22a",
+                                "wordBreak": "break-word",
+                              }
+                            }
+                          >
+                            3a499586-b2e0-11e4-a058-00144feab7de
+                          </span>
+                          "
                         </span>
                       </span>
                       <br />
