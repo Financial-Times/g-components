@@ -30,7 +30,7 @@ class HtmlHead extends PureComponent {
       facebookHeadline,
       facebookImage,
       headline,
-      headTags,
+      wrapWithHeadTags,
       mainImage,
       socialDescription,
       socialHeadline,
@@ -49,7 +49,7 @@ class HtmlHead extends PureComponent {
     } = this.props;
     const polyfillFeatures = ['default', 'fetch'].join(',');
     const mainImageUrl = getMainImage(mainImage);
-    const Tag = headTags ? 'head' : Fragment;
+    const Tag = wrapWithHeadTags ? 'head' : Fragment;
     return (
       <Tag>
         <meta charSet="utf-8" />
@@ -225,7 +225,7 @@ HtmlHead.propTypes = {
   facebookImage: PropTypes.string,
   flags: flagsPropType,
   headline: PropTypes.string.isRequired,
-  headTags: PropTypes.bool,
+  wrapWithHeadTags: PropTypes.bool,
   mainImage: mainImagePropType,
   socialDescription: PropTypes.string,
   socialHeadline: PropTypes.string,
@@ -257,7 +257,7 @@ HtmlHead.defaultProps = {
   flags: {},
   topic: {},
   description: DEFAULTS.desc,
-  headTags: true,
+  wrapWithHeadTags: true,
   facebookDescription: '',
   facebookHeadline: '',
   facebookImage: '',
