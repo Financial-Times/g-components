@@ -6,6 +6,7 @@
 import React, { PureComponent } from 'react';
 import OHeader from 'o-header/main.js';
 import './styles.scss';
+import { flagsPropType } from '../../shared/proptypes';
 
 class Header extends PureComponent {
   ref = React.createRef();
@@ -17,10 +18,20 @@ class Header extends PureComponent {
   }
 
   render() {
+    const {
+      props: {
+        flags: { dark },
+      },
+    } = this;
+
+    const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
+      .filter(i => i)
+      .join(' ');
+
     return (
       <header
         ref={this.ref}
-        className="o-header o-header--simple"
+        className={headerClasses}
         data-o-component="o-header"
         data-o-header--no-js=""
       >
@@ -47,3 +58,13 @@ Financial Times
 }
 
 export default Header;
+
+Header.propTypes = {
+  flags: flagsPropType,
+};
+
+Header.defaultProps = {
+  flags: {
+    dark: false,
+  },
+};

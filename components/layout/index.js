@@ -88,7 +88,7 @@ class Layout extends PureComponent {
         slots.forEach(initialised.slots.initSlot.bind(initialised.slots));
       }
     } catch (e) {
-      console.error(e);
+      console.error(e); // eslint-disable-line no-console
     }
   }
 
@@ -104,7 +104,7 @@ class Layout extends PureComponent {
       <Fragment>
         {flags.analytics && <Analytics {...this.props} />}
         {flags.ads && <TopAd />}
-        {flags.header && <Header key="header" {...props} />}
+        {flags.header && <Header key="header" {...{ ...props, flags }} />}
         <main key="main" role="main">
           <article className="article" itemScope itemType="http://schema.org/Article">
             <div className="article-head o-grid-container">

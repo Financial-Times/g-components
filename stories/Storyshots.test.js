@@ -1,5 +1,11 @@
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 
+global.IntersectionObserver = jest.fn().mockImplementation(() => ({
+  observe: () => ({}),
+  unobserve: () => ({}),
+  disconnect: () => ({}),
+}));
+
 initStoryshots({
   test: snapshotWithOptions({
     createNodeMock: (el) => {

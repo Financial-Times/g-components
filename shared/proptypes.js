@@ -19,6 +19,7 @@ export const flagsPropType = PropTypes.shape({
   footer: StringBoolPropType.isRequired,
   comments: StringBoolPropType.isRequired,
   data: StringBoolPropType.isRequired,
+  dark: StringBoolPropType.isRequired,
 });
 
 export const mainImagePropType = PropTypes.oneOfType([

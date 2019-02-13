@@ -6,6 +6,7 @@
 import React, { PureComponent } from 'react';
 import OShare from 'o-share/main.js';
 import PropTypes from 'prop-types';
+import { flagsPropType } from '../../shared/proptypes';
 import './styles.scss';
 
 class Share extends PureComponent {
@@ -25,14 +26,17 @@ class Share extends PureComponent {
       twitterRelatedAccounts,
       url,
       tweetText,
+      flags: { dark },
     } = this.props;
+    const containerClasses = ['container', dark && 'container--inverse'].filter(i => i).join(' ');
+    const sharingClasses = ['o-share', dark && 'o-share--inverse'].filter(i => i).join(' ');
     return (
       <div
         className="article__share article__share--top n-util-clearfix"
         data-trackable="share | top"
       >
-        <div className="container">
-          <div ref={this.ref} data-o-component="o-share" className="o-share">
+        <div className={containerClasses}>
+          <div ref={this.ref} data-o-component="o-share" className={sharingClasses}>
             <ul>
               <li className="o-share__action o-share__action--twitter">
                 <a
@@ -93,6 +97,7 @@ Share.propTypes = {
   headline: PropTypes.string,
   twitterRelatedAccounts: PropTypes.arrayOf(PropTypes.string),
   tweetText: PropTypes.string,
+  flags: flagsPropType,
 };
 
 Share.defaultProps = {
@@ -101,6 +106,9 @@ Share.defaultProps = {
   twitterHeadline: '',
   headline: '',
   twitterRelatedAccounts: [],
+  flags: {
+    dark: false,
+  },
 };
 
 export default Share;

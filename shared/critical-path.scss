@@ -1,5 +1,5 @@
-@import 'o-colors/main.scss';
-@import 'o-grid/main.scss';
+@import "o-colors/main.scss";
+@import "o-grid/main.scss";
 
 $font-sans: MetricWeb, sans-serif;
 $font-serif: Georgia, serif;
@@ -112,3 +112,5 @@ body {
     max-width: 700px;
   }
 }
+
+@import "./dark";

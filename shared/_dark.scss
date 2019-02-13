@@ -1,36 +1,38 @@
 // starter-kit dark theme
-@import 'o-typography/main';
+@import "o-typography/main";
 
 .dark {
-  html,
+  &,
   body {
-    background-color: oColorsGetPaletteColor('slate');
+    background-color: oColorsGetPaletteColor("slate");
   }
 
   .article {
     .o-typography-topic,
     .o-typography-author {
-      color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
 
       &:hover {
-        color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 73);
+        color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
       }
     }
 
     h1 {
-      color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
     }
 
     .o-typography-standfirst {
       @include oTypographySans($scale: 2, $line-height: 24px);
-      color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 80);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 80);
 
       a {
-        color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
-        border-bottom: 2px solid oColorsGetTextColor(oColorsGetPaletteColor('slate'), 60);
+        color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
+        border-bottom: 2px solid
+          oColorsGetTextColor(oColorsGetPaletteColor("slate"), 60);
 
         &:hover {
-          border-bottom: 2px solid oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
+          border-bottom: 2px solid
+            oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
         }
       }
     }
@@ -42,28 +44,36 @@
     ol li,
     ul li,
     figcaption {
-      color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 60);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 60);
     }
 
     p a,
     figcaption a,
     footer small a {
-      color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
-      border-bottom: 2px solid oColorsGetTextColor(oColorsGetPaletteColor('slate'), 60);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
+      border-bottom: 2px solid
+        oColorsGetTextColor(oColorsGetPaletteColor("slate"), 60);
 
       &:hover {
-        color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
-        border-bottom: 2px solid oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
+        color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
+        border-bottom: 2px solid
+          oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
       }
 
       &:focus {
-        color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
+        color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
         border-bottom-color: transparent;
       }
     }
 
     p {
-      @include oTypographySerif($scale: (default: 1, XL: 2), $line-height: 1.6);
+      @include oTypographySerif(
+        $scale: (
+          default: 1,
+          XL: 2
+        ),
+        $line-height: 1.6
+      );
     }
 
     ol li,
@@ -71,7 +81,10 @@
       @include oTypographySerif($scale: 1, $line-height: 28px);
 
       &::before {
-        color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 60) !important;
+        color: oColorsGetTextColor(
+          oColorsGetPaletteColor("slate"),
+          60
+        ) !important;
       }
     }
   }
@@ -79,23 +92,23 @@
   .onward-journey {
     a,
     h2 {
-      color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
 
       &:hover {
-        color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 73);
+        color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
       }
 
       &:focus {
-        color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 73);
+        color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
       }
 
       &:visited {
-        color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 100);
+        color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
       }
     }
 
     .o-date {
-      color: oColorsGetTextColor(oColorsGetPaletteColor('slate'), 60);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 60);
     }
   }
 
