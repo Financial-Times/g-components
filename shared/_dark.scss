@@ -1,10 +1,23 @@
 // starter-kit dark theme
+$o-typography-is-silent: false;
+
+@import "o-colors/main";
 @import "o-typography/main";
 
 .dark {
-  &,
+  background-color: oColorsGetPaletteColor("slate");
+
   body {
-    background-color: oColorsGetPaletteColor("slate");
+    background-color: inherit;
+  }
+
+  .pink {
+    @include oColorsFor(page, background);
+    padding: 1em 0;
+
+    @include oGridRespondTo(M) {
+      padding: 2em 0;
+    }
   }
 
   .article {
@@ -17,18 +30,22 @@
       }
     }
 
-    h1 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
       color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
     }
 
     .o-typography-standfirst {
-      @include oTypographySans($scale: 2, $line-height: 24px);
-      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 80);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
 
       a {
         color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
         border-bottom: 2px solid
-          oColorsGetTextColor(oColorsGetPaletteColor("slate"), 60);
+          oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
 
         &:hover {
           border-bottom: 2px solid
@@ -38,21 +55,22 @@
     }
 
     p,
-    small,
-    .byline,
     .o-date,
-    ol li,
-    ul li,
-    figcaption {
-      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 60);
+    .byline,
+    small {
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
     }
 
-    p a,
+    figcaption,
     figcaption a,
     footer small a {
+      color: rgb(151, 151, 151);
+    }
+
+    p a {
       color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
       border-bottom: 2px solid
-        oColorsGetTextColor(oColorsGetPaletteColor("slate"), 60);
+        oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
 
       &:hover {
         color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 100);
@@ -79,11 +97,12 @@
     ol li,
     ul li {
       @include oTypographySerif($scale: 1, $line-height: 28px);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
 
       &::before {
         color: oColorsGetTextColor(
           oColorsGetPaletteColor("slate"),
-          60
+          73
         ) !important;
       }
     }
@@ -108,12 +127,7 @@
     }
 
     .o-date {
-      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 60);
+      color: oColorsGetTextColor(oColorsGetPaletteColor("slate"), 73);
     }
-  }
-
-  .o-footer__row {
-    border-top: 1px solid #51555c;
-    padding-top: 12px;
   }
 }

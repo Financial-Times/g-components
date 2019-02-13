@@ -6,6 +6,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import OComments from 'o-comments/main.js';
+import { flagsPropType } from '../../shared/proptypes';
 import './styles.scss';
 
 class Comments extends PureComponent {
@@ -25,8 +26,14 @@ class Comments extends PureComponent {
   }
 
   render() {
+    const {
+      flags: { dark },
+    } = this.props;
+
+    const containerClasses = ['o-grid-container', dark && 'pink'].filter(i => i).join(' ');
+
     return (
-      <div className="o-grid-container">
+      <div className={containerClasses}>
         <div className="o-grid-row">
           <div
             ref={this.ref}
@@ -53,12 +60,16 @@ Comments.propTypes = {
   title: PropTypes.string,
   id: PropTypes.string,
   url: PropTypes.string,
+  flags: flagsPropType,
 };
 
 Comments.defaultProps = {
   title: 'Comments',
   id: '3a499586-b2e0-11e4-a058-00144feab7de',
   url: 'https://local.ft.com/comments-test',
+  flags: {
+    dark: false,
+  },
 };
 
 export default Comments;

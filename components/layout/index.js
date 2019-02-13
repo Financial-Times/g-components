@@ -165,7 +165,7 @@ Limited
           </article>
         </main>
         {flags.onwardjourney && <OnwardJourney key="oj" {...props} />}
-        {flags.comments && <Comments key="comments" {...props} />}
+        {flags.comments && <Comments key="comments" {...{ ...props, flags }} />}
         {flags.footer && <Footer key="footer" {...props} />}
       </Fragment>
     );
