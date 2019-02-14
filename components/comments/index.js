@@ -29,11 +29,8 @@ class Comments extends PureComponent {
     const {
       flags: { dark },
     } = this.props;
-
-    const containerClasses = ['o-grid-container', dark && 'pink'].filter(i => i).join(' ');
-
-    return (
-      <div className={containerClasses}>
+    const comments = (
+      <div className="o-grid-container">
         <div className="o-grid-row">
           <div
             ref={this.ref}
@@ -45,14 +42,18 @@ class Comments extends PureComponent {
             <div className="o--if-no-js">
               To participate in this chat, you need to upgrade to a newer web browser.
               {' '}
-              <a href="http://help.ft.com/tools-services/browser-compatibility/">
-Learn more.
-              </a>
+              <a href="http://help.ft.com/tools-services/browser-compatibility/">Learn more.</a>
             </div>
           </div>
         </div>
       </div>
     );
+
+    if (dark) {
+      return <div className="pink">{comments}</div>;
+    }
+
+    return comments;
   }
 }
 
