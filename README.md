@@ -11,6 +11,12 @@ Reusable React components for building graphics pages. [See how to use them in t
 | `<DataTable>`                  | A sortable table                              |
 | `<DataFilter>`                 | Filter tabular data by searching or selecting |
 
+### Optional page components
+
+| Component                      | Description                                   |
+|--------------------------------|-----------------------------------------------|
+| `<ImageSet>`                   | An image set (small, medium, large)           |
+
 ### Page furniture
 
 | Component                      | Description                                   |
