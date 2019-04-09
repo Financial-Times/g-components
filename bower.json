@@ -23,7 +23,7 @@
     "o-header": "^7.2.8",
     "o-footer": "^6.0.8",
     "o-teaser": "^2.3.2",
-    "o-comments": "^4.0.7",
+    "o-comments": "^5",
     "o-share": "^6.1.0",
     "o-ads": "^10.2.0",
     "o-date": "^2.10.3",
@@ -33,6 +33,7 @@
     "o-forms": "^5.8.2"
   },
   "resolutions": {
-    "o-ads": "^10.0.1"
+    "o-ads": "^10.0.1",
+    "o-comments": "^5"
   }
 }

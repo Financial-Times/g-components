@@ -33,9 +33,6 @@ module.exports = (mode = 'production') => ({
     plugins: [new BowerResolvePlugin()],
     descriptionFiles: ['bower.json', 'package.json'],
     mainFields: ['browser', 'main'],
-    alias: {
-      ftdomdelegate: 'dom-delegate',
-    },
   },
   devtool: 'source-map',
   plugins: [

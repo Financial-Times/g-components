@@ -15,9 +15,6 @@ module.exports = (baseConfig, env, defaultConfig) => {
       plugins: [new BowerResolvePlugin()],
       descriptionFiles: ['bower.json', 'package.json'],
       mainFields: ['browser', 'main'],
-      alias: {
-        ftdomdelegate: 'dom-delegate',
-      },
     },
     module: {
       rules: [
