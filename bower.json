@@ -2,19 +2,11 @@
   "name": "@financial-times/g-components",
   "description": "Page furniture used by FT IG's Starter Kit",
   "main": "dist/gcomponents.min.umd.js",
-  "authors": [
-    "Ændrew Rininsland <andrew.rininsland@ft.com"
-  ],
+  "authors": ["Ændrew Rininsland <andrew.rininsland@ft.com"],
   "license": "ISC",
   "homepage": "https://github.com/Financial-Times/g-components",
   "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
+  "ignore": ["**/.*", "node_modules", "bower_components", "test", "tests"],
   "dependencies": {
     "o-normalise": "^1.5.3",
     "o-fonts": "^3.0.4",
@@ -31,9 +23,5 @@
     "o-tracking": "^1.2.3",
     "o-table": "^6.9.1",
     "o-forms": "^5.8.2"
-  },
-  "resolutions": {
-    "o-ads": "^10.0.1",
-    "o-comments": "^5"
   }
 }
