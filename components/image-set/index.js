@@ -44,7 +44,7 @@ const imageSet = ({ graphicsData }) => (
 
 imageSet.propTypes = {
   graphicsData: PropTypes.objectOf({
-    alt: PropTypes.string,
+    alt: PropTypes.string.isRequired,
     sources: PropTypes.objectOf({
       small: PropTypes.string,
       medium: PropTypes.string,
@@ -54,9 +54,7 @@ imageSet.propTypes = {
 };
 
 imageSet.defaultProps = {
-  graphicsData: {
-    alt: '',
-  },
+  graphicsData: {},
 };
 
 export default imageSet;
