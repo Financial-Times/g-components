@@ -145,9 +145,6 @@ Legal &amp; Privacy
                     <a className="o-footer__matrix-link" href="//markets.ft.com/data/alerts/">
                       Alerts Hub
                     </a>
-                    <a className="o-footer__matrix-link" href="//lexicon.ft.com/">
-                      Lexicon
-                    </a>
                     <a
                       className="o-footer__matrix-link"
                       href="//rankings.ft.com/businessschoolrankings/global-mba-ranking-2016"
