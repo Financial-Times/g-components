@@ -21,8 +21,10 @@
     "react": "^16.4.1"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "d3-time-format": "^2.1.1",
     "react-scroll-percentage": "^2.0.0",
+    "react-useportal": "^1.0.2",
     "remove-markdown": "^0.3.0"
   },
   "devDependencies": {

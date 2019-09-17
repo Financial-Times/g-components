@@ -1,0 +1,28 @@
+@import 'o-tooltip/main.scss';
+
+.g-tooltip {
+  @include oTooltip();
+  display: block;
+  pointer-events: none;
+
+  &--content {
+    @include oTooltipContent();
+  }
+
+  &--left {
+    @include oTooltipLeftArrow();
+  }
+
+  &--right {
+    @include oTooltipRightArrow();
+  }
+
+  &--top {
+    @include oTooltipDownArrow();
+  }
+
+  &--bottom {
+    @include oTooltipUpArrow();
+  }
+}
+

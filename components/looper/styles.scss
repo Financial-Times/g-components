@@ -1,0 +1,37 @@
+@import "o-buttons/main";
+
+.g-looper {
+  &__play-pause {
+    @include oButtons($theme: "primary-mono");
+    &--is-paused {
+      @include oButtonsIconButton(
+        $icon-name: "play",
+        $is-icon-only: true,
+        $theme: "primary-mono"
+      );
+    }
+    &--is-playing {
+      @include oButtonsIconButton(
+        $icon-name: "pause",
+        $is-icon-only: true,
+        $theme: "primary-mono"
+      );
+    }
+  }
+
+  &__toggle-looping {
+    @include oButtons($theme: "primary-mono");
+    @include oButtonsIconButton(
+      $icon-name: "refresh",
+      $is-icon-only: true,
+      $theme: "primary-mono"
+    );
+
+    &--off {
+      background-color: #676668;
+      color: #ffffff;
+      border-color: transparent;
+      text-decoration: none;
+    }
+  }
+}

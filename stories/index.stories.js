@@ -3,12 +3,10 @@
  * Main Storybook.js stories
  */
 
-import React from 'react';
+import React, { Fragment, useState } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf, addDecorator } from '@storybook/react';
-import {
-  withKnobs, text, boolean, select, array,
-} from '@storybook/addon-knobs';
+import { withKnobs, text, boolean, select, array } from '@storybook/addon-knobs';
 import { withInfo } from '@storybook/addon-info';
 import Observer from 'react-scroll-percentage';
 import { TopAd, MiddleAd } from '../components/ads';
@@ -24,6 +22,7 @@ import Share from '../components/share';
 import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
+import Tooltip, { tooltipContext } from '../components/tooltip';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -151,11 +150,7 @@ storiesOf('Layout', module)
   .add(
     'With custom article head',
     () => {
-      const CustomArticleHead = (
-        <h1>
-New starter kit site
-        </h1>
-      );
+      const CustomArticleHead = <h1>New starter kit site</h1>;
       return (
         <Layout
           flags={DEFAULT.flags}
@@ -190,7 +185,7 @@ New starter kit site
   );
 
 storiesOf('Layout, dark theme', module)
-  .addDecorator((story) => {
+  .addDecorator(story => {
     document.documentElement.classList.add('dark');
     return story();
   })
@@ -722,9 +717,7 @@ storiesOf('Ads', module).add('Middle ad', () => <MiddleAd />);
 storiesOf('Analytics', module).add(
   'default',
   () => [
-    <h4 key="1">
-You won&apos;t see anything here as &quot;Analytics&quot; has no visual output
-    </h4>,
+    <h4 key="1">You won&apos;t see anything here as &quot;Analytics&quot; has no visual output</h4>,
     <Analytics key="2" id={DEFAULT.uuid} flags={DEFAULT.flags} />,
   ],
   {
@@ -839,15 +832,7 @@ storiesOf('Sticky', module)
         <Sticky
           graphic={({ percentage, inView }) => (
             <h1 style={{ backgroundColor: '#969696', padding: '1em' }}>
-              Percentage:
-              {' '}
-              {(percentage * 100).toFixed(1)}
-              %
-              {' '}
-              <br />
-              {' '}
-In viewport:
-              {' '}
+              Percentage: {(percentage * 100).toFixed(1)}% <br /> In viewport:{' '}
               {inView ? 'yes' : 'no'}
             </h1>
           )}
@@ -855,122 +840,102 @@ In viewport:
             <div style={{ fontSize: '500%' }}>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
               <h1>
                 Lorem ipsum; pct:
-                {percentage}
-                ; inview:
+                {percentage}; inview:
                 {inView}
               </h1>
             </div>
@@ -1010,22 +975,10 @@ In viewport:
         <Sticky
           graphic={({ percentage, inView, current }) => (
             <h1 style={{ backgroundColor: '#969696', padding: '1em' }}>
-              Percentage:
-              {' '}
-              {(percentage * 100).toFixed(1)}
-              %
-              {' '}
-              <br />
-              {' '}
-Frame is in viewport:
-              {' '}
+              Percentage: {(percentage * 100).toFixed(1)}% <br /> Frame is in viewport:{' '}
               {inView ? 'yes' : 'no'}
-              <br />
-              {' '}
-Currently viewing line:
-              {/* prettier-ignore */}
-              {' '}
-              {current}
+              <br /> Currently viewing line:
+              {/* prettier-ignore */} {current}
             </h1>
           )}
           article={({ updateGraphic }) => (
@@ -1035,11 +988,7 @@ Currently viewing line:
                   <Observer>
                     {({ inView }) => {
                       if (inView) updateGraphic(idx);
-                      return (
-                        <h1>
-                          {label}
-                        </h1>
-                      );
+                      return <h1>{label}</h1>;
                     }}
                   </Observer>
                 ),
@@ -1068,3 +1017,125 @@ Currently viewing line:
   `,
     },
   );
+
+storiesOf('Tooltip', module)
+  .add('default', () => <Tooltip visible>Here is your content</Tooltip>)
+  .add('With directional arrows', () => (
+    <Fragment>
+      <Tooltip visible arrow="left">
+        Left tooltip
+      </Tooltip>
+      <br />
+      <br />
+      <br />
+      <br />
+      <Tooltip visible arrow="right">
+        Right tooltip
+      </Tooltip>
+      <br />
+      <br />
+      <br />
+      <br />
+      <Tooltip visible arrow="top">
+        Top tooltip
+      </Tooltip>
+      <br />
+      <br />
+      <br />
+      <br />
+      <Tooltip visible arrow="bottom">
+        Bottom tooltip
+      </Tooltip>
+    </Fragment>
+  ))
+  .add('Attached to an element', () => {
+    const TargetElement = ({ direction, children, left, top, setTooltip, content }) => (
+      <div
+        onMouseOver={evt => {
+          setTooltip({
+            target: evt.currentTarget,
+            visible: true,
+            arrow: direction,
+            content,
+          });
+        }}
+        onFocus={evt => {
+          setTooltip({
+            target: evt.currentTarget,
+            visible: true,
+            arrow: direction,
+            content,
+          });
+        }}
+        onBlur={evt => {
+          setTooltip({
+            visible: false,
+          });
+        }}
+        onMouseOut={() => {
+          setTooltip({ visible: false });
+        }}
+        style={{ position: 'absolute', left, top, background: 'red' }}
+      >
+        {children}
+      </div>
+    );
+
+    const App = () => {
+      const [tooltip, setTooltip] = useState({
+        left: null,
+        top: null,
+        content: '',
+        visible: false,
+      });
+      return (
+        <tooltipContext.Provider value={{ ...tooltip, setTooltip }}>
+          <div style={{ width: '100vw', height: '100vw' }}>
+            <TargetElement
+              content="First tooltip!"
+              setTooltip={setTooltip}
+              rootId="root"
+              left="50%"
+              top="20%"
+              direction="left"
+            >
+              Target left!
+            </TargetElement>
+            <TargetElement
+              content="Second tooltip!"
+              setTooltip={setTooltip}
+              rootId="root"
+              left="50%"
+              top="40%"
+              direction="right"
+            >
+              Target right!
+            </TargetElement>
+            <TargetElement
+              content="Third tooltip!"
+              setTooltip={setTooltip}
+              rootId="root"
+              left="50%"
+              top="70%"
+              direction="top"
+            >
+              Target top!
+            </TargetElement>
+            <TargetElement
+              content="Fourth tooltip!"
+              setTooltip={setTooltip}
+              rootId="root"
+              left="50%"
+              top="90%"
+              direction="bottom"
+            >
+              Target bottom!
+            </TargetElement>
+          </div>
+          <Tooltip {...tooltip}>{tooltip.content}</Tooltip>
+        </tooltipContext.Provider>
+      );
+    };
+
+    return <App />;
+  });
