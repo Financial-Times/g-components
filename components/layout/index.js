@@ -121,7 +121,6 @@ const Layout = ({ flags, ads, children, defaultContainer, customArticleHead, ...
       value={{
         flags,
         ads,
-        children,
         defaultContainer,
         customArticleHead,
         ...props,

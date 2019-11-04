@@ -1,4 +1,4 @@
-storybook-static
+storybook-static/
 .vscode
 dist
 build
