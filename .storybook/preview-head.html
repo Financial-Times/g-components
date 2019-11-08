@@ -1,16 +1,15 @@
-<link rel="../shared/critical-path.scss" />
 <!-- Add CTM checks -->
 <script>
-  document.documentElement.className = "core";
-  var script = document.createElement("script");
-  var supportsDeferredScripts = "defer" in script && "async" in script;
+  document.documentElement.className = 'core';
+  var script = document.createElement('script');
+  var supportsDeferredScripts = 'defer' in script && 'async' in script;
   window.cutsTheMustard =
-    typeof document.documentElement.dataset === "object" &&
-    "visibilityState" in document &&
+    typeof document.documentElement.dataset === 'object' &&
+    'visibilityState' in document &&
     supportsDeferredScripts;
   if (window.cutsTheMustard)
     document.documentElement.className = document.documentElement.className.replace(
       /core/g,
-      "enhanced"
+      'enhanced',
     );
 </script>
