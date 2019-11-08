@@ -1,9 +1,8 @@
 {
-  "presets": ["@emotion/babel-preset-css-prop"],
-  "env": {
-    "test": {
-      "plugins": ["require-context-hook"]
-    }
-  },
-  "sourceType": "unambiguous"
+  "presets": ["@babel/preset-env", "@emotion/babel-preset-css-prop"]
+  // "plugins": [
+  //   "@babel/proposal-class-properties",
+  //   "@babel/syntax-dynamic-import",
+  //   "@babel/proposal-object-rest-spread"
+  // ]
 }

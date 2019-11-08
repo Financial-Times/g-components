@@ -60,10 +60,7 @@ module.exports = {
   // globals: {},
 
   // An array of directory names to be searched recursively up from the requiring module's location
-  moduleDirectories: [
-    "node_modules",
-    "bower_components"
-  ],
+  moduleDirectories: ['node_modules', 'bower_components'],
 
   // An array of file extensions your modules use
   // moduleFileExtensions: [
@@ -75,24 +72,22 @@ module.exports = {
 
   // A map from regular expressions to module names that allow to stub out resources with a single module
   moduleNameMapper: {
-    "\\.(css|sass|scss)$": "identity-obj-proxy",
-    "dom-delegate": resolve(__dirname, "bower_components", "dom-delegate/lib/delegate.js"),
-    "o-comment-utilities": resolve(__dirname, "bower_components", "o-comment-utilities/main.js"),
-    "o-comment-api": resolve(__dirname, "bower_components", "o-comment-api/main.js"),
-    "o-comment-ui": resolve(__dirname, "bower_components", "o-comment-ui/main.js"),
-    "o-overlay": resolve(__dirname, "bower_components", "o-overlay/main.js"),
-    "o-viewport": resolve(__dirname, "bower_components", "o-viewport/main.js"),
-    "o-utils": resolve(__dirname, "bower_components", "o-utils/main.js"),
-    "o-layers": resolve(__dirname, "bower_components", "o-layers/main.js"),
-    "o-dom": resolve(__dirname, "bower_components", "o-dom/main.js"),
-    "o-toggle": resolve(__dirname, "bower_components", "o-toggle/main.js"),
-    "o-grid": resolve(__dirname, "bower_components", "o-grid/main.js"),
+    '\\.(css|sass|scss)$': 'identity-obj-proxy',
+    'dom-delegate': resolve(__dirname, 'bower_components', 'dom-delegate/lib/delegate.js'),
+    'o-comment-utilities': resolve(__dirname, 'bower_components', 'o-comment-utilities/main.js'),
+    'o-comment-api': resolve(__dirname, 'bower_components', 'o-comment-api/main.js'),
+    'o-comment-ui': resolve(__dirname, 'bower_components', 'o-comment-ui/main.js'),
+    'o-overlay': resolve(__dirname, 'bower_components', 'o-overlay/main.js'),
+    'o-viewport': resolve(__dirname, 'bower_components', 'o-viewport/main.js'),
+    'o-utils': resolve(__dirname, 'bower_components', 'o-utils/main.js'),
+    'o-layers': resolve(__dirname, 'bower_components', 'o-layers/main.js'),
+    'o-dom': resolve(__dirname, 'bower_components', 'o-dom/main.js'),
+    'o-toggle': resolve(__dirname, 'bower_components', 'o-toggle/main.js'),
+    'o-grid': resolve(__dirname, 'bower_components', 'o-grid/main.js'),
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
-  modulePathIgnorePatterns: [
-    '/ftdomdelegate/'
-  ],
+  modulePathIgnorePatterns: ['/ftdomdelegate/'],
 
   // Activates notifications for test results
   // notify: false,
@@ -133,9 +128,7 @@ module.exports = {
   // runner: "jest-runner",
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
-  setupFiles: [
-    './jest.setup.js',
-  ],
+  setupFiles: ['<rootDir>/.jest/setup.js', '<rootDir>/.jest/register-context.js'],
 
   // The path to a module that runs some code to configure or set up the testing framework before each test
   // setupTestFrameworkScriptFile: null,
@@ -178,8 +171,9 @@ module.exports = {
 
   // A map from regular expressions to paths to transformers
   transform: {
-    "\\.js$": "babel-jest",
-    "\\.txt$": "jest-raw-loader"
+    '\\.txt$': 'jest-raw-loader',
+    '^.+\\.jsx?$': 'babel-jest',
+    '^.+\\.mdx?$': '<rootDir>/.jest/transform-mdx.js',
   },
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
