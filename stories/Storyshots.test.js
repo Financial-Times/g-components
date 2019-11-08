@@ -10,7 +10,7 @@ global.Date.now = () => Math.round(new Date().getTime() / 1000);
 global.IntersectionObserver = jest.fn().mockImplementation(() => ({
   observe: () => ({}),
   unobserve: () => ({}),
-  disconnect: () => ({})
+  disconnect: () => ({}),
 }));
 
 initStoryshots({
@@ -21,6 +21,6 @@ initStoryshots({
       ref.setAttribute('data-o-component', el.props['data-o-component']);
 
       return ref;
-    }
-  })
+    },
+  }),
 });

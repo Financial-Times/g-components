@@ -1,0 +1,24 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import ConstituencyResultsTable from './';
+
+<Meta title="Elections|GE2019/Constituency Results Table" component={ConstituencyResultsTable} />
+
+# x component
+
+tktk
+
+<Preview>
+  <Story name="Basic">
+    <ConstituencyResultsTable
+      data={[
+        { party: 'Green', candidate: 'Caroline Lucas', votes: 30149, showAsterick: true },
+        { party: 'Labour', candidate: 'Solomon Curtis', votes: 15450 },
+        { party: 'Conservative', candidate: 'Emma Warman', votes: 11082 },
+        { party: 'Ukip', candidate: 'Ian Buchanan', votes: 630 },
+        { party: 'Independent', candidate: 'Nick Yeomans', votes: 376 },
+      ]}
+      tableHeaders={['Party', 'Candidate', 'Total Votes']}
+      note="* Note to indicate outgoing candidate"
+    />
+  </Story>
+</Preview>

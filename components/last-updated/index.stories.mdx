@@ -1,0 +1,17 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import LastUpdated from './';
+
+<Meta title="Core|Last Updated" component={LastUpdated} />
+
+# x component
+
+tktk
+
+<Preview>
+  <Story name="Default (live) variant">
+    <LastUpdated lastUpdated={new Date('1987-01-05T00:00:00.00')} />
+  </Story>
+  <Story name="Light variant">
+    <LastUpdated live={false} lastUpdated={new Date('1987-01-05T00:00:00.00')} />
+  </Story>
+</Preview>

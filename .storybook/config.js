@@ -1,7 +1,3 @@
 import { configure } from '@storybook/react';
 
-function loadStories() {
-  require('../stories/index.stories.js');
-}
-
-configure(loadStories, module);
+configure(require.context('../components', true, /\.stories\.(js|mdx)$/), module);

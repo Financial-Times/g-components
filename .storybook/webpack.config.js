@@ -21,15 +21,7 @@ module.exports = ({ config }) => {
         {
           test: /\.jsx?$/,
           loader: 'babel-loader',
-          exclude: /node_modules/,
-          options: {
-            plugins: [
-              'add-module-exports' /* <-- wtfits */,
-              'transform-runtime',
-              'transform-class-properties',
-              'syntax-dynamic-import',
-            ],
-          },
+          exclude: /(node_modules|bower_components)/,
         },
         {
           test: /\.scss$/,

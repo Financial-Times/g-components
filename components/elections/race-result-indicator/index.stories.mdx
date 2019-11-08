@@ -1,0 +1,21 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import RaceResultIndicator from './';
+
+<Meta title="Elections|GE2019/Race Result Indicator" component={RaceResultIndicator} />
+
+# Race Result Indicator component
+
+tktk
+
+<Preview>
+  <Story name="Various permutations">
+    <div style={{ width: '100%' }}>
+      <RaceResult incumbent="Labour" winner="Labour" />
+      <RaceResult incumbent="Conservative" winner="Labour" />
+      <RaceResult incumbent="Labour" winner="Conservative" />
+      <RaceResult incumbent="Liberal Democrats" winner="Liberal Democrats" />
+      <RaceResult incumbent="Conservative" winner="Liberal Democrats" />
+      <RaceResult incumbent="Green" winner="Green" />
+    </div>
+  </Story>
+</Preview>

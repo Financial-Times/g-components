@@ -22,6 +22,7 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
+    "babel-plugin-emotion": "^10.0.23",
     "d3-time-format": "^2.2.1",
     "react-autosuggest": "^9.4.3",
     "react-scroll-percentage": "^2.0.0",
@@ -29,7 +30,17 @@
     "remove-markdown": "^0.3.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.6.0",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.7.1",
+    "@emotion/babel-preset-css-prop": "^10.0.23",
     "@storybook/addon-actions": "^5.2.5",
+    "@storybook/addon-docs": "^5.2.5",
     "@storybook/addon-info": "^5.2.5",
     "@storybook/addon-knobs": "^5.2.5",
     "@storybook/addon-links": "^5.2.5",
@@ -37,17 +48,12 @@
     "@storybook/addon-viewport": "^5.2.5",
     "@storybook/addons": "^5.2.5",
     "@storybook/react": "^5.2.5",
-    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.3",
     "babel-jest": "^23.4.0",
-    "babel-loader": "^7.1.5",
+    "babel-loader": "^8.0.6",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-dynamic-import-node": "^2.1.0",
-    "babel-plugin-external-helpers": "^6.22.0",
-    "babel-plugin-syntax-dynamic-import": "^6.18.0",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-plugin-require-context-hook": "^1.0.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-runtime": "^6.26.0",
@@ -94,18 +100,13 @@
   "engines": {
     "node": ">= 8.6.0"
   },
-  "babel": {
-    "presets": [
-      "env",
-      "react"
+  "jest": {
+    "setupFiles": [
+      "<rootDir>/.jest/register-context.js"
     ],
-    "plugins": [
-      "transform-object-rest-spread",
-      "transform-class-properties",
-      "add-module-exports",
-      "transform-runtime",
-      "syntax-dynamic-import"
-    ],
-    "sourceMaps": "inline"
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest",
+      "^.+\\.mdx?$": "<rootDir>/.jest/transform-mdx.js"
+    }
   }
 }

@@ -1,0 +1,10 @@
+{
+  "presets": ["@emotion/babel-preset-css-prop"],
+  "plugins": [
+    // "add-module-exports",
+    "@babel/transform-runtime",
+    "@babel/proposal-class-properties",
+    "@babel/syntax-dynamic-import",
+    "@babel/proposal-object-rest-spread"
+  ]
+}

@@ -4,11 +4,11 @@
  * This isn't used for any actual bundling; we use Rollup for that.
  */
 
-import BowerResolvePlugin from 'bower-resolve-webpack-plugin';
-import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
-import * as path from 'path';
+const BowerResolvePlugin = require('bower-resolve-webpack-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const path = require('path');
 
 module.exports = (mode = 'production') => ({
   mode,
@@ -66,13 +66,30 @@ module.exports = (mode = 'production') => ({
         loader: 'babel-loader',
         exclude: /node_modules/,
         options: {
-          presets: ['babel-preset-env', 'babel-preset-react'],
+          presets: [
+            [
+              '@babel/preset-env',
+              {
+                targets: {
+                  node: 'current',
+                },
+              },
+            ],
+          ],
           plugins: [
             'add-module-exports' /* <-- wtfits */,
-            'transform-runtime',
-            'transform-class-properties',
-            'syntax-dynamic-import',
+            '@babel/transform-runtime',
+            '@babel/plugin-proposal-class-properties',
+            '@babel/syntax-dynamic-import',
           ],
+          env: {
+            production: {
+              presets: ['@emotion/babel-preset-css-prop'],
+            },
+            test: {
+              plugins: ['require-context-hook'],
+            },
+          },
         },
       },
       {

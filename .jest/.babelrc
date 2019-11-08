@@ -1,0 +1,9 @@
+{
+  "presets": ["@emotion/babel-preset-css-prop"],
+  "env": {
+    "test": {
+      "plugins": ["require-context-hook"]
+    }
+  },
+  "sourceType": "unambiguous"
+}

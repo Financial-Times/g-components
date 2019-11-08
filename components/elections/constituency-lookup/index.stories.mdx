@@ -1,0 +1,23 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import ConstituencyLookup from './';
+
+<Meta title="Elections|GE2019/Constituency Lookup" component={ConstituencyLookup} />
+
+# Constituency Lookup component
+
+`<ConstituencyLookup />` can be used to...
+
+<Preview>
+  <Story name="Basic">
+    <ConstituencyLookup
+      constituencyList={[
+        { id: 'E14000739', name: 'Hemel Hempstead' },
+        { id: 'E14000887', name: 'Putney' },
+        { id: 'E14000763', name: 'Islington North' },
+        { id: 'E14000549', name: 'Battersea' },
+        { id: 'E14000768', name: 'Kensington' },
+      ]}
+      setOpenConstituency={c => window.alert(`Constituency ID: ${c}`)}
+    />
+  </Story>
+</Preview>
