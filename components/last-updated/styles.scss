@@ -1,0 +1,43 @@
+@import 'o-teaser/main';
+
+.last-updated {
+  display: inline-flex;
+  align-items: center;
+  font-family: Metric, MetricWeb, MetricWeb-Regular;
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: #c00;
+
+  &--live {
+    letter-spacing: normal;
+    font-family: Metric, MetricWeb, MetricWeb-SemiBold;
+    font-weight: 600;
+    font-size: 14px;
+    padding: 4px 7px;
+    background-color: #cc0000;
+    color: white;
+
+    @include oTeaser(('timestamp'), ('small'));
+
+    .o-teaser {
+      margin-bottom: 0;
+      opacity: 0.9;
+
+      &--small {
+        border-bottom: 0;
+        padding-bottom: 0;
+      }
+
+      &__timestamp {
+        margin-left: 7px;
+      }
+
+      &__timestamp-prefix:before,
+      &__timestamp--inprogress:before {
+        background-color: white;
+      }
+    }
+  }
+}

@@ -1,0 +1,91 @@
+@import 'o-grid/main';
+
+.g-constituency-results-table {
+  width: 100%;
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+
+    thead tr th {
+      color: rgba(38, 42, 51, 0.8);
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.29;
+      letter-spacing: 0.3px;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      border-bottom: solid 1px;
+      border-bottom-color: #999189;
+
+      @include oGridRespondTo(M) {
+        border-bottom-color: #ccc1b7;
+      }
+
+      vertical-align: bottom;
+
+      // First two children
+      &:nth-child(-n + 2) {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+        max-width: 40px;
+
+        @include oGridRespondTo(M) {
+          max-width: none;
+        }
+      }
+    }
+
+    tbody tr td {
+      height: 40px;
+      line-height: 40px;
+      font-size: 18px;
+      font-weight: normal;
+      color: rgba(0, 0, 0, 0.9);
+      border-bottom: solid 1px;
+      border-bottom-color: #ccc1b7;
+
+      @include oGridRespondTo(M) {
+        border-bottom-color: #f2e5da;
+      }
+
+      // First two children
+      &:nth-child(-n + 2) {
+        text-align: left;
+      }
+
+      &:last-child {
+        text-align: right;
+      }
+
+      &.number {
+        font-feature-settings: 'tnum';
+      }
+
+      .party-badge {
+        display: inline-block;
+        height: 25px;
+        position: relative;
+        top: 7px;
+        margin-right: 10px;
+        width: 4px;
+
+        @include oGridRespondTo(M) {
+          width: 8px;
+        }
+      }
+    }
+  }
+
+  &__note {
+    text-align: right;
+    margin-top: 7px;
+    font-size: 14px;
+    font-weight: normal;
+    letter-spacing: 0.26px;
+    color: #66605c;
+  }
+}

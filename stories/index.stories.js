@@ -22,6 +22,13 @@ import Share from '../components/share';
 import DataTable from '../components/data-table';
 import DataFilter from '../components/data-filter';
 import Sticky from '../components/sticky';
+import AutosuggestSearch from '../components/autosuggest-search';
+import ConstituencyLookup from '../components/elections/constituency-lookup';
+import { getPartyInfo } from '../components/elections/utils';
+import LastUpdated from '../components/last-updated';
+import DateTime from '../components/datetime';
+import ConstituencyResultsTable from '../components/elections/constituency-results-table';
+import RaceResult from '../components/elections/race-result-indicator';
 import '../shared/critical-path.scss';
 
 const defaultFlags = {
@@ -1042,3 +1049,146 @@ storiesOf('Sticky', module)
   `,
     },
   );
+
+// Autosuggest search
+storiesOf('AutosuggestSearch', module).add(
+  'default',
+  () => (
+    <AutosuggestSearch
+      placeholder="Search here..."
+      width={300}
+      searchList={[
+        { value: 'jeremycorbyn', display: 'Jeremy Corbyn' },
+        { value: 'borisjohnson', display: 'Boris Johnson' },
+        { value: 'joswinson', display: 'Jo Swinson' },
+      ]}
+      validateInput={input => {
+        if (input === '') {
+          return { isError: true, errorMessage: 'ERROR!!!' };
+        }
+        return { isError: false, errorMessage: '' };
+      }}
+    />
+  ),
+  {
+    info: `
+      <AutosuggestSearch /> can be used to create a text input which automatically
+        suggests search queries based on a given list. It takes an array of objects
+        \`searchList\` which are filtered using the (or default) \`getSuggestions\`
+        function. The component takes these functions as (optional) props;
+        - \`getSuggestions(value, searchList)\` which should return a filtered searchList
+        - \`getSuggestionValue(suggestionObject)\` which should return the value to display
+          in the search input after a suggestion has been selected from the dropdown list
+        - \`renderSuggestion(suggestionObject)\` which should return how the suggestion should
+          rendered in the dropdown list.
+        - \`onSelectCallback(suggestionValue)\` which takes the value returned by getSuggestionValue
+        - \`onSubmitCallback(searchValue)\` which takes the current input searchValue
+        - \`validateInput(searchValue)\` which takes the current input searchValue and should return
+          an object with isError (boolean) and errorMessage (string) attributes
+    `,
+  },
+);
+
+// Constituency lookup
+storiesOf('ConstituencyLookup', module).add(
+  'default',
+  () => (
+    <ConstituencyLookup
+      constituencyList={[
+        { id: 'E14000739', name: 'Hemel Hempstead' },
+        { id: 'E14000887', name: 'Putney' },
+        { id: 'E14000763', name: 'Islington North' },
+        { id: 'E14000549', name: 'Battersea' },
+        { id: 'E14000768', name: 'Kensington' },
+      ]}
+      setOpenConstituency={c => window.alert(`Constituency ID: ${c}`)}
+    />
+  ),
+  {
+    info: `
+      <ConstituencyLookup /> can be used to...
+    `,
+  },
+);
+
+// Autosuggest search
+storiesOf('getPartyInfo', module).add(
+  'default',
+  () =>
+    [
+      'Conservative',
+      'Labour',
+      'Liberal Democrats',
+      'Green',
+      'ChangeUK',
+      'Brexit',
+      'UKIP',
+      'Plaid Cymru',
+      'SNP',
+      'DUP',
+      'Sinn Féin',
+      'UUP',
+      'SDLP',
+      'Alliance',
+      'Independent/Other',
+    ].map(p => {
+      const { color, shortName, formattedName } = getPartyInfo(p);
+      return (
+        <div>
+          <div style={{ height: 20, width: 20, backgroundColor: color }} />
+          <div>
+            <strong>shortName: </strong>
+            {`${shortName}`}
+          </div>
+          <div>
+            <strong>formattedName: </strong>
+            {`${formattedName}`}
+          </div>
+          <br />
+        </div>
+      );
+    }),
+  {
+    info: `
+      \`getPartyInfo(string)\` returns an object with party \`color\`, \`shortName\` and \`formattedName\`
+      for a given UK political party
+    `,
+  },
+);
+
+storiesOf('LastUpdated', module)
+  .add('default (live)', () => <LastUpdated lastUpdated={new Date('1987-01-05T00:00:00.00')} />)
+  .add('Light variant (live = false', () => (
+    <LastUpdated live={false} lastUpdated={new Date('1987-01-05T00:00:00.00')} />
+  ));
+
+storiesOf('DateTime', module).add('default', () => (
+  <DateTime datestamp={new Date('1987-01-05T00:00:00.00')} />
+));
+
+
+storiesOf('ConstituencyResultsTable', module).add('default', () => (
+  <ConstituencyResultsTable
+    data={[
+      { party: 'Green', candidate: 'Caroline Lucas', votes: 30149, showAsterick: true },
+      { party: 'Labour', candidate: 'Solomon Curtis', votes: 15450 },
+      { party: 'Conservative', candidate: 'Emma Warman', votes: 11082 },
+      { party: 'Ukip', candidate: 'Ian Buchanan', votes: 630 },
+      { party: 'Independent', candidate: 'Nick Yeomans', votes: 376 },
+    ]}
+    tableHeaders={['Party', 'Candidate', 'Total Votes']}
+    note={'* Note to indicate outgoing candidate'}
+  />
+));
+
+storiesOf('RaceResult', module).add('default', () => (
+  <div style={{ width: '100%' }}>
+    <RaceResult incumbent="Labour" winner="Labour" />
+    <RaceResult incumbent="Conservative" winner="Labour" />
+    <RaceResult incumbent="Labour" winner="Conservative" />
+    <RaceResult incumbent="Liberal Democrats" winner="Liberal Democrats" />
+    <RaceResult incumbent="Conservative" winner="Liberal Democrats" />
+    <RaceResult incumbent="Green" winner="Green" />
+  </div>
+));
+

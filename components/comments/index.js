@@ -9,20 +9,19 @@ import OComments from 'o-comments/main.js';
 import { flagsPropType } from '../../shared/proptypes';
 import './styles.scss';
 
-const Comments = ({ id, url, flags }) => {
+const Comments = ({ id, url, linkPageUrl, flags }) => {
   const ref = useRef();
 
   const { dark } = flags;
 
   useEffect(() => {
-    (async () => {
-      // prettier-ignore
+    if ((id && linkPageUrl) || (id && url)) {
       new OComments(ref.current, { // eslint-disable-line no-new
-        articleUrl: url,
+        articleUrl: linkPageUrl || url,
         articleId: id,
       });
-    })();
-  }, [id, url]);
+    }
+  }, [id, url, linkPageUrl]);
 
   const comments = (
     <div className="o-grid-container">
@@ -53,15 +52,13 @@ Comments.displayName = 'GComments';
 
 Comments.propTypes = {
   title: PropTypes.string,
-  id: PropTypes.string,
-  url: PropTypes.string,
+  id: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   flags: flagsPropType,
 };
 
 Comments.defaultProps = {
   title: 'Comments',
-  id: '3a499586-b2e0-11e4-a058-00144feab7de',
-  url: 'https://local.ft.com/comments-test',
   flags: {
     dark: false,
   },

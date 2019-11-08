@@ -1,0 +1,134 @@
+@import 'o-grid/main';
+
+// Container styles
+.g-autosuggest-search {
+  position: relative;
+
+  // Add error styles
+  &--error {
+    .react-autosuggest__input {
+      border: solid 1px #cc0000;
+      color: #cc0000;
+    }
+  }
+
+  &__clear-button {
+    height: 44px;
+    position: absolute;
+    right: 8px;
+    top: 0;
+    padding: 0;
+    background: none;
+    border: none;
+
+    i.icon {
+      vertical-align: middle;
+      background-image: url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:cross?source=o-icons&format=svg');
+      display: inline-block;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: 50%;
+      background-color: transparent;
+    }
+  }
+
+  &__error-message {
+    font-size: 14px;
+    line-height: 1.43;
+    color: #cc0000;
+    margin-top: 5px;
+  }
+}
+
+// Override react autosuggest defaults
+.react-autosuggest {
+  &__container {
+    position: relative;
+    width: 100%;
+
+    ul li {
+      font-family: MetricWeb, sans-serif;
+    }
+
+    ul li:before {
+      content: '';
+    }
+  }
+
+  &__input {
+    font-family: MetricWeb, sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #33302e;
+    background-color: #ffffff;
+    margin-top: 0;
+    border: 0 none;
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 40px;
+    padding: 9px 9px 9px;
+    border-radius: 0;
+    background-clip: padding-box;
+    outline: none;
+    appearance: none;
+    border: 1px solid #b3a9a0;
+    transition: 0.15s box-shadow ease-in, 0.15s -webkit-box-shadow ease-in;
+
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon:search?width=14&format=png&source=o-icons%27);
+    background-repeat: no-repeat;
+    background-position: 10px;
+    padding-left: 32px;
+
+    &::placeholder {
+      text-transform: none;
+    }
+
+    &:focus {
+      border-color: #999189;
+      box-shadow: 0 0 0 2px #1aecff;
+    }
+
+    &--open {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__suggestions-container {
+    display: none;
+
+    &--open {
+      display: block;
+      position: absolute;
+      width: 100%;
+      border-bottom-left-radius: 4px;
+      border-bottom-right-radius: 4px;
+      z-index: 2;
+      max-height: 193px;
+      overflow-y: auto;
+    }
+  }
+
+  &__suggestions-list {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style-type: none !important;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    color: #4d4845;
+    background-color: #ffffff;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.15);
+    border: solid 1px #e2e2e2;
+  }
+
+  &__suggestion {
+    cursor: pointer;
+    padding: 10px 20px;
+
+    &--highlighted {
+      background-color: #f2f2f2;
+    }
+  }
+}

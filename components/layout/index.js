@@ -126,7 +126,7 @@ const Layout = ({ flags, ads, children, defaultContainer, customArticleHead, ...
         ...props,
       }}
     >
-      {flags.analytics && <Analytics {...{ ...props, breakpoint }} />}
+      {flags.analytics && <Analytics {...{ ...props, flags, breakpoint }} />}
       {flags.ads && <TopAd />}
       {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
       <main key="main" role="main">

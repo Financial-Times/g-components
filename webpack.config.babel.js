@@ -8,13 +8,16 @@ import BowerResolvePlugin from 'bower-resolve-webpack-plugin';
 import UglifyJsPlugin from 'uglifyjs-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import * as path from 'path';
 
 module.exports = (mode = 'production') => ({
   mode,
   output: {
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'umd',
     path: __dirname,
     filename: 'dist/gcomponents.js',
+    library: 'GComponents',
+    umdNamedDefine: true,
     sourceMapFilename: 'dist/gcomponents.map',
   },
   optimization: {
@@ -33,6 +36,22 @@ module.exports = (mode = 'production') => ({
     plugins: [new BowerResolvePlugin()],
     descriptionFiles: ['bower.json', 'package.json'],
     mainFields: ['browser', 'main'],
+    alias: {
+      react: path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+      assets: path.resolve(__dirname, 'assets'),
+    },
+  },
+  externals: {
+    // Don't bundle react or react-dom
+    react: {
+      commonjs: 'react',
+      commonjs2: 'react',
+    },
+    'react-dom': {
+      commonjs: 'react-dom',
+      commonjs2: 'react-dom',
+    },
   },
   devtool: 'source-map',
   plugins: [
