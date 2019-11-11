@@ -240,7 +240,7 @@ exports[`Storyshots Core|Comments Basic 1`] = `
 </div>
 `;
 
-exports[`Storyshots Core|Data Filter Basic 1`] = `""`;
+exports[`Storyshots Core|DataFilter Defaults 1`] = `null`;
 
 exports[`Storyshots Core|DataTable Basic 1`] = `
 <div
@@ -3241,27 +3241,8 @@ Array [
               data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
             >
               <div>
-                <div
-                  breakpoint="default"
-                  buildTime="2019-01-31T00:00:00.000Z"
-                  headline="New Starter Kit site"
-                  id=""
-                  publishedDate="2019-01-31T00:00:00.000Z"
-                  title="New Starter Kit site"
-                  topic={
-                    Object {
-                      "name": "Testing",
-                      "url": "https://local.ft.com/",
-                    }
-                  }
-                  url="https://local.ft.com/"
-                  wrapArticleHead={true}
-                >
-                  <div>
-                    <div>
-                      <div>
-                        <p>
-                          Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.
+                <p>
+                  Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.
 Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores
 omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr
 dolore praesent est.
@@ -3279,11 +3260,7 @@ tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant e
 Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum
 salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim
 soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </p>
               </div>
             </div>
           </div>
@@ -3896,14 +3873,46 @@ exports[`Storyshots Core|Sticky Complex Case 1`] = `
             }
           }
         >
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
-          <div />
+          <div>
+            <h1>
+              one
+            </h1>
+          </div>
+          <div>
+            <h1>
+              two
+            </h1>
+          </div>
+          <div>
+            <h1>
+              three
+            </h1>
+          </div>
+          <div>
+            <h1>
+              four
+            </h1>
+          </div>
+          <div>
+            <h1>
+              five
+            </h1>
+          </div>
+          <div>
+            <h1>
+              six
+            </h1>
+          </div>
+          <div>
+            <h1>
+              seven
+            </h1>
+          </div>
+          <div>
+            <h1>
+              eight
+            </h1>
+          </div>
         </div>
       </article>
       <figure
@@ -4133,29 +4142,203 @@ exports[`Storyshots Elections|GE2019/Race Result Indicator Various Permutations 
   }
 >
   <div
-    incumbent="Labour"
-    winner="Labour"
-  />
+    className="race-result"
+  >
+    <div
+      className="race-result--incumbent"
+      style={
+        Object {
+          "backgroundColor": "#cf4d3c",
+        }
+      }
+    />
+    <div
+      className="race-result--triangle-background"
+    />
+    <div
+      className="race-result--triangle"
+      style={
+        Object {
+          "borderColor": "transparent transparent transparent #cf4d3c",
+        }
+      }
+    />
+    <div
+      className="race-result--outcome"
+      style={
+        Object {
+          "backgroundColor": "#cf4d3c",
+        }
+      }
+    >
+      Labour holds
+    </div>
+  </div>
   <div
-    incumbent="Conservative"
-    winner="Labour"
-  />
+    className="race-result"
+  >
+    <div
+      className="race-result--incumbent"
+      style={
+        Object {
+          "backgroundColor": "#149adb",
+        }
+      }
+    />
+    <div
+      className="race-result--triangle-background"
+    />
+    <div
+      className="race-result--triangle"
+      style={
+        Object {
+          "borderColor": "transparent transparent transparent #149adb",
+        }
+      }
+    />
+    <div
+      className="race-result--outcome"
+      style={
+        Object {
+          "backgroundColor": "#cf4d3c",
+        }
+      }
+    >
+      Labour gain from Conservative
+    </div>
+  </div>
   <div
-    incumbent="Labour"
-    winner="Conservative"
-  />
+    className="race-result"
+  >
+    <div
+      className="race-result--incumbent"
+      style={
+        Object {
+          "backgroundColor": "#cf4d3c",
+        }
+      }
+    />
+    <div
+      className="race-result--triangle-background"
+    />
+    <div
+      className="race-result--triangle"
+      style={
+        Object {
+          "borderColor": "transparent transparent transparent #cf4d3c",
+        }
+      }
+    />
+    <div
+      className="race-result--outcome"
+      style={
+        Object {
+          "backgroundColor": "#149adb",
+        }
+      }
+    >
+      Conservative gain from Labour
+    </div>
+  </div>
   <div
-    incumbent="Liberal Democrats"
-    winner="Liberal Democrats"
-  />
+    className="race-result"
+  >
+    <div
+      className="race-result--incumbent"
+      style={
+        Object {
+          "backgroundColor": "#f09000",
+        }
+      }
+    />
+    <div
+      className="race-result--triangle-background"
+    />
+    <div
+      className="race-result--triangle"
+      style={
+        Object {
+          "borderColor": "transparent transparent transparent #f09000",
+        }
+      }
+    />
+    <div
+      className="race-result--outcome"
+      style={
+        Object {
+          "backgroundColor": "#f09000",
+        }
+      }
+    >
+      Liberal Democrats holds
+    </div>
+  </div>
   <div
-    incumbent="Conservative"
-    winner="Liberal Democrats"
-  />
+    className="race-result"
+  >
+    <div
+      className="race-result--incumbent"
+      style={
+        Object {
+          "backgroundColor": "#149adb",
+        }
+      }
+    />
+    <div
+      className="race-result--triangle-background"
+    />
+    <div
+      className="race-result--triangle"
+      style={
+        Object {
+          "borderColor": "transparent transparent transparent #149adb",
+        }
+      }
+    />
+    <div
+      className="race-result--outcome"
+      style={
+        Object {
+          "backgroundColor": "#f09000",
+        }
+      }
+    >
+      Liberal Democrats gain from Conservative
+    </div>
+  </div>
   <div
-    incumbent="Green"
-    winner="Green"
-  />
+    className="race-result"
+  >
+    <div
+      className="race-result--incumbent"
+      style={
+        Object {
+          "backgroundColor": "#8deb9d",
+        }
+      }
+    />
+    <div
+      className="race-result--triangle-background"
+    />
+    <div
+      className="race-result--triangle"
+      style={
+        Object {
+          "borderColor": "transparent transparent transparent #8deb9d",
+        }
+      }
+    />
+    <div
+      className="race-result--outcome"
+      style={
+        Object {
+          "backgroundColor": "#8deb9d",
+        }
+      }
+    >
+      Green holds
+    </div>
+  </div>
 </div>
 `;
 

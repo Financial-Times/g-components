@@ -1,12 +1,15 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import '../../shared/critical-path.scss';
+import DataFilter from './';
 
-<Meta title="Core|Data Filter" />
+<Meta title="Core|DataFilter" component={DataFilter} />
 
-# x component
+# DataFilter
 
 tktk
 
 <Preview>
-  <Story name="Basic"></Story>
+  <Story name="Defaults">
+    <DataFilter />
+  </Story>
 </Preview>
