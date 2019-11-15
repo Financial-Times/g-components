@@ -212,6 +212,22 @@ exports[`Storyshots Core|Autosuggest Search Mp Lookup Example 1`] = `
 </form>
 `;
 
+exports[`Storyshots Core|Card Basic 1`] = `
+<div
+  style={
+    Object {
+      "padding": "1em",
+    }
+  }
+>
+  <div
+    className="g-card"
+  >
+    This is a basic card component
+  </div>
+</div>
+`;
+
 exports[`Storyshots Core|Comments Basic 1`] = `
 <div
   className="o-grid-container"
