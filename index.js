@@ -3,6 +3,8 @@
  * g-components entry point
  */
 
+export * from './components/elections';
+
 export { TopAd, MiddleAd } from './components/ads';
 export { default as Analytics } from './components/analytics';
 export { default as ArticleHead, Byline } from './components/article-head';
@@ -25,3 +27,4 @@ export { default as DataFilter } from './components/data-filter';
 export { default as Sticky } from './components/sticky';
 export { default as LastUpdated } from './components/last-updated';
 export { default as Card } from './components/card';
+export { default as AutosuggestSearch } from './components/autosuggest-search';

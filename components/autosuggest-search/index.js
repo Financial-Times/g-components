@@ -38,6 +38,7 @@ const AutosuggestSearch = ({
   renderSuggestion,
   onSelectCallback,
   onSubmitCallback,
+  onClearFunction,
   validateInput,
 }) => {
   const inputRef = useRef();
@@ -88,6 +89,7 @@ const AutosuggestSearch = ({
     setSearchValue('');
     setErrorState({ isError: false, errorMessage: '' });
     inputRef.current.input.focus();
+    onClearFunction();
   };
 
   const { isError, errorMessage } = errorState;
@@ -133,6 +135,7 @@ AutosuggestSearch.propTypes = {
   renderSuggestion: PropTypes.func,
   onSelectCallback: PropTypes.func,
   onSubmitCallback: PropTypes.func,
+  onClearFunction: PropTypes.func,
   validateInput: PropTypes.func,
 };
 
@@ -145,6 +148,7 @@ AutosuggestSearch.defaultProps = {
   renderSuggestion: RenderSuggestion,
   onSelectCallback: () => {},
   onSubmitCallback: () => {},
+  onClearCallback: () => {},
   validateInput: () => {},
 };
 

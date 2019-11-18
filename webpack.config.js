@@ -77,7 +77,7 @@ module.exports = (mode = 'production') => ({
             ],
           ],
           plugins: [
-            'add-module-exports' /* <-- wtfits */,
+            // 'add-module-exports' /* <-- wtfits */,
             '@babel/transform-runtime',
             '@babel/plugin-proposal-class-properties',
             '@babel/syntax-dynamic-import',

@@ -37,4 +37,32 @@ tktk
       note="* Note to indicate outgoing candidate"
     />
   </Story>
+  <Story name="With custom sort">
+    <ConstituencyResultsTable
+      data={[
+        {
+          party: 'Green',
+          candidate: 'Caroline Lucas',
+          sortName: 'Lucas, Caroline',
+          showAsterick: true,
+        },
+        { party: 'Labour', candidate: 'Solomon Curtis', sortName: 'Curtis, Solomon' },
+        { party: 'Conservative', candidate: 'Emma Warman', sortName: 'Warman, Emma' },
+        { party: 'Ukip', candidate: 'Ian Buchanan', sortName: 'Buchanan, Ian' },
+        {
+          party: 'Liberal Democrats',
+          candidate: 'Callum James Littlemore',
+          sortName: 'Littlemore, Callum James',
+        },
+        {
+          party: 'Independent',
+          candidate: 'Isabelle Amanda Parasram',
+          sortName: 'Parasram, Isabelle Amanda',
+        },
+      ]}
+      tableHeaders={['Party', 'Candidate']}
+      note="* Note to indicate outgoing candidate"
+      sortFunction={(a, b) => a.sortName.localeCompare(b.sortName)}
+    />
+  </Story>
 </Preview>

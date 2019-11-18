@@ -11,10 +11,12 @@ import './styles.scss';
 
 const { getPartyInfo } = uk;
 
-export const ConstituencyResultsTable = ({ className, data, tableHeaders, note }) => {
-  const sortedData = data.sort((a, b) =>
-    a.votes && b.votes ? b.votes - a.votes : a.candidate.localeCompare(b.candidate),
-  );
+export const ConstituencyResultsTable = ({ className, data, tableHeaders, note, sortFunction }) => {
+  const sortedData = sortFunction
+    ? data.sort((a, b) => sortFunction(a, b))
+    : data.sort((a, b) =>
+        a.votes && b.votes ? b.votes - a.votes : a.candidate.localeCompare(b.candidate),
+      );
 
   return (
     <div className={className}>
@@ -62,6 +64,7 @@ ConstituencyResultsTable.propTypes = {
   ).isRequired,
   tableHeaders: PropTypes.arrayOf(PropTypes.string).isRequired,
   note: PropTypes.string,
+  sortFunction: PropTypes.func,
 };
 
 ConstituencyResultsTable.defaultProps = {
