@@ -4,21 +4,37 @@
  * @tags ge2019
  */
 
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { uk } from '@financial-times/politics';
+import { Context } from '../../layout';
 import './styles.scss';
 
 const { getPartyInfo } = uk;
 
 const RaceResult = ({ incumbent, winner, backgroundColor }) => {
-  if (!incumbent || !winner) return null;
+  const { breakpoint = 'default' } = useContext(Context) || {};
+
+  if (!incumbent) return null;
+
   const incumbentParty = getPartyInfo(incumbent);
-  const winnerParty = getPartyInfo(winner);
-  const text =
-    winner !== incumbent
-      ? `${winnerParty.formattedName} gain`
-      : `${winnerParty.formattedName} hold`;
+  const winnerParty = winner ? getPartyInfo(winner) : null;
+  /* eslint-disable no-nested-ternary */
+  // I am so sorry for the following expression: -æ.
+  const text = winner
+    ? winner !== incumbent
+      ? `${
+          !['default', 's', 'm'].includes(breakpoint.toLowerCase())
+            ? winnerParty.formattedName
+            : winnerParty.shortName
+        } gain`
+      : `${
+          !['default', 's', 'm'].includes(breakpoint.toLowerCase())
+            ? winnerParty.formattedName
+            : winnerParty.shortName
+        } hold`
+    : 'Yet to declare';
+  /* eslint-enable no-nested-ternary */
   return (
     <div className="race-result">
       <div className="race-result--incumbent" style={{ backgroundColor: incumbentParty.color }} />
@@ -34,7 +50,13 @@ const RaceResult = ({ incumbent, winner, backgroundColor }) => {
           borderColor: `transparent transparent transparent ${incumbentParty.color}`,
         }}
       />
-      <div className="race-result--outcome" style={{ backgroundColor: winnerParty.color }}>
+      <div
+        className="race-result--outcome"
+        style={{
+          backgroundColor: winner ? winnerParty.color : '#f2dfce',
+          color: winner ? winnerParty.textColor : 'black',
+        }}
+      >
         {text}
       </div>
     </div>
@@ -44,7 +66,7 @@ const RaceResult = ({ incumbent, winner, backgroundColor }) => {
 RaceResult.propTypes = {
   winner: PropTypes.string.isRequired,
   incumbent: PropTypes.string.isRequired,
-  backgroundColor: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string,
 };
 
 RaceResult.defaultProps = {

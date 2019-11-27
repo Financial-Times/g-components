@@ -2225,7 +2225,7 @@ Array [
                   This should resemble config: 
                   <br />
                   <pre>
-                    {"flags":{"prod":false,"errorReporting":true,"analytics":false,"googleAnalytics":false,"ads":false,"onwardjourney":true,"shareButtons":true,"header":true,"footer":true,"comments":true,"data":false,"dark":false},"ads":{"gptSite":"test.5887.origami","gptZone":false,"dfpTargeting":false},"defaultContainer":true,"customArticleHead":null,"url":"https://local.ft.com/","summary":"This is a standfirst","topic":{"url":"https://local.ft.com/","name":"Testing"},"bylines":[{"name":"Ændrew Rininsland","url":"https://ft.com/ændrew-rininsland"}],"image":{"uuid":"f07ccec8-7ded-11e8-af48-190d103e32a4"},"headline":"New Starter Kit site","title":"New Starter Kit site","id":"3a499586-b2e0-11e4-a058-00144feab7de","pubdate":"2019-01-31T00:00:00.000Z","buildTime":"2019-01-31T00:00:00.000Z","wrapArticleHead":true}
+                    {"flags":{"prod":false,"errorReporting":true,"analytics":false,"googleAnalytics":false,"ads":false,"onwardjourney":true,"shareButtons":true,"header":true,"footer":true,"comments":true,"data":false,"dark":false},"ads":{"gptSite":"test.5887.origami","gptZone":false,"dfpTargeting":false},"defaultContainer":true,"customArticleHead":null,"breakpoint":"default","url":"https://local.ft.com/","summary":"This is a standfirst","topic":{"url":"https://local.ft.com/","name":"Testing"},"bylines":[{"name":"Ændrew Rininsland","url":"https://ft.com/ændrew-rininsland"}],"image":{"uuid":"f07ccec8-7ded-11e8-af48-190d103e32a4"},"headline":"New Starter Kit site","title":"New Starter Kit site","id":"3a499586-b2e0-11e4-a058-00144feab7de","pubdate":"2019-01-31T00:00:00.000Z","buildTime":"2019-01-31T00:00:00.000Z","wrapArticleHead":true}
                   </pre>
                 </div>
               </div>
@@ -5136,10 +5136,11 @@ exports[`Storyshots Elections|GE2019/Race Result Indicator Various Permutations 
       style={
         Object {
           "backgroundColor": "#cf4d3c",
+          "color": "white",
         }
       }
     >
-      Labour hold
+      Lab hold
     </div>
   </div>
   <div
@@ -5174,10 +5175,11 @@ exports[`Storyshots Elections|GE2019/Race Result Indicator Various Permutations 
       style={
         Object {
           "backgroundColor": "#cf4d3c",
+          "color": "white",
         }
       }
     >
-      Labour gain
+      Lab gain
     </div>
   </div>
   <div
@@ -5212,10 +5214,11 @@ exports[`Storyshots Elections|GE2019/Race Result Indicator Various Permutations 
       style={
         Object {
           "backgroundColor": "#149adb",
+          "color": "white",
         }
       }
     >
-      Conservative gain
+      Con gain
     </div>
   </div>
   <div
@@ -5250,10 +5253,11 @@ exports[`Storyshots Elections|GE2019/Race Result Indicator Various Permutations 
       style={
         Object {
           "backgroundColor": "#f09000",
+          "color": "black",
         }
       }
     >
-      Liberal Democrats hold
+      Lib Dem hold
     </div>
   </div>
   <div
@@ -5288,10 +5292,11 @@ exports[`Storyshots Elections|GE2019/Race Result Indicator Various Permutations 
       style={
         Object {
           "backgroundColor": "#f09000",
+          "color": "black",
         }
       }
     >
-      Liberal Democrats gain
+      Lib Dem gain
     </div>
   </div>
   <div
@@ -5326,6 +5331,7 @@ exports[`Storyshots Elections|GE2019/Race Result Indicator Various Permutations 
       style={
         Object {
           "backgroundColor": "#8deb9d",
+          "color": "black",
         }
       }
     >

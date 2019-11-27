@@ -22,7 +22,7 @@
     "react-dom": "^16.9.0"
   },
   "dependencies": {
-    "@financial-times/politics": "^1.1.7",
+    "@financial-times/politics": "^1.2.0",
     "babel-plugin-emotion": "^10.0.23",
     "classnames": "^2.2.6",
     "d3-time-format": "^2.2.1",

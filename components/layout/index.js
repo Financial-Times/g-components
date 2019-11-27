@@ -123,6 +123,7 @@ const Layout = ({ flags, ads, children, defaultContainer, customArticleHead, ...
         ads,
         defaultContainer,
         customArticleHead,
+        breakpoint,
         ...props,
       }}
     >
