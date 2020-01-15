@@ -25,17 +25,17 @@ const NamesElement = ({ namesList }) =>
     const separator = i === 0 ? '' : i === namesList.length - 1 ? ' and ' : ', ';
     const location = name.location && <Fragment> {name.location}</Fragment>;
     const author = name.url ? (
-      <Fragment key={`author-${name.name}`}>
+      <span key={`author-${name.name}`}>
         <a href={name.url} className="o-typography-author">
           {name.name}
         </a>
         {location}
-      </Fragment>
+      </span>
     ) : (
-      <Fragment key={`author-${name.name}`}>
+      <span key={`author-${name.name}`}>
         <span>{name.name}</span>
         {location}
-      </Fragment>
+      </span>
     );
     return a.concat(separator, author);
   }, []);
