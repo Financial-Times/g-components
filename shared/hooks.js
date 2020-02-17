@@ -5,8 +5,7 @@
 
 import { useRef, useEffect, useState } from 'react';
 import OAds from 'o-ads/main.js';
-import { isElement } from './helpers';
-import { registerLayoutChangeEvents, unregisterLayoutChangeEvents } from '../../shared/helpers';
+import { isElement, registerLayoutChangeEvents, unregisterLayoutChangeEvents } from './helpers';
 
 /**
  * @function

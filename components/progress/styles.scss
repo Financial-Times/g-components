@@ -1,0 +1,18 @@
+.g-progress {
+  height: 2px;
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  &__segment {
+    margin-right: 2px;
+    flex: 1;
+    background: white;
+    &--active {
+      background: #ca1b54;
+    }
+
+    &:last-child {
+      margin-right: 0px;
+    }
+  }
+}
