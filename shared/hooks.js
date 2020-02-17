@@ -3,8 +3,10 @@
  * Sundry hooks that have multiple use-cases
  */
 
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useState } from 'react';
+import OAds from 'o-ads/main.js';
 import { isElement } from './helpers';
+import { registerLayoutChangeEvents, unregisterLayoutChangeEvents } from '../../shared/helpers';
 
 /**
  * @function
@@ -54,6 +56,64 @@ export const usePortal = parent => {
   return rootRef.current;
 };
 
+/**
+ * @function
+ * Initialises o-ads
+ */
+export const useAds = (config, enabled = true) => {
+  useEffect(() => {
+    // Async side-effects should be in an IIFE in useEffect; don't make the CB async!
+    (async () => {
+      try {
+        if (enabled) {
+          const initialised = await OAds.init({
+            gpt: {
+              network: 5887,
+              site: config.gptSite || 'ft.com',
+              zone: config.gptZone || 'unclassified',
+            },
+            dfp_targeting: config.dfpTargeting,
+          });
+
+          const slots = Array.from(document.querySelectorAll('.o-ads, [data-o-ads-name]'));
+          slots.forEach(initialised.slots.initSlot.bind(initialised.slots));
+        }
+      } catch (e) {
+        if (!global.STORYBOOK_ENV) console.error(e); // eslint-disable-line no-console
+      }
+    })();
+  }, [config, enabled]);
+};
+
+/**
+ * @function
+ * Initialises o-grid's layout change events on first call;
+ * then returns the current breakpoint.
+ */
+export const useLayoutChangeEvents = () => {
+  const [breakpoint, setBreakpoint] = useState('default');
+
+  const listenersRef = useRef();
+
+  const update = ({ detail }) => {
+    setBreakpoint({ breakpoint: detail });
+  };
+
+  useEffect(() => {
+    window.addEventListener('o-grid.layoutChange', update);
+    listenersRef.current = registerLayoutChangeEvents();
+
+    return () => {
+      unregisterLayoutChangeEvents(listenersRef.current);
+      window.removeEventListener('o-grid.layoutChange', update);
+    };
+  }, []);
+
+  return breakpoint;
+};
+
 export default {
   usePortal,
+  useAds,
+  useLayoutChangeEvents,
 };

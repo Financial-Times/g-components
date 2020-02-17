@@ -1,0 +1,194 @@
+// import { useContext } from 'react';
+// import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+// import { MiddleAd } from '../ads';
+// import { GridContainer, GridRow, GridChild } from '../grid';
+// import Layout, { Context } from './';
+// import '../../shared/critical-path.scss';
+
+// export const defaultFlags = {
+// prod: false,
+// errorReporting: true,
+// analytics: false,
+// googleAnalytics: false,
+// ads: false,
+// onwardjourney: true,
+// shareButtons: true,
+// header: true,
+// footer: true,
+// comments: true,
+// data: false,
+// dark: false,
+// };
+
+// export const DEFAULTS = {
+// flags: defaultFlags,
+// url: 'https://local.ft.com/',
+// summary: 'This is a standfirst',
+// topic: {
+// url: 'https://local.ft.com/',
+// name: 'Testing',
+// },
+// bylines: [{ name: 'Ændrew Rininsland', url: 'https://ft.com/ændrew-rininsland' }],
+// image: {
+// uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
+// },
+// headline: 'New Starter Kit site',
+// title: 'New Starter Kit site',
+// id: '3a499586-b2e0-11e4-a058-00144feab7de',
+// pubdate: new Date('2018-07-25T17:43:37.00Z').toISOString(),
+// buildTime: new Date('2018-07-25T17:43:37.00Z').toISOString(),
+// ads: {
+// gptSite: 'test.5887.origami', // Ad unit hierarchy makes ads more granular.
+// gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
+// dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
+// },
+// };
+
+// export const lorem = `Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint. // Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores // omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr // dolore praesent est. // Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne. // Habeo congue vel te. Ex quo summo principes. Eu dicta solet molestiae eam, eu ius primis // consectetuer. Ei dicant numquam omittam qui. Vim dicunt nostrud volutpat ex, cu mel // gubergren constituto. // Ad qui wisi minimum cotidieque, ea vis esse discere intellegam. Et omnium inimicus vim. Ea // sale dicam homero ius. Impedit eligendi delicata in mel, vis soluta temporibus an, ex vis // vide laoreet. No per hinc ferri mediocritatem, eam modus ubique atomorum ne. Iudico offendit // ut his. // Mel fastidii eleifend no, ut oratio intellegam cum. Iudico dignissim sadipscing ei mel. At // laudem legendos erroribus eos. Aliquid dolorem dissentiunt eos cu. Eros suscipiantur mea ei, // tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant eos. // Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum // salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim // soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.`;
+
+// export const CustomArticleHead = <h1>New starter kit site</h1>;
+
+// export const DeepChild = () => {
+// const ctx = useContext(Context);
+// return <pre>{JSON.stringify(ctx)}</pre>;
+// };
+
+// <Meta title="Core|Layout" component={Layout} />
+
+// # Layout component
+
+// `<Layout />` is the primary component you'll work with in Starter Kit.
+
+// All the other components are already included with it, and it's
+// the default export of g-components. To use it, you supply it children, which
+// get wrapped as the main article body. Make sure to wrap paragraphs in `<p>` tags
+// to maintain typographic styles.
+
+// <Preview>
+// <Story name="Basic">
+// <Layout
+// flags={DEFAULTS.flags}
+// headline={DEFAULTS.headline}
+// title={DEFAULTS.title}
+// topic={DEFAULTS.topic}
+// url={DEFAULTS.url}
+// publishedDate={DEFAULTS.pubdate}
+// buildTime={DEFAULTS.buildTime}
+// ads={DEFAULTS.ads}
+// id={DEFAULTS.id}
+// >
+// {[
+// ...lorem.split(/\n\n/).map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+// <MiddleAd />,
+// ]}
+// </Layout>
+// </Story>
+// </Preview>
+
+// <Preview>
+// <Story name="With custom children">
+// <Layout
+// flags={DEFAULTS.flags}
+// headline={DEFAULTS.headline}
+// title={DEFAULTS.title}
+// topic={DEFAULTS.topic}
+// url={DEFAULTS.url}
+// publishedDate={DEFAULTS.pubdate}
+// buildTime={DEFAULTS.buildTime}
+// >
+// <GridContainer>
+// <GridRow>
+// <GridChild>
+// <div>
+// {lorem.split(/\n\n/).map((par, idx) => (
+// <p key={idx /_ eslint-disable-line _/}>{par}</p>
+// ))}
+// </div>
+// </GridChild>
+// </GridRow>
+// </GridContainer>
+// </Layout>
+// </Story>
+// </Preview>
+
+// <Preview>
+// <Story name="With custom article head">
+// <Layout
+// flags={DEFAULTS.flags}
+// headline={DEFAULTS.headline}
+// title={DEFAULTS.title}
+// topic={DEFAULTS.topic}
+// url={DEFAULTS.url}
+// publishedDate={DEFAULTS.pubdate}
+// buildTime={DEFAULTS.buildTime}
+// ads={DEFAULTS.ads}
+// id={DEFAULTS.id}
+// customArticleHead={CustomArticleHead}
+// >
+// {[
+// ...lorem.split(/\n\n/).map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+// <MiddleAd />,
+// ]}
+// </Layout>
+// </Story>
+// </Preview>
+
+// <Preview>
+// <Story name="Using context">
+// <Layout {...DEFAULTS}>
+// <div width="100%" style={{ overflow: 'scroll' }}>
+// This should resemble config: <br />
+// <DeepChild
+// {
+// ...{
+// /_ Look ma, no props! _/
+// }
+// }
+// />
+// </div>
+// </Layout>
+// </Story>
+// </Preview>
+
+// <Preview>
+// <Story name="Dark theme">
+// <Layout
+// flags={{ ...DEFAULTS.flags, dark: true }}
+// headline={DEFAULTS.headline}
+// title={DEFAULTS.title}
+// topic={DEFAULTS.topic}
+// url={DEFAULTS.url}
+// publishedDate={DEFAULTS.pubdate}
+// buildTime={DEFAULTS.buildTime}
+// ads={DEFAULTS.ads}
+// id={DEFAULTS.id}
+// >
+// {[
+// ...lorem.split(/\n\n/).map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+// <MiddleAd />,
+// ]}
+// </Layout>
+// </Story>
+// </Preview>
+
+// <Preview>
+// <Story name="Full-width article body">
+// <Layout
+// flags={{ ...DEFAULTS.flags, dark: true }}
+// headline={DEFAULTS.headline}
+// title={DEFAULTS.title}
+// topic={DEFAULTS.topic}
+// url={DEFAULTS.url}
+// publishedDate={DEFAULTS.pubdate}
+// buildTime={DEFAULTS.buildTime}
+// ads={DEFAULTS.ads}
+// id={DEFAULTS.id}
+// span={'full-width'}
+// >
+// {[
+// ...lorem.split(/\n\n/).map((par, idx) => <p key={idx /* eslint-disable-line */}>{par}</p>),
+// <MiddleAd />,
+// ]}
+// </Layout>
+// </Story>
+// </Preview>

@@ -3,14 +3,9 @@
  * Main page layout view
  */
 
-import React, { useState, useEffect, useRef, createContext } from 'react';
+import React, { createContext } from 'react';
 import PropTypes from 'prop-types';
-import OAds from 'o-ads/main.js';
-import {
-  strftime,
-  registerLayoutChangeEvents,
-  unregisterLayoutChangeEvents,
-} from '../../shared/helpers';
+import { strftime } from '../../shared/helpers';
 import { flagsPropType, StringBoolPropType } from '../../shared/proptypes';
 import Header from '../header';
 import Analytics from '../analytics';
@@ -21,6 +16,7 @@ import Comments from '../comments';
 import Footer from '../footer';
 import { GridChild, GridRow, GridContainer } from '../grid';
 import './styles.scss';
+import { useAds, useLayoutChangeEvents } from '../../shared/hooks';
 
 export const Context = createContext({});
 
@@ -34,47 +30,8 @@ const Layout = ({
   headerColspan,
   ...props
 }) => {
-  const [state, setState] = useState({
-    breakpoint: 'default',
-  });
-
-  const listenersRef = useRef();
-
-  const update = ({ detail }) => {
-    setState({ breakpoint: detail });
-  };
-
-  useEffect(() => {
-    // Async side-effects should be in an IIFE in useEffect; don't make the CB async!
-    (async () => {
-      try {
-        window.addEventListener('o-grid.layoutChange', update);
-        listenersRef.current = registerLayoutChangeEvents();
-        if (flags.ads) {
-          const initialised = await OAds.init({
-            gpt: {
-              network: 5887,
-              site: ads.gptSite || 'ft.com',
-              zone: ads.gptZone || 'unclassified',
-            },
-            dfp_targeting: ads.dfpTargeting,
-          });
-
-          const slots = Array.from(document.querySelectorAll('.o-ads, [data-o-ads-name]'));
-          slots.forEach(initialised.slots.initSlot.bind(initialised.slots));
-        }
-      } catch (e) {
-        if (!global.STORYBOOK_ENV) console.error(e); // eslint-disable-line no-console
-      }
-    })();
-
-    return () => {
-      unregisterLayoutChangeEvents(listenersRef.current);
-      window.removeEventListener('o-grid.layoutChange', update);
-    };
-  }, [ads.dfpTargeting, ads.gptSite, ads.gptZone, flags.ads]);
-
-  const { breakpoint } = state;
+  const breakpoint = useLayoutChangeEvents();
+  useAds(ads, flags.ads);
 
   const hasCustomChildren =
     React.Children.toArray(children).some(
