@@ -18,9 +18,9 @@ const Modal = ({ className, parent, children, isOpen, closeModal, closeButton })
     const handler = ({ keyCode }) => {
       if (keyCode === 27) closeModal();
     };
-    document.addEventListener('onkeydown', handler);
+    document.addEventListener('keydown', handler);
     return () => {
-      document.removeEventListener('onkeydown', handler);
+      document.removeEventListener('keydown', handler);
     };
   }, [closeModal]);
 
