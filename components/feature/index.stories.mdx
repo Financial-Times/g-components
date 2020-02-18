@@ -41,9 +41,27 @@ export const DEFAULTS = {
     dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
   },
 };
+
 export const lorem = `Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint. // Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores // omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr // dolore praesent est. // Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne. // Habeo congue vel te. Ex quo summo principes. Eu dicta solet molestiae eam, eu ius primis // consectetuer. Ei dicant numquam omittam qui. Vim dicunt nostrud volutpat ex, cu mel // gubergren constituto. // Ad qui wisi minimum cotidieque, ea vis esse discere intellegam. Et omnium inimicus vim. Ea // sale dicam homero ius. Impedit eligendi delicata in mel, vis soluta temporibus an, ex vis // vide laoreet. No per hinc ferri mediocritatem, eam modus ubique atomorum ne. Iudico offendit // ut his. // Mel fastidii eleifend no, ut oratio intellegam cum. Iudico dignissim sadipscing ei mel. At // laudem legendos erroribus eos. Aliquid dolorem dissentiunt eos cu. Eros suscipiantur mea ei, // tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant eos. // Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum // salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim // soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.`;
 
-<Meta title="Core|Feature" component={Feature} />
+export const ExampleBackground = ({ page }) => (
+  <div
+    style={{
+      backgroundImage: 'url(https://placeimg.com/640/480/any)',
+      backgroundSize: 'cover',
+      flex: 1,
+      filter: page > 0 && 'blur(8px)',
+    }}
+  />
+);
+
+export const ExampleForeground = ({ page }) => (
+  <div style={{ flex: 1, color: 'white' }}>
+    <h3>You are on page {page}</h3>
+  </div>
+);
+
+<Meta title="Layouts|Feature" component={Feature} />
 
 # Feature Layout component
 
@@ -53,6 +71,12 @@ layout on mobile.
 
 <Preview>
   <Story name="Basic">
-    <Feature {...DEFAULTS}>Hurr</Feature>
+    <Feature {...DEFAULTS} background={ExampleBackground} foreground={ExampleForeground}>
+      <h1>Slide 1!</h1>
+      <h1>Slide 2!</h1>
+      <h1>Slide 3!</h1>
+      <h1>Slide 4!</h1>
+      <h1>Slide 5!</h1>
+    </Feature>
   </Story>
 </Preview>

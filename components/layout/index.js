@@ -20,7 +20,7 @@ import { useAds, useLayoutChangeEvents } from '../../shared/hooks';
 
 export const Context = createContext({});
 
-const Layout = ({
+const Article = ({
   flags,
   ads,
   children,
@@ -123,9 +123,9 @@ const Layout = ({
   );
 };
 
-Layout.displayName = 'GLayout';
+Article.displayName = 'GArticle';
 
-Layout.propTypes = {
+Article.propTypes = {
   id: PropTypes.string,
   ads: PropTypes.shape({
     gptSite: PropTypes.string.isRequired,
@@ -141,7 +141,7 @@ Layout.propTypes = {
   headerColspan: PropTypes.string,
 };
 
-Layout.defaultProps = {
+Article.defaultProps = {
   id: '',
   ads: {
     gptSite: 'test.5887.origami', // Ad unit hierarchy makes ads more granular.
@@ -156,4 +156,4 @@ Layout.defaultProps = {
   headerColspan: '12 S11 Scenter M9 L8 XL7',
 };
 
-export default Layout;
+export default Article;

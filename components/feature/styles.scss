@@ -1,7 +1,64 @@
 .g-feature {
-  height: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   &__container {
     display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+
+    .g-progress {
+      z-index: 99;
+    }
+  }
+
+  &__controls {
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+
+    &--back,
+    &--forward {
+      flex: 1;
+      &:hover:not(.g-feature__controls--disabled),
+      &:focus:not(.g-feature__controls--disabled) {
+        background: rgba(100, 100, 100, 0.5);
+        cursor: pointer;
+      }
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    position: relative;
+  }
+
+  &__background,
+  &__foreground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    > * {
+      flex: 1;
+    }
+  }
+
+  &__background {
+    z-index: 0;
+  }
+
+  &__foreground {
+    z-index: 2;
   }
 }

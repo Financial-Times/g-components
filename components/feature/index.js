@@ -5,7 +5,7 @@
  * Use without `<Layout>`, this replaces it.
  */
 
-import React, { useState } from 'react';
+import React, { useState, Children, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { flagsPropType, StringBoolPropType } from '../../shared/proptypes';
@@ -18,14 +18,29 @@ import Progress from '../progress';
 
 export { Context } from '../layout';
 
-const Feature = ({ flags, ads, children, ...props }) => {
+const Feature = ({
+  flags,
+  ads,
+  children,
+  background: BackgroundComponent,
+  foreground: ForegroundComponent,
+  ...props
+}) => {
   const breakpoint = useLayoutChangeEvents();
   useAds(ads, flags.ads);
-  const [currentPage, setPage] = useState(0);
-  const goForward = () => setPage(currentPage + 1);
-  const goBack = () => setPage(currentPage - 1);
 
-  useKeyboardShortcuts({
+  const [currentPage, goPage] = useState(0);
+  const [allowBack, setAllowBack] = useState(true);
+  const goForward = useCallback(
+    () => currentPage + 1 < Children.count(children) && goPage(currentPage + 1),
+    [children, currentPage],
+  );
+  const goBack = useCallback(() => currentPage > 0 && allowBack && goPage(currentPage - 1), [
+    allowBack,
+    currentPage,
+  ]);
+
+  const keyboardHandlers = useKeyboardShortcuts({
     37: goBack,
     39: goForward,
   });
@@ -36,34 +51,63 @@ const Feature = ({ flags, ads, children, ...props }) => {
         flags,
         ads,
         breakpoint,
+        goBack,
+        goForward,
+        goPage,
+        setAllowBack,
         ...props,
       }}
     >
       <div className={classnames(flags.dark && 'dark', 'g-feature')}>
         {flags.analytics && <Analytics {...{ ...props, flags, breakpoint }} />}
         {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
-
-        <Progress value={0} steps={20} />
-        <div className="g-feature__controls">
-          <div
-            tabIndex={0}
-            aria-label="Go back"
-            className="g-feature__controls__back"
-            role="button"
-            onClick={goBack}
+        <div className="g-feature__container">
+          <Progress
+            value={currentPage / Children.count(children)}
+            steps={Children.count(children) - 1}
           />
-          <div
-            tabIndex={0}
-            aria-label="Go back"
-            className="g-feature__controls__forward"
-            role="button"
-            onClick={goForward}
-          />
+          {/* Navigation */}
+          <div className="g-feature__controls">
+            <div
+              tabIndex={currentPage > 0 ? 0 : -1}
+              aria-label="Go back"
+              className={classnames(
+                'g-feature__controls--back',
+                currentPage < 1 && 'g-feature__controls--disabled',
+              )}
+              role="button"
+              onKeyDown={keyboardHandlers.goBack}
+              onClick={goBack}
+            />
+            <div
+              tabIndex={currentPage + 1 < Children.count(children) ? 0 : -1}
+              aria-label="Go forward"
+              className={classnames(
+                'g-feature__controls--forward',
+                currentPage + 1 === Children.count(children) && 'g-feature__controls--disabled',
+              )}
+              role="button"
+              onKeyDown={keyboardHandlers.goForward}
+              onClick={goForward}
+            />
+          </div>
+          {/* The main bit */}
+          <main key="main" role="main" className="g-feature__main">
+            {BackgroundComponent && (
+              <div className="g-feature__background" role="presentation">
+                <BackgroundComponent page={currentPage} />
+              </div>
+            )}
+            <article className="g-feature__content">
+              {Children.map(children, (d, i) => (i === currentPage ? d : null))}
+            </article>
+            {ForegroundComponent && (
+              <div className="g-feature__foreground" role="presentation">
+                <ForegroundComponent page={currentPage} />
+              </div>
+            )}
+          </main>
         </div>
-        <main className="g-feature__container" key="main" role="main">
-          {children}
-          {currentPage}
-        </main>
       </div>
     </Context.Provider>
   );
@@ -72,34 +116,29 @@ const Feature = ({ flags, ads, children, ...props }) => {
 Feature.displayName = 'GFeature';
 
 Feature.propTypes = {
-  id: PropTypes.string,
   ads: PropTypes.shape({
     gptSite: PropTypes.string.isRequired,
     gptZone: StringBoolPropType.isRequired,
     dfpTargeting: StringBoolPropType.isRequired,
   }),
-  flags: flagsPropType.isRequired,
+  flags: flagsPropType,
   children: PropTypes.node,
-  defaultContainer: PropTypes.bool,
-  customArticleHead: PropTypes.node,
-  wrapArticleHead: PropTypes.bool,
-  bodyColspan: PropTypes.string,
-  headerColspan: PropTypes.string,
+  background: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
+  foreground: PropTypes.oneOfType([PropTypes.func, PropTypes.node]),
 };
 
 Feature.defaultProps = {
-  id: '',
   ads: {
     gptSite: 'test.5887.origami', // Ad unit hierarchy makes ads more granular.
     gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
     dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
   },
+  flags: {
+    dark: true,
+  },
   children: null,
-  defaultContainer: true,
-  customArticleHead: null,
-  wrapArticleHead: true,
-  bodyColspan: '12 S11 Scenter M9 L8 XL7',
-  headerColspan: '12 S11 Scenter M9 L8 XL7',
+  background: undefined,
+  foreground: undefined,
 };
 
 export default Feature;

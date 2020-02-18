@@ -117,12 +117,25 @@ export const useLayoutChangeEvents = () => {
  */
 export const useKeyboardShortcuts = shortcuts => {
   useEffect(() => {
-    const listener = window.addEventListener('onkeydown', ({ keyPress }) => {
-      if (shortcuts[keyPress]) shortcuts[keyPress]();
-    });
+    const listener = ({ keyCode }) => {
+      if (shortcuts[keyCode]) shortcuts[keyCode]();
+    };
 
-    return () => window.removeEventListener('onkeydown', listener);
+    document.addEventListener('keydown', listener);
+    return () => {
+      window.removeEventListener('keydown', listener);
+    };
   }, [shortcuts]);
+
+  // Return object with function name bound to respective keypress
+  // N.b., this will break if you use the same function name twice
+  return Object.entries(shortcuts).reduce(
+    (a, [k, v]) => ({
+      ...a,
+      [v.name]: ({ keyPress }) => keyPress === k && v(),
+    }),
+    {},
+  );
 };
 
 export default {
