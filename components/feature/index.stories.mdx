@@ -1,0 +1,58 @@
+import { useContext } from 'react';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Feature, { Context } from './';
+import '../../shared/critical-path.scss';
+
+export const defaultFlags = {
+  prod: false,
+  errorReporting: true,
+  analytics: false,
+  googleAnalytics: false,
+  ads: false,
+  onwardjourney: true,
+  shareButtons: true,
+  header: true,
+  footer: true,
+  comments: true,
+  data: false,
+  dark: true,
+};
+
+export const DEFAULTS = {
+  flags: defaultFlags,
+  url: 'https://local.ft.com/',
+  summary: 'This is a standfirst',
+  topic: {
+    url: 'https://local.ft.com/',
+    name: 'Testing',
+  },
+  bylines: [{ name: 'Ændrew Rininsland', url: 'https://ft.com/ændrew-rininsland' }],
+  image: {
+    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
+  },
+  headline: 'New Starter Kit site',
+  title: 'New Starter Kit site',
+  id: '3a499586-b2e0-11e4-a058-00144feab7de',
+  pubdate: new Date('2018-07-25T17:43:37.00Z').toISOString(),
+  buildTime: new Date('2018-07-25T17:43:37.00Z').toISOString(),
+  ads: {
+    gptSite: 'test.5887.origami', // Ad unit hierarchy makes ads more granular.
+    gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
+    dfpTargeting: false, // granular targeting is optional and will be specified by the ads team
+  },
+};
+export const lorem = `Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint. // Error vitae molestie ea sit, cu usu facilis deleniti, nec ea novum solet. No pro labores // omnesque, duo ut tractatos accusamus. Usu vitae mollis ut, cetero detraxit cu qui. Et elitr // dolore praesent est. // Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne. // Habeo congue vel te. Ex quo summo principes. Eu dicta solet molestiae eam, eu ius primis // consectetuer. Ei dicant numquam omittam qui. Vim dicunt nostrud volutpat ex, cu mel // gubergren constituto. // Ad qui wisi minimum cotidieque, ea vis esse discere intellegam. Et omnium inimicus vim. Ea // sale dicam homero ius. Impedit eligendi delicata in mel, vis soluta temporibus an, ex vis // vide laoreet. No per hinc ferri mediocritatem, eam modus ubique atomorum ne. Iudico offendit // ut his. // Mel fastidii eleifend no, ut oratio intellegam cum. Iudico dignissim sadipscing ei mel. At // laudem legendos erroribus eos. Aliquid dolorem dissentiunt eos cu. Eros suscipiantur mea ei, // tantas vituperata vis ad. Pri et dicunt regione, ut quando volutpat abhorreant eos. // Ad cum saperet docendi, ex habeo nemore euismod vix, usu semper instructior cu. Natum // salutatus consetetur sit cu. Ad erroribus complectitur vis. Ne possim similique vis. Ne enim // soluta vix, quis natum ne qui, ei vidit latine partiendo mei. Mel ea duis essent vivendo.`;
+
+<Meta title="Core|Feature" component={Feature} />
+
+# Feature Layout component
+
+`<Feature />` is a type of layout that enables a
+carousel-esque experience on desktop and a paged
+layout on mobile.
+
+<Preview>
+  <Story name="Basic">
+    <Feature {...DEFAULTS}>Hurr</Feature>
+  </Story>
+</Preview>

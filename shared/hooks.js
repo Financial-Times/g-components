@@ -111,8 +111,23 @@ export const useLayoutChangeEvents = () => {
   return breakpoint;
 };
 
+/**
+ * @file
+ * Sets up global keyboard shortcuts
+ */
+export const useKeyboardShortcuts = shortcuts => {
+  useEffect(() => {
+    const listener = window.addEventListener('onkeydown', ({ keyPress }) => {
+      if (shortcuts[keyPress]) shortcuts[keyPress]();
+    });
+
+    return () => window.removeEventListener('onkeydown', listener);
+  }, [shortcuts]);
+};
+
 export default {
   usePortal,
   useAds,
   useLayoutChangeEvents,
+  useKeyboardShortcuts,
 };
