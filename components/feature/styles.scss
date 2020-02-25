@@ -38,6 +38,7 @@
   &__content {
     z-index: 1;
     position: relative;
+    color: #d3d4d6;
   }
 
   &__background,
@@ -48,7 +49,7 @@
     width: 100%;
     height: 100%;
     display: flex;
-
+    pointer-events: none;
     > * {
       flex: 1;
     }
