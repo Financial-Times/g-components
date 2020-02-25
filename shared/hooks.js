@@ -99,13 +99,18 @@ export const useLayoutChangeEvents = () => {
   };
 
   useEffect(() => {
-    window.addEventListener('o-grid.layoutChange', update);
-    listenersRef.current = registerLayoutChangeEvents();
+    try {
+      window.addEventListener('o-grid.layoutChange', update);
+      listenersRef.current = registerLayoutChangeEvents();
 
-    return () => {
-      unregisterLayoutChangeEvents(listenersRef.current);
-      window.removeEventListener('o-grid.layoutChange', update);
-    };
+      return () => {
+        unregisterLayoutChangeEvents(listenersRef.current);
+        window.removeEventListener('o-grid.layoutChange', update);
+      };
+    } catch (e) {
+      // Suppress errors in Jest
+      if (!global.STORYBOOK_ENV) console.error(e); // eslint-disable-line no-console
+    }
   }, []);
 
   return breakpoint;

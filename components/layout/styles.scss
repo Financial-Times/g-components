@@ -3,3 +3,4 @@ $o-grid-is-silent: false;
 
 @import 'o-typography/main';
 @import 'o-grid/main';
+@include oGridSurfaceLayoutSizes;

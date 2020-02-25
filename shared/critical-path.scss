@@ -1,5 +1,5 @@
-@import "o-colors/main.scss";
-@import "o-grid/main.scss";
+@import 'o-colors/main.scss';
+@import 'o-grid/main.scss';
 
 @include oGridSurfaceLayoutSizes;
 
@@ -115,4 +115,4 @@ body {
   }
 }
 
-@import "./dark";
+@import './dark';
