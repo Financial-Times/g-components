@@ -63,12 +63,17 @@ const HtmlHead = ({
       <meta property="fb:app_id" content="429755910551755" />
       <link
         rel="icon"
+        type="image/svg+xml"
+        href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&width=32&height=32"
+      />
+      <link
+        rel="alternate icon"
         type="image/png"
         href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&width=32&height=32&format=png"
         sizes="32x32"
       />
       <link
-        rel="icon"
+        rel="alternate icon"
         type="image/png"
         href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&width=194&height=194&format=png"
         sizes="194x194"
