@@ -64,7 +64,7 @@ const HtmlHead = ({
       <link
         rel="icon"
         type="image/svg+xml"
-        href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos&width=32&height=32"
+        href="https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo-v1%3Abrand-ft-logo-square-coloured?source=update-logos"
       />
       <link
         rel="alternate icon"
