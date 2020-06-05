@@ -83,4 +83,15 @@ export const dataMetaPropType = PropTypes.shape({
   }),
 });
 
+export const bylinesPropType = PropTypes.oneOfType([
+  PropTypes.string,
+  PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      url: PropTypes.string,
+      location: PropTypes.string,
+    }),
+  )
+]);
+
 export default '';

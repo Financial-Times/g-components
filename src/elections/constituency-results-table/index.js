@@ -6,7 +6,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { uk } from '@financial-times/politics';
-import { Context } from '../../layout';
+import { Context } from '../../article-layout';
 import { numberWithCommas } from '../utils';
 import { Expander } from '../../expander';
 import './styles.scss';

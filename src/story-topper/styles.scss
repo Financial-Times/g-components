@@ -1,0 +1,27 @@
+$o-typography-is-silent: false;
+@import '../shared/_globals.scss';
+@import 'o-typography/main';
+
+.story-topper .topic {
+  margin-top: 11px;
+  margin-bottom: 15px;
+}
+
+.story-topper h1 {
+  margin-bottom: 24px;
+}
+
+.story-topper figure .o-typography-caption {
+  margin-top: 4px;
+}
+
+.story-topper .article__share {
+  margin-top: 13px;
+}
+
+.story-topper .bylines {
+  margin-top: 13px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ccc1b7;
+  padding-bottom: 23px;
+}

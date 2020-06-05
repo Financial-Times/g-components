@@ -1,6 +1,6 @@
 /**
  * @file
- * Main page layout view
+ * Article layout
  */
 
 import React, { createContext } from 'react';
@@ -9,6 +9,7 @@ import { flagsPropType, StringBoolPropType } from '../shared/proptypes';
 import Header from '../header';
 import Analytics from '../analytics';
 import { TopAd } from '../ads';
+import Epilogue from '../epilogue';
 import OnwardJourney from '../onwardjourney';
 import Comments from '../comments';
 import Footer from '../footer';
@@ -17,13 +18,10 @@ import { useAds, useLayoutChangeEvents } from '../shared/hooks';
 
 export const Context = createContext({});
 
-const Article = ({
+const ArticleLayout = ({
   flags,
   ads,
-  children,
-  defaultContainer,
-  bodyColspan,
-  headerColspan,
+  children: [topper, ...body],
   ...props
 }) => {
   const breakpoint = useLayoutChangeEvents();
@@ -34,7 +32,6 @@ const Article = ({
       value={{
         flags,
         ads,
-        defaultContainer,
         breakpoint,
         ...props,
       }}
@@ -42,7 +39,15 @@ const Article = ({
       {flags.analytics && <Analytics {...{ ...props, flags, breakpoint }} />}
       {flags.ads && <TopAd />}
       {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
-      {children}
+      <main key="main" role="main">
+        <article className="article" itemScope itemType="http://schema.org/Article">
+          {topper}
+          <div className="article-body o-editorial-typography-body" itemProp="articleBody">
+            {body}
+          </div>
+          <Epilogue />
+        </article>
+      </main>
       {flags.onwardjourney && <OnwardJourney key="oj" {...{ ...props, breakpoint }} />}
       {flags.comments && <Comments key="comments" {...{ ...props, flags, breakpoint }} />}
       {flags.footer && <Footer key="footer" {...{ ...props, flags, breakpoint }} />}
@@ -50,34 +55,24 @@ const Article = ({
   );
 };
 
-Article.displayName = 'GArticle';
+ArticleLayout.displayName = 'GArticleLayout';
 
-Article.propTypes = {
-  id: PropTypes.string,
-  ads: PropTypes.shape({
+ArticleLayout.propTypes = {
+  flags: flagsPropType.isRequired,
+  ads: PropTypes.exact({
     gptSite: PropTypes.string.isRequired,
     gptZone: StringBoolPropType.isRequired,
     targeting: StringBoolPropType.isRequired,
   }),
-  flags: flagsPropType.isRequired,
   children: PropTypes.node,
-  defaultContainer: PropTypes.bool,
-  wrapArticleHead: PropTypes.bool,
-  bodyColspan: PropTypes.string,
-  headerColspan: PropTypes.string,
 };
 
-Article.defaultProps = {
-  id: '',
+ArticleLayout.defaultProps = {
   ads: {
     gptSite: 'test.5887.origami', // Ad unit hierarchy makes ads more granular.
     gptZone: false, // Start with ft.com and /companies /markets /world as appropriate to your story
     targeting: false, // granular targeting is optional and will be specified by the ads team
   },
-  children: null,
-  defaultContainer: true,
-  wrapArticleHead: true,
-  headerColspan: '12 S11 Scenter M9 L8 XL7',
 };
 
-export default Article;
+export default ArticleLayout;

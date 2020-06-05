@@ -20,13 +20,15 @@ const Share = ({
 }) => {
   const ref = useRef();
 
-  const { dark } = flags;
+  const { shareButtons, dark } = flags;
 
   useEffect(() => {
     (async () => {
       new OShare(ref.current); // eslint-disable-line no-new
     })();
   }, []);
+
+  if (!shareButtons) return null;
 
   const containerClasses = ['container', dark && 'container--inverse'].filter(i => i).join(' ');
   const sharingClasses = ['o-share', dark && 'o-share--inverse'].filter(i => i).join(' ');

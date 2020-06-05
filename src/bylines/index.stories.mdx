@@ -1,0 +1,65 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import Bylines from './';
+
+<Meta title="Core|Bylines" component={Bylines} />
+
+# Bylines component
+
+<Preview>
+  <Story name="Basic">
+    <Bylines names="FT reporters" date="2020-05-07T00:00:00" />
+  </Story>
+</Preview>
+
+
+## Two names with URLs and locations
+
+<Preview>
+  <Story name="Dual">
+    <Bylines names={[{ name: 'Max Harlow', url: 'https://ft.com/max-harlow' }, { name: 'Hax Marlow', location: 'San Serriffe' }]} date="2020-05-07T00:00:00" />
+  </Story>
+</Preview>
+
+If there's more than two it only uses 'and' before the last:
+
+<Preview>
+  <Story name="Multiple">
+    <Bylines names={[{ name: 'Max Harlow', url: 'https://ft.com/max-harlow' }, { name: 'Hax Marlow', location: 'San Serriffe' }, { name: 'Someone Else' }]} date="2020-05-07T00:00:00" />
+  </Story>
+</Preview>
+
+
+## Without a date
+
+<Preview>
+  <Story name="Undated">
+    <Bylines names="Max Harlow" />
+  </Story>
+</Preview>
+
+
+## Without a name
+
+<Preview>
+  <Story name="Unnamed">
+    <Bylines date="2020-05-07T00:00:00" />
+  </Story>
+</Preview>
+
+
+## With prefix and date at start
+
+<Preview>
+  <Story name="Date at start">
+    <Bylines prefix="Updated" names={[{ name: 'FT Visual & Data Journalism team', url: 'https://www.ft.com/visual-and-data-journalism' }]} date="2020-05-07T00:00:00" reversed />
+  </Story>
+</Preview>
+
+
+## Renders nothing if you pass it nothing
+
+<Preview>
+  <Story name="Empty">
+    <Bylines />
+  </Story>
+</Preview>

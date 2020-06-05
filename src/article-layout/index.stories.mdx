@@ -1,0 +1,70 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import StoryTopper from '../story-topper';
+import { MiddleAd } from '../ads';
+import { GridContainer, GridRow, GridChild } from '../grid';
+import ArticleLayout, { Context } from './';
+
+export const props = {
+  flags: {
+    prod: false,
+    errorReporting: true,
+    analytics: false,
+    googleAnalytics: false,
+    ads: false,
+    onwardjourney: true,
+    shareButtons: true,
+    header: true,
+    footer: true,
+    comments: true,
+    data: false,
+    dark: false,
+  },
+  url: 'https://www.ft.com/',
+  summary: 'This is a standfirst',
+  topic: {
+    url: 'https://www.ft.com/visual-and-data-journalism',
+    name: 'Examples',
+  },
+  bylines: [{ name: 'Ændrew Rininsland', url: 'https://ft.com/ændrew-rininsland' }],
+  mainImage: {
+    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
+    description: 'This is a main image description.',
+    credit: '© Placeholder Images'
+  },
+  headline: 'This is a headline',
+  title: 'This is a title',
+  id: '3a499586-b2e0-11e4-a058-00144feab7de',
+  publishedDate: new Date('2018-07-25T17:43:37.00Z').toISOString(),
+  buildTime: new Date('2018-07-25T17:43:37.00Z').toISOString(),
+};
+
+<Meta title="Layouts|Article" component={ArticleLayout} />
+
+# ArticleLayout component
+
+`<ArticleLayout />` sets up the basic structure of an article page.
+
+The first child will be treated specially as a topper. All children should be wrapped within grid components.
+
+<Preview>
+  <Story name="Basic">
+    <ArticleLayout {...props}>
+      <GridContainer>
+        <GridRow>
+          <GridChild colspan="12 S11 Scenter M10 L9 XL8">
+            <StoryTopper {...props} />
+          </GridChild>
+        </GridRow>
+      </GridContainer>
+      <GridContainer>
+        <GridRow>
+          <GridChild colspan="12 S11 Scenter M10 L9 XL8">
+            <p>Lorem ipsum dolor sit amet, esse mediocritatem et eos, ex cum nostrum singulis inciderint.</p>
+            <MiddleAd />
+            <p>Ex his oratio perpetua expetendis, commune suscipiantur nec at, vel lorem atqui option ne. Habeo congue vel te.</p>
+          </GridChild>
+        </GridRow>
+      </GridContainer>
+    </ArticleLayout>
+  </Story>
+</Preview>

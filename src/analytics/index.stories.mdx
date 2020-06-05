@@ -1,5 +1,5 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
-import { DEFAULTS } from '../layout/index.stories.mdx';
+import { props } from '../article-layout/index.stories.mdx';
 import Analytics from './';
 
 <Meta title="Core|Analytics" component={Analytics} />
@@ -13,6 +13,6 @@ You need to just simply import it where-ever.
 <Preview>
   <Story name="Basic">
     <h4 key="1">You won&apos;t see anything here as &quot;Analytics&quot; has no visual output</h4>,
-    <Analytics key="2" id={DEFAULTS.uuid} flags={DEFAULTS.flags} />,
+    <Analytics key="2" id={props.uuid} flags={props.flags} />,
   </Story>
 </Preview>

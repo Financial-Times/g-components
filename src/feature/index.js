@@ -13,10 +13,10 @@ import Header from '../header';
 import Analytics from '../analytics';
 import './styles.scss';
 import { useAds, useLayoutChangeEvents, useKeyboardShortcuts } from '../shared/hooks';
-import { Context } from '../layout';
+import { Context } from '../article-layout';
 import Progress from '../progress';
 
-export { Context } from '../layout';
+export { Context } from '../article-layout';
 
 const Feature = forwardRef(
   (
