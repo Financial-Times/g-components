@@ -19,17 +19,16 @@ $o-typography-is-silent: false;
 }
 
 .big-topper .topic {
-  margin-top: 26px;
+  margin-top: 18px;
   margin-bottom: 15px;
 }
 
 .big-topper h1 {
   max-width: 790px;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
   margin-left: auto;
   margin-right: auto;
   font-size: 54px;
-  font-weight: 500;
   line-height: 54px;
 }
 
@@ -44,9 +43,10 @@ $o-typography-is-silent: false;
 
 .big-topper .o-editorial-typography-standfirst {
   max-width: 680px;
+  margin-top: 18px;
+  margin-bottom: 28px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 38px;
   color: #66605c;
   font-size: 24px;
   text-align: left;
