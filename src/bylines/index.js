@@ -54,7 +54,7 @@ const DateElement = ({ dateRef, date }) => {
   );
 }
 
-const Bylines = ({ prefix, names, date, reversed }) => {
+const Bylines = ({ prefix, names, date, dateFirst }) => {
   const dateRef = useRef();
 
   useEffect(() => {
@@ -70,10 +70,10 @@ const Bylines = ({ prefix, names, date, reversed }) => {
   return (
     <div className="bylines">
       {prefix && `${prefix} `}
-      {reversed && date && <DateElement dateRef={dateRef} date={date} />}
-      {reversed && ' by '}
+      {dateFirst && date && <DateElement dateRef={dateRef} date={date} />}
+      {dateFirst && ' by '}
       {names && <NamesElement namesList={namesList} />}
-      {!reversed && date && <DateElement dateRef={dateRef} date={date} />}
+      {!dateFirst && date && <DateElement dateRef={dateRef} date={date} />}
     </div>
   );
 };
@@ -82,7 +82,7 @@ Bylines.propTypes = PropTypes.exact({
   prefix: PropTypes.string,
   names: bylinesPropType,
   date: PropTypes.string,
-  reversed: PropTypes.boolean,
+  dateFirst: PropTypes.boolean,
 });
 
 Bylines.displayName = 'GBylines';
