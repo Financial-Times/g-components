@@ -5,37 +5,7 @@
 
 import React from 'react';
 import removeMarkdown from 'remove-markdown';
-import { utcFormat } from 'd3-time-format';
 import { getGridBreakpoints } from '@financial-times/o-grid';
-
-const formatterCache = new Map();
-const defaultFTDateFormat = '%A, %-e %B %Y';
-
-export function isotime(date) {
-  if (!date) {
-    return '';
-  }
-  if (!(date instanceof Date)) {
-    return date;
-  }
-
-  return date.toISOString();
-}
-
-// strftime format docs: https://github.com/d3/d3-time-format
-export function strftime(format = defaultFTDateFormat) {
-  if (formatterCache.has(format)) {
-    return formatterCache.get(format);
-  }
-
-  const fm = utcFormat(format);
-  formatterCache.set(format, fm);
-  return fm;
-}
-
-export function ftdate(d) {
-  return strftime()(d);
-}
 
 export function plain(str, stripListLeaders = true) {
   return removeMarkdown(str, { stripListLeaders, gfm: true });

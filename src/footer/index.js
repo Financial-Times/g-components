@@ -4,7 +4,6 @@
  */
 import React, { useEffect, useRef } from 'react';
 import OFooter from '@financial-times/o-footer';
-import { strftime } from '../shared/helpers';
 import './styles.scss';
 
 const Footer = () => {
@@ -185,7 +184,7 @@ const Footer = () => {
         <div className="o-footer__copyright" role="contentinfo">
           <small>
             Markets data delayed by at least 15 minutes. &#xA9; THE FINANCIAL TIMES LTD{' '}
-            {strftime('%Y')(new Date())}
+            {new Date().getFullYear()}
             {'. '}
             <abbr title="Financial Times" aria-label="F T">
               FT
