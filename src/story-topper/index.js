@@ -53,7 +53,7 @@ const StoryTopper = ({
 
       <meta itemProp="dateModified" content={buildTime} suppressHydrationWarning />
 
-      {mainImage && (mainImage.url || mainImage.uuid) && (
+      {flags.mainImage && mainImage && (mainImage.url || mainImage.uuid) && (
         <figure className="graphic graphic-b-1 graphic-pad-1">
           <img alt={mainImage.description} src={getMainImage(mainImage)} />
           <figcaption className="o-typography-caption">
@@ -66,7 +66,9 @@ const StoryTopper = ({
 
       <Share headline={headline} {...{ ...props, flags }} />
 
-      <Bylines names={bylines} date={publishedDate} />
+      {flags.bylines && bylines && (
+        <Bylines names={bylines} date={publishedDate} />
+      )}
     </div>
   );
 };

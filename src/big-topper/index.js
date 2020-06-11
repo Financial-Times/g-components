@@ -28,7 +28,7 @@ const BigTopper = ({
 
   return (
     <div className="big-topper">
-      {mainImage && (mainImage.url || mainImage.uuid) && (
+      {flags.mainImage && mainImage && (mainImage.url || mainImage.uuid) && (
         <figure className="graphic graphic-b-1 graphic-pad-1">
           <img alt={mainImage.description} src={getMainImage(mainImage)} />
           <figcaption className="o-typography-caption">
@@ -51,11 +51,13 @@ const BigTopper = ({
         {headline}
       </h1>
 
-      {bylines && (<Bylines prefix="By" names={bylines} date={publishedDate} />)}
+      {flags.bylines && bylines && (
+        <Bylines prefix="By" names={bylines} date={publishedDate} />
+      )}
 
       <Share headline={headline} {...{ ...props, flags }} />
 
-      {summary && (
+      {flags.summary && summary && (
         <p className="o-editorial-typography-standfirst">
           {summary}{' '}
           {relatedArticle && (
