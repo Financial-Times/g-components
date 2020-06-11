@@ -75,11 +75,6 @@ body {
   &-head {
     margin-top: 18px;
     margin-bottom: 0;
-
-    .article__share {
-      margin-top: 15px;
-      margin-bottom: 15px;
-    }
   }
 
   // This was in the original Starter Kit styles.scss but prevents
@@ -91,15 +86,6 @@ body {
   //     }
   //   }
   // }
-}
-
-/* Hide whatsapp share button on desktop */
-.article__share {
-  @include oGridRespondTo(S) {
-    .o-share__icon--whatsapp {
-      display: none;
-    }
-  }
 }
 
 .graphic {
