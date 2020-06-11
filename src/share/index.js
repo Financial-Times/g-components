@@ -62,7 +62,7 @@ const Share = ({
       >
         <ul>
           {services.map(({ name, link }) => (
-            <li className="o-share__action">
+            <li key={name} className="o-share__action">
               <a
                 className={`o-share__icon o-share__icon--${name.toLowerCase()}`}
                 href={link}
