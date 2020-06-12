@@ -28,7 +28,7 @@ const BigTopper = ({
 
   return (
     <div className="big-topper">
-      {flags.mainImage && mainImage && (mainImage.url || mainImage.uuid) && (
+      {flags.mainImage && (mainImage.url || mainImage.uuid) && (
         <figure className="graphic graphic-b-1 graphic-pad-1">
           <img alt={mainImage.description} src={getMainImage(mainImage)} />
           <figcaption className="o-typography-caption">

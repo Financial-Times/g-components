@@ -32,7 +32,7 @@ export const mainImagePropType = PropTypes.oneOfType([
   PropTypes.shape({
     url: PropTypes.string.isRequired,
   }),
-]);
+]).isRequired;
 
 export const trackingPropType = PropTypes.shape({
   micrositeName: PropTypes.string,
