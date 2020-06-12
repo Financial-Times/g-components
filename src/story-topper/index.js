@@ -5,7 +5,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GridChild, GridRow, GridContainer } from '../grid';
 import Share from '../share';
 import Bylines from '../bylines';
 import { getMainImage } from '../shared/helpers';
