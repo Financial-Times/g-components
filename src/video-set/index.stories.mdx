@@ -1,7 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import VideoSet from './';
 
-<Meta title="Core|Video Set" />
+<Meta title="Core|Video Set" parameters={{ chromatic: { disable: true } }} />
 
 # Video set
 
@@ -9,8 +9,10 @@ Component for displaying different videos at different breakpoints.
 
 Breakpoints are the S, M and L [Origami o-grid](https://github.com/Financial-Times/o-grid) breakpoints.
 
+_Chromatic testing is disabled because the renderer won't show videos._
+
 <Preview>
-  <Story name="Basic">
+  <Story name="Example">
     <VideoSet
       alt="Demo video set video"
       sources={{

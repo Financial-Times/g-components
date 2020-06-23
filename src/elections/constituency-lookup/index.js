@@ -3,10 +3,10 @@
  * UK constituency lookup component
  */
 
-import React, { useEffect, useMemo } from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
-import AutosuggestSearch from '../../autosuggest-search';
 import { uk } from '@financial-times/politics';
+import AutosuggestSearch from '../../autosuggest-search';
 import {
   getConstituencyIdFromPostcode,
   findMatch,
@@ -76,41 +76,40 @@ const ConstituencyLookup = ({
     const minimumInputLength = 2;
     if (inputLength < minimumInputLength) {
       return [];
-    } else {
-      const scoredList = formattedConstituencyList.map(({ display, words, ...d }) => {
-        const scores = words.reduce((acc, word) => {
-          const match = inputValueWords.find(
-            inputValueWord => word.toLowerCase().slice(0, inputValueWord.length) === inputValueWord,
-          );
-          return [
-            ...acc,
-            {
-              matchLength: match ? match.length : 0,
-              wordLength: word.length,
-              pcMatch: match ? match.length / word.length : 0,
-            },
-          ];
-        }, []);
-
-        const score = scores.reduce((acc, { matchLength, pcMatch }) => acc + matchLength, 0);
-
-        return {
-          display,
-          ...d,
-          score,
-        };
-      });
-
-      return scoredList.filter(d => d.score > minimumInputLength).sort((a, b) => b.score - a.score);
     }
+    const scoredList = formattedConstituencyList.map(({ display, words, ...d }) => {
+      const scores = words.reduce((acc, word) => {
+        const match = inputValueWords.find(
+          (inputValueWord) => word.toLowerCase().slice(0, inputValueWord.length) === inputValueWord,
+        );
+        return [
+          ...acc,
+          {
+            matchLength: match ? match.length : 0,
+            wordLength: word.length,
+            pcMatch: match ? match.length / word.length : 0,
+          },
+        ];
+      }, []);
+
+      const score = scores.reduce((acc, { matchLength, pcMatch }) => acc + matchLength, 0);
+
+      return {
+        display,
+        ...d,
+        score,
+      };
+    });
+
+    return scoredList.filter((d) => d.score > minimumInputLength).sort((a, b) => b.score - a.score);
   };
 
-  const onSelectCallback = suggestion => {
+  const onSelectCallback = (suggestion) => {
     const { value } = suggestion;
     setOpenConstituency(value);
   };
 
-  const onSubmitCallback = async searchValue => {
+  const onSubmitCallback = async (searchValue) => {
     const constituencyMatch = findMatch(formattedConstituencyList, searchValue);
     if (constituencyMatch) {
       const { value } = constituencyMatch;
@@ -126,7 +125,7 @@ const ConstituencyLookup = ({
     return { isError: false, errorMessage: '' };
   };
 
-  const validateInput = input => {
+  const validateInput = (input) => {
     if (input === '' || (!findMatch(formattedConstituencyList, input) && !containsNumber(input))) {
       return { isError: true, errorMessage: 'No match found' };
     }
@@ -140,7 +139,7 @@ const ConstituencyLookup = ({
     <div className={className}>
       <AutosuggestSearch
         placeholder="Search"
-        width={'100%'}
+        width="100%"
         searchList={formattedConstituencyList}
         onSelectCallback={onSelectCallback}
         onSubmitCallback={onSubmitCallback}

@@ -29,11 +29,11 @@ export const parties = [
 
 <Preview>
   <Story name="getPartyInfo(party: string)">
-    <div>
-      {parties.map(p => {
+    <>
+      {parties.map((p) => {
         const { color, shortName, formattedName } = getPartyInfo(p);
         return (
-          <div>
+          <div key={shortName}>
             <div style={{ height: 20, width: 20, backgroundColor: color }} />
             <div>
               <strong>shortName: </strong>
@@ -47,6 +47,6 @@ export const parties = [
           </div>
         );
       })}
-    </div>
+    </>
   </Story>
 </Preview>

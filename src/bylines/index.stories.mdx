@@ -1,65 +1,64 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import Bylines from './';
 
-<Meta title="Core|Bylines" component={Bylines} />
+<Meta title="Core|Bylines" component={Bylines} parameters={{ chromatic: { disable: true } }} />
 
 # Bylines component
 
-<Preview>
-  <Story name="Basic">
-    <Bylines names="FT reporters" date="2020-05-07T00:00:00" />
-  </Story>
-</Preview>
+This will render bylines in FT style.
 
-
-## Two names with URLs and locations
+It requires a `names` or `date` prop to render; otherwise it displays nothing.
 
 <Preview>
-  <Story name="Dual">
-    <Bylines names={[{ name: 'Max Harlow', url: 'https://ft.com/max-harlow' }, { name: 'Hax Marlow', location: 'San Serriffe' }]} date="2020-05-07T00:00:00" />
-  </Story>
-</Preview>
-
-If there's more than two it only uses 'and' before the last:
-
-<Preview>
-  <Story name="Multiple">
-    <Bylines names={[{ name: 'Max Harlow', url: 'https://ft.com/max-harlow' }, { name: 'Hax Marlow', location: 'San Serriffe' }, { name: 'Someone Else' }]} date="2020-05-07T00:00:00" />
-  </Story>
-</Preview>
-
-
-## Without a date
-
-<Preview>
-  <Story name="Undated">
-    <Bylines names="Max Harlow" />
-  </Story>
-</Preview>
-
-
-## Without a name
-
-<Preview>
-  <Story name="Unnamed">
-    <Bylines date="2020-05-07T00:00:00" />
-  </Story>
-</Preview>
-
-
-## With prefix and date at start
-
-<Preview>
-  <Story name="Date at start">
-    <Bylines prefix="Updated" names={[{ name: 'FT Visual & Data Journalism team', url: 'https://www.ft.com/visual-and-data-journalism' }]} date="2020-05-07T00:00:00" dateFirst />
-  </Story>
-</Preview>
-
-
-## Renders nothing if you pass it nothing
-
-<Preview>
-  <Story name="Empty">
-    <Bylines />
+  <Story name="Examples">
+    <>
+      Basic:
+      <div>
+        <Bylines names="FT reporters" date="2020-05-07T00:00:00" />
+      </div>
+      Two names with URLs and locations:
+      <div>
+        <Bylines
+          names={[
+            { name: 'Max Harlow', url: 'https://ft.com/max-harlow' },
+            { name: 'Hax Marlow', location: 'San Serriffe' },
+          ]}
+          date="2020-05-07T00:00:00"
+        />
+      </div>
+      If there's more than two it only uses 'and' before the last:
+      <div>
+        <Bylines
+          names={[
+            { name: 'Max Harlow', url: 'https://ft.com/max-harlow' },
+            { name: 'Hax Marlow', location: 'San Serriffe' },
+            { name: 'Someone Else' },
+          ]}
+          date="2020-05-07T00:00:00"
+        />
+      </div>
+      Without a date:
+      <div>
+        <Bylines names="Max Harlow" />
+      </div>
+      Without a name:
+      <div>
+        <Bylines date="2020-05-07T00:00:00" />
+      </div>
+      With prefix and date at start:
+      <div>
+        <Bylines
+          prefix="Updated"
+          names={[
+            {
+              name: 'FT Visual & Data Journalism team',
+              url: 'https://www.ft.com/visual-and-data-journalism',
+            },
+          ]}
+          date="2020-05-07T00:00:00"
+          dateFirst
+        />
+      </div>
+    </>
   </Story>
 </Preview>

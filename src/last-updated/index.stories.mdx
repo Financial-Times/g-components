@@ -5,65 +5,41 @@ import LastUpdated from './';
 
 # Last Updated component
 
-<Preview>
-  <Story name="Standard">
-    <LastUpdated date={new Date('1987-01-05T00:00:00.00')} />
-  </Story>
-</Preview>
+Shows when story was last updated. It has three variants:
 
-With dot:
+- Basic
+- Dot (ongoing story)
+- Live (ongoing liveblog story)
 
-<Preview>
-  <Story name="Standard, dot">
-    <LastUpdated dot date={new Date('1987-01-05T00:00:00.00')} />
-  </Story>
-</Preview>
-
-Only dot:
+If you don't provide a date, you won't see anything.
 
 <Preview>
-  <Story name="Standard, dot without date">
-    <LastUpdated dot />
-  </Story>
-</Preview>
-
-If you don't provide a date, you won't see anything:
-
-<Preview>
-  <Story name="Standard, without date">
-    <LastUpdated />
-  </Story>
-</Preview>
-
-
-The live version has a red background:
-
-<Preview>
-  <Story name="Live">
-    <LastUpdated live date={new Date('1987-01-05T00:00:00.00')} />
-  </Story>
-</Preview>
-
-Live, with dot:
-
-<Preview>
-  <Story name="Live, dot">
-    <LastUpdated live dot date={new Date('1987-01-05T00:00:00.00')} />
-  </Story>
-</Preview>
-
-Live, only dot:
-
-<Preview>
-  <Story name="Live, dot without date">
-    <LastUpdated live dot />
-  </Story>
-</Preview>
-
-Live, without a date provided:
-
-<Preview>
-  <Story name="Live, without date">
-    <LastUpdated live />
+  <Story name="Examples">
+    <>
+      Basic:
+      <div>
+        <LastUpdated date={new Date('1987-01-05T00:00:00.00')} />
+      </div>
+      With dot:
+      <div>
+        <LastUpdated dot />
+        <br />
+        <LastUpdated dot date={new Date('1987-01-05T00:00:00.00')} />
+        <br />
+        <LastUpdated dot live />
+        <br />
+        <LastUpdated dot live date={new Date('1987-01-05T00:00:00.00')} />
+      </div>
+      Live:
+      <div>
+        <LastUpdated live />
+        <br />
+        <LastUpdated live date={new Date('1987-01-05T00:00:00.00')} />
+        <br />
+        <LastUpdated live dot />
+        <br />
+        <LastUpdated live dot date={new Date('1987-01-05T00:00:00.00')} />
+      </div>
+    </>
   </Story>
 </Preview>

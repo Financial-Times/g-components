@@ -3,9 +3,9 @@
  * Util functions for UK elections
  */
 
-import removeAccents from 'remove-accents';
+export { default as removeAccents } from 'remove-accents';
 
-export const numberWithCommas = x => {
+export const numberWithCommas = (x) => {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 };
 

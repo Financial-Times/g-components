@@ -48,7 +48,8 @@ export const DEFAULTS = {
 export const ExampleBackground = ({ page }) => (
   <div
     style={{
-      backgroundImage: 'url(https://placeimg.com/640/480/any)',
+      backgroundImage:
+        'url(https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2Fc2b95004-9257-4657-be7d-3ed5e20fe72a.jpg?source=g-components)',
       backgroundSize: 'cover',
       flex: 1,
       filter: page > 0 && 'blur(8px)',
@@ -66,12 +67,10 @@ export const ExampleForeground = ({ page }) => (
 
 # Feature Layout component
 
-`<Feature />` is a type of layout that enables a
-carousel-esque experience on desktop and a paged
-layout on mobile.
+`<Feature />` is a type of layout that enables a carousel-esque experience on desktop and a paged layout on mobile.
 
 <Preview>
-  <Story name="Basic">
+  <Story name="Example">
     <Feature {...DEFAULTS} background={ExampleBackground} foreground={ExampleForeground}>
       <div>
         <h1>Slide 1!</h1>

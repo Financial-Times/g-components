@@ -6,38 +6,24 @@ import Share from './';
 # Share component
 
 <Preview>
-  <Story name="Basic">
-    <Share
-      text="My favourite website"
-      url="https://www.ft.com/visual-and-data-journalism"
-    />
-  </Story>
-</Preview>
-
-
-## Separated
-
-<Preview>
-  <Story name="Separated">
-    <Share
-      text="My favourite website"
-      url="https://www.ft.com/visual-and-data-journalism"
-      separated
-    />
-  </Story>
-</Preview>
-
-
-## Dark mode
-
-(the icons are white)
-
-<Preview>
-  <Story name="Dark mode">
-    <Share
-      text="My favourite website"
-      url="https://www.ft.com/visual-and-data-journalism"
-      dark
-    />
+  <Story name="Examples">
+    <>
+      Default:
+      <Share text="My favourite website" url="https://www.ft.com/visual-and-data-journalism" />
+      Separated:
+      <Share
+        text="My favourite website"
+        url="https://www.ft.com/visual-and-data-journalism"
+        separated
+      />
+      Dark (white icons):
+      <div className="dark">
+        <Share
+          text="My favourite website"
+          url="https://www.ft.com/visual-and-data-journalism"
+          dark
+        />
+      </div>
+    </>
   </Story>
 </Preview>

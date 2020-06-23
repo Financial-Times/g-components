@@ -47,38 +47,29 @@ export const resultsEndFormatted = formatResultsData(
 
 # Seats Bar Chart component
 
-### Start
+Shows the seat distribution in Parliament.
 
 <Preview>
-  <Story name="Basic (start)">
-    <SeatsBarChart
-      tableHeaders={['Party', 'Seats', '% of vote']}
-      data={resultsStartFormatted}
-      majority={320}
-    />
-  </Story>
-</Preview>
-
-### Middle
-
-<Preview>
-  <Story name="Basic (middle)">
-    <SeatsBarChart
-      tableHeaders={['Party', 'Seats', '% of vote']}
-      data={resultsMiddleFormatted}
-      majority={320}
-    />
-  </Story>
-</Preview>
-
-### End
-
-<Preview>
-  <Story name="Basic (end)">
-    <SeatsBarChart
-      tableHeaders={['Party', 'Seats', '% of vote']}
-      data={resultsEndFormatted}
-      majority={320}
-    />
+  <Story name="Examples">
+    <>
+      At start of vote count:
+      <SeatsBarChart
+        tableHeaders={['Party', 'Seats', '% of vote']}
+        data={resultsStartFormatted}
+        majority={320}
+      />
+      Mid-count:
+      <SeatsBarChart
+        tableHeaders={['Party', 'Seats', '% of vote']}
+        data={resultsMiddleFormatted}
+        majority={320}
+      />
+      Final result:
+      <SeatsBarChart
+        tableHeaders={['Party', 'Seats', '% of vote']}
+        data={resultsEndFormatted}
+        majority={320}
+      />
+    </>
   </Story>
 </Preview>

@@ -8,24 +8,25 @@ import ListCard from './';
 This allows the creation of lists, much like the
 deprecated "Latest Changes" Rich Journalism component.
 
-<Preview>
-  <Story name="Basic">
-    <ListCard title="Yay">{['One!', 'Two!']}</ListCard>
-  </Story>
-</Preview>
+You can provide an array as children:
 
 <Preview>
-  <Story name="Changelog example">
-    <ListCard title="Latest Changes">
-      <span>
-        <strong>April 26:</strong> Streamgraph changes...
-      </span>
-      <span>
-        <strong>April 9:</strong> Map changes...
-      </span>
-      <span>
-        <strong>April 8:</strong> Data changes...
-      </span>
-    </ListCard>
+  <Story name="Examples">
+    <>
+      Basic, with <code>string[]</code> as child:
+      <ListCard title="Yay">{['One!', 'Two!']}</ListCard>
+      You can also supply arbitrary elements; each child will be wrapped with <code>{`li`}</code>:
+      <ListCard title="Latest Changes">
+        <span>
+          <strong>April 26:</strong> Streamgraph changes...
+        </span>
+        <span>
+          <strong>April 9:</strong> Map changes...
+        </span>
+        <span>
+          <strong>April 8:</strong> Data changes...
+        </span>
+      </ListCard>
+    </>
   </Story>
 </Preview>

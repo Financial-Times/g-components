@@ -2,7 +2,7 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import Observer from 'react-scroll-percentage';
 import Sticky from './';
 
-<Meta title="Core|Sticky" component={Sticky} />
+<Meta title="Core|Sticky" component={Sticky} parameters={{ chromatic: { disable: true } }} />
 
 # Sticky component
 
@@ -24,10 +24,12 @@ takes two props, each of which is an element-returning function:
   - \`inView\` is whether the container is in the viewport
   - \`current\` is the label currently set by the article in terms of what's visible
 
-See the "complex case" story for how to use updateGraphic
+See the "complex case" story for how to use updateGraphic.
+
+_Note: Chromatic snapshotting disabled due to indeterminism._
 
 <Preview>
-  <Story name="Basic">
+  <Story name="Basic example">
     <div
       style={{
         backgroundColor: 'rgba(155, 155, 155, 0.7)',
@@ -151,7 +153,7 @@ See the "complex case" story for how to use updateGraphic
 </Preview>
 
 <Preview>
-  <Story name="Complex case">
+  <Story name="Complex example">
     <div
       style={{
         backgroundColor: 'rgba(155, 155, 155, 0.7)',

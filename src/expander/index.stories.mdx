@@ -8,27 +8,26 @@ import Expander from './';
 Allows collapsible content regions
 
 <Preview>
-  <Story name="basic with one child">
-    <Expander>
-      <ul>
+  <Story name="Examples">
+    <>
+      Basic with one child:
+      <Expander>
+        <ul>
+          {Array(50)
+            .fill(null)
+            .map((_, idx) => (
+              <li key={idx}>{idx}</li>
+            ))}
+        </ul>
+      </Expander>
+      Basic with multiple children:
+      <Expander>
         {Array(50)
           .fill(null)
           .map((_, idx) => (
-            <li key={idx}>{idx}</li>
+            <div key={idx}>{idx}</div>
           ))}
-      </ul>
-    </Expander>
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="basic with multiple children">
-    <Expander>
-      {Array(50)
-        .fill(null)
-        .map((_, idx) => (
-          <div key={idx}>{idx}</div>
-        ))}
-    </Expander>
+      </Expander>
+    </>
   </Story>
 </Preview>

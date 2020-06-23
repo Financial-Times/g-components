@@ -9,7 +9,6 @@ import { flagsPropType, StringBoolPropType } from '../shared/proptypes';
 import Header from '../header';
 import Analytics from '../analytics';
 import { TopAd } from '../ads';
-import Epilogue from '../epilogue';
 import OnwardJourney from '../onwardjourney';
 import Comments from '../comments';
 import Footer from '../footer';
@@ -51,6 +50,7 @@ ArticleLayout.propTypes = {
     gptZone: StringBoolPropType.isRequired,
     targeting: StringBoolPropType.isRequired,
   }),
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
 };
 
 ArticleLayout.defaultProps = {

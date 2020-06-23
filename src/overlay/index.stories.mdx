@@ -2,7 +2,7 @@ import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { withKnobs, boolean } from '@storybook/addon-knobs';
 import Overlay from './';
 
-export const defaultProps = isShowing => ({
+export const defaultProps = (isShowing) => ({
   isShowing: boolean('Toggle overlay', isShowing),
 });
 
@@ -11,7 +11,7 @@ export const defaultProps = isShowing => ({
 # Overlay component
 
 <Preview>
-  <Story name="Basic">
+  <Story name="Example">
     <div>
       Use the Knobs toggle to show overlay
       <Overlay {...defaultProps(false)}>Overlay content</Overlay>

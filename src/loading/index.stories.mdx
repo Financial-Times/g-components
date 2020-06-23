@@ -5,38 +5,28 @@ import Loading from './';
 
 # Loading component
 
-Spinner for loading. Uses o-loading@^2.
+Spinner for loading. Uses o-loading. The default size is `small`
+and the default theme is `dark`.
 
 <Preview>
-  <Story name="Basic with no props">
-    <Loading />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Basic with light theme">
-    <div style={{ background: '#262a33' }}>
-      <Loading theme="light" />
-    </div>
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="All sizes with dark theme">
-    <div>
-      <Loading size="small" />
-      <Loading size="medium" />
-      <Loading size="large" />
-    </div>
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="All sizes with light theme">
-    <div style={{ background: '#262a33' }}>
-      <Loading theme="light" size="small" />
-      <Loading theme="light" size="medium" />
-      <Loading theme="light" size="large" />
-    </div>
+  <Story name="Examples">
+    <>
+      Default, without props:
+      <div>
+        <Loading />
+      </div>
+      Dark variant:
+      <div>
+        <Loading size="small" />
+        <Loading size="medium" />
+        <Loading size="large" />
+      </div>
+      Light variant:
+      <div style={{ background: '#262a33' }}>
+        <Loading theme="light" size="small" />
+        <Loading theme="light" size="medium" />
+        <Loading theme="light" size="large" />
+      </div>
+    </>
   </Story>
 </Preview>

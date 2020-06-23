@@ -29,60 +29,31 @@ export const basicRows = [
 # Table component
 
 <Preview>
-  <Story name="Basic">
-    <DataTable headers={basicHeaders} rows={basicRows} />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Basic (horizontally lined)">
-    <DataTable headers={basicHeaders} rows={basicRows} isLinedHorizontal={true} />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Basic (striped)">
-    <DataTable headers={basicHeaders} rows={basicRows} isStriped={true} />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Compact">
-    <DataTable headers={basicHeaders} rows={basicRows} isCompact={true} />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="With caption and footnote">
-    <DataTable
-      captionTop={'captionTop'}
-      captionBottom={'captionBottom'}
-      headers={basicHeaders}
-      rows={basicRows}
-    />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Responsive overflow">
-    <DataTable headers={basicHeaders} rows={basicRows} responsive="overflow" />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Responsive scroll">
-    <DataTable headers={basicHeaders} rows={basicRows} responsive="scroll" />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Responsive flat">
-    <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" />
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Sorting disabled">
-    <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" isSortable={false} />
+  <Story name="Examples">
+    <>
+      Basic:
+      <DataTable headers={basicHeaders} rows={basicRows} />
+      Basic (horizontally lined):
+      <DataTable headers={basicHeaders} rows={basicRows} isLinedHorizontal={true} />
+      Basic (striped):
+      <DataTable headers={basicHeaders} rows={basicRows} isStriped={true} />
+      Compact:
+      <DataTable headers={basicHeaders} rows={basicRows} isCompact={true} />
+      With caption and footnote:
+      <DataTable
+        captionTop={'captionTop'}
+        captionBottom={'captionBottom'}
+        headers={basicHeaders}
+        rows={basicRows}
+      />
+      Responsive overflow:
+      <DataTable headers={basicHeaders} rows={basicRows} responsive="overflow" />
+      Responsive scroll:
+      <DataTable headers={basicHeaders} rows={basicRows} responsive="scroll" />
+      Responsive flat:
+      <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" />
+      Sorting disabled:
+      <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" isSortable={false} />
+    </>
   </Story>
 </Preview>

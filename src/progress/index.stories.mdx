@@ -7,35 +7,39 @@ import Progress from './';
 # Progress bar component
 
 N.b., this is intended for the Feature layout style.
+
 It does not currently mirror `o-stepped-progress`.
-It takes one prop, `value`, which is a number between 0 and 1.
+
+If `value` is provided (decimal number between 0 and 1), that percentage
+will be used.
+
+If `steps` is provided, it will be a stepped progresss bar.
 
 <Preview>
-  <Story name="Basic progress bars">
-    <div className="dark" style={{ color: 'white' }}>
-      <h3>0%</h3>
-      <Progress value={0} />
-      <h3>30%</h3>
-      <Progress value={0.3} />
-      <h3>60%</h3>
-      <Progress value={0.6} />
-      <h3>100%</h3>
-      <Progress value={1} />
-    </div>
-  </Story>
-</Preview>
-
-<Preview>
-  <Story name="Progress bars with steps > 1">
-    <div className="dark" style={{ color: 'white' }}>
-      <h3>0%</h3>
-      <Progress value={0} steps={4} />
-      <h3>30%</h3>
-      <Progress value={0.3} steps={10} />
-      <h3>60%</h3>
-      <Progress value={0.6} steps={2} />
-      <h3>100%</h3>
-      <Progress value={1} steps={50} />
-    </div>
+  <Story name="Examples">
+    <>
+      Percentage:
+      <div className="dark" style={{ color: 'white' }}>
+        <h3>0%</h3>
+        <Progress value={0} />
+        <h3>30%</h3>
+        <Progress value={0.3} />
+        <h3>60%</h3>
+        <Progress value={0.6} />
+        <h3>100%</h3>
+        <Progress value={1} />
+      </div>
+      Stepped:
+      <div className="dark" style={{ color: 'white' }}>
+        <h3>0%</h3>
+        <Progress value={0} steps={4} />
+        <h3>30%</h3>
+        <Progress value={0.3} steps={10} />
+        <h3>60%</h3>
+        <Progress value={0.6} steps={2} />
+        <h3>100%</h3>
+        <Progress value={1} steps={50} />
+      </div>
+    </>
   </Story>
 </Preview>
