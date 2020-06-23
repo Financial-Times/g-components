@@ -8,11 +8,7 @@ import PropTypes from 'prop-types';
 import './styles.scss';
 
 const Accordion = ({ children }) => {
-  return (
-    <div className="g-accordion">
-      {children}
-    </div>
-  );
+  return <div className="g-accordion">{children}</div>;
 };
 
 const AccordionSection = ({ isExpanded = false, children: [title, ...body] }) => {
@@ -20,13 +16,15 @@ const AccordionSection = ({ isExpanded = false, children: [title, ...body] }) =>
   return (
     <div className="g-accordion-section">
       <button
-        className={`g-accordion-section__header ${expanded ? 'g-accordion-section__header--expanded' : ''}`}
+        className={`g-accordion-section__header ${
+          expanded ? 'g-accordion-section__header--expanded' : ''
+        }`}
         ariaExpanded={expanded}
         onClick={() => setExpanded(!expanded)}
       >
         {title}
       </button>
-      {expanded && (<div className="g-accordion-section__body">{body}</div>)}
+      {expanded && <div className="g-accordion-section__body">{body}</div>}
     </div>
   );
 };
@@ -38,8 +36,12 @@ Accordion.propTypes = {
 Accordion.displayName = 'GAccordion';
 
 AccordionSection.propTypes = {
-  isExpanded: PropTypes.boolean,
+  isExpanded: PropTypes.bool,
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
+};
+
+AccordionSection.defaultProps = {
+  isExpanded: false,
 };
 
 AccordionSection.displayName = 'GAccordionSection';
