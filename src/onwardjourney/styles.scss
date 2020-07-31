@@ -3,7 +3,25 @@ $o-teaser-is-silent: false;
 @import '../shared/_globals.scss';
 @import 'o-teaser/main';
 
+.onward-journey .o-teaser a {
+  border-bottom: none;
+}
+
 .onward-journey__link {
-  color: #333;
+  color: #33302e;
   text-decoration: none;
+
+  h3 {
+    font-weight: 600;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 60px;
+      margin-top: 5px;
+      border-bottom: 4px solid #000;
+      position: absolute;
+      z-index: 1;
+    }
+  }
 }
