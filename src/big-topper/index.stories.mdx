@@ -27,10 +27,11 @@ export const props = {
   },
   bylines: [
     { name: 'Person One', url: 'https://www.ft.com/' },
-    { name: 'Person Two', url: 'https://www.ft.com/' }
+    { name: 'Person Two', url: 'https://www.ft.com/' },
   ],
   mainImage: {
-    url: 'https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8408723765-2qw52.png?source=ig'
+    url:
+      'https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8408723765-2qw52.png?source=ig',
   },
   headline: 'This is a headline',
   title: 'This is a title',
@@ -39,12 +40,12 @@ export const props = {
   buildTime: new Date('2018-07-25T17:43:37.00Z').toISOString(),
 };
 
-<Meta title="Core|Big Topper" component={BigTopper} />
+<Meta title="Core/Big Topper" component={BigTopper} />
 
 # BigTopper component
 
 <Preview>
   <Story name="Basic">
-    <BigTopper {...props}/>
+    <BigTopper {...props} />
   </Story>
 </Preview>

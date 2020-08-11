@@ -1,7 +1,7 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { Ad, TopAd, MiddleAd } from './';
 
-<Meta title="Core|Ads" />
+<Meta title="Core/Ads" />
 
 # Ads component
 
@@ -12,6 +12,7 @@ Related files/configs for ads are also found in `useAds` in `shared/hooks.js` (s
 There are several ad types:
 
 ### Generic ad
+
 <Preview>
   <Story name="GenericAd" parameters={{ chromatic: { disable: true } }}>
     <Ad
@@ -28,17 +29,15 @@ There are several ad types:
 </Preview>
 
 ### Generic ad on slate
+
 <Preview>
   <Story name="GenericAdSlate" parameters={{ chromatic: { disable: true } }}>
-    <Ad
-      name="generic-ad"
-      targeting="pos=top;version=1"
-      background="slate"
-    />
+    <Ad name="generic-ad" targeting="pos=top;version=1" background="slate" />
   </Story>
 </Preview>
 
 ### Top ad
+
 <Preview>
   <Story name="TopAd" parameters={{ chromatic: { disable: true } }}>
     <TopAd />
@@ -46,6 +45,7 @@ There are several ad types:
 </Preview>
 
 ### MPU (mid-page unit) ad
+
 <Preview>
   <Story name="MiddleAd" parameters={{ chromatic: { disable: true } }}>
     <MiddleAd />
