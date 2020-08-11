@@ -20,7 +20,7 @@ import { isElement, registerLayoutChangeEvents, unregisterLayoutChangeEvents } f
  *
  * Modified from: https://www.jayfreestone.com/writing/react-portals-with-hooks/
  */
-export const usePortal = parent => {
+export const usePortal = (parent) => {
   const rootRef = useRef(null);
 
   useEffect(() => {
@@ -121,7 +121,7 @@ export const useLayoutChangeEvents = () => {
  * @file
  * Sets up global keyboard shortcuts
  */
-export const useKeyboardShortcuts = shortcuts => {
+export const useKeyboardShortcuts = (shortcuts) => {
   const handlers = useRef(null);
   useEffect(() => {
     handlers.current = shortcuts;

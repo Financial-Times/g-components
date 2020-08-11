@@ -7,6 +7,32 @@
   "keywords": [],
   "author": "Ændrew Rininsland <andrew.rininsland@ft.com",
   "license": "ISC",
+  "jest": {
+    "verbose": true,
+    "transform": {
+      "^.+\\.[tj]sx?$": "babel-jest",
+      "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
+    }
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          [
+            "@babel/preset-env",
+            {
+              "targets": {
+                "node": "current"
+              },
+              "useBuiltIns": "usage",
+              "corejs": 3
+            }
+          ],
+          "@babel/preset-react"
+        ]
+      }
+    }
+  },
   "peerDependencies": {
     "prop-types": "^15.6.2",
     "react": "^16.13.1",
@@ -38,6 +64,7 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "classnames": "^2.2.6",
+    "ftdomdelegate": "^4.0.5",
     "prop-types": "^15.7.2",
     "react-autosuggest": "^9.4.3",
     "react-scroll-percentage": "^2.0.0",
@@ -45,7 +72,7 @@
     "remove-markdown": "^0.3.0"
   },
   "scripts": {
-    "test": "react-app-rewired test",
+    "test": "jest",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
     "chromatic": "chromatic"
@@ -54,9 +81,6 @@
     "extends": "react-app"
   },
   "devDependencies": {
-    "jest-raw-loader": "^1.0.1",
-    "node-sass": "^4.14.1",
-    "react-scripts": "3.4.1",
     "@storybook/addon-a11y": "^6.0.2",
     "@storybook/addon-actions": "^6.0.2",
     "@storybook/addon-docs": "^6.0.2",
@@ -78,8 +102,10 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^2.5.0",
     "jest-fetch-mock": "^3.0.3",
+    "jest-raw-loader": "^1.0.1",
+    "node-sass": "^4.14.1",
     "prettier": "^2.0.5",
-    "react-app-rewired": "^2.1.6",
+    "react-scripts": "^3.4.2",
     "react-test-renderer": "^16.13.1"
   },
   "exports": {

@@ -1,220 +1,1344 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Button Emoji 1`] = `
-<button
-  onClick={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "border": "1px solid #eee",
-      "borderRadius": 3,
-      "cursor": "pointer",
-      "fontSize": 15,
-      "margin": 10,
-      "padding": "3px 10px",
-    }
-  }
-  type="button"
+exports[`Storyshots Core/DateTime Examples 1`] = `
+<time
+  className="o-date"
+  data-o-component="o-date"
+  dateTime="2019-01-31T00:00:00.000Z"
 >
-  <span
-    aria-label="so cool"
-    role="img"
+  0 seconds ago
+</time>
+`;
+
+exports[`Storyshots Core/Grid/Grid Default grid 1`] = `
+Array [
+  <div
+    className="o-grid-container"
   >
-    😀 😎 👍 💯
-  </span>
-</button>
-`;
-
-exports[`Storyshots Button Text 1`] = `
-<button
-  onClick={[Function]}
-  style={
-    Object {
-      "backgroundColor": "#FFFFFF",
-      "border": "1px solid #eee",
-      "borderRadius": 3,
-      "cursor": "pointer",
-      "fontSize": 15,
-      "margin": 10,
-      "padding": "3px 10px",
-    }
-  }
-  type="button"
->
-  Hello Button
-</button>
-`;
-
-exports[`Storyshots Welcome to Storybook 1`] = `
-<article
-  style={
-    Object {
-      "backgroundColor": "#fff",
-      "color": "#000",
-      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
-      "lineHeight": 1.4,
-      "padding": 15,
-    }
-  }
->
-  <h1>
-    Welcome to storybook
-  </h1>
-  <p>
-    This is a UI component dev environment for your app.
-  </p>
-  <p>
-    We've added some basic stories inside the 
-    <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+    <div
+      className="o-grid-row"
     >
-      src/stories
-    </code>
-     directory.
-    <br />
-    A story is a single state of one or more UI components. You can have as many stories as you want.
-    <br />
-    (Basically a story is like a visual test case.)
-  </p>
-  <p>
-    See these sample 
-    <button
-      onClick={[Function]}
-      style={
-        Object {
-          "backgroundColor": "transparent",
-          "borderBottom": "1px solid #1474f3",
-          "borderLeft": "none",
-          "borderRight": "none",
-          "borderTop": "none",
-          "color": "#1474f3",
-          "cursor": "pointer",
-          "font": "inherit",
-          "padding": 0,
-          "paddingBottom": 2,
-          "textDecoration": "none",
-        }
-      }
-      type="button"
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="1"
+      >
+        <div
+          className="demo-cell"
+        >
+          1
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
     >
-      stories
-    </button>
-     for a component called 
-    <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+      <div
+        data-o-grid-colspan="2"
+      >
+        <div
+          className="demo-cell"
+        >
+          2
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="2"
+      >
+        <div
+          className="demo-cell"
+        >
+          2
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="2"
+      >
+        <div
+          className="demo-cell"
+        >
+          2
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="2"
+      >
+        <div
+          className="demo-cell"
+        >
+          2
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="2"
+      >
+        <div
+          className="demo-cell"
+        >
+          2
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="2"
+      >
+        <div
+          className="demo-cell"
+        >
+          2
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
     >
-      Button
-    </code>
-    .
-  </p>
-  <p>
-    Just like that, you can add your own components as stories.
-    <br />
-    You can also edit those components and see changes right away.
-    <br />
-    (Try editing the 
-    <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+      <div
+        data-o-grid-colspan="3"
+      >
+        <div
+          className="demo-cell"
+        >
+          3
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="3"
+      >
+        <div
+          className="demo-cell"
+        >
+          3
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="3"
+      >
+        <div
+          className="demo-cell"
+        >
+          3
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="3"
+      >
+        <div
+          className="demo-cell"
+        >
+          3
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
     >
-      Button
-    </code>
-     stories located at 
-    <code
-      style={
-        Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
-        }
-      }
+      <div
+        data-o-grid-colspan="4"
+      >
+        <div
+          className="demo-cell"
+        >
+          4
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="4"
+      >
+        <div
+          className="demo-cell"
+        >
+          4
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="4"
+      >
+        <div
+          className="demo-cell"
+        >
+          4
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row o-grid-row--compact"
     >
-      src/stories/1-Button.stories.js
-    </code>
-    .)
-  </p>
-  <p>
-    Usually we create stories with smaller UI components in the app.
-    <br />
-    Have a look at the 
-    <a
-      href="https://storybook.js.org/basics/writing-stories"
-      rel="noopener noreferrer"
-      style={
-        Object {
-          "borderBottom": "1px solid #1474f3",
-          "color": "#1474f3",
-          "paddingBottom": 2,
-          "textDecoration": "none",
-        }
-      }
-      target="_blank"
+      <div
+        data-o-grid-colspan="6"
+      >
+        <div
+          className="demo-cell"
+        >
+          6 (compact)
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="6"
+      >
+        <div
+          className="demo-cell"
+        >
+          6 (compact)
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
     >
-      Writing Stories
-    </a>
-     section in our documentation.
-  </p>
+      <div
+        data-o-grid-colspan="12"
+      >
+        <div
+          className="demo-cell"
+        >
+          12
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="8 S12 M8"
+      >
+        <div
+          className="demo-cell"
+        >
+          <span
+            data-demo-highlight="default"
+          >
+            8
+          </span>
+          <span
+            data-demo-highlight="S"
+          >
+            S12
+          </span>
+          <span
+            data-demo-highlight="M L XL"
+          >
+            M8
+          </span>
+          <div
+            className="o-grid-row"
+          >
+            <div
+              data-o-grid-colspan="6 S12 M6 XL3"
+            >
+              <div
+                className="demo-cell"
+              >
+                <span
+                  data-demo-highlight="default"
+                >
+                  6
+                </span>
+                <span
+                  data-demo-highlight="S"
+                >
+                  S12
+                </span>
+                <span
+                  data-demo-highlight="M L"
+                >
+                  M6
+                </span>
+                <span
+                  data-demo-highlight="XL"
+                >
+                  XL3
+                </span>
+              </div>
+            </div>
+            <div
+              data-o-grid-colspan="6 S12 M6 XL3"
+            >
+              <div
+                className="demo-cell"
+              >
+                <span
+                  data-demo-highlight="default"
+                >
+                  6
+                </span>
+                <span
+                  data-demo-highlight="S"
+                >
+                  S12
+                </span>
+                <span
+                  data-demo-highlight="M L"
+                >
+                  M6
+                </span>
+                <span
+                  data-demo-highlight="XL"
+                >
+                  XL3
+                </span>
+              </div>
+            </div>
+            <div
+              data-o-grid-colspan="6 S12 M6 XL3"
+            >
+              <div
+                className="demo-cell"
+              >
+                <span
+                  data-demo-highlight="default"
+                >
+                  6
+                </span>
+                <span
+                  data-demo-highlight="S"
+                >
+                  S12
+                </span>
+                <span
+                  data-demo-highlight="M L"
+                >
+                  M6
+                </span>
+                <span
+                  data-demo-highlight="XL"
+                >
+                  XL3
+                </span>
+              </div>
+            </div>
+            <div
+              data-o-grid-colspan="6 S12 M6 XL3"
+            >
+              <div
+                className="demo-cell"
+              >
+                <span
+                  data-demo-highlight="default"
+                >
+                  6
+                </span>
+                <span
+                  data-demo-highlight="S"
+                >
+                  S12
+                </span>
+                <span
+                  data-demo-highlight="M L"
+                >
+                  M6
+                </span>
+                <span
+                  data-demo-highlight="XL"
+                >
+                  XL3
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="4 S12 M4"
+      >
+        <div
+          className="demo-cell"
+        >
+          <span
+            data-demo-highlight="default"
+          >
+            4
+          </span>
+          <span
+            data-demo-highlight="S"
+          >
+            S12
+          </span>
+          <span
+            data-demo-highlight="M L XL"
+          >
+            M4
+          </span>
+          <div
+            className="o-grid-row"
+          >
+            <div
+              data-o-grid-colspan="12 L7 XL6"
+            >
+              <div
+                className="demo-cell"
+              >
+                <span
+                  data-demo-highlight="default S M"
+                >
+                  12
+                </span>
+                <span
+                  data-demo-highlight="L"
+                >
+                  L7
+                </span>
+                <span
+                  data-demo-highlight="XL"
+                >
+                  XL6
+                </span>
+              </div>
+            </div>
+            <div
+              data-o-grid-colspan="12 L5 XL6"
+            >
+              <div
+                className="demo-cell"
+              >
+                <span
+                  data-demo-highlight="default S M"
+                >
+                  12
+                </span>
+                <span
+                  data-demo-highlight="L"
+                >
+                  L5
+                </span>
+                <span
+                  data-demo-highlight="XL"
+                >
+                  XL6
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="one-half"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-half
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="one-quarter"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-quarter
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="one-quarter"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-quarter
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="one-third"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-third
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="two-thirds"
+      >
+        <div
+          className="demo-cell"
+        >
+          two-thirds
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="one-third push8"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-third push8 (first in source)
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="two-thirds pull4"
+      >
+        <div
+          className="demo-cell"
+        >
+          two-thirds pull4 (last in source)
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="one-third center"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-third center
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="one-half"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-half
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="one-quarter"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-quarter
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="one-quarter"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-quarter
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="one-quarter"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-quarter
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="one-quarter"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-quarter
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="one-third"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-third
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="one-third"
+      >
+        <div
+          className="demo-cell"
+        >
+          one-third
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="two-thirds"
+      >
+        <div
+          className="demo-cell"
+        >
+          two-thirds
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="full-width"
+      >
+        <div
+          className="demo-cell"
+        >
+          full-width
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="full-width"
+      >
+        <div
+          className="demo-cell"
+        >
+          full-width
+        </div>
+      </div>
+    </div>
+  </div>,
   <p
     style={
       Object {
-        "opacity": 0.5,
+        "textAlign": "center",
       }
     }
   >
-    <b>
-      NOTE:
-    </b>
-    <br />
-    Have a look at the 
-    <code
+    With container bleed:
+  </p>,
+  <div
+    className="o-grid-container  o-grid-container--bleed"
+  >
+    <div
+      className="o-grid-row"
+    >
+      <div
+        data-o-grid-colspan="6"
+      >
+        <div
+          class="demo-cell"
+        >
+          6
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="6"
+      >
+        <div
+          class="demo-cell"
+        >
+          6
+        </div>
+      </div>
+    </div>
+    <div
+      className="o-grid-row o-grid-row--compact"
+    >
+      <div
+        data-o-grid-colspan="6"
+      >
+        <div
+          class="demo-cell"
+        >
+          6 (compact)
+        </div>
+      </div>
+      <div
+        data-o-grid-colspan="6"
+      >
+        <div
+          class="demo-cell"
+        >
+          6 (compact)
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
+
+exports[`Storyshots Core/Grid/GridContainer Full bleed grid container 1`] = `
+<div
+  className="o-grid-container  o-grid-container--bleed"
+>
+  <div
+    className="o-grid-row"
+  >
+    <div
+      data-o-grid-colspan={6}
+    >
+      <div
+        className="demo-cell"
+      >
+        normal row
+      </div>
+    </div>
+    <div
+      data-o-grid-colspan={6}
+    >
+      <div
+        className="demo-cell"
+      >
+        normal row
+      </div>
+    </div>
+  </div>
+  <div
+    className="o-grid-row o-grid-row--compact"
+  >
+    <div
+      data-o-grid-colspan={6}
+    >
+      <div
+        className="demo-cell"
+      >
+        compact row
+      </div>
+    </div>
+    <div
+      data-o-grid-colspan={6}
+    >
+      <div
+        className="demo-cell"
+      >
+        compact row
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Core/Grid/GridContainer Snappy container 1`] = `
+<div
+  className="o-grid-container o-grid-container--snappy"
+>
+  <div
+    className="o-grid-row"
+  >
+    <div
+      data-o-grid-colspan={12}
+    >
+      <div
+        className="demo-cell"
+      >
+        <code>
+          .o-grid-snappy
+        </code>
+         Applied to parent of full-width row
+      </div>
+    </div>
+  </div>
+  <div
+    className="o-grid-row"
+  >
+    <div
+      data-o-grid-colspan={6}
+    >
+      <div
+        className="demo-cell"
+      >
+        <code>
+          .o-grid-snappy
+        </code>
+         Applied to parent
+      </div>
+    </div>
+    <div
+      data-o-grid-colspan={6}
+    >
+      <div
+        className="demo-cell"
+      >
+        <code>
+          .o-grid-snappy
+        </code>
+         Applied to parent
+      </div>
+    </div>
+  </div>
+  <div
+    className="o-grid-row"
+  >
+    <div
+      data-o-grid-colspan={6}
+    >
+      <div
+        className="demo-cell"
+      >
+        <code>
+          .o-grid-snappy
+        </code>
+         Applied to parent of solo row
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Core/Grid/GridRow Compact and gutterless columns 1`] = `
+<div
+  className="o-grid-container"
+>
+  <div
+    className="o-grid-row o-grid-row--compact"
+  >
+    <div
+      data-o-grid-colspan="6"
+    >
+      <div
+        className="demo-cell"
+      >
+        no gutters (applied using o-grid-row--compact)
+      </div>
+    </div>
+    <div
+      data-o-grid-colspan="6"
+    >
+      <div
+        className="demo-cell"
+      >
+        no gutters (applied using o-grid-row--compact)
+      </div>
+    </div>
+  </div>
+  <div
+    className="o-grid-row o-grid-row--compact"
+  >
+    <div
+      data-o-grid-colspan="6 push6"
+    >
+      <div
+        className="demo-cell"
+      >
+        First in source
+      </div>
+    </div>
+    <div
+      data-o-grid-colspan="6 pull6"
+    >
+      <div
+        className="demo-cell"
+      >
+        Last in source
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Core/Image Set Example 1`] = `
+Array [
+  <div>
+    Basic image set
+  </div>,
+  <div
+    className="g-imageset"
+  >
+    <figure>
+      <picture>
+        <source
+          media="screen and (max-width: 490px)"
+          srcSet="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F61b2c912-0d49-11ea-bb52-34c8d9dc6d84?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=490"
+        />
+        <source
+          media="screen and (min-width: 980px)"
+          srcSet="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F5c9b8478-0d49-11ea-bb52-34c8d9dc6d84?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=1260"
+        />
+        <img
+          alt="Demo image set"
+          srcSet="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F5f35b8b6-0d49-11ea-bb52-34c8d9dc6d84?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=700"
+        />
+      </picture>
+    </figure>
+  </div>,
+  <div>
+    Image set using SVGs, skipping the image service
+  </div>,
+  <div
+    className="g-imageset"
+  >
+    <figure>
+      <picture>
+        <source
+          media="screen and (max-width: 490px)"
+          srcSet="https://ig.ft.com/autograph/graphics/us-2020-polltracker.svg?frame=webS"
+        />
+        <source
+          media="screen and (min-width: 980px)"
+          srcSet="https://ig.ft.com/autograph/graphics/us-2020-polltracker.svg?frame=webM"
+        />
+        <img
+          alt="Demo image set"
+          srcSet="https://ig.ft.com/autograph/graphics/us-2020-polltracker.svg?frame=webM"
+        />
+      </picture>
+    </figure>
+  </div>,
+]
+`;
+
+exports[`Storyshots Elections/GE2019/Utilities getPartyInfo(party: string) 1`] = `
+Array [
+  <div>
+    <div
       style={
         Object {
-          "backgroundColor": "#f3f2f2",
-          "border": "1px solid #eae9e9",
-          "borderRadius": 4,
-          "color": "#3a3a3a",
-          "fontSize": 15,
-          "fontWeight": 600,
-          "padding": "2px 5px",
+          "backgroundColor": "#149adb",
+          "height": 20,
+          "width": 20,
         }
       }
-    >
-      .storybook/webpack.config.js
-    </code>
-     to add webpack loaders and plugins you are using in this project.
-  </p>
-</article>
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      Con
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Conservative
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#cf4d3c",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      Lab
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Labour
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#f09000",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      Lib Dem
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Liberal Democrats
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#8deb9d",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      Green
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Green
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#fc8b9d",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      TIGfC
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Independent Group for Change
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#80cfd6",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      Brexit
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Brexit party
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#7200ab",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      Ukip
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Ukip
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#990000",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      PC
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Plaid Cymru
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#ffdf00",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      SNP
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Scottish National party
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#210066",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      DUP
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Democratic Unionist party
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#006643",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      SF
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Sinn Féin
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#3f67cc",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      UUP
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Ulster Unionist party
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#5ba373",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      SDLP
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Social Democratic and Labour party
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#ffbe18",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      APNI
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Alliance party
+    </div>
+    <br />
+  </div>,
+  <div>
+    <div
+      style={
+        Object {
+          "backgroundColor": "#d9cace",
+          "height": 20,
+          "width": 20,
+        }
+      }
+    />
+    <div>
+      <strong>
+        shortName: 
+      </strong>
+      Ind
+    </div>
+    <div>
+      <strong>
+        formattedName: 
+      </strong>
+      Independent
+    </div>
+    <br />
+  </div>,
+]
 `;

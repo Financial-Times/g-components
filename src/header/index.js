@@ -14,7 +14,7 @@ const Header = ({ flags, ...props }) => {
   const { dark } = flags;
 
   const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
-    .filter(i => i)
+    .filter((i) => i)
     .join(' ');
 
   useEffect(() => {

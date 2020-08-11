@@ -43,14 +43,14 @@ export function getMainImage(img = {}) {
 
 // Via: https://reactjs.org/blog/2015/12/16/ismounted-antipattern.html
 
-export const makeCancelable = promise => {
+export const makeCancelable = (promise) => {
   let hasCanceled = false;
 
   const wrappedPromise = new Promise((resolve, reject) => {
     /* eslint-disable prefer-promise-reject-errors */
     promise.then(
-      val => (hasCanceled ? reject({ isCanceled: true }) : resolve(val)),
-      error => (hasCanceled ? reject({ isCanceled: true }) : reject(error)),
+      (val) => (hasCanceled ? reject({ isCanceled: true }) : resolve(val)),
+      (error) => (hasCanceled ? reject({ isCanceled: true }) : reject(error)),
     );
     /* eslint-enable */
   });
@@ -68,11 +68,11 @@ export const registerLayoutChangeEvents = () => {
   const { layouts } = getGridBreakpoints();
   if (layouts) {
     const breakpoints = new Map([...Object.entries(layouts), ['default', '240px']]);
-    const decr1 = val => `${Number(val.replace('px', '') - 1)}px`;
+    const decr1 = (val) => `${Number(val.replace('px', '') - 1)}px`;
 
     const setupQuery = (query, size) => {
       // matchMedia listener handler: Dispatch `o-grid.layoutChange` event if a match
-      const handleMQChange = mql => {
+      const handleMQChange = (mql) => {
         if (mql.matches) {
           window.dispatchEvent(
             new CustomEvent('o-grid.layoutChange', {
@@ -121,13 +121,13 @@ export const registerLayoutChangeEvents = () => {
   );
 };
 
-export const unregisterLayoutChangeEvents = listeners => {
+export const unregisterLayoutChangeEvents = (listeners) => {
   const { layouts } = getGridBreakpoints();
   if (layouts) {
     const breakpoints = new Map([...Object.entries(layouts), ['default', '240px']]);
-    const decr1 = val => `${Number(val.replace('px', '') - 1)}px`;
+    const decr1 = (val) => `${Number(val.replace('px', '') - 1)}px`;
 
-    const removeQuery = query => {
+    const removeQuery = (query) => {
       const [, listener] = listeners.find(([q]) => q === query);
       const mql = window.matchMedia(query);
       mql.removeListener(listener);

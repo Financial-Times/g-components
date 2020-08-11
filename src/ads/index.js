@@ -5,7 +5,6 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import OAds from '@financial-times/o-ads';
 import './styles.scss';
 
 export const Ad = ({
