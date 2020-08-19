@@ -138,7 +138,7 @@ const HtmlHead = ({
       )}
 
       {/* Add polyfill service */}
-      <script src={`https://cdn.polyfill.io/v2/polyfill.min.js?features=${polyfillFeatures}`} />
+      <script src={`https://cdn.polyfill.io/v3/polyfill.min.js?features=${polyfillFeatures}`} />
 
       {/* Add CTM checks */}
       <script
