@@ -268,7 +268,7 @@ HtmlHead.defaultProps = {
   tracking: {
     product: 'IG',
   },
-  polyfills: ['default', 'fetch'],
+  polyfills: ['default', 'fetch', 'es2019'],
 };
 
 HtmlHead.displayName = 'GHtmlHead';
