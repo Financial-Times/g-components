@@ -22,7 +22,7 @@
   "parser": "babel-eslint",
   "settings": {
     "import/resolver": {
-      "node": {
+      "node-browser": {
         "moduleDirectory": ["node_modules", "node_modules/@financial-times"]
       }
     }
