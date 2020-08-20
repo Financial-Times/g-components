@@ -42,9 +42,8 @@ const HtmlHead = ({
   twitterHeadline,
   twitterImage,
   url,
-  polyfills,
+  polyfillFeatures,
 }) => {
-  const polyfillFeatures = polyfills.join(',');
   const mainImageUrl = getMainImage(mainImage);
   const Tag = wrapWithHeadTags ? 'head' : Fragment;
 
@@ -138,7 +137,7 @@ const HtmlHead = ({
       )}
 
       {/* Add polyfill service */}
-      <script src={`https://cdn.polyfill.io/v3/polyfill.min.js?features=${polyfillFeatures}`} />
+      <script src={`https://cdn.polyfill.io/v3/polyfill.min.js?features=${polyfillFeatures.join(',')}`} />
 
       {/* Add CTM checks */}
       <script
@@ -234,7 +233,7 @@ HtmlHead.propTypes = {
   twitterHeadline: PropTypes.string,
   twitterImage: PropTypes.string,
   url: PropTypes.string.isRequired,
-  polyfills: PropTypes.arrayOf(PropTypes.string),
+  polyfillFeatures: PropTypes.arrayOf(PropTypes.string),
 };
 
 const DEFAULTS = {
@@ -268,7 +267,7 @@ HtmlHead.defaultProps = {
   tracking: {
     product: 'IG',
   },
-  polyfills: ['default', 'fetch', 'es2019'],
+  polyfillFeatures: ['default', 'fetch', 'es2019'],
 };
 
 HtmlHead.displayName = 'GHtmlHead';
