@@ -8,6 +8,7 @@
   "author": "Ændrew Rininsland <andrew.rininsland@ft.com",
   "license": "ISC",
   "jest": {
+    "resolver": "./.storybook/resolver.js",
     "verbose": true,
     "transform": {
       "^.+\\.[tj]sx?$": "babel-jest",
@@ -77,9 +78,6 @@
     "build-storybook": "build-storybook -s public",
     "chromatic": "chromatic"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "devDependencies": {
     "@storybook/addon-a11y": "^6.0.2",
     "@storybook/addon-actions": "^6.0.2",
@@ -92,6 +90,7 @@
     "@storybook/preset-create-react-app": "^3.1.4",
     "@storybook/react": "^6.0.2",
     "chromatic": "^4.0.3",
+    "enhanced-resolve-jest": "^1.1.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
