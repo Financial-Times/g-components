@@ -33,9 +33,9 @@ const NetChangeBarChart = ({ className, title, tableHeaders, data, showShortPart
   const maxSeatChange = tableData.reduce((acc, { seatChange }) => Math.max(acc, seatChange), 0);
   const range = maxSeatChange - minSeatChange;
 
-  const getBarPosition = seatChange => ((seatChange - minSeatChange) / range) * 100;
-  const getStartPosition = seatChange => getBarPosition(Math.min(0, seatChange));
-  const getBarWidth = seatChange => Math.abs(getBarPosition(seatChange) - getBarPosition(0));
+  const getBarPosition = (seatChange) => ((seatChange - minSeatChange) / range) * 100;
+  const getStartPosition = (seatChange) => getBarPosition(Math.min(0, seatChange));
+  const getBarWidth = (seatChange) => Math.abs(getBarPosition(seatChange) - getBarPosition(0));
 
   return (
     <div className={className}>
@@ -46,7 +46,7 @@ const NetChangeBarChart = ({ className, title, tableHeaders, data, showShortPart
       <table className={`${className}__table`}>
         <thead>
           <tr>
-            {tableHeaders.map(t =>
+            {tableHeaders.map((t) =>
               t === '0' ? (
                 <th key={`th_${t}`} className="axis-label">
                   <span style={{ left: `${getStartPosition(0)}%` }}>{t}</span>
@@ -59,10 +59,13 @@ const NetChangeBarChart = ({ className, title, tableHeaders, data, showShortPart
         </thead>
 
         <tbody>
-          {tableData.map(({ party, seatChange, isOthers }) => {
+          {tableData.map(({ party, seatChange, isOthers }, idx) => {
             const { formattedName, shortName, color, whiteOverlayOpacity } = getPartyInfo(party);
             return (
-              <tr className={`row${isOthers ? ' row--others' : ''}`}>
+              <tr
+                key={idx /* eslint-disable-line react/no-array-index-key */}
+                className={`row${isOthers ? ' row--others' : ''}`}
+              >
                 <td className={`party${isOthers ? ' party--others' : ''}`}>
                   <span className="party-badge" style={{ backgroundColor: color }} />
                   <span className="party-name party-name--desktop">
@@ -114,9 +117,9 @@ const NetChangeBarChart = ({ className, title, tableHeaders, data, showShortPart
 
       <div className={`${className}__footnote`}>
         {footnoteData.map(({ party, seatChange }, index, arr) => {
-          const { shortName, color } = getPartyInfo(party);
+          const { shortName } = getPartyInfo(party);
           return (
-            <Fragment>
+            <Fragment key={party}>
               {shortName} (
               <span className="seats">
                 {seatChange > 0 && '+'}

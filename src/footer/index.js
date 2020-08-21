@@ -11,7 +11,11 @@ const Footer = () => {
 
   useEffect(() => {
     (async () => {
-      new OFooter(ref.current);
+      try {
+        new OFooter(ref.current);
+      } catch (e) {
+        console.error(e);
+      }
     })();
   }, []);
 

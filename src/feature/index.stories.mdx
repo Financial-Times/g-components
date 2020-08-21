@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Feature, { Context } from './';
 import '../shared/critical-path.scss';
 
@@ -69,7 +69,7 @@ export const ExampleForeground = ({ page }) => (
 
 `<Feature />` is a type of layout that enables a carousel-esque experience on desktop and a paged layout on mobile.
 
-<Preview>
+<Canvas>
   <Story name="Example">
     <Feature {...DEFAULTS} background={ExampleBackground} foreground={ExampleForeground}>
       <div>
@@ -82,4 +82,4 @@ export const ExampleForeground = ({ page }) => (
       <h1>Slide 5!</h1>
     </Feature>
   </Story>
-</Preview>
+</Canvas>

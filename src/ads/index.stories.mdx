@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { Ad, TopAd, MiddleAd } from './';
 
 <Meta title="Core/Ads" />
@@ -13,7 +13,7 @@ There are several ad types:
 
 ### Generic ad
 
-<Preview>
+<Canvas>
   <Story name="GenericAd" parameters={{ chromatic: { disable: true } }}>
     <Ad
       name="generic-ad"
@@ -26,28 +26,28 @@ There are several ad types:
       extraFormat="Billboard,SuperLeaderboard,Leaderboard,Responsive"
     />
   </Story>
-</Preview>
+</Canvas>
 
 ### Generic ad on slate
 
-<Preview>
+<Canvas>
   <Story name="GenericAdSlate" parameters={{ chromatic: { disable: true } }}>
     <Ad name="generic-ad" targeting="pos=top;version=1" background="slate" />
   </Story>
-</Preview>
+</Canvas>
 
 ### Top ad
 
-<Preview>
+<Canvas>
   <Story name="TopAd" parameters={{ chromatic: { disable: true } }}>
     <TopAd />
   </Story>
-</Preview>
+</Canvas>
 
 ### MPU (mid-page unit) ad
 
-<Preview>
+<Canvas>
   <Story name="MiddleAd" parameters={{ chromatic: { disable: true } }}>
     <MiddleAd />
   </Story>
-</Preview>
+</Canvas>

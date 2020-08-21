@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Button, { ButtonGroup, ButtonPaginationGroup } from './';
 
 <Meta title="Core/Button" component={Button} parameters={{ chromatic: { disable: true } }} />
@@ -8,7 +8,7 @@ import Button, { ButtonGroup, ButtonPaginationGroup } from './';
 Please see docs for [o-buttons](https://github.com/Financial-Times/o-buttons) as
 the API is rather similar.
 
-<Preview>
+<Canvas>
   <Story name="Examples" parameters={{ styles: [Promise.resolve(require('./_stories.scss'))] }}>
     <>
       Secondary/default button:
@@ -107,7 +107,7 @@ the API is rather similar.
       Grouped layout:
       <div>
         <ButtonGroup>
-          <Button selected="true">John</Button>
+          <Button selected>John</Button>
           <Button>Paul</Button>
           <Button>George</Button>
           <Button>Ringo</Button>
@@ -231,4 +231,4 @@ the API is rather similar.
       </div>
     </>
   </Story>
-</Preview>
+</Canvas>

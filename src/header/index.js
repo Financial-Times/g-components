@@ -19,7 +19,11 @@ const Header = ({ flags, ...props }) => {
 
   useEffect(() => {
     (async () => {
-      new OHeader(ref.current);
+      try {
+        new OHeader(ref.current);
+      } catch (e) {
+        console.error(e);
+      }
     })();
   }, []);
 

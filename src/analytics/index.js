@@ -15,46 +15,52 @@ import { spoorTrackingPixel } from '../shared/helpers';
 const Analytics = ({ id, tracking, flags }) => {
   useEffect(() => {
     (async () => {
-      if (!window.cutsTheMustard) return;
-      const pageData = {
-        content: { asset_type: 'interactive' },
-      };
+      try {
+        if (!window.cutsTheMustard) return;
+        const pageData = {
+          content: { asset_type: 'interactive' },
+        };
 
-      const properties = [].reduce.call(
-        document.querySelectorAll('head meta[property^="ft.track:"]') || [],
-        (o, el) => {
-          const attName = el.getAttribute('property').replace('ft.track:', '');
-          o[attName] = el.getAttribute('content'); // eslint-disable-line no-param-reassign
-          return o;
-        },
-        {},
-      );
+        const properties = [].reduce.call(
+          document.querySelectorAll('head meta[property^="ft.track:"]') || [],
+          (o, el) => {
+            if (!el) return o;
 
-      const contentId = id || document.documentElement.getAttribute('data-content-id');
+            const attName = el.getAttribute('property').replace('ft.track:', '');
+            o[attName] = el.getAttribute('content'); // eslint-disable-line no-param-reassign
+            return o;
+          },
+          {},
+        );
 
-      if (contentId) {
-        pageData.content.uuid = contentId;
+        const contentId = id || document.documentElement.getAttribute('data-content-id');
+
+        if (contentId) {
+          pageData.content.uuid = contentId;
+        }
+
+        if (properties.microsite_name) {
+          pageData.microsite_name = properties.microsite_name;
+        }
+
+        // Setup
+        OTracking.init({
+          server: 'https://spoor-api.ft.com/px.gif',
+          system: {
+            is_live:
+              typeof properties.is_live === 'string' ? properties.is_live.toLowerCase() : false,
+          },
+          context: { product: properties.product || 'IG' },
+        });
+
+        // Page
+        OTracking.page(pageData);
+
+        // Links
+        OTracking.link.init();
+      } catch (e) {
+        console.error(e);
       }
-
-      if (properties.microsite_name) {
-        pageData.microsite_name = properties.microsite_name;
-      }
-
-      // Setup
-      OTracking.init({
-        server: 'https://spoor-api.ft.com/px.gif',
-        system: {
-          is_live:
-            typeof properties.is_live === 'string' ? properties.is_live.toLowerCase() : false,
-        },
-        context: { product: properties.product || 'IG' },
-      });
-
-      // Page
-      OTracking.page(pageData);
-
-      // Links
-      OTracking.link.init();
     })();
   }, [id]);
 

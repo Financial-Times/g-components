@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import StoryTopper from '../story-topper';
 import { MiddleAd } from '../ads';
 import Epilogue from '../epilogue';
@@ -6,6 +6,7 @@ import { GridContainer, GridRow, GridChild } from '../grid';
 import ArticleLayout, { Context } from './';
 
 export const props = {
+  id: 'e8e6e017-d06b-3cfa-8cb6-0b9e30bc847e', // Lorem Ipsum page
   flags: {
     prod: false,
     errorReporting: true,
@@ -50,7 +51,7 @@ export const props = {
 
 The first child will be treated specially as a topper. All children should be wrapped within grid components.
 
-<Preview>
+<Canvas>
   <Story name="Starter Kit default body">
     <ArticleLayout {...props}>
       <main key="main" role="main">
@@ -111,4 +112,4 @@ The first child will be treated specially as a topper. All children should be wr
       </main>
     </ArticleLayout>
   </Story>
-</Preview>
+</Canvas>

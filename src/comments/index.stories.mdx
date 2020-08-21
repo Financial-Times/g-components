@@ -1,4 +1,5 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { props } from '../article-layout/index.stories.mdx';
 import Comments from './';
 
 <Meta title="Core/Comments" component={Comments} />
@@ -7,8 +8,8 @@ import Comments from './';
 
 Loads the Coral comments widget.
 
-<Preview>
+<Canvas>
   <Story name="Basic" parameters={{ chromatic: { disable: true } }}>
-    <Comments />
+    <Comments flags={props.flags} url="http://localhost:8080" id={props.id} />
   </Story>
-</Preview>
+</Canvas>

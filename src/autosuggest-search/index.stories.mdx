@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { withKnobs, array, boolean } from '@storybook/addon-knobs';
 import AutosuggestSearch from './';
 
@@ -34,7 +34,7 @@ function. The component takes these functions as (optional) props:
 - `validateInput(searchValue)` which takes the current input searchValue and should return
   an object with isError (boolean) and errorMessage (string) attributes
 
-<Preview>
+<Canvas>
   <Story name="Examples">
     <>
       MP lookup example:
@@ -194,4 +194,4 @@ function. The component takes these functions as (optional) props:
       />
     </>
   </Story>
-</Preview>
+</Canvas>

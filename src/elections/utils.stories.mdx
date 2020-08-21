@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { uk } from '@financial-times/politics';
 const { getPartyInfo } = uk;
 
@@ -27,7 +27,7 @@ export const parties = [
 `getPartyInfo(string)` returns an object with party `color`, `shortName` and
 `formattedName` for a given UK political party.
 
-<Preview>
+<Canvas>
   <Story name="getPartyInfo(party: string)">
     <>
       {parties.map((p) => {
@@ -49,4 +49,4 @@ export const parties = [
       })}
     </>
   </Story>
-</Preview>
+</Canvas>

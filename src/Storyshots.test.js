@@ -1,13 +1,16 @@
-// test('something', () => {
-//   const iconv = require('@financial-times/o-header');
-//   console.log(iconv);
-//   expect(true).toBe(true);
-// });
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
+import fetch from 'node-fetch';
 
 const mockedDate = new Date(2019, 1, 0);
 const originalDate = Date;
 
+global.getComputedStyle = jest.fn(() => {
+  return {
+    getPropertyValue: () =>
+      '{"layouts": {"S": "490px", "M": "740px", "L": "980px", "XL": "1220px"}}',
+  };
+});
+global.fetch = fetch;
 global.Date = jest.fn(() => mockedDate);
 global.Date.setDate = originalDate.setDate;
 global.Date.now = () => Math.round(new Date().getTime() / 1000);

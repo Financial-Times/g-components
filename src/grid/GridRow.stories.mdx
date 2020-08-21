@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { GridContainer, GridRow, GridChild } from './';
 
 <Meta title="Core/Grid/GridRow" component={GridRow} parameters={{ chromatic: { disable: true } }} />
@@ -9,7 +9,7 @@ import { GridContainer, GridRow, GridChild } from './';
 
 It has one config option: `compact`, which will remove gutters from columns
 
-<Preview>
+<Canvas>
   <Story
     name="Compact and gutterless columns"
     parameters={{ styles: [Promise.resolve(require('./_stories.scss'))] }}
@@ -33,4 +33,4 @@ It has one config option: `compact`, which will remove gutters from columns
       </GridRow>
     </GridContainer>
   </Story>
-</Preview>
+</Canvas>
