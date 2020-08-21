@@ -1,3 +1,8 @@
+// test('something', () => {
+//   const iconv = require('@financial-times/o-header');
+//   console.log(iconv);
+//   expect(true).toBe(true);
+// });
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 
 const mockedDate = new Date(2019, 1, 0);
