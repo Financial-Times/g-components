@@ -9,9 +9,6 @@
   "license": "ISC",
   "jest": {
     "resolver": "<rootDir>/.jest/resolver.js",
-    "setupFiles": [
-      "<rootDir>/.jest/register-context.js"
-    ],
     "verbose": true,
     "transform": {
       "^.+\\.[tj]sx?$": "babel-jest",
@@ -36,9 +33,6 @@
             }
           ],
           "@babel/preset-react"
-        ],
-        "plugins": [
-          "require-context-hook"
         ]
       }
     }
