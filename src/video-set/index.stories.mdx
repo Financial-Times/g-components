@@ -1,7 +1,7 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import VideoSet from './';
 
-<Meta title="Core|Video Set" parameters={{ chromatic: { disable: true } }} />
+<Meta title="Core/Video Set" parameters={{ chromatic: { disable: true } }} />
 
 # Video set
 
@@ -11,7 +11,7 @@ Breakpoints are the S, M and L [Origami o-grid](https://github.com/Financial-Tim
 
 _Chromatic testing is disabled because the renderer won't show videos._
 
-<Preview>
+<Canvas>
   <Story name="Example">
     <VideoSet
       alt="Demo video set video"
@@ -34,4 +34,4 @@ _Chromatic testing is disabled because the renderer won't show videos._
       }}
     />
   </Story>
-</Preview>
+</Canvas>

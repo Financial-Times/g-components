@@ -8,7 +8,12 @@ import PropTypes from 'prop-types';
 import Share from '../share';
 import Bylines from '../bylines';
 import { getMainImage } from '../shared/helpers';
-import { mainImagePropType, bylinesPropType, topicPropType, flagsPropType } from '../shared/proptypes';
+import {
+  mainImagePropType,
+  bylinesPropType,
+  topicPropType,
+  flagsPropType,
+} from '../shared/proptypes';
 import './styles.scss';
 
 const StoryTopper = ({
@@ -78,9 +83,7 @@ const StoryTopper = ({
         />
       )}
 
-      {flags.bylines && bylines && (
-        <Bylines names={bylines} date={publishedDate} />
-      )}
+      {flags.bylines && bylines && <Bylines names={bylines} date={publishedDate} />}
     </div>
   );
 };

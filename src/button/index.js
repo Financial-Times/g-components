@@ -52,7 +52,7 @@ Button.propTypes = {
   big: PropTypes.bool,
   buttonType: PropTypes.oneOf(['button', 'submit', 'reset']),
   type: PropTypes.oneOf(['primary', 'secondary']),
-  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
+  children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]),
   icon: PropTypes.oneOf([...validIcons, '']),
   label: PropTypes.string,
   inverse: PropTypes.bool,
@@ -69,9 +69,10 @@ Button.defaultProps = {
   buttonType: 'button',
   label: '',
   inverse: false,
+  children: 'Click me',
 };
 
-export const ButtonGroup = ({ children, className, ...props }) => (
+export const ButtonGroup = ({ children, className }) => (
   <div className={classnames(className, 'o-buttons-group')}>{children}</div>
 );
 
@@ -84,7 +85,7 @@ ButtonGroup.defaultProps = {
   className: undefined,
 };
 
-export const ButtonPaginationGroup = ({ children, className, ...props }) => (
+export const ButtonPaginationGroup = ({ children, className }) => (
   <div className={classnames(className, 'o-buttons-pagination')}>{children}</div>
 );
 

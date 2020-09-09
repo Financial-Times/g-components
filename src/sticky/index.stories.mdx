@@ -1,8 +1,8 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Observer from 'react-scroll-percentage';
 import Sticky from './';
 
-<Meta title="Core|Sticky" component={Sticky} parameters={{ chromatic: { disable: true } }} />
+<Meta title="Core/Sticky" component={Sticky} parameters={{ chromatic: { disable: true } }} />
 
 # Sticky component
 
@@ -28,7 +28,7 @@ See the "complex case" story for how to use updateGraphic.
 
 _Note: Chromatic snapshotting disabled due to indeterminism._
 
-<Preview>
+<Canvas>
   <Story name="Basic example">
     <div
       style={{
@@ -150,9 +150,9 @@ _Note: Chromatic snapshotting disabled due to indeterminism._
       />
     </div>
   </Story>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <Story name="Complex example">
     <div
       style={{
@@ -172,7 +172,7 @@ _Note: Chromatic snapshotting disabled due to indeterminism._
         article={({ updateGraphic }) => (
           <div style={{ fontSize: '500%' }}>
             {['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight'].map((label, idx) => (
-              <Observer>
+              <Observer key={label}>
                 {({ inView }) => {
                   if (inView) updateGraphic(idx);
                   return <h1>{label}</h1>;
@@ -184,4 +184,4 @@ _Note: Chromatic snapshotting disabled due to indeterminism._
       />
     </div>
   </Story>
-</Preview>
+</Canvas>

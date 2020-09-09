@@ -1,8 +1,8 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import { GridContainer, GridRow, GridChild } from './';
 
 <Meta
-  title="Core|Grid/GridContainer"
+  title="Core/Grid/GridContainer"
   component={GridContainer}
   parameters={{ chromatic: { disable: true } }}
 />
@@ -18,7 +18,7 @@ It has two config options:
 - `snappy`, which means the grid will snap to the preconfigured `o-grid` breakpoints
 - `bleed`, which removes exterior margins.
 
-<Preview>
+<Canvas>
   <Story
     name="Full bleed grid container"
     parameters={{ styles: [Promise.resolve(require('./_stories.scss'))] }}
@@ -42,9 +42,9 @@ It has two config options:
       </GridRow>
     </GridContainer>
   </Story>
-</Preview>
+</Canvas>
 
-<Preview>
+<Canvas>
   <Story
     name="Snappy container"
     parameters={{ styles: [Promise.resolve(require('./_stories.scss'))] }}
@@ -78,4 +78,4 @@ It has two config options:
       </GridRow>
     </GridContainer>
   </Story>
-</Preview>
+</Canvas>

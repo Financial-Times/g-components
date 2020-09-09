@@ -1,16 +1,16 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import '../../shared/critical-path.scss';
 import ConstituencyLookup from './';
 import candidateList from '../sample-data/candidates.json';
 import constituencyList from '../sample-data/constituencies.json';
 
-<Meta title="Elections|GE2019/Constituency Lookup" component={ConstituencyLookup} />
+<Meta title="Elections/GE2019/Constituency Lookup" component={ConstituencyLookup} />
 
 # Constituency Lookup component
 
 `<ConstituencyLookup />` can be used to load data about a constituency.
 
-<Preview>
+<Canvas>
   <Story name="Examples">
     <ConstituencyLookup
       constituencyList={constituencyList}
@@ -18,4 +18,4 @@ import constituencyList from '../sample-data/constituencies.json';
       setOpenConstituency={(c) => window.alert(`Constituency ID: ${c}`)}
     />
   </Story>
-</Preview>
+</Canvas>

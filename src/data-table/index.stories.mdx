@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import DataTable from './';
 
 export const basicHeaders = [
@@ -24,11 +24,11 @@ export const basicRows = [
   { appointed: '1945', name: 'Hargreaves Parkinson' },
 ];
 
-<Meta title="Core|DataTable" component={DataTable} />
+<Meta title="Core/DataTable" component={DataTable} />
 
 # Table component
 
-<Preview>
+<Canvas>
   <Story name="Examples">
     <>
       Basic:
@@ -56,4 +56,4 @@ export const basicRows = [
       <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" isSortable={false} />
     </>
   </Story>
-</Preview>
+</Canvas>

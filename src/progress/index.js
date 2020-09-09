@@ -13,6 +13,7 @@ const Progress = ({ value, steps }) => (
     {steps ? (
       (Array.isArray(steps) ? steps : Array(steps).fill()).map((step, i) => (
         <li
+          key={i /* eslint-disable-line react/no-array-index-key */}
           className={classnames(
             'g-progress__segment',
             i / steps < value && 'g-progress__segment--active',

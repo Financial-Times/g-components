@@ -47,6 +47,7 @@ export const ConstituencyResultsTable = ({
       );
   const rows = sortedData.map(({ party, candidate, votes, showAsterick }) => (
     <ConstituencyResultsTableRow
+      key={`${party}_${candidate}`}
       party={party}
       candidate={candidate}
       votes={votes}
@@ -58,7 +59,7 @@ export const ConstituencyResultsTable = ({
       <table className={`${className}__table`}>
         <thead>
           <tr>
-            {tableHeaders.map(t => (
+            {tableHeaders.map((t) => (
               <th key={`th_${t}`}>{t}</th>
             ))}
           </tr>
@@ -79,7 +80,7 @@ export const ConstituencyResultsTable = ({
           ) : (
             [
               rows,
-              <tr>
+              <tr key="note">
                 {note && (
                   <td colSpan="1000" className={`${className}__table--note`}>
                     {note}

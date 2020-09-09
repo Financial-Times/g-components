@@ -35,7 +35,7 @@ const cellAttributes = (header, row) => {
   return Object.assign(...attributes);
 };
 
-const footerAttributes = header => {
+const footerAttributes = (header) => {
   const classes = header.columnType === 'number' ? 'o-table__cell--numeric' : '';
   const attributes = [
     classes ? { className: classes } : {},
@@ -96,8 +96,8 @@ const Body = ({ rows, headers }) => (
           const attributes = cellAttributes(header, row);
           const valueFormat =
             typeof row[header.columnName] === 'number'
-              ? value => value.toLocaleString()
-              : value => value;
+              ? (value) => value.toLocaleString()
+              : (value) => value;
           const value = valueFormat(row[header.columnName] || '');
           if (header.columnIsHeader) {
             return (

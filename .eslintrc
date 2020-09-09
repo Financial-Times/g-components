@@ -13,7 +13,8 @@
     "react/jsx-filename-extension": [0],
     "react/jsx-fragments": [2, "element"],
     "react/state-in-constructor": [0],
-    "react/jsx-props-no-spreading": [0]
+    "react/jsx-props-no-spreading": [0],
+    "no-nested-ternary": [0]
   },
   "env": {
     "browser": true,
@@ -22,8 +23,8 @@
   "parser": "babel-eslint",
   "settings": {
     "import/resolver": {
-      "node": {
-        "moduleDirectory": ["node_modules"]
+      "node-browser": {
+        "moduleDirectory": ["node_modules", "node_modules/@financial-times"]
       }
     }
   }

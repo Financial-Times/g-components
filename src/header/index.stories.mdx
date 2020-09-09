@@ -1,14 +1,15 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { props } from '../article-layout/index.stories.mdx';
 import Header from './';
 
-<Meta title="Core|Header" component={Header} />
+<Meta title="Core/Header" component={Header} />
 
 # Header component
 
 Basic FT.com header. It takes no props.
 
-<Preview>
+<Canvas>
   <Story name="Example">
-    <Header />
+    <Header flags={props.flags} />
   </Story>
-</Preview>
+</Canvas>

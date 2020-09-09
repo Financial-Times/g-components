@@ -1,8 +1,8 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import '../shared/critical-path.scss';
 import Progress from './';
 
-<Meta title="Core|Progress" component={Progress} />
+<Meta title="Core/Progress" component={Progress} />
 
 # Progress bar component
 
@@ -15,7 +15,7 @@ will be used.
 
 If `steps` is provided, it will be a stepped progresss bar.
 
-<Preview>
+<Canvas>
   <Story name="Examples">
     <>
       Percentage:
@@ -42,4 +42,4 @@ If `steps` is provided, it will be a stepped progresss bar.
       </div>
     </>
   </Story>
-</Preview>
+</Canvas>

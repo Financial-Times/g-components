@@ -1,7 +1,7 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import Bylines from './';
 
-<Meta title="Core|Bylines" component={Bylines} parameters={{ chromatic: { disable: true } }} />
+<Meta title="Core/Bylines" component={Bylines} parameters={{ chromatic: { disable: true } }} />
 
 # Bylines component
 
@@ -9,8 +9,8 @@ This will render bylines in FT style.
 
 It requires a `names` or `date` prop to render; otherwise it displays nothing.
 
-<Preview>
-  <Story name="Examples">
+<Canvas>
+  <Story name="Byline Examples">
     <>
       Basic:
       <div>
@@ -61,4 +61,4 @@ It requires a `names` or `date` prop to render; otherwise it displays nothing.
       </div>
     </>
   </Story>
-</Preview>
+</Canvas>

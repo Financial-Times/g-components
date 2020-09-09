@@ -115,10 +115,14 @@ const ConstituencyLookup = ({
       const { value } = constituencyMatch;
       setOpenConstituency(value);
     } else {
-      const constituencyId = await getConstituencyIdFromPostcode(searchValue);
-      if (constituencyId !== '') {
-        setOpenConstituency(constituencyId);
-      } else {
+      try {
+        const constituencyId = await getConstituencyIdFromPostcode(searchValue);
+        if (constituencyId !== '') {
+          setOpenConstituency(constituencyId);
+        } else {
+          throw new Error();
+        }
+      } catch (e) {
         return { isError: true, errorMessage: 'Server error' };
       }
     }

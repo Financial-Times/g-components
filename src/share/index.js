@@ -29,24 +29,24 @@ const Share = ({
   const services = [
     {
       name: 'Twitter',
-      link: 'https://twitter.com/intent/tweet'
-        + `?url=${url}`
-        + `&text=${textTwitter || text}`
-        + '&via=FinancialTimes',
+      link:
+        'https://twitter.com/intent/tweet' +
+        `?url=${url}` +
+        `&text=${textTwitter || text}` +
+        '&via=FinancialTimes',
     },
     {
       name: 'Facebook',
-      link: 'https://www.facebook.com/sharer.php'
-        + `?u=${url}`
-        + `&t=${textFacebook || text}`,
+      link: 'https://www.facebook.com/sharer.php' + `?u=${url}` + `&t=${textFacebook || text}`,
     },
     {
       name: 'LinkedIn',
-      link: 'https://www.linkedin.com/shareArticle'
-        + '?mini=true'
-        + `&url=${url}`
-        + `&title=${textLinkedIn || text}`
-        + `&source=Financial+Times`,
+      link:
+        'https://www.linkedin.com/shareArticle' +
+        '?mini=true' +
+        `&url=${url}` +
+        `&title=${textLinkedIn || text}` +
+        `&source=Financial+Times`,
     },
     {
       name: 'WhatsApp',
@@ -56,10 +56,7 @@ const Share = ({
 
   return (
     <div className={['g-share', separated && 'g-share--separated'].join(' ')}>
-      <div
-        className={['o-share', dark && 'o-share--inverse'].join(' ')}
-        data-o-component="o-share"
-      >
+      <div className={['o-share', dark && 'o-share--inverse'].join(' ')} data-o-component="o-share">
         <ul>
           {services.map(({ name, link }) => (
             <li key={name} className="o-share__action">
@@ -68,9 +65,7 @@ const Share = ({
                 href={link}
                 rel="noopener"
               >
-                <span className="o-share__text">
-                  Share on {name}. Opens in a new window.
-                </span>
+                <span className="o-share__text">Share on {name}. Opens in a new window.</span>
               </a>
             </li>
           ))}

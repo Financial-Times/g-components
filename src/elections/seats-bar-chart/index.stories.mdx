@@ -1,4 +1,4 @@
-import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
 import '../../shared/critical-path.scss';
 import SeatsBarChart from './';
 import { formatResultsData } from '../sample-data/utils.js';
@@ -43,13 +43,13 @@ export const resultsEndFormatted = formatResultsData(
   partiesThatAreOthers,
 );
 
-<Meta title="Elections|GE2019/Seats Bar Chart" component={SeatsBarChart} />
+<Meta title="Elections/GE2019/Seats Bar Chart" component={SeatsBarChart} />
 
 # Seats Bar Chart component
 
 Shows the seat distribution in Parliament.
 
-<Preview>
+<Canvas>
   <Story name="Examples">
     <>
       At start of vote count:
@@ -72,4 +72,4 @@ Shows the seat distribution in Parliament.
       />
     </>
   </Story>
-</Preview>
+</Canvas>
