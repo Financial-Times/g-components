@@ -56,12 +56,12 @@ jobs:
     <<: *default_container_config
     steps:
       - *attach_workspace
-      # - run:
-      #     name: Run tests
-      #     command: npm test
       - run:
-          name: Run Chromatic visual testing
-          command: npx chromatic --exit-zero-on-changes
+          name: Run tests
+          command: npm test
+      # - run:
+      #     name: Run Chromatic visual testing
+      #     command: npx chromatic --exit-zero-on-changes
 
   build_docs:
     <<: *default_container_config
