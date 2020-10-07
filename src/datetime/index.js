@@ -5,6 +5,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import ODate from '@financial-times/o-date';
+import ftDateFormat from '@financial-times/ft-date-format';
 
 const DateTime = ({ datestamp }) => {
   const elRef = useRef(null);
@@ -21,7 +22,7 @@ const DateTime = ({ datestamp }) => {
       className="o-date"
       dateTime={datestamp.toISOString()}
     >
-      {ODate.ftTime(datestamp)}
+      {ftDateFormat.ftTime(datestamp)}
     </time>
   );
 };
