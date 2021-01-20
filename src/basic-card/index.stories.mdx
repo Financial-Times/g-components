@@ -1,0 +1,28 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import BasicCard from './';
+
+<Meta title="Core/BasicCard" component={BasicCard} />
+
+# Basic card component
+
+Style card component with title
+
+<Canvas>
+  <Story name="With paragraphs">
+    <BasicCard title="Basic card">
+      <p>This is the first paragraph in the basic card component.</p>
+      <p>This is the second paragraph in the basic card component.</p>
+    </BasicCard>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With list">
+    <BasicCard title="Basic card">
+      <ul className="g-list-card__list">
+        <li className="g-list-card__list-item">Point one</li>
+        <li className="g-list-card__list-item">Point two</li>
+      </ul>
+    </BasicCard>
+  </Story>
+</Canvas>

@@ -1,0 +1,63 @@
+.g-basic-card {
+  margin-top: 20px;
+  margin-bottom: 32px;
+  background-color: #ffebd9;
+  box-shadow: none;
+  border: none;
+
+  &__title,
+  p {
+    font-family: MetricWeb, sans-serif;
+  }
+
+  &__title {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #33302e;
+    margin: 0 0 20px;
+    padding: 0;
+  }
+
+  strong {
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 12px;
+  }
+}
+
+.g-list-card {
+  &__list {
+    margin: 0 0 24px;
+    padding: 0;
+    list-style: none;
+    color: #33302e;
+  }
+
+  &__list-item {
+    font-family: MetricWeb, sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    position: relative;
+    margin: 0;
+    padding-left: calc(2ch + 4px);
+    list-style: none;
+    color: inherit;
+
+    &:before {
+      position: absolute;
+      left: 0;
+      transform-origin: center left;
+      content: '•';
+      transform: scale(1.5);
+      margin-top: -0.25ch;
+      color: inherit;
+    }
+  }
+}
