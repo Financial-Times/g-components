@@ -13,6 +13,19 @@ export const basicHeaders = [
   },
 ];
 
+export const headersWithDefaultSortIcon = [
+    {
+    contents: 'Year',
+    columnType: 'number',
+    columnName: 'appointed',
+    defaultSortIcon: 'descending',
+  },
+  {
+    contents: 'Editor',
+    columnName: 'name',
+  },
+]
+
 export const basicRows = [
   { appointed: '2020', name: 'Roula Khalaf' },
   { appointed: '2006', name: 'Lionel Barber' },
@@ -54,6 +67,8 @@ export const basicRows = [
       <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" />
       Sorting disabled:
       <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" isSortable={false} />
+      With default sort icon:
+      <DataTable headers={headersWithDefaultSortIcon} rows={basicRows} />
     </>
   </Story>
 </Canvas>
