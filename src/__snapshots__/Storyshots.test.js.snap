@@ -3410,6 +3410,125 @@ Array [
       </div>
     </div>
   </div>,
+  "With default sort icon:",
+  <div
+    className="g-data-table o-table-scroll-wrapper"
+  >
+    <table
+      className="o-table"
+      data-o-component="o-table"
+    >
+      <thead>
+        <tr>
+          <th
+            aria-sort="descending"
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+            role="columnheader"
+            scope="col"
+          >
+            Year
+          </th>
+          <th
+            role="columnheader"
+            scope="col"
+          >
+            Editor
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+          >
+            2020
+          </td>
+          <td>
+            Roula Khalaf
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+          >
+            2006
+          </td>
+          <td>
+            Lionel Barber
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+          >
+            2001
+          </td>
+          <td>
+            Andrew Gowers
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+          >
+            1991
+          </td>
+          <td>
+            Richard Lambert
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+          >
+            1981
+          </td>
+          <td>
+            Sir Geoffrey Owen
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+          >
+            1973
+          </td>
+          <td>
+            Fredy Fisher
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+          >
+            1949
+          </td>
+          <td>
+            Sir Gordon Newton
+          </td>
+        </tr>
+        <tr>
+          <td
+            className="o-table__cell--numeric"
+            data-o-table-data-type="numeric"
+          >
+            1945
+          </td>
+          <td>
+            Hargreaves Parkinson
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>,
 ]
 `;
 
