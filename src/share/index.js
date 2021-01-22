@@ -6,6 +6,7 @@
 import React, { useEffect, useRef } from 'react';
 import OShare from '@financial-times/o-share';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import './styles.scss';
 
 const Share = ({
@@ -17,6 +18,7 @@ const Share = ({
   textWhatsApp,
   separated,
   dark,
+  size,
 }) => {
   const ref = useRef();
 
@@ -55,8 +57,8 @@ const Share = ({
   ];
 
   return (
-    <div className={['g-share', separated && 'g-share--separated'].join(' ')}>
-      <div className={['o-share', dark && 'o-share--inverse'].join(' ')} data-o-component="o-share">
+    <div className={classnames('g-share', separated && 'g-share--separated', `g-share--${size}`)}>
+      <div className={classnames('o-share', dark && 'o-share--inverse')} data-o-component="o-share">
         <ul>
           {services.map(({ name, link }) => (
             <li key={name} className="o-share__action">
@@ -84,6 +86,7 @@ Share.propTypes = {
   textWhatsApp: PropTypes.string,
   separated: PropTypes.bool,
   dark: PropTypes.bool,
+  size: PropTypes.oneOf(['default', 'small']),
 };
 
 Share.displayName = 'GShare';

@@ -29,7 +29,8 @@ const BigTopper = ({
   facebookHeadline,
   tweetText,
   flags,
-  bylineProps,
+  byline,
+  share,
   ...props
 }) => {
   // These really mess with Storyshots' snapshot testing
@@ -62,7 +63,7 @@ const BigTopper = ({
       </h1>
 
       {flags.bylines && bylines && (
-        <Bylines prefix="By" names={bylines} date={publishedDate} {...(bylineProps || {})} />
+        <Bylines prefix="By" names={bylines} date={publishedDate} {...(byline || {})} />
       )}
 
       {flags.shareButtons && (
@@ -72,6 +73,7 @@ const BigTopper = ({
           textTwitter={tweetText || twitterHeadline}
           textFacebook={facebookHeadline}
           dark={flags.dark}
+          {...(share || {})}
         />
       )}
 
@@ -109,7 +111,8 @@ BigTopper.propTypes = {
   flags: flagsPropType.isRequired,
   publishedDate: PropTypes.string.isRequired,
   buildTime: PropTypes.string.isRequired,
-  bylineProps: PropTypes.object,
+  byline: PropTypes.object,
+  share: PropTypes.object,
 };
 
 BigTopper.displayName = 'GBigTopper';
