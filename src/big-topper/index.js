@@ -8,7 +8,12 @@ import PropTypes from 'prop-types';
 import Share from '../share';
 import Bylines from '../bylines';
 import { getMainImage } from '../shared/helpers';
-import { mainImagePropType, topicPropType, bylinesPropType, flagsPropType } from '../shared/proptypes';
+import {
+  mainImagePropType,
+  topicPropType,
+  bylinesPropType,
+  flagsPropType,
+} from '../shared/proptypes';
 import './styles.scss';
 
 const BigTopper = ({
@@ -24,6 +29,7 @@ const BigTopper = ({
   facebookHeadline,
   tweetText,
   flags,
+  bylineProps,
   ...props
 }) => {
   // These really mess with Storyshots' snapshot testing
@@ -56,7 +62,7 @@ const BigTopper = ({
       </h1>
 
       {flags.bylines && bylines && (
-        <Bylines prefix="By" names={bylines} date={publishedDate} />
+        <Bylines prefix="By" names={bylines} date={publishedDate} {...(bylineProps || {})} />
       )}
 
       {flags.shareButtons && (
@@ -103,6 +109,7 @@ BigTopper.propTypes = {
   flags: flagsPropType.isRequired,
   publishedDate: PropTypes.string.isRequired,
   buildTime: PropTypes.string.isRequired,
+  bylineProps: PropTypes.object,
 };
 
 BigTopper.displayName = 'GBigTopper';

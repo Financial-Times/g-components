@@ -49,3 +49,9 @@ export const props = {
     <BigTopper {...props} />
   </Story>
 </Canvas>
+
+<Canvas>
+  <Story name="With byline props">
+    <BigTopper {...props} bylineProps={{ prefix: 'Updated', dateFirst: true }} />
+  </Story>
+</Canvas>
