@@ -1198,6 +1198,79 @@ exports[`Storyshots Core/Big Topper Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Core/Big Topper With byline props 1`] = `
+<div
+  className="big-topper"
+>
+  <figure
+    className="graphic graphic-b-1 graphic-pad-1"
+  >
+    <img
+      src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8408723765-2qw52.png?source=ig"
+    />
+    <figcaption
+      className="o-typography-caption"
+    />
+  </figure>
+  <div
+    className="topic"
+  >
+    <a
+      className="o-editorial-typography-topic"
+      href="https://www.ft.com/visual-and-data-journalism"
+    >
+      Visual & Data Journalism
+    </a>
+  </div>
+  <h1
+    className="o-editorial-layout-heading-1"
+    itemProp="headline"
+  >
+    This is a headline
+  </h1>
+  <div
+    className="bylines"
+  >
+    Updated 
+     
+    <time
+      className="o-date o-editorial-typography-byline-timestamp"
+      data-o-component="o-date"
+      dateTime="2019-01-31T00:00:00.000Z"
+      suppressHydrationWarning={true}
+    >
+      January 31 2019
+    </time>
+     by 
+    
+    <a
+      className="o-editorial-typography-author"
+      href="https://www.ft.com/"
+    >
+      Person One
+    </a>
+     and 
+    <a
+      className="o-editorial-typography-author"
+      href="https://www.ft.com/"
+    >
+      Person Two
+    </a>
+  </div>
+  <p
+    className="o-editorial-typography-standfirst"
+  >
+    This is a standfirst
+     
+  </p>
+  <meta
+    content="2019-01-31T00:00:00.000Z"
+    itemProp="dateModified"
+    suppressHydrationWarning={true}
+  />
+</div>
+`;
+
 exports[`Storyshots Core/Button Examples 1`] = `
 Array [
   "Secondary/default button:",
