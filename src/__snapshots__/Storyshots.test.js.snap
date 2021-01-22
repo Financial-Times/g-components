@@ -1198,6 +1198,230 @@ exports[`Storyshots Core/Big Topper Basic 1`] = `
 </div>
 `;
 
+exports[`Storyshots Core/Big Topper With byline props 1`] = `
+<div
+  className="big-topper"
+>
+  <figure
+    className="graphic graphic-b-1 graphic-pad-1"
+  >
+    <img
+      src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8408723765-2qw52.png?source=ig"
+    />
+    <figcaption
+      className="o-typography-caption"
+    />
+  </figure>
+  <div
+    className="topic"
+  >
+    <a
+      className="o-editorial-typography-topic"
+      href="https://www.ft.com/visual-and-data-journalism"
+    >
+      Visual & Data Journalism
+    </a>
+  </div>
+  <h1
+    className="o-editorial-layout-heading-1"
+    itemProp="headline"
+  >
+    This is a headline
+  </h1>
+  <div
+    className="bylines"
+  >
+    Updated 
+     
+    <time
+      className="o-date o-editorial-typography-byline-timestamp"
+      data-o-component="o-date"
+      dateTime="2019-01-31T00:00:00.000Z"
+      suppressHydrationWarning={true}
+    >
+      January 31 2019
+    </time>
+     by 
+    
+    <a
+      className="o-editorial-typography-author"
+      href="https://www.ft.com/"
+    >
+      Person One
+    </a>
+     and 
+    <a
+      className="o-editorial-typography-author"
+      href="https://www.ft.com/"
+    >
+      Person Two
+    </a>
+  </div>
+  <p
+    className="o-editorial-typography-standfirst"
+  >
+    This is a standfirst
+     
+  </p>
+  <meta
+    content="2019-01-31T00:00:00.000Z"
+    itemProp="dateModified"
+    suppressHydrationWarning={true}
+  />
+</div>
+`;
+
+exports[`Storyshots Core/Big Topper With share props 1`] = `
+<div
+  className="big-topper"
+>
+  <figure
+    className="graphic graphic-b-1 graphic-pad-1"
+  >
+    <img
+      src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8408723765-2qw52.png?source=ig"
+    />
+    <figcaption
+      className="o-typography-caption"
+    />
+  </figure>
+  <div
+    className="topic"
+  >
+    <a
+      className="o-editorial-typography-topic"
+      href="https://www.ft.com/visual-and-data-journalism"
+    >
+      Visual & Data Journalism
+    </a>
+  </div>
+  <h1
+    className="o-editorial-layout-heading-1"
+    itemProp="headline"
+  >
+    This is a headline
+  </h1>
+  <div
+    className="bylines"
+  >
+    By 
+    
+    <a
+      className="o-editorial-typography-author"
+      href="https://www.ft.com/"
+    >
+      Person One
+    </a>
+     and 
+    <a
+      className="o-editorial-typography-author"
+      href="https://www.ft.com/"
+    >
+      Person Two
+    </a>
+     
+    <time
+      className="o-date o-editorial-typography-byline-timestamp"
+      data-o-component="o-date"
+      dateTime="2019-01-31T00:00:00.000Z"
+      suppressHydrationWarning={true}
+    >
+      January 31 2019
+    </time>
+  </div>
+  <div
+    className="g-share g-share--separated g-share--small"
+  >
+    <div
+      className="o-share"
+      data-o-component="o-share"
+    >
+      <ul>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--twitter"
+            href="https://twitter.com/intent/tweet?url=https://www.ft.com/&text=This is a headline&via=FinancialTimes"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              Twitter
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--facebook"
+            href="https://www.facebook.com/sharer.php?u=https://www.ft.com/&t=This is a headline"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              Facebook
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.ft.com/&title=This is a headline&source=Financial+Times"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              LinkedIn
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--whatsapp"
+            href="whatsapp://send?text=This is a headline - https://www.ft.com/"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              WhatsApp
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <p
+    className="o-editorial-typography-standfirst"
+  >
+    This is a standfirst
+     
+  </p>
+  <meta
+    content="2019-01-31T00:00:00.000Z"
+    itemProp="dateModified"
+    suppressHydrationWarning={true}
+  />
+</div>
+`;
+
 exports[`Storyshots Core/Button Examples 1`] = `
 Array [
   "Secondary/default button:",
@@ -6477,10 +6701,10 @@ exports[`Storyshots Core/Share Examples 1`] = `
 Array [
   "Default:",
   <div
-    className="g-share "
+    className="g-share g-share--undefined"
   >
     <div
-      className="o-share "
+      className="o-share"
       data-o-component="o-share"
     >
       <ul>
@@ -6557,10 +6781,10 @@ Array [
   </div>,
   "Separated:",
   <div
-    className="g-share g-share--separated"
+    className="g-share g-share--separated g-share--undefined"
   >
     <div
-      className="o-share "
+      className="o-share"
       data-o-component="o-share"
     >
       <ul>
@@ -6640,7 +6864,7 @@ Array [
     className="dark"
   >
     <div
-      className="g-share "
+      className="g-share g-share--undefined"
     >
       <div
         className="o-share o-share--inverse"
@@ -6717,6 +6941,166 @@ Array [
           </li>
         </ul>
       </div>
+    </div>
+  </div>,
+  "Small:",
+  <div
+    className="g-share g-share--small"
+  >
+    <div
+      className="o-share"
+      data-o-component="o-share"
+    >
+      <ul>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--twitter"
+            href="https://twitter.com/intent/tweet?url=https://www.ft.com/visual-and-data-journalism&text=My favourite website&via=FinancialTimes"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              Twitter
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--facebook"
+            href="https://www.facebook.com/sharer.php?u=https://www.ft.com/visual-and-data-journalism&t=My favourite website"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              Facebook
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.ft.com/visual-and-data-journalism&title=My favourite website&source=Financial+Times"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              LinkedIn
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--whatsapp"
+            href="whatsapp://send?text=My favourite website - https://www.ft.com/visual-and-data-journalism"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              WhatsApp
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>,
+  "Small and separated:",
+  <div
+    className="g-share g-share--separated g-share--small"
+  >
+    <div
+      className="o-share"
+      data-o-component="o-share"
+    >
+      <ul>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--twitter"
+            href="https://twitter.com/intent/tweet?url=https://www.ft.com/visual-and-data-journalism&text=My favourite website&via=FinancialTimes"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              Twitter
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--facebook"
+            href="https://www.facebook.com/sharer.php?u=https://www.ft.com/visual-and-data-journalism&t=My favourite website"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              Facebook
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--linkedin"
+            href="https://www.linkedin.com/shareArticle?mini=true&url=https://www.ft.com/visual-and-data-journalism&title=My favourite website&source=Financial+Times"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              LinkedIn
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+        <li
+          className="o-share__action"
+        >
+          <a
+            className="o-share__icon o-share__icon--whatsapp"
+            href="whatsapp://send?text=My favourite website - https://www.ft.com/visual-and-data-journalism"
+            rel="noopener"
+          >
+            <span
+              className="o-share__text"
+            >
+              Share on 
+              WhatsApp
+              . Opens in a new window.
+            </span>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>,
 ]
@@ -7012,10 +7396,10 @@ exports[`Storyshots Core/Story Topper Example 1`] = `
     </figcaption>
   </figure>
   <div
-    className="g-share "
+    className="g-share g-share--undefined"
   >
     <div
-      className="o-share false"
+      className="o-share"
       data-o-component="o-share"
     >
       <ul>
@@ -12457,10 +12841,10 @@ Array [
                 </figcaption>
               </figure>
               <div
-                className="g-share "
+                className="g-share g-share--undefined"
               >
                 <div
-                  className="o-share false"
+                  className="o-share"
                   data-o-component="o-share"
                 >
                   <ul>

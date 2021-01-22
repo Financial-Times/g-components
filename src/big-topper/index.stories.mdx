@@ -49,3 +49,19 @@ export const props = {
     <BigTopper {...props} />
   </Story>
 </Canvas>
+
+<Canvas>
+  <Story name="With byline props">
+    <BigTopper {...props} byline={{ prefix: 'Updated', dateFirst: true }} />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With share props">
+    <BigTopper
+      {...props}
+      flags={{ ...props.flags, shareButtons: true }}
+      share={{ size: 'small', separated: true }}
+    />
+  </Story>
+</Canvas>

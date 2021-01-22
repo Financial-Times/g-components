@@ -12,9 +12,23 @@ $o-share-is-silent: false;
 }
 
 @include oGridRespondTo(S) {
-
   .g-share .o-share__icon--whatsapp {
     display: none;
   }
+}
 
+.g-share--small {
+  .o-share .o-share__icon::before {
+    width: 28px;
+    height: 28px;
+    background-size: 30px 30px;
+  }
+}
+
+.g-share--small.g-share--separated li {
+  margin-left: 12px;
+}
+
+.g-share--small.g-share--separated li:first-of-type {
+  margin-left: 0;
 }
