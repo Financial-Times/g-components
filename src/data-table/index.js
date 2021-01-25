@@ -181,7 +181,7 @@ const DataTable = ({
 
   useEffect(() => {
     tableOrigami.current = OTable.init(tableRef.current);
-  });
+  }, []);
 
   // @TODO fix this; private method OTable.prototype._duplicateHeaders
   // useEffect(() => {
@@ -240,7 +240,7 @@ DataTable.propTypes = {
       columnIsHeader: PropTypes.bool,
       columnIsSortable: PropTypes.bool,
       columnIsVerticallyCentred: PropTypes.bool,
-      defaultSortIcon: PropTypes.oneOf(['ascending', 'descending'])
+      defaultSortIcon: PropTypes.oneOf(['ascending', 'descending']),
     }),
   ).isRequired,
   rows: PropTypes.arrayOf(PropTypes.object),
