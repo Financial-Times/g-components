@@ -27,15 +27,12 @@ const Comments = ({ id, url, linkPageUrl, flags }) => {
   const comments = (
     <div className="o-grid-container">
       <div className="o-grid-row">
-        <div
-          ref={ref}
-          data-o-component="o-comments"
-          id="comments"
-          data-o-grid-colspan="12 S11 Scenter M9 L8 XL7"
-        >
-          <div className="o--if-no-js">
-            To participate in this chat, you need to upgrade to a newer web browser.{' '}
-            <a href="https://help.ft.com/tools-services/browser-compatibility/">Learn more.</a>
+        <div data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
+          <div ref={ref} data-o-component="o-comments" id="comments">
+            <div className="o--if-no-js">
+              To participate in this chat, you need to upgrade to a newer web browser.{' '}
+              <a href="https://help.ft.com/tools-services/browser-compatibility/">Learn more.</a>
+            </div>
           </div>
         </div>
       </div>
