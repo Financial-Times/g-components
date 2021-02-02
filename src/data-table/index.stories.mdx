@@ -67,6 +67,8 @@ export const basicRows = [
       <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" />
       Sorting disabled:
       <DataTable headers={basicHeaders} rows={basicRows} responsive="flat" isSortable={false} />
+      With row truncation:
+      <DataTable headers={basicHeaders} rows={basicRows} responsive="overflow" truncation={4} />
       With default sort icon:
       <DataTable headers={headersWithDefaultSortIcon} rows={basicRows} />
     </>

@@ -45,7 +45,7 @@ const footerAttributes = (header) => {
   return Object.assign(...attributes);
 };
 
-const tableAttributes = (responsive, isStriped, isLinedHorizontal, isCompact, isSortable) => {
+const tableAttributes = (responsive, truncation, isStriped, isLinedHorizontal, isCompact, isSortable) => {
   const className = classnames(
     'o-table',
     responsive === 'scroll' && 'o-table--responsive-scroll',
@@ -60,6 +60,7 @@ const tableAttributes = (responsive, isStriped, isLinedHorizontal, isCompact, is
     { 'data-o-component': 'o-table' },
     !isSortable ? { 'data-o-table-sortable': false } : {},
     responsive !== 'none' ? { 'data-o-table-responsive': responsive } : {},
+    truncation ? { 'data-o-table-minimum-row-count': truncation, 'data-o-table-expanded': 'false' } : {},
   ];
   return Object.assign(...attributes);
 };
@@ -170,6 +171,7 @@ const DataTable = ({
   rows,
   footers,
   responsive,
+  truncation,
   isHeaderHidden,
   isSortable,
   isStriped,
@@ -199,6 +201,7 @@ const DataTable = ({
 
   const attributes = tableAttributes(
     responsive,
+    truncation,
     isStriped,
     isLinedHorizontal,
     isCompact,
@@ -251,6 +254,7 @@ DataTable.propTypes = {
     }),
   ),
   responsive: PropTypes.oneOf(['none', 'scroll', 'flat', 'overflow']),
+  truncation: PropTypes.number,
   isHeaderHidden: PropTypes.bool,
   isSortable: PropTypes.bool,
   isStriped: PropTypes.bool,
@@ -265,6 +269,7 @@ DataTable.defaultProps = {
   rows: [],
   footers: [],
   responsive: 'none',
+  truncation: null,
   isHeaderHidden: false,
   isSortable: true,
   isStriped: false,
