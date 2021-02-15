@@ -1,0 +1,74 @@
+import { Fragment, useRef } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import '../shared/critical-path.scss';
+import StickyHeader from './';
+
+export const ExampleContent = () => (
+  <Fragment>
+    <h2>Section title</h2>
+    <p>
+      Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit
+      plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s&apos;joro pronomeċa, mi paki vice
+      fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh
+      tiele hiper defīnītive.
+    </p>
+  </Fragment>
+);
+
+export const StickyHeaderStoryContainer = ({ children }) => {
+  const containerRef = useRef();
+  return (
+    <div ref={containerRef} style={{ height: 3000, position: 'relative' }}>
+      {children({ containerRef })}
+    </div>
+  );
+};
+
+<Meta title="Core/Sticky Header" component={StickyHeader} />
+
+# Sticky header component
+
+TKTK
+
+<Canvas>
+  <Story name="With single child element">
+    <StickyHeaderStoryContainer>
+      {({ containerRef }) => (
+        <div>
+          <h1>Title</h1>
+          <StickyHeader
+            containerRef={containerRef}
+            height={{ default: 30, s: 30, m: 30, l: 30, xl: 30 }}
+          >
+            <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+              Sticky header child
+            </div>
+          </StickyHeader>
+          <ExampleContent />
+        </div>
+      )}
+    </StickyHeaderStoryContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With shadow always on when sticky">
+    <StickyHeaderStoryContainer>
+      {({ containerRef }) => (
+        <div>
+          <h1>Title</h1>
+          <StickyHeader
+            containerRef={containerRef}
+            height={{ default: 30, s: 30, m: 30, l: 30, xl: 30 }}
+            alwaysShowShadowWhenSticky
+          >
+            <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+              Sticky header child
+            </div>
+          </StickyHeader>
+          <ExampleContent />
+        </div>
+      )}
+    </StickyHeaderStoryContainer>
+  </Story>
+</Canvas>
