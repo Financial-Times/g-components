@@ -52,7 +52,7 @@ TKTK
 </Canvas>
 
 <Canvas>
-  <Story name="With shadow always on when sticky">
+  <Story name="With shadow on scroll up">
     <StickyHeaderStoryContainer>
       {({ containerRef }) => (
         <div>
@@ -60,11 +60,23 @@ TKTK
           <StickyHeader
             containerRef={containerRef}
             height={{ default: 30, s: 30, m: 30, l: 30, xl: 30 }}
-            alwaysShowShadowWhenSticky
           >
-            <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
-              Sticky header child
-            </div>
+            {({ isSticky, scrollDirection }) => (
+              <div
+                style={{
+                  height: 30,
+                  backgroundColor: 'white',
+                  borderBottom: '1px solid black',
+                  transition: 'box-shadow 0.5s',
+                  boxShadow:
+                    isSticky && scrollDirection === 'up'
+                      ? '0 4px 6px 0 rgba(77, 72, 69, 0.1), 0 1px 2px 0 rgba(77, 72, 69, 0.24'
+                      : 'none',
+                }}
+              >
+                Sticky header child
+              </div>
+            )}
           </StickyHeader>
           <ExampleContent />
         </div>
