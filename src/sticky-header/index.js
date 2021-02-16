@@ -1,14 +1,16 @@
-import React, { useState, useRef, useContext } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Context } from '../article-layout';
 import useScrollPosition from './useScrollPosition';
 import './styles.scss';
 
-const StickyHeader = ({ children, containerRef, height }) => {
+const StickyHeader = ({ children, containerRef }) => {
   const [isSticky, setSticky] = useState(false);
+  const [heightOfChildren, setHeightOfChildren] = useState(0);
   const [scrollDirection, setScrollDirection] = useState('down');
   const ref = useRef(null);
+  const childrenRef = useRef(null);
 
   useScrollPosition(({ prevPos, currPos }) => {
     if (ref.current && containerRef.current) {
@@ -16,42 +18,39 @@ const StickyHeader = ({ children, containerRef, height }) => {
       const { bottom: containerBottom } = containerRef.current.getBoundingClientRect();
       const isSticky = stickyTop <= 0 && containerBottom - stickyHeight >= 0;
 
+      if (childrenRef.current) {
+        const { height } = childrenRef.current.getBoundingClientRect();
+        setHeightOfChildren(height);
+      } else {
+        setHeightOfChildren(stickyHeight);
+      }
+
       setSticky(isSticky);
       setScrollDirection(currPos.y > prevPos.y ? 'up' : 'down');
     }
   }, []);
 
-  const { b } = useContext(Context);
-  const breakpoint = (b && b.breakpoint) || 'default';
-  const breakpointHeight = height[breakpoint];
+  const wrapperClasses = classNames('sticky-header', isSticky && 'sticky-header--fixed');
 
-  const wrapperClasses = classNames(
-    'sticky-header-wrapper',
-    isSticky && 'sticky-header-wrapper--fixed',
-  );
+  const childrenIsFunction = typeof children === 'function';
 
   return (
     <div
       className={wrapperClasses}
       ref={ref}
-      style={{ minHeight: isSticky && breakpointHeight ? breakpointHeight : 'auto' }}
+      style={{ minHeight: isSticky ? heightOfChildren : 'auto' }}
     >
-      {typeof children === 'function' ? children({ isSticky, scrollDirection }) : children}
+      {childrenIsFunction ? children({ isSticky, scrollDirection, ref: childrenRef }) : children}
     </div>
   );
 };
 
 StickyHeader.propTypes = {
   children: PropTypes.oneOfType([PropTypes.func.isRequired, PropTypes.node]).isRequired,
-  height: PropTypes.object.isRequired,
   containerRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   ]).isRequired,
-};
-
-StickyHeader.defaultProps = {
-  height: { default: 0, s: 0, m: 0, l: 0, xl: 0 },
 };
 
 export default StickyHeader;

@@ -1,7 +1,10 @@
-import { Fragment, useRef } from 'react';
+import { Fragment, useRef, useState } from 'react';
 import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
 import '../shared/critical-path.scss';
 import StickyHeader from './';
+
+export const hideElement = (hideElement) => boolean('Hide element', hideElement);
 
 export const ExampleContent = () => (
   <Fragment>
@@ -24,7 +27,7 @@ export const StickyHeaderStoryContainer = ({ children }) => {
   );
 };
 
-<Meta title="Core/Sticky Header" component={StickyHeader} />
+<Meta title="Core/Sticky Header" component={StickyHeader} decorators={[withKnobs]} />
 
 # Sticky header component
 
@@ -36,10 +39,7 @@ TKTK
       {({ containerRef }) => (
         <div>
           <h1>Title</h1>
-          <StickyHeader
-            containerRef={containerRef}
-            height={{ default: 30, s: 30, m: 30, l: 30, xl: 30 }}
-          >
+          <StickyHeader containerRef={containerRef}>
             <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
               Sticky header child
             </div>
@@ -57,10 +57,7 @@ TKTK
       {({ containerRef }) => (
         <div>
           <h1>Title</h1>
-          <StickyHeader
-            containerRef={containerRef}
-            height={{ default: 30, s: 30, m: 30, l: 30, xl: 30 }}
-          >
+          <StickyHeader containerRef={containerRef}>
             {({ isSticky, scrollDirection }) => (
               <div
                 style={{
@@ -78,6 +75,42 @@ TKTK
               </div>
             )}
           </StickyHeader>
+          <ExampleContent />
+        </div>
+      )}
+    </StickyHeaderStoryContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With changing height of children">
+    <StickyHeaderStoryContainer>
+      {({ containerRef }) => (
+        <div>
+          <h1>Title</h1>
+          <StickyHeader containerRef={containerRef}>
+            {({ ref }) => (
+              <div ref={ref}>
+                <div
+                  style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}
+                >
+                  Sticky header child
+                </div>
+                <div
+                  style={{
+                    height: 30,
+                    backgroundColor: 'yellow',
+                    borderBottom: '1px solid black',
+                    display: hideElement(false) ? 'none' : 'block',
+                  }}
+                >
+                  Sticky header child 2
+                </div>
+              </div>
+            )}
+          </StickyHeader>
+          <ExampleContent />
+          <ExampleContent />
           <ExampleContent />
         </div>
       )}
