@@ -7481,6 +7481,323 @@ exports[`Storyshots Core/Sticky Complex example 1`] = `
 </div>
 `;
 
+exports[`Storyshots Core/Sticky Header With changing height of children 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "border": "1px solid red",
+        "height": 2000,
+        "position": "relative",
+      }
+    }
+  >
+    <div>
+      <h1>
+        Title
+      </h1>
+      <div
+        className="sticky-header"
+        style={
+          Object {
+            "minHeight": "auto",
+          }
+        }
+      >
+        <div
+          className="sticky-header__children-wrapper"
+          style={
+            Object {
+              "top": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+                "borderBottom": "1px solid black",
+                "height": 30,
+              }
+            }
+          >
+            Sticky header child
+          </div>
+          <div
+            style={
+              Object {
+                "backgroundColor": "yellow",
+                "borderBottom": "1px solid black",
+                "display": "block",
+                "height": 30,
+              }
+            }
+          >
+            Sticky header child 2
+          </div>
+        </div>
+      </div>
+      <h2>
+        Section title
+      </h2>
+      <p>
+        Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s'joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh tiele hiper defīnītive.
+      </p>
+      <h2>
+        Section title
+      </h2>
+      <p>
+        Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s'joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh tiele hiper defīnītive.
+      </p>
+      <h2>
+        Section title
+      </h2>
+      <p>
+        Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s'joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh tiele hiper defīnītive.
+      </p>
+    </div>
+  </div>,
+  <footer
+    style={
+      Object {
+        "height": 2000,
+      }
+    }
+  />,
+]
+`;
+
+exports[`Storyshots Core/Sticky Header With missing containerRef 1`] = `
+Array [
+  <div>
+    <h1>
+      Title
+    </h1>
+    <div
+      className="sticky-header"
+      style={
+        Object {
+          "minHeight": "auto",
+        }
+      }
+    >
+      <div
+        className="sticky-header__children-wrapper"
+        style={
+          Object {
+            "top": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "white",
+              "borderBottom": "1px solid black",
+              "height": 30,
+            }
+          }
+        >
+          Sticky header child
+        </div>
+      </div>
+    </div>
+    <h2>
+      Section title
+    </h2>
+    <p>
+      Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s'joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh tiele hiper defīnītive.
+    </p>
+  </div>,
+  <footer
+    style={
+      Object {
+        "height": 2000,
+      }
+    }
+  />,
+]
+`;
+
+exports[`Storyshots Core/Sticky Header With offset 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "border": "1px solid red",
+        "height": 2000,
+        "position": "relative",
+      }
+    }
+  >
+    <div>
+      <h1>
+        Title
+      </h1>
+      <div
+        className="sticky-header"
+        style={
+          Object {
+            "minHeight": "auto",
+          }
+        }
+      >
+        <div
+          className="sticky-header__children-wrapper"
+          style={
+            Object {
+              "top": 20,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+                "borderBottom": "1px solid black",
+                "height": 30,
+              }
+            }
+          >
+            Sticky header child
+          </div>
+        </div>
+      </div>
+      <h2>
+        Section title
+      </h2>
+      <p>
+        Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s'joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh tiele hiper defīnītive.
+      </p>
+    </div>
+  </div>,
+  <footer
+    style={
+      Object {
+        "height": 2000,
+      }
+    }
+  />,
+]
+`;
+
+exports[`Storyshots Core/Sticky Header With shadow on scroll up 1`] = `
+<div
+  style={
+    Object {
+      "border": "1px solid red",
+      "height": 2000,
+      "position": "relative",
+    }
+  }
+>
+  <div>
+    <h1>
+      Title
+    </h1>
+    <div
+      className="sticky-header"
+      style={
+        Object {
+          "minHeight": "auto",
+        }
+      }
+    >
+      <div
+        className="sticky-header__children-wrapper"
+        style={
+          Object {
+            "top": 0,
+          }
+        }
+      >
+        <div
+          style={
+            Object {
+              "backgroundColor": "white",
+              "borderBottom": "1px solid black",
+              "boxShadow": "none",
+              "height": 30,
+              "transition": "box-shadow 0.5s",
+            }
+          }
+        >
+          Sticky header child
+        </div>
+      </div>
+    </div>
+    <h2>
+      Section title
+    </h2>
+    <p>
+      Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s'joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh tiele hiper defīnītive.
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Core/Sticky Header With single child element 1`] = `
+Array [
+  <div
+    style={
+      Object {
+        "border": "1px solid red",
+        "height": 2000,
+        "position": "relative",
+      }
+    }
+  >
+    <div>
+      <h1>
+        Title
+      </h1>
+      <div
+        className="sticky-header"
+        style={
+          Object {
+            "minHeight": "auto",
+          }
+        }
+      >
+        <div
+          className="sticky-header__children-wrapper"
+          style={
+            Object {
+              "top": 0,
+            }
+          }
+        >
+          <div
+            style={
+              Object {
+                "backgroundColor": "white",
+                "borderBottom": "1px solid black",
+                "height": 30,
+              }
+            }
+          >
+            Sticky header child
+          </div>
+        </div>
+      </div>
+      <h2>
+        Section title
+      </h2>
+      <p>
+        Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s'joro pronomeċa, mi paki vice fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh tiele hiper defīnītive.
+      </p>
+    </div>
+  </div>,
+  <footer
+    style={
+      Object {
+        "height": 2000,
+      }
+    }
+  />,
+]
+`;
+
 exports[`Storyshots Core/Story Topper Example 1`] = `
 <div
   className="story-topper"
