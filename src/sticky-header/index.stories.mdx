@@ -18,10 +18,10 @@ export const ExampleContent = () => (
   </Fragment>
 );
 
-export const StickyHeaderStoryContainer = ({ children }) => {
+export const StickyHeaderStoryContainer = ({ height, children }) => {
   const containerRef = useRef();
   return (
-    <div ref={containerRef} style={{ height: 3000, position: 'relative' }}>
+    <div ref={containerRef} style={{ height, position: 'relative', border: '1px solid red' }}>
       {children({ containerRef })}
     </div>
   );
@@ -31,11 +31,21 @@ export const StickyHeaderStoryContainer = ({ children }) => {
 
 # Sticky header component
 
-TKTK
+`<StickyHeader>{children}</StickyHeader>` can be used to turn any React node or component
+into a sticky header - a header which fixes into place after the top (+ optional offset) of the page reaches the header
+and becomes unfixed after it has passed the bottom of a container element (e.g. the main body of a page).
+
+Props:
+
+- `containerRef` (ref created with `createRef` or `useRef`): a ref to a container element.
+  The sticky header will become hidden after the bottom of the header has passed the bottom of the container
+- `offset` (integer - optional): a pixel offset for when the header should become sticky - this offset is also applied
+  to the fixed position of the header (i.e. if set to 20px, the header will become sticky when the top of the page is
+  20px above the header and the header will be in a fixed position 20px below the top of the page)
 
 <Canvas>
   <Story name="With single child element">
-    <StickyHeaderStoryContainer>
+    <StickyHeaderStoryContainer height={2000}>
       {({ containerRef }) => (
         <div>
           <h1>Title</h1>
@@ -48,12 +58,32 @@ TKTK
         </div>
       )}
     </StickyHeaderStoryContainer>
+    <footer style={{ height: 2000 }}></footer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With offset">
+    <StickyHeaderStoryContainer height={2000}>
+      {({ containerRef }) => (
+        <div>
+          <h1>Title</h1>
+          <StickyHeader containerRef={containerRef} offset={20}>
+            <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+              Sticky header child
+            </div>
+          </StickyHeader>
+          <ExampleContent />
+        </div>
+      )}
+    </StickyHeaderStoryContainer>
+    <footer style={{ height: 2000 }}></footer>
   </Story>
 </Canvas>
 
 <Canvas>
   <Story name="With shadow on scroll up">
-    <StickyHeaderStoryContainer>
+    <StickyHeaderStoryContainer height={2000}>
       {({ containerRef }) => (
         <div>
           <h1>Title</h1>
@@ -84,30 +114,24 @@ TKTK
 
 <Canvas>
   <Story name="With changing height of children">
-    <StickyHeaderStoryContainer>
+    <StickyHeaderStoryContainer height={2000}>
       {({ containerRef }) => (
         <div>
           <h1>Title</h1>
           <StickyHeader containerRef={containerRef}>
-            {({ ref }) => (
-              <div ref={ref}>
-                <div
-                  style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}
-                >
-                  Sticky header child
-                </div>
-                <div
-                  style={{
-                    height: 30,
-                    backgroundColor: 'yellow',
-                    borderBottom: '1px solid black',
-                    display: hideElement(false) ? 'none' : 'block',
-                  }}
-                >
-                  Sticky header child 2
-                </div>
-              </div>
-            )}
+            <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+              Sticky header child
+            </div>
+            <div
+              style={{
+                height: 30,
+                backgroundColor: 'yellow',
+                borderBottom: '1px solid black',
+                display: hideElement(false) ? 'none' : 'block',
+              }}
+            >
+              Sticky header child 2
+            </div>
           </StickyHeader>
           <ExampleContent />
           <ExampleContent />
@@ -115,5 +139,6 @@ TKTK
         </div>
       )}
     </StickyHeaderStoryContainer>
+    <footer style={{ height: 2000 }}></footer>
   </Story>
 </Canvas>
