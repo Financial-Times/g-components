@@ -34,14 +34,28 @@ export const StickyHeaderStoryContainer = ({ height, children }) => {
 `<StickyHeader>{children}</StickyHeader>` can be used to turn any React node or component
 into a sticky header - a header which fixes into place after the top (+ optional offset) of the page reaches the header
 and becomes unfixed after it has passed the bottom of a container element (e.g. the main body of a page).
+It does not rely on the css `position: sticky`.
 
 Props:
 
-- `containerRef` (ref created with `createRef` or `useRef`): a ref to a container element.
-  The sticky header will become hidden after the bottom of the header has passed the bottom of the container
+- `containerRef` (ref created with `createRef` or `useRef` - optional): a ref to a container element.
+  The sticky header will become hidden after the bottom of the header has passed the bottom of the container. If
+  missing the header will remain fixed all the way to the bottom of the page
 - `offset` (integer - optional): a pixel offset for when the header should become sticky - this offset is also applied
   to the fixed position of the header (i.e. if set to 20px, the header will become sticky when the top of the page is
   20px above the header and the header will be in a fixed position 20px below the top of the page)
+
+The component passes two props to the child component if needed. These can be accessed by passing
+the following as a child:
+
+```
+{({ isSticky, scrollDirection }) => (
+  ... use the props here ...
+)}
+```
+
+- `isSticky` (boolean): whether or not the sticky header is currently fixed in place
+- `scrollDirection` ('up' or 'down'): the direction the user is scrolling in
 
 <Canvas>
   <Story name="With single child element">
@@ -139,6 +153,21 @@ Props:
         </div>
       )}
     </StickyHeaderStoryContainer>
+    <footer style={{ height: 2000 }}></footer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With missing containerRef">
+    <div>
+      <h1>Title</h1>
+      <StickyHeader>
+        <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+          Sticky header child
+        </div>
+      </StickyHeader>
+      <ExampleContent />
+    </div>
     <footer style={{ height: 2000 }}></footer>
   </Story>
 </Canvas>

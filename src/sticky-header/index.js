@@ -12,12 +12,17 @@ const StickyHeader = ({ children, containerRef, offset }) => {
   const childrenRef = useRef(null);
 
   useScrollPosition(({ prevPos, currPos }) => {
-    if (stickyRef.current && containerRef.current && childrenRef.current) {
-      const { bottom: containerBottom } = containerRef.current.getBoundingClientRect();
+    if (stickyRef.current && childrenRef.current) {
       const { top: stickyTop, height: stickyHeight } = stickyRef.current.getBoundingClientRect();
       const { height: heightOfChildren } = childrenRef.current.getBoundingClientRect();
 
-      const isSticky = stickyTop <= offset && containerBottom - stickyHeight - offset >= 0;
+      let isSticky;
+      if (containerRef?.current) {
+        const { bottom: containerBottom } = containerRef.current.getBoundingClientRect();
+        isSticky = stickyTop <= offset && containerBottom - stickyHeight - offset >= 0;
+      } else {
+        isSticky = stickyTop <= offset;
+      }
 
       setHeightOfChildren(heightOfChildren);
       setSticky(isSticky);
@@ -47,7 +52,7 @@ StickyHeader.propTypes = {
   containerRef: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
-  ]).isRequired,
+  ]),
   offset: PropTypes.number,
 };
 
