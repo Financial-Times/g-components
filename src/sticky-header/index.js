@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import useScrollPosition from './useScrollPosition';
@@ -35,7 +35,7 @@ const StickyHeader = ({ children, containerRef, offset }) => {
   const childrenIsFunction = typeof children === 'function';
 
   return (
-    <div
+    <header
       className={stickyHeaderClasses}
       ref={stickyRef}
       style={{ minHeight: isSticky ? heightOfChildren : 'auto' }}
@@ -43,7 +43,7 @@ const StickyHeader = ({ children, containerRef, offset }) => {
       <div className="sticky-header__children-wrapper" ref={childrenRef} style={{ top: offset }}>
         {childrenIsFunction ? children({ isSticky, scrollDirection }) : children}
       </div>
-    </div>
+    </header>
   );
 };
 
