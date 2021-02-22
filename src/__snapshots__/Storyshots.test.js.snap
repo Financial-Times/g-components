@@ -7496,7 +7496,7 @@ Array [
       <h1>
         Title
       </h1>
-      <div
+      <header
         className="sticky-header"
         style={
           Object {
@@ -7536,7 +7536,7 @@ Array [
             Sticky header child 2
           </div>
         </div>
-      </div>
+      </header>
       <h2>
         Section title
       </h2>
@@ -7573,7 +7573,7 @@ Array [
     <h1>
       Title
     </h1>
-    <div
+    <header
       className="sticky-header"
       style={
         Object {
@@ -7601,7 +7601,7 @@ Array [
           Sticky header child
         </div>
       </div>
-    </div>
+    </header>
     <h2>
       Section title
     </h2>
@@ -7634,7 +7634,7 @@ Array [
       <h1>
         Title
       </h1>
-      <div
+      <header
         className="sticky-header"
         style={
           Object {
@@ -7662,7 +7662,7 @@ Array [
             Sticky header child
           </div>
         </div>
-      </div>
+      </header>
       <h2>
         Section title
       </h2>
@@ -7695,7 +7695,7 @@ exports[`Storyshots Core/Sticky Header With shadow on scroll up 1`] = `
     <h1>
       Title
     </h1>
-    <div
+    <header
       className="sticky-header"
       style={
         Object {
@@ -7725,7 +7725,7 @@ exports[`Storyshots Core/Sticky Header With shadow on scroll up 1`] = `
           Sticky header child
         </div>
       </div>
-    </div>
+    </header>
     <h2>
       Section title
     </h2>
@@ -7751,7 +7751,7 @@ Array [
       <h1>
         Title
       </h1>
-      <div
+      <header
         className="sticky-header"
         style={
           Object {
@@ -7779,7 +7779,7 @@ Array [
             Sticky header child
           </div>
         </div>
-      </div>
+      </header>
       <h2>
         Section title
       </h2>
