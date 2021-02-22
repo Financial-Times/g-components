@@ -7,7 +7,6 @@ const RefPropType = PropTypes.oneOfType([
 ]);
 
 export const NavigationHeaderMobileDropdownButton = ({
-  currentPage,
   currentText,
   onClick,
   isOpen,
@@ -18,7 +17,6 @@ export const NavigationHeaderMobileDropdownButton = ({
     className={`navigation-header__dropdown-button navigation-header__dropdown-button--${
       isOpen ? 'open' : 'closed'
     }`}
-    value={currentPage}
     onClick={onClick}
     aria-haspopup="true"
     aria-expanded={isOpen}
@@ -30,7 +28,7 @@ export const NavigationHeaderMobileDropdownButton = ({
 
 NavigationHeaderMobileDropdownButton.propTypes = {
   currentText: PropTypes.string.isRequired,
-  currentPage: PropTypes.string.isRequired,
+  currentPage: PropTypes.string,
   onClick: PropTypes.func,
   isOpen: PropTypes.bool,
   buttonRef: RefPropType,
@@ -50,19 +48,21 @@ export const NavigationHeaderMobileDropdown = ({
 }) => {
   const dropdownRef = useRef();
 
-  const handleClick = (event) => {
-    // If clicking outside dropdown or button, close dropdown
-    if (!(dropdownRef.current.contains(event.target) || buttonRef.current.contains(event.target))) {
-      closeDropdown();
-    }
-  };
-
   useEffect(() => {
+    const handleClick = (event) => {
+      // If clicking outside dropdown or button, close dropdown
+      if (
+        !(dropdownRef.current.contains(event.target) || buttonRef.current.contains(event.target))
+      ) {
+        closeDropdown();
+      }
+    };
+
     document.addEventListener('mousedown', handleClick);
     return () => {
       document.removeEventListener('mousedown', handleClick);
     };
-  }, []);
+  }, [closeDropdown, buttonRef]);
 
   return (
     <ul className="navigation-header__dropdown" role="menu" id="dropwdown-menu" ref={dropdownRef}>
