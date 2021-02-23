@@ -1,0 +1,108 @@
+import { useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import ButtonToggle from './';
+
+export const StateWrapper = ({ children, initialState }) => {
+  const [state, setState] = useState(initialState);
+  return <div>{children({ state, setState })}</div>;
+};
+
+<Meta title="Local/Button Toggle" component={ButtonToggle} />
+
+# Button Toggle
+
+TKTK
+
+<Canvas>
+  <Story name="Default">
+    <StateWrapper initialState="a">
+      {({ state, setState }) => (
+        <ButtonToggle
+          items={[
+            { value: 'a', display: 'Item A' },
+            { value: 'b', display: 'Item B' },
+          ]}
+          selectedItem={state}
+          onToggle={(value) => setState(value)}
+        />
+      )}
+    </StateWrapper>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Equal buttons width custom width">
+    <StateWrapper initialState="a">
+      {({ state, setState }) => (
+        <ButtonToggle
+          items={[
+            { value: 'a', display: 'Item A' },
+            { value: 'b', display: 'Bigger Item B' },
+          ]}
+          selectedItem={state}
+          onToggle={(value) => setState(value)}
+          width={300}
+        />
+      )}
+    </StateWrapper>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Unequal buttons">
+    <StateWrapper initialState="a">
+      {({ state, setState }) => (
+        <ButtonToggle
+          items={[
+            { value: 'a', display: 'Item A' },
+            { value: 'b', display: 'Bigger Item B' },
+          ]}
+          selectedItem={state}
+          onToggle={(value) => setState(value)}
+          equalButtons={false}
+        />
+      )}
+    </StateWrapper>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With title">
+    <StateWrapper initialState="a">
+      {({ state, setState }) => (
+        <ButtonToggle
+          title="Button toggle"
+          items={[
+            { value: 'a', display: 'Item A' },
+            { value: 'b', display: 'Item B' },
+          ]}
+          selectedItem={state}
+          onToggle={(value) => setState(value)}
+          width={300}
+        />
+      )}
+    </StateWrapper>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Inverted">
+    <div style={{ backgroundColor: '#262a33', padding: '1em' }}>
+      <StateWrapper initialState="a">
+        {({ state, setState }) => (
+          <ButtonToggle
+            title="Button toggle"
+            items={[
+              { value: 'a', display: 'Item A' },
+              { value: 'b', display: 'Item B' },
+            ]}
+            selectedItem={state}
+            onToggle={(value) => setState(value)}
+            width={300}
+            inverse={true}
+          />
+        )}
+      </StateWrapper>
+    </div>
+  </Story>
+</Canvas>

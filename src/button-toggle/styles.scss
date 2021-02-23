@@ -1,0 +1,28 @@
+.button-toggle {
+  margin: 0;
+  padding: 0;
+  border: none;
+  width: 100%;
+
+  &__title {
+    margin-bottom: 10px;
+  }
+
+  &--inverse &__title {
+    color: #ffffff;
+  }
+
+  div {
+    display: flex;
+  }
+
+  button {
+    min-width: auto;
+    position: relative;
+  }
+
+  &--equal button {
+    flex: 1;
+    padding: 0;
+  }
+}
