@@ -45,7 +45,14 @@ const footerAttributes = (header) => {
   return Object.assign(...attributes);
 };
 
-const tableAttributes = (responsive, truncation, isStriped, isLinedHorizontal, isCompact, isSortable) => {
+const tableAttributes = (
+  responsive,
+  truncation,
+  isStriped,
+  isLinedHorizontal,
+  isCompact,
+  isSortable,
+) => {
   const className = classnames(
     'o-table',
     responsive === 'scroll' && 'o-table--responsive-scroll',
@@ -60,7 +67,9 @@ const tableAttributes = (responsive, truncation, isStriped, isLinedHorizontal, i
     { 'data-o-component': 'o-table' },
     !isSortable ? { 'data-o-table-sortable': false } : {},
     responsive !== 'none' ? { 'data-o-table-responsive': responsive } : {},
-    truncation ? { 'data-o-table-minimum-row-count': truncation, 'data-o-table-expanded': 'false' } : {},
+    truncation
+      ? { 'data-o-table-minimum-row-count': truncation, 'data-o-table-expanded': 'false' }
+      : {},
   ];
   return Object.assign(...attributes);
 };
@@ -184,6 +193,10 @@ const DataTable = ({
   useEffect(() => {
     tableOrigami.current = OTable.init(tableRef.current);
   }, []);
+
+  useEffect(() => {
+    tableOrigami.current.updateRows();
+  }, [rows]);
 
   // @TODO fix this; private method OTable.prototype._duplicateHeaders
   // useEffect(() => {
