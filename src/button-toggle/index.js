@@ -53,7 +53,7 @@ ButtonToggle.propTypes = {
   ).isRequired,
   selectedItem: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   onToggle: PropTypes.func.isRequired,
-  width: PropTypes.string,
+  width: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   equalButtons: PropTypes.bool,
   big: PropTypes.bool,
   inverse: PropTypes.bool,

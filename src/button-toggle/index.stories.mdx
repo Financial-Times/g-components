@@ -9,9 +9,24 @@ export const StateWrapper = ({ children, initialState }) => {
 
 <Meta title="Local/Button Toggle" component={ButtonToggle} />
 
-# Button Toggle
+# Button Toggle component
 
-TKTK
+`<ButtonToggle />` can be used to add a radio-button/toggle like input to a page
+
+Props:
+
+- `title` (string - optional): label to be displayed above buttons
+- `items` (array of `{ value: (string), display: (node) }`): list of items to be displayed as buttons
+- `selectedItem` (string): the current active item - should match a value from the `items` array
+- `onToggle` (function): function to run on toggle/button click
+- `width` (string or number - optional): sets fixed width for group of buttons
+- `equalButtons` (boolean - optional): makes buttons equal in width (half of parent or fixed width), true by default
+
+o-buttons props (see origami documentation [here](https://github.com/Financial-Times/o-buttons)):
+
+- `big` (boolean - optional): use o-buttons big style, true by default
+- `inverse` (boolean - optional): inverts button and title style
+- `theme` (string - optional): sets theme from available o-butttons theme, mono by default
 
 <Canvas>
   <Story name="Default">
