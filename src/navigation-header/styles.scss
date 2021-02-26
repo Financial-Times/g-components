@@ -1,0 +1,189 @@
+@import 'o-grid/main.scss';
+
+$navigation-height: 40px;
+$navigation-height-mobile: 48px;
+$navigation-background-color: #fef9f5;
+$navigation-border-color: #ccc1b7;
+$navigation-link-spacing: 15px;
+$navigation-font-size: 16px;
+$current-link-color: #0d7680;
+$default-link-color: #000000;
+$link-underline-height: 4px;
+$arrowIconColor: 0d7680;
+$navigation-box-shadow: 0 4px 6px 0 rgba(77, 72, 69, 0.1), 0 1px 2px 0 rgba(77, 72, 69, 0.24);
+$dropdown-item-height: 44px;
+$dropdown-item-background-color: #f2dfce;
+$dropdown-item-horizontal-padding: 32px;
+$dropdown-icon-size: 26px;
+
+.navigation-header {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: $navigation-height;
+  font-size: $navigation-font-size;
+  background-color: $navigation-background-color;
+  border-bottom: 1px solid $navigation-border-color;
+  top: 0;
+  box-sizing: border-box;
+  z-index: 1;
+
+  @include oGridRespondTo($until: M) {
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: flex-start;
+    height: $navigation-height-mobile;
+  }
+
+  &__title {
+    font-weight: 600;
+
+    &::after {
+      content: '';
+      position: relative;
+      margin-left: $navigation-link-spacing;
+      border-right: 1px solid $navigation-border-color;
+      height: calc(#{$navigation-height});
+    }
+  }
+
+  &__list {
+    display: table;
+    list-style-type: none;
+    padding: 0;
+    height: $navigation-height;
+
+    &:not(:first-child) {
+      padding-left: $navigation-link-spacing;
+    }
+  }
+
+  &__item {
+    display: table-cell;
+    vertical-align: middle;
+
+    &:not(:last-child) {
+      padding-right: $navigation-link-spacing;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $default-link-color;
+    border: 0;
+    position: relative;
+    display: block;
+    padding: calc((#{$navigation-height} - #{$navigation-font-size}) / 2) 0;
+    white-space: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: $link-underline-height;
+    }
+  }
+
+  &__link:focus,
+  &__link:hover {
+    &::after {
+      background-color: $default-link-color;
+    }
+  }
+
+  &__link[aria-current] {
+    color: $current-link-color;
+
+    &::after {
+      background-color: $current-link-color;
+    }
+  }
+
+  &__dropdown-button {
+    font-family: MetricWeb, sans-serif;
+    font-size: $navigation-font-size;
+    background-color: $navigation-background-color;
+    color: $current-link-color;
+    border: none;
+    border-bottom: 1px solid $current-link-color;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 24px 24px;
+    padding-right: 24px;
+    padding-left: 0;
+    text-align: left;
+    margin-left: $navigation-link-spacing;
+
+    &:focus-visible {
+      outline: 2px solid #807973 !important;
+    }
+
+    &--open {
+      background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-up?source=build-service&format=svg&tint=#{$arrowIconColor});
+    }
+
+    &--closed {
+      background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:arrow-down?source=build-service&format=svg&tint=#{$arrowIconColor});
+    }
+
+    @include oGridRespondTo($until: M) {
+      flex: 1;
+      box-sizing: border-box;
+      width: 100%;
+    }
+  }
+
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    top: $navigation-height;
+    background-color: $navigation-background-color;
+    box-shadow: $navigation-box-shadow;
+    width: 100%;
+    z-index: 1;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    @include oGridRespondTo($until: M) {
+      top: $navigation-height-mobile;
+    }
+  }
+
+  &__dropdown-link {
+    display: block;
+    text-decoration: none;
+    color: $default-link-color;
+    width: 100%;
+    height: $dropdown-item-height;
+    line-height: $dropdown-item-height;
+    padding: 0 $dropdown-item-horizontal-padding;
+    box-sizing: border-box;
+
+    &:focus,
+    &:hover {
+      background-color: $dropdown-item-background-color;
+    }
+  }
+
+  &__dropdown-link[aria-current] {
+    font-weight: 600;
+    position: relative;
+
+    &::before {
+      content: '';
+      background-size: $dropdown-icon-size $dropdown-icon-size;
+      width: $dropdown-icon-size;
+      height: $dropdown-icon-size;
+      position: absolute;
+      top: calc((#{$dropdown-item-height} - #{$dropdown-icon-size}) / 2);
+      left: calc((#{$dropdown-item-horizontal-padding} - #{$dropdown-icon-size}) / 2);
+      background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:tick?source=build-service&format=svg);
+    }
+  }
+}

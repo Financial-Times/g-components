@@ -1,0 +1,106 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import NavigationHeader from './';
+
+<Meta title="Core/NavigationHeader" component={NavigationHeader} />
+
+# Navigation header component
+
+`<NavigationHeader />` can be used to add extra navigation to a page. Includes a dropdown for small devices
+
+Props:
+
+- `title` (string - optional): navigation title to be displayed to the left of the links
+- `links` (array): a list of links for navigation each with a `text` and `url` attribute
+- `currentPage` (string - optional): if this matches the url of an item in the links array, this will
+  be highlighted in the navigation
+- `useDropdown` (boolean - optional): an override to enable/disable the dropdown. If this prop is undefined, the
+  dropdown is automatically displayed at the `default` breakpoint
+- `openLinksInNewTab` (boolean - optional): adds `target="_blank"` to all links so they open in another tab
+
+<Canvas>
+  <Story name="With title">
+    <NavigationHeader
+      title="Example title"
+      links={[
+        { text: 'Link 1', url: '#1' },
+        { text: 'Link 2', url: '#2' },
+        { text: 'Link 3', url: '#3' },
+      ]}
+      useDropdown={false}
+    />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Without title">
+    <NavigationHeader
+      links={[
+        { text: 'Link 1', url: '#1' },
+        { text: 'Link 2', url: '#2' },
+        { text: 'Link 3', url: '#3' },
+      ]}
+      useDropdown={false}
+    />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With current page">
+    <NavigationHeader
+      title="Example title"
+      links={[
+        { text: 'Link 1', url: '#1' },
+        { text: 'Link 2', url: '#2' },
+        { text: 'Link 3', url: '#3' },
+      ]}
+      currentPage="#1"
+      useDropdown={false}
+    />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With links opening in new tab">
+    <NavigationHeader
+      title="Example title"
+      links={[
+        { text: 'Link 1', url: '#1' },
+        { text: 'Link 2', url: '#2' },
+        { text: 'Link 3', url: '#3' },
+      ]}
+      openLinksInNewTab
+      useDropdown={false}
+    />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Using dropdown">
+    <NavigationHeader
+      title="Example title"
+      links={[
+        { text: 'Link 1', url: '#1' },
+        { text: 'Link 2', url: '#2' },
+        { text: 'Link 3', url: '#3' },
+      ]}
+      currentPage="#1"
+      openLinksInNewTab
+      useDropdown
+    />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Using dropdown with no current page">
+    <NavigationHeader
+      title="Example title"
+      links={[
+        { text: 'Link 1', url: '#1' },
+        { text: 'Link 2', url: '#2' },
+        { text: 'Link 3', url: '#3' },
+      ]}
+      openLinksInNewTab
+      useDropdown
+    />
+  </Story>
+</Canvas>

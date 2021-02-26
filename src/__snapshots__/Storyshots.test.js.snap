@@ -6486,6 +6486,263 @@ Array [
 ]
 `;
 
+exports[`Storyshots Core/NavigationHeader Using dropdown 1`] = `
+<nav
+  aria-label="Navigation menu"
+  className="navigation-header"
+  role="navigation"
+>
+  <div
+    className="navigation-header__title"
+  >
+    Example title
+  </div>
+  <button
+    aria-controls="dropwdown-menu"
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="navigation-header__dropdown-button navigation-header__dropdown-button--closed"
+    onClick={[Function]}
+  >
+    Link 1
+  </button>
+</nav>
+`;
+
+exports[`Storyshots Core/NavigationHeader Using dropdown with no current page 1`] = `
+<nav
+  aria-label="Navigation menu"
+  className="navigation-header"
+  role="navigation"
+>
+  <div
+    className="navigation-header__title"
+  >
+    Example title
+  </div>
+  <button
+    aria-controls="dropwdown-menu"
+    aria-expanded={false}
+    aria-haspopup="true"
+    className="navigation-header__dropdown-button navigation-header__dropdown-button--closed"
+    onClick={[Function]}
+  >
+    Link 1
+  </button>
+</nav>
+`;
+
+exports[`Storyshots Core/NavigationHeader With current page 1`] = `
+<nav
+  aria-label="Navigation menu"
+  className="navigation-header"
+  role="navigation"
+>
+  <div
+    className="navigation-header__title"
+  >
+    Example title
+  </div>
+  <ul
+    className="navigation-header__list"
+  >
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current="page"
+        className="navigation-header__link"
+        href="#"
+        target={null}
+      >
+        Link 1
+      </a>
+    </li>
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#2"
+        target={null}
+      >
+        Link 2
+      </a>
+    </li>
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#3"
+        target={null}
+      >
+        Link 3
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Storyshots Core/NavigationHeader With links opening in new tab 1`] = `
+<nav
+  aria-label="Navigation menu"
+  className="navigation-header"
+  role="navigation"
+>
+  <div
+    className="navigation-header__title"
+  >
+    Example title
+  </div>
+  <ul
+    className="navigation-header__list"
+  >
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#1"
+        target="_blank"
+      >
+        Link 1
+      </a>
+    </li>
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#2"
+        target="_blank"
+      >
+        Link 2
+      </a>
+    </li>
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#3"
+        target="_blank"
+      >
+        Link 3
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Storyshots Core/NavigationHeader With title 1`] = `
+<nav
+  aria-label="Navigation menu"
+  className="navigation-header"
+  role="navigation"
+>
+  <div
+    className="navigation-header__title"
+  >
+    Example title
+  </div>
+  <ul
+    className="navigation-header__list"
+  >
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#1"
+        target={null}
+      >
+        Link 1
+      </a>
+    </li>
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#2"
+        target={null}
+      >
+        Link 2
+      </a>
+    </li>
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#3"
+        target={null}
+      >
+        Link 3
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
+exports[`Storyshots Core/NavigationHeader Without title 1`] = `
+<nav
+  aria-label="Navigation menu"
+  className="navigation-header"
+  role="navigation"
+>
+  <ul
+    className="navigation-header__list"
+  >
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#1"
+        target={null}
+      >
+        Link 1
+      </a>
+    </li>
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#2"
+        target={null}
+      >
+        Link 2
+      </a>
+    </li>
+    <li
+      className="navigation-header__item"
+    >
+      <a
+        aria-current={null}
+        className="navigation-header__link"
+        href="#3"
+        target={null}
+      >
+        Link 3
+      </a>
+    </li>
+  </ul>
+</nav>
+`;
+
 exports[`Storyshots Core/OnwardJourney Example 1`] = `null`;
 
 exports[`Storyshots Core/Overlay Example 1`] = `
