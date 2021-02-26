@@ -1,0 +1,173 @@
+import { Fragment, useRef, useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { withKnobs, boolean } from '@storybook/addon-knobs';
+import '../shared/critical-path.scss';
+import StickyHeader from './';
+
+export const hideElement = (hideElement) => boolean('Hide element', hideElement);
+
+export const ExampleContent = () => (
+  <Fragment>
+    <h2>Section title</h2>
+    <p>
+      Ik kie neġi æpude pōsÞpriskribo, anċ ēg tiel subtegmenÞo. Giga gārði esperǣntigo vi jes. Ċit
+      plēj esceptīnte hu, ōl vola eksploðæ poǽ. Ōīð gh pǽƿjo s&apos;joro pronomeċa, mi paki vice
+      fiksa vir. Trǣ kibi multa ok, sur ðū īnfāno kæŭze. Om ene modō sekvanta proksimumecō, ānÞ sh
+      tiele hiper defīnītive.
+    </p>
+  </Fragment>
+);
+
+export const StickyHeaderStoryContainer = ({ height, children }) => {
+  const containerRef = useRef();
+  return (
+    <div ref={containerRef} style={{ height, position: 'relative', border: '1px solid red' }}>
+      {children({ containerRef })}
+    </div>
+  );
+};
+
+<Meta title="Core/Sticky Header" component={StickyHeader} decorators={[withKnobs]} />
+
+# Sticky header component
+
+`<StickyHeader>{children}</StickyHeader>` can be used to turn any React node or component
+into a sticky header - a header which fixes into place after the top (+ optional offset) of the page reaches the header
+and becomes unfixed after it has passed the bottom of a container element (e.g. the main body of a page).
+It does not rely on the css `position: sticky`.
+
+Props:
+
+- `containerRef` (ref created with `createRef` or `useRef` - optional): a ref to a container element.
+  The sticky header will become hidden after the bottom of the header has passed the bottom of the container. If
+  missing the header will remain fixed all the way to the bottom of the page
+- `offset` (integer - optional): a pixel offset for when the header should become sticky - this offset is also applied
+  to the fixed position of the header (i.e. if set to 20px, the header will become sticky when the top of the page is
+  20px above the header and the header will be in a fixed position 20px below the top of the page)
+
+The component passes two props to the child component if needed. These can be accessed by passing
+the following as a child:
+
+```
+{({ isSticky, scrollDirection }) => (
+  ... use the props here ...
+)}
+```
+
+- `isSticky` (boolean): whether or not the sticky header is currently fixed in place
+- `scrollDirection` ('up' or 'down'): the direction the user is scrolling in
+
+<Canvas>
+  <Story name="With single child element">
+    <StickyHeaderStoryContainer height={2000}>
+      {({ containerRef }) => (
+        <div>
+          <h1>Title</h1>
+          <StickyHeader containerRef={containerRef}>
+            <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+              Sticky header child
+            </div>
+          </StickyHeader>
+          <ExampleContent />
+        </div>
+      )}
+    </StickyHeaderStoryContainer>
+    <footer style={{ height: 2000 }}></footer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With offset">
+    <StickyHeaderStoryContainer height={2000}>
+      {({ containerRef }) => (
+        <div>
+          <h1>Title</h1>
+          <StickyHeader containerRef={containerRef} offset={20}>
+            <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+              Sticky header child
+            </div>
+          </StickyHeader>
+          <ExampleContent />
+        </div>
+      )}
+    </StickyHeaderStoryContainer>
+    <footer style={{ height: 2000 }}></footer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With shadow on scroll up">
+    <StickyHeaderStoryContainer height={2000}>
+      {({ containerRef }) => (
+        <div>
+          <h1>Title</h1>
+          <StickyHeader containerRef={containerRef}>
+            {({ isSticky, scrollDirection }) => (
+              <div
+                style={{
+                  height: 30,
+                  backgroundColor: 'white',
+                  borderBottom: '1px solid black',
+                  transition: 'box-shadow 0.5s',
+                  boxShadow:
+                    isSticky && scrollDirection === 'up'
+                      ? '0 4px 6px 0 rgba(77, 72, 69, 0.1), 0 1px 2px 0 rgba(77, 72, 69, 0.24'
+                      : 'none',
+                }}
+              >
+                Sticky header child
+              </div>
+            )}
+          </StickyHeader>
+          <ExampleContent />
+        </div>
+      )}
+    </StickyHeaderStoryContainer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With changing height of children">
+    <StickyHeaderStoryContainer height={2000}>
+      {({ containerRef }) => (
+        <div>
+          <h1>Title</h1>
+          <StickyHeader containerRef={containerRef}>
+            <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+              Sticky header child
+            </div>
+            <div
+              style={{
+                height: 30,
+                backgroundColor: 'yellow',
+                borderBottom: '1px solid black',
+                display: hideElement(false) ? 'none' : 'block',
+              }}
+            >
+              Sticky header child 2
+            </div>
+          </StickyHeader>
+          <ExampleContent />
+          <ExampleContent />
+          <ExampleContent />
+        </div>
+      )}
+    </StickyHeaderStoryContainer>
+    <footer style={{ height: 2000 }}></footer>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="With missing containerRef">
+    <div>
+      <h1>Title</h1>
+      <StickyHeader>
+        <div style={{ height: 30, backgroundColor: 'white', borderBottom: '1px solid black' }}>
+          Sticky header child
+        </div>
+      </StickyHeader>
+      <ExampleContent />
+    </div>
+    <footer style={{ height: 2000 }}></footer>
+  </Story>
+</Canvas>
