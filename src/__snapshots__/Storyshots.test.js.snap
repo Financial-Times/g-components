@@ -182,6 +182,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -228,6 +229,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -288,6 +290,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -348,6 +351,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -408,6 +412,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -484,6 +489,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -549,6 +555,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -587,10 +594,13 @@ Array [
         <div
           className="g-autosuggest-search__selected-value"
         >
-          <span>
+          <span
+            id="selected-value__US"
+          >
             US
           </span>
           <button
+            aria-labelledby="selected-value__US"
             className="g-autosuggest-search__selected-value-close-button"
             onClick={[Function]}
             type="button"
@@ -610,10 +620,13 @@ Array [
         <div
           className="g-autosuggest-search__selected-value"
         >
-          <span>
+          <span
+            id="selected-value__UK"
+          >
             UK
           </span>
           <button
+            aria-labelledby="selected-value__UK"
             className="g-autosuggest-search__selected-value-close-button"
             onClick={[Function]}
             type="button"
@@ -642,6 +655,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -680,10 +694,13 @@ Array [
         <div
           className="g-autosuggest-search__selected-value"
         >
-          <span>
+          <span
+            id="selected-value__US"
+          >
             US
           </span>
           <button
+            aria-labelledby="selected-value__US"
             className="g-autosuggest-search__selected-value-close-button"
             onClick={[Function]}
             type="button"
@@ -703,10 +720,13 @@ Array [
         <div
           className="g-autosuggest-search__selected-value"
         >
-          <span>
+          <span
+            id="selected-value__UK"
+          >
             UK
           </span>
           <button
+            aria-labelledby="selected-value__UK"
             className="g-autosuggest-search__selected-value-close-button"
             onClick={[Function]}
             type="button"
@@ -726,10 +746,13 @@ Array [
         <div
           className="g-autosuggest-search__selected-value"
         >
-          <span>
+          <span
+            id="selected-value__France"
+          >
             France
           </span>
           <button
+            aria-labelledby="selected-value__France"
             className="g-autosuggest-search__selected-value-close-button"
             onClick={[Function]}
             type="button"
@@ -749,10 +772,13 @@ Array [
         <div
           className="g-autosuggest-search__selected-value"
         >
-          <span>
+          <span
+            id="selected-value__Germany"
+          >
             Germany
           </span>
           <button
+            aria-labelledby="selected-value__Germany"
             className="g-autosuggest-search__selected-value-close-button"
             onClick={[Function]}
             type="button"
@@ -772,10 +798,13 @@ Array [
         <div
           className="g-autosuggest-search__selected-value"
         >
-          <span>
+          <span
+            id="selected-value__Spain"
+          >
             Spain
           </span>
           <button
+            aria-labelledby="selected-value__Spain"
             className="g-autosuggest-search__selected-value-close-button"
             onClick={[Function]}
             type="button"
@@ -804,6 +833,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -864,6 +894,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -924,6 +955,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -984,6 +1016,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -1044,6 +1077,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -1104,6 +1138,7 @@ Array [
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search here..."
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
@@ -8306,6 +8341,7 @@ exports[`Storyshots Elections/GE2019/Constituency Lookup Examples 1`] = `
           aria-activedescendant={null}
           aria-autocomplete="list"
           aria-controls="react-autowhatever-1"
+          aria-label="Search"
           autoComplete="off"
           className="react-autosuggest__input"
           disabled={false}
