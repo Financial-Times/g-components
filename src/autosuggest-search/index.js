@@ -34,9 +34,10 @@ const defaultGetSuggestionValue = ({ display }) => display;
 
 const SelectedValue = ({ className, display, value, onSelectedValueRemove }) => (
   <div className={`${className}__selected-value`} key={`selected-value__${value}`}>
-    <span>{display}</span>
+    <span id={`selected-value__${value}`}>{display}</span>
     <button
       className={`${className}__selected-value-close-button`}
+      aria-labelledby={`selected-value__${value}`}
       type="button"
       onClick={() => onSelectedValueRemove(value)}
     >
@@ -228,6 +229,7 @@ const AutosuggestSearch = ({
           }}
           focusInputOnSuggestionClick={usingSelectedValues}
           inputProps={{
+            'aria-label': placeholder,
             placeholder,
             value: searchValue,
             onChange,
