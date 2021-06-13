@@ -2,6 +2,13 @@
 
 Reusable React components for building IG pages.
 
+You can see what components are available in Storybook:
+
+```bash
+$ npm run storybook
+```
+
+
 # Development
 
 To test components during development:
