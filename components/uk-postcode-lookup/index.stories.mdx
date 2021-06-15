@@ -1,0 +1,34 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import '../../shared/critical-path.scss';
+import localAuthoritiesList from './local-authorities-list.json';
+import UKPostcodeLookup from './';
+
+<Meta title="Core|UKPostcodeLookup" component={UKPostcodeLookup} />
+
+# UK postcode lookup component
+
+`<UKPostcodeLookup />` can be used to create a text input which automatically
+suggests search queries based on a given list and finds the administrative area matching a UK postcode on submit.
+It takes an array of objects `suggestionList` with at least two attributes, `value` and `display`.
+
+Props:
+
+- `outsideSuggestionListError` is the error which shows when the postcode is outside the administrative
+  areas in the suggestion list
+- `onSelect` which triggers any user defined functionality when a match is found
+- `adminAreaAccessor` which should be used to return the admin area code or field
+  from the [Postcodes.io docs](http://postcodes.io/docs) that matches `value`s in the suggestion list
+
+<Preview>
+  <Story name="Basic">
+    <div style={{ padding: '1em' }}>
+      <UKPostcodeLookup
+        placeholder="Search for local authority in England and Wales"
+        outsideSuggestionListError="Local authority is not in England and Wales"
+        suggestionList={localAuthoritiesList}
+        onSelect={c => window.alert(`Local authority: ${c.display}, code: ${c.value}`)}
+        adminAreaAccessor={c => c.codes['admin_district']}
+      />
+    </div>
+  </Story>
+</Preview>
