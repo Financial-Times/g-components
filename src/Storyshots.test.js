@@ -1,8 +1,7 @@
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 import fetch from 'node-fetch';
 
-const mockedDate = new Date(2019, 1, 0);
-const originalDate = Date;
+jest.useFakeTimers('modern').setSystemTime(new Date('2019-01-01').getTime());
 
 global.getComputedStyle = jest.fn(() => {
   return {
@@ -11,9 +10,6 @@ global.getComputedStyle = jest.fn(() => {
   };
 });
 
-global.Date = () => mockedDate;
-global.Date.setDate = originalDate.setDate;
-global.Date.now = () => Math.round(new Date().getTime() / 1000);
 global.IntersectionObserver = jest.fn().mockImplementation(() => ({
   observe: () => ({}),
   unobserve: () => ({}),
