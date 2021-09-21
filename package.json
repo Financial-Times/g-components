@@ -67,7 +67,9 @@
     "classnames": "^2.2.6",
     "ftdomdelegate": "^4.0.5",
     "prop-types": "^15.7.2",
+    "react": "^16.14.0",
     "react-autosuggest": "^10.0.2",
+    "react-dom": "^16.14.0",
     "react-scroll-percentage": "^2.0.0",
     "remove-accents": "^0.4.2",
     "remove-markdown": "^0.3.0"
