@@ -11,7 +11,7 @@ global.getComputedStyle = jest.fn(() => {
   };
 });
 
-global.Date = jest.fn((val) => (val ? new Date(val) : mockedDate));
+global.Date = () => mockedDate;
 global.Date.setDate = originalDate.setDate;
 global.Date.now = () => Math.round(new Date().getTime() / 1000);
 global.IntersectionObserver = jest.fn().mockImplementation(() => ({
