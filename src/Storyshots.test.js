@@ -10,8 +10,8 @@ global.getComputedStyle = jest.fn(() => {
       '{"layouts": {"S": "490px", "M": "740px", "L": "980px", "XL": "1220px"}}',
   };
 });
-global.fetch = fetch;
-global.Date = jest.fn(() => mockedDate);
+
+global.Date = jest.fn((val) => (val ? new Date(val) : mockedDate));
 global.Date.setDate = originalDate.setDate;
 global.Date.now = () => Math.round(new Date().getTime() / 1000);
 global.IntersectionObserver = jest.fn().mockImplementation(() => ({
@@ -20,8 +20,9 @@ global.IntersectionObserver = jest.fn().mockImplementation(() => ({
   disconnect: () => ({}),
 }));
 
+global.fetch = fetch;
+
 initStoryshots({
-  framework: 'react',
   test: snapshotWithOptions({
     createNodeMock: (el) => {
       const ref = document.createElement(el.type);

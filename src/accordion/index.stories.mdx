@@ -1,4 +1,4 @@
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Accordion, AccordionSection } from './';
 
 <Meta title="Core/Accordion" component={Accordion} />
@@ -7,7 +7,7 @@ import { Accordion, AccordionSection } from './';
 
 An accordion; first element in each section becomes the title, subsequent elements become the body
 
-<Preview>
+<Canvas>
   <Story name="Example">
     <Accordion>
       <AccordionSection>
@@ -25,4 +25,4 @@ An accordion; first element in each section becomes the title, subsequent elemen
       </AccordionSection>
     </Accordion>
   </Story>
-</Preview>
+</Canvas>

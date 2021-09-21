@@ -1,10 +1,7 @@
 import { Fragment, useRef, useState } from 'react';
-import { Meta, Story, Canvas } from '@storybook/addon-docs/blocks';
-import { withKnobs, boolean } from '@storybook/addon-knobs';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import '../shared/critical-path.scss';
 import StickyHeader from './';
-
-export const hideElement = (hideElement) => boolean('Hide element', hideElement);
 
 export const ExampleContent = () => (
   <Fragment>
@@ -27,7 +24,7 @@ export const StickyHeaderStoryContainer = ({ height, children }) => {
   );
 };
 
-<Meta title="Core/Sticky Header" component={StickyHeader} decorators={[withKnobs]} />
+<Meta title="Core/Sticky Header" component={StickyHeader} />
 
 # Sticky header component
 
@@ -141,7 +138,7 @@ the following as a child:
                 height: 30,
                 backgroundColor: 'yellow',
                 borderBottom: '1px solid black',
-                display: hideElement(false) ? 'none' : 'block',
+                display: 'block',
               }}
             >
               Sticky header child 2
