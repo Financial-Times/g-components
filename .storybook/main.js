@@ -1,4 +1,4 @@
-process.env.SASS_PATH="node_modules:node_modules/@financial-times"
+process.env.SASS_PATH = 'node_modules:node_modules/@financial-times';
 
 module.exports = {
   stories: ['../src/**/*.stories.@(mdx|js)'],
@@ -7,8 +7,8 @@ module.exports = {
     '@storybook/addon-actions',
     '@storybook/addon-links',
     '@storybook/addon-viewport',
-    '@storybook/addon-knobs',
-    '@storybook/addon-docs'
+    '@storybook/addon-docs',
+    '@storybook/addon-controls',
   ],
   webpackFinal: async (config, { configType }) => {
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
@@ -20,8 +20,6 @@ module.exports = {
     // Resolve "browser" field in package.json (Origami)
     config.resolve.aliasFields = ['browser'];
     config.resolve.mainFields = ['main', 'browser'];
-
-    console.dir(config.module)
 
     // Return the altered config
     return config;
