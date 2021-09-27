@@ -20,6 +20,7 @@ const Comments = ({ id, url, linkPageUrl, flags }) => {
         // eslint-disable-line no-new
         articleUrl: linkPageUrl || url,
         articleId: id,
+        title: id,
       });
     }
   }, [id, url, linkPageUrl]);

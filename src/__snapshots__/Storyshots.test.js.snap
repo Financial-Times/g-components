@@ -1213,10 +1213,10 @@ exports[`Storyshots Core/Big Topper Basic 1`] = `
     <time
       className="o-date o-editorial-typography-byline-timestamp"
       data-o-component="o-date"
-      dateTime="2019-01-31T00:00:00.000Z"
+      dateTime="2018-07-25T17:43:37.000Z"
       suppressHydrationWarning={true}
     >
-      January 31 2019
+      July 25 2018
     </time>
   </div>
   <p
@@ -1226,7 +1226,7 @@ exports[`Storyshots Core/Big Topper Basic 1`] = `
      
   </p>
   <meta
-    content="2019-01-31T00:00:00.000Z"
+    content="2018-07-25T17:43:37.000Z"
     itemProp="dateModified"
     suppressHydrationWarning={true}
   />
@@ -1271,10 +1271,10 @@ exports[`Storyshots Core/Big Topper With byline props 1`] = `
     <time
       className="o-date o-editorial-typography-byline-timestamp"
       data-o-component="o-date"
-      dateTime="2019-01-31T00:00:00.000Z"
+      dateTime="2018-07-25T17:43:37.000Z"
       suppressHydrationWarning={true}
     >
-      January 31 2019
+      July 25 2018
     </time>
      by 
     
@@ -1299,7 +1299,7 @@ exports[`Storyshots Core/Big Topper With byline props 1`] = `
      
   </p>
   <meta
-    content="2019-01-31T00:00:00.000Z"
+    content="2018-07-25T17:43:37.000Z"
     itemProp="dateModified"
     suppressHydrationWarning={true}
   />
@@ -1358,10 +1358,10 @@ exports[`Storyshots Core/Big Topper With share props 1`] = `
     <time
       className="o-date o-editorial-typography-byline-timestamp"
       data-o-component="o-date"
-      dateTime="2019-01-31T00:00:00.000Z"
+      dateTime="2018-07-25T17:43:37.000Z"
       suppressHydrationWarning={true}
     >
-      January 31 2019
+      July 25 2018
     </time>
   </div>
   <div
@@ -1450,7 +1450,7 @@ exports[`Storyshots Core/Big Topper With share props 1`] = `
      
   </p>
   <meta
-    content="2019-01-31T00:00:00.000Z"
+    content="2018-07-25T17:43:37.000Z"
     itemProp="dateModified"
     suppressHydrationWarning={true}
   />
@@ -2368,7 +2368,7 @@ Array [
         dateTime="2020-05-07T00:00:00"
         suppressHydrationWarning={true}
       >
-        January 31 2019
+        May 7 2020
       </time>
     </div>
   </div>,
@@ -2397,7 +2397,7 @@ Array [
         dateTime="2020-05-07T00:00:00"
         suppressHydrationWarning={true}
       >
-        January 31 2019
+        May 7 2020
       </time>
     </div>
   </div>,
@@ -2430,7 +2430,7 @@ Array [
         dateTime="2020-05-07T00:00:00"
         suppressHydrationWarning={true}
       >
-        January 31 2019
+        May 7 2020
       </time>
     </div>
   </div>,
@@ -2463,7 +2463,7 @@ Array [
         dateTime="2020-05-07T00:00:00"
         suppressHydrationWarning={true}
       >
-        January 31 2019
+        May 7 2020
       </time>
     </div>
   </div>,
@@ -2480,7 +2480,7 @@ Array [
         dateTime="2020-05-07T00:00:00"
         suppressHydrationWarning={true}
       >
-        January 31 2019
+        May 7 2020
       </time>
        by 
       
@@ -3927,9 +3927,9 @@ exports[`Storyshots Core/DateTime Examples 1`] = `
 <time
   className="o-date"
   data-o-component="o-date"
-  dateTime="2019-01-31T00:00:00.000Z"
+  dateTime="1987-01-05T00:00:00.000Z"
 >
-  0 seconds ago
+  January 5 1987
 </time>
 `;
 
@@ -6177,9 +6177,9 @@ Array [
           <time
             className="o-date"
             data-o-component="o-date"
-            dateTime="2019-01-31T00:00:00.000Z"
+            dateTime="1987-01-05T00:00:00.000Z"
           >
-            0 seconds ago
+            January 5 1987
           </time>
         </span>
       </div>
@@ -6227,9 +6227,9 @@ Array [
           <time
             className="o-date"
             data-o-component="o-date"
-            dateTime="2019-01-31T00:00:00.000Z"
+            dateTime="1987-01-05T00:00:00.000Z"
           >
-            0 seconds ago
+            January 5 1987
           </time>
         </span>
       </div>
@@ -6288,9 +6288,9 @@ Array [
           <time
             className="o-date"
             data-o-component="o-date"
-            dateTime="2019-01-31T00:00:00.000Z"
+            dateTime="1987-01-05T00:00:00.000Z"
           >
-            0 seconds ago
+            January 5 1987
           </time>
         </div>
       </div>
@@ -6327,9 +6327,9 @@ Array [
           <time
             className="o-date"
             data-o-component="o-date"
-            dateTime="2019-01-31T00:00:00.000Z"
+            dateTime="1987-01-05T00:00:00.000Z"
           >
-            0 seconds ago
+            January 5 1987
           </time>
         </div>
       </div>
@@ -6388,9 +6388,9 @@ Array [
           <time
             className="o-date"
             data-o-component="o-date"
-            dateTime="2019-01-31T00:00:00.000Z"
+            dateTime="1987-01-05T00:00:00.000Z"
           >
-            0 seconds ago
+            January 5 1987
           </time>
         </div>
       </div>
@@ -8117,7 +8117,7 @@ exports[`Storyshots Core/Story Topper Example 1`] = `
      
   </p>
   <meta
-    content="2019-01-31T00:00:00.000Z"
+    content="2018-07-25T17:43:37.000Z"
     itemProp="dateModified"
     suppressHydrationWarning={true}
   />
@@ -8230,10 +8230,10 @@ exports[`Storyshots Core/Story Topper Example 1`] = `
     <time
       className="o-date o-editorial-typography-byline-timestamp"
       data-o-component="o-date"
-      dateTime="2019-01-31T00:00:00.000Z"
+      dateTime="2018-07-25T17:43:37.000Z"
       suppressHydrationWarning={true}
     >
-      January 31 2019
+      July 25 2018
     </time>
   </div>
 </div>
@@ -13563,7 +13563,7 @@ Array [
                  
               </p>
               <meta
-                content="2019-01-31T00:00:00.000Z"
+                content="2018-07-25T17:43:37.000Z"
                 itemProp="dateModified"
                 suppressHydrationWarning={true}
               />
@@ -13676,10 +13676,10 @@ Array [
                 <time
                   className="o-date o-editorial-typography-byline-timestamp"
                   data-o-component="o-date"
-                  dateTime="2019-01-31T00:00:00.000Z"
+                  dateTime="2018-07-25T17:43:37.000Z"
                   suppressHydrationWarning={true}
                 >
-                  January 31 2019
+                  July 25 2018
                 </time>
               </div>
             </div>
