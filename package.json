@@ -72,6 +72,7 @@
     "react": "^16.14.0",
     "react-autosuggest": "^10.0.2",
     "react-dom": "^16.14.0",
+    "react-modal": "^3.14.3",
     "react-scroll-percentage": "^2.0.0",
     "remove-accents": "^0.4.2",
     "remove-markdown": "^0.3.0"
