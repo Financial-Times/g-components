@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactModal from 'react-modal';
-import WebAudioFontPlayer from './webaudiofont';
+import './webaudiofont';
 
 const STYLE = {
   MIDISoundsInfo: {
@@ -1311,7 +1311,7 @@ class MIDISounds extends React.Component {
     var AudioContextFunc = window.AudioContext || window.webkitAudioContext;
     this.audioContext = new AudioContextFunc();
     this.destination = this.audioContext.destination;
-    this.player = new WebAudioFontPlayer();
+    this.player = new window.WebAudioFontPlayer();
     this.equalizer = this.player.createChannel(this.audioContext);
     this.output = this.audioContext.createGain();
     this.echo = this.player.createReverberator(this.audioContext);
