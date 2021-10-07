@@ -15,7 +15,7 @@ const DEFAULT_INSTRUMENTS = [
 const DataSonification = React.memo(
   ({
     dataSeries,
-    instruments,
+    instruments: userInstruments,
     pitchConstantAcrossSeries,
     minPitch,
     maxPitch,
@@ -37,13 +37,11 @@ const DataSonification = React.memo(
       return pitchScales && Math.round(pitchScales[i](datum) / 2) * 2;
     };
 
-    if (instruments === null) {
-      // eslint-disable-next-line no-param-reassign
-      instruments = DEFAULT_INSTRUMENTS.filter((d, index) => index < dataSeries.length);
-    }
+    const instruments =
+      userInstruments || DEFAULT_INSTRUMENTS.filter((d, index) => index < dataSeries.length);
 
     useEffect(() => {
-      instruments.map(({ code, volume }) => midiSounds.setInstrumentVolume(code, volume));
+      instruments.forEach(({ code, volume }) => midiSounds.setInstrumentVolume(code, volume));
     }, [instruments]);
 
     // Setup a scale for the pitches
