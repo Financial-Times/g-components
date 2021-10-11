@@ -31,7 +31,9 @@ references:
 
   only_version_tags: &only_version_tags
     tags:
-      only: /^v.*$/
+      only: /^v.*/
+    branches:
+      ignore: /.*/
 
 jobs:
   install:
@@ -95,9 +97,7 @@ workflows:
             - install
       - release_npm:
           requires:
-            - install
             - test
           filters:
             <<: *only_version_tags
-            branches:
-              ignore: /.*/
+
