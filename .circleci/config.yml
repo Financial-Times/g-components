@@ -74,6 +74,14 @@ jobs:
           name: Publish npm package
           command: npx npm-prepublish --verbose && npm publish --access public
 
+  test_release_npm:
+    <<: *default_container_config
+    steps:
+      - *attach_workspace
+      - run:
+          name: Setup npm credentials
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ${HOME}/.npmrc
+
   release_ghpr:
     <<: *default_container_config
     steps:
@@ -90,14 +98,6 @@ workflows:
   build-and-release:
     jobs:
       - install
-      - test:
+      - test_release_npm:
           requires:
             - install
-      - release_npm:
-          requires:
-            - install
-            - test
-          filters:
-            <<: *only_version_tags
-            branches:
-              ignore: /.*/
