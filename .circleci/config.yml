@@ -98,6 +98,10 @@ workflows:
   build-and-release:
     jobs:
       - install
+      - test:
+          requires:
+            - install
       - test_release_npm:
           requires:
             - install
+            - test
