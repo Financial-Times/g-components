@@ -103,5 +103,4 @@ workflows:
             - install
       - test_release_npm:
           requires:
-            - install
             - test
