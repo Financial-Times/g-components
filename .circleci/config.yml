@@ -31,7 +31,9 @@ references:
 
   only_version_tags: &only_version_tags
     tags:
-      only: /^v.*$/
+      only: /^v.*/
+    branches:
+      ignore: /.*/
 
 jobs:
   install:
@@ -74,14 +76,6 @@ jobs:
           name: Publish npm package
           command: npx npm-prepublish --verbose && npm publish --access public
 
-  test_release_npm:
-    <<: *default_container_config
-    steps:
-      - *attach_workspace
-      - run:
-          name: Setup npm credentials
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ${HOME}/.npmrc
-
   release_ghpr:
     <<: *default_container_config
     steps:
@@ -101,6 +95,9 @@ workflows:
       - test:
           requires:
             - install
-      - test_release_npm:
+      - release_npm:
           requires:
             - test
+          filters:
+            <<: *only_version_tags
+
