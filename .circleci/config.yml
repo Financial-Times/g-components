@@ -89,12 +89,6 @@ jobs:
 
 workflows:
   version: 2
-  build:
-    jobs:
-      - install
-      - test:
-          requires:
-            - install
   build-and-release:
     jobs:
       - install
@@ -105,5 +99,8 @@ workflows:
           requires:
             - test
           filters:
-            <<: *only_version_tags
+            tags:
+              only: /^v.*/
+            branches:
+              ignore: /.*/
 
