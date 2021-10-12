@@ -91,16 +91,16 @@ const DataSonification = React.memo(
     }, [dataSeries, datumDuration, duration, timingVariable]);
 
     useEffect(() => {
-      if (dataSeries.length === 1 && dataSeries[0].length === 1) {
+      if (!isPlaying) {
+        clearInterval(stopInterval);
+        midiSounds.cancelQueue();
+      } else if (dataSeries.length === 1 && dataSeries[0].length === 1) {
         midiSounds.playChordAt(
           midiSounds.contextTime(),
           instruments[0].code,
           [getPitch(dataSeries[0][0][pitchVariable], 0)],
           noteDuration,
         );
-      } else if (!isPlaying) {
-        clearInterval(stopInterval);
-        midiSounds.cancelQueue();
       } else {
         const getTime = (when, timeVar, j) => {
           if (datumDuration) {
