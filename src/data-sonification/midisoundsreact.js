@@ -1308,8 +1308,7 @@ class MIDISounds extends React.Component {
         this.player.cancelQueue(this.audioContext);
       }
     }
-    var AudioContextFunc = window.AudioContext || window.webkitAudioContext;
-    this.audioContext = new AudioContextFunc();
+    this.audioContext = this.props.audioContext;
     this.destination = this.audioContext.destination;
     this.player = new WebAudioFontPlayer();
     this.equalizer = this.player.createChannel(this.audioContext);

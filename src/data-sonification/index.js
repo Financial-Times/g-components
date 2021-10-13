@@ -27,6 +27,7 @@ const DataSonification = React.memo(
     datumDuration,
     noteDuration,
     isPlaying,
+    audioContext,
   }) => {
     let midiSounds = useRef(null);
     const [pitchScales, setPitchScales] = useState(null);
@@ -141,6 +142,7 @@ const DataSonification = React.memo(
           ref={(ref) => (midiSounds = ref)}
           appElementName="root"
           instruments={instruments.map((i) => i.code)}
+          audioContext={audioContext}
         />
       </div>
     );
@@ -166,6 +168,8 @@ DataSonification.propTypes = {
   maxDataValue: PropTypes.number,
   noteDuration: PropTypes.number,
   isPlaying: PropTypes.bool.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  audioContext: PropTypes.object.isRequired,
 };
 
 DataSonification.defaultProps = {
