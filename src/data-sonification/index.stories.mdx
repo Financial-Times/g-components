@@ -3,15 +3,36 @@ import DataSonification from './';
 import Button from '../button';
 
 export const dataSingle = [
-    [{x: 1, y:1}, {x: 2, y:3}, {x: 3, y:5}, {x: 4, y:4}, {x: 5, y:2}]
+  [
+    { x: 1, y: 1 },
+    { x: 2, y: 3 },
+    { x: 3, y: 5 },
+    { x: 4, y: 4 },
+    { x: 5, y: 2 },
+  ],
 ];
 
 export const dataMulti = [
-    [{x: 1, y:1}, {x: 2, y:3}, {x: 3, y:5}, {x: 4, y:4}, {x: 5, y:2}],
-    [{x: 1, y:5}, {x: 2, y:3}, {x: 3, y:1}, {x: 4, y:2}, {x: 5, y:4}]
+  [
+    { x: 1, y: 1 },
+    { x: 2, y: 3 },
+    { x: 3, y: 5 },
+    { x: 4, y: 4 },
+    { x: 5, y: 2 },
+  ],
+  [
+    { x: 1, y: 5 },
+    { x: 2, y: 3 },
+    { x: 3, y: 1 },
+    { x: 4, y: 2 },
+    { x: 5, y: 4 },
+  ],
 ];
 
 export let isPlaying = true;
+
+export const AudioContextFunc = window.AudioContext || window.webkitAudioContext;
+export const audioContext = new AudioContextFunc();
 
 <Meta title="Core/DataSonification" component={DataSonification} />
 
@@ -23,11 +44,30 @@ Sonifies data, giving control over instruments, volume, duration, pitch etc.
   <Story name="Examples">
     <>
       Single data series:
-      <DataSonification dataSeries={dataSingle} pitchVariable="y" timingVariable="x" isPlaying />
+      <DataSonification
+        audioContext={audioContext}
+        dataSeries={dataSingle}
+        pitchVariable="y"
+        timingVariable="x"
+        isPlaying
+      />
       Multiple (concurrently playing) data series:
-      <DataSonification dataSeries={dataMulti} pitchVariable="y" timingVariable="x" isPlaying />
+      <DataSonification
+        audioContext={audioContext}
+        dataSeries={dataMulti}
+        pitchVariable="y"
+        timingVariable="x"
+        isPlaying
+      />
       Customised instrument:
-      <DataSonification dataSeries={dataSingle} pitchVariable="y" timingVariable="x" instruments={[{ code: 1217, volume: 1 }]} isPlaying />
+      <DataSonification
+        audioContext={audioContext}
+        dataSeries={dataSingle}
+        pitchVariable="y"
+        timingVariable="x"
+        instruments={[{ code: 1217, volume: 1 }]}
+        isPlaying
+      />
     </>
   </Story>
 </Canvas>
