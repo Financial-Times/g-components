@@ -3961,6 +3961,23 @@ exports[`Storyshots Core/Epilogue Example 1`] = `
 </div>
 `;
 
+exports[`Storyshots Core/FlourishEmbed Example 1`] = `
+Array [
+  <div>
+    Basic Flourish embed
+  </div>,
+  <iframe
+    frameBorder="0"
+    height="600px"
+    sandbox="allow-same-origin allow-forms allow-scripts allow-downloads allow-popups allow-popups-to-escape-sandbox allow-top-navigation-by-user-activation"
+    scrolling="no"
+    src="https://flo.uri.sh/visualisation/7730043/embed?auto=1"
+    title="Timeline of government responses"
+    width="100%"
+  />,
+]
+`;
+
 exports[`Storyshots Core/Footer Example 1`] = `
 <footer
   className="o-footer o-footer--theme-dark"
