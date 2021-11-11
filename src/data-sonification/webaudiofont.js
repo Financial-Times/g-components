@@ -2487,8 +2487,8 @@
               }
               return envelope;
             };
-            this.adjustPreset = async function (audioContext, preset) {
-              await Promise.all(preset.zones.map((zone) => this.adjustZone(audioContext, zone)));
+            this.adjustPreset = function (audioContext, preset) {
+              preset.zones.map((zone) => this.adjustZone(audioContext, zone));
             };
             this.adjustZone = async function (audioContext, zone) {
               if (zone.buffer) {
