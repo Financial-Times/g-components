@@ -2297,72 +2297,73 @@
             ) {
               this.resumeContext(audioContext);
               volume = this.limitVolume(volume);
-              var zone = this.findZone(audioContext, preset, pitch);
-              if (!zone.buffer) {
-                console.log('empty buffer ', zone);
-                return;
-              }
-              var baseDetune = zone.originalPitch - 100.0 * zone.coarseTune - zone.fineTune;
-              var playbackRate = 1.0 * Math.pow(2, (100.0 * pitch - baseDetune) / 1200.0);
-              var sampleRatio = zone.sampleRate / audioContext.sampleRate;
-              var startWhen = when;
-              if (startWhen < audioContext.currentTime) {
-                startWhen = audioContext.currentTime;
-              }
-              var waveDuration = duration + this.afterTime;
-              var loop = true;
-              if (zone.loopStart < 1 || zone.loopStart >= zone.loopEnd) {
-                loop = false;
-              }
-              if (!loop) {
-                if (waveDuration > zone.buffer.duration / playbackRate) {
-                  waveDuration = zone.buffer.duration / playbackRate;
+              return this.findZone(audioContext, preset, pitch).then((zone) => {
+                if (!zone.buffer) {
+                  console.log('empty buffer ', zone);
+                  return;
                 }
-              }
-              var envelope = this.findEnvelope(audioContext, target, startWhen, waveDuration);
-              this.setupEnvelope(
-                audioContext,
-                envelope,
-                zone,
-                volume,
-                startWhen,
-                waveDuration,
-                duration,
-              );
-              envelope.audioBufferSourceNode = audioContext.createBufferSource();
-              envelope.audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, 0);
-              if (slides) {
-                if (slides.length > 0) {
-                  envelope.audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, when);
-                  for (var i = 0; i < slides.length; i++) {
-                    var newPlaybackRate =
-                      1.0 * Math.pow(2, (100.0 * slides[i].pitch - baseDetune) / 1200.0);
-                    var newWhen = when + slides[i].when;
-                    envelope.audioBufferSourceNode.playbackRate.linearRampToValueAtTime(
-                      newPlaybackRate,
-                      newWhen,
-                    );
+                var baseDetune = zone.originalPitch - 100.0 * zone.coarseTune - zone.fineTune;
+                var playbackRate = 1.0 * Math.pow(2, (100.0 * pitch - baseDetune) / 1200.0);
+                var sampleRatio = zone.sampleRate / audioContext.sampleRate;
+                var startWhen = when;
+                if (startWhen < audioContext.currentTime) {
+                  startWhen = audioContext.currentTime;
+                }
+                var waveDuration = duration + this.afterTime;
+                var loop = true;
+                if (zone.loopStart < 1 || zone.loopStart >= zone.loopEnd) {
+                  loop = false;
+                }
+                if (!loop) {
+                  if (waveDuration > zone.buffer.duration / playbackRate) {
+                    waveDuration = zone.buffer.duration / playbackRate;
                   }
                 }
-              }
-              envelope.audioBufferSourceNode.buffer = zone.buffer;
-              if (loop) {
-                envelope.audioBufferSourceNode.loop = true;
-                envelope.audioBufferSourceNode.loopStart =
-                  zone.loopStart / zone.sampleRate + zone.delay;
-                envelope.audioBufferSourceNode.loopEnd =
-                  zone.loopEnd / zone.sampleRate + zone.delay;
-              } else {
-                envelope.audioBufferSourceNode.loop = false;
-              }
-              envelope.audioBufferSourceNode.connect(envelope);
-              envelope.audioBufferSourceNode.start(startWhen, zone.delay);
-              envelope.audioBufferSourceNode.stop(startWhen + waveDuration);
-              envelope.when = startWhen;
-              envelope.duration = waveDuration;
-              envelope.pitch = pitch;
-              envelope.preset = preset;
-              return envelope;
+                var envelope = this.findEnvelope(audioContext, target, startWhen, waveDuration);
+                this.setupEnvelope(
+                  audioContext,
+                  envelope,
+                  zone,
+                  volume,
+                  startWhen,
+                  waveDuration,
+                  duration,
+                );
+                envelope.audioBufferSourceNode = audioContext.createBufferSource();
+                envelope.audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, 0);
+                if (slides) {
+                  if (slides.length > 0) {
+                    envelope.audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, when);
+                    for (var i = 0; i < slides.length; i++) {
+                      var newPlaybackRate =
+                        1.0 * Math.pow(2, (100.0 * slides[i].pitch - baseDetune) / 1200.0);
+                      var newWhen = when + slides[i].when;
+                      envelope.audioBufferSourceNode.playbackRate.linearRampToValueAtTime(
+                        newPlaybackRate,
+                        newWhen,
+                      );
+                    }
+                  }
+                }
+                envelope.audioBufferSourceNode.buffer = zone.buffer;
+                if (loop) {
+                  envelope.audioBufferSourceNode.loop = true;
+                  envelope.audioBufferSourceNode.loopStart =
+                    zone.loopStart / zone.sampleRate + zone.delay;
+                  envelope.audioBufferSourceNode.loopEnd =
+                    zone.loopEnd / zone.sampleRate + zone.delay;
+                } else {
+                  envelope.audioBufferSourceNode.loop = false;
+                }
+                envelope.audioBufferSourceNode.connect(envelope);
+                envelope.audioBufferSourceNode.start(startWhen, zone.delay);
+                envelope.audioBufferSourceNode.stop(startWhen + waveDuration);
+                envelope.when = startWhen;
+                envelope.duration = waveDuration;
+                envelope.pitch = pitch;
+                envelope.preset = preset;
+                return envelope;
+              });
             };
             this.noZeroVolume = function (n) {
               if (n > this.nearZero) {
@@ -2487,11 +2488,9 @@
               return envelope;
             };
             this.adjustPreset = function (audioContext, preset) {
-              for (var i = 0; i < preset.zones.length; i++) {
-                this.adjustZone(audioContext, preset.zones[i]);
-              }
+              preset.zones.map((zone) => this.adjustZone(audioContext, zone));
             };
-            this.adjustZone = function (audioContext, zone) {
+            this.adjustZone = async function (audioContext, zone) {
               if (zone.buffer) {
                 //
               } else {
@@ -2527,7 +2526,7 @@
                       b = decoded.charCodeAt(i);
                       view[i] = b;
                     }
-                    audioContext.decodeAudioData(arraybuffer).then((audioBuffer) => {
+                    await audioContext.decodeAudioData(arraybuffer, (audioBuffer) => {
                       zone.buffer = audioBuffer;
                     });
                   }
@@ -2541,7 +2540,7 @@
                 zone.sustain = this.numValue(zone.originalPitch, 0);
               }
             };
-            this.findZone = function (audioContext, preset, pitch) {
+            this.findZone = async function (audioContext, preset, pitch) {
               var zone = null;
               for (var i = preset.zones.length - 1; i >= 0; i--) {
                 zone = preset.zones[i];
@@ -2549,11 +2548,9 @@
                   break;
                 }
               }
-              try {
-                this.adjustZone(audioContext, zone);
-              } catch (ex) {
-                console.log('adjustZone', ex);
-              }
+              await this.adjustZone(audioContext, zone).catch((ex) =>
+                console.log('adjustZone', ex),
+              );
               return zone;
             };
             this.cancelQueue = function (audioContext) {
