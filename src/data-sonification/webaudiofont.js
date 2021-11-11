@@ -2297,7 +2297,7 @@
             ) {
               this.resumeContext(audioContext);
               volume = this.limitVolume(volume);
-              return this.findZone(audioContext, preset, pitch).then((zone) => {
+              this.findZone(audioContext, preset, pitch).then((zone) => {
                 if (!zone.buffer) {
                   console.log('empty buffer ', zone);
                   return;
@@ -2487,8 +2487,8 @@
               }
               return envelope;
             };
-            this.adjustPreset = function (audioContext, preset) {
-              preset.zones.map((zone) => this.adjustZone(audioContext, zone));
+            this.adjustPreset = async function (audioContext, preset) {
+              await Promise.all(preset.zones.map((zone) => this.adjustZone(audioContext, zone)));
             };
             this.adjustZone = async function (audioContext, zone) {
               if (zone.buffer) {
@@ -2526,9 +2526,8 @@
                       b = decoded.charCodeAt(i);
                       view[i] = b;
                     }
-                    await audioContext.decodeAudioData(arraybuffer, (audioBuffer) => {
-                      zone.buffer = audioBuffer;
-                    });
+                    var audioBuffer = await audioContext.decodeAudioData(arraybuffer);
+                    zone.buffer = audioBuffer;
                   }
                 }
                 zone.loopStart = this.numValue(zone.loopStart, 0);
@@ -2540,7 +2539,7 @@
                 zone.sustain = this.numValue(zone.originalPitch, 0);
               }
             };
-            this.findZone = async function (audioContext, preset, pitch) {
+            this.findZone = function (audioContext, preset, pitch) {
               var zone = null;
               for (var i = preset.zones.length - 1; i >= 0; i--) {
                 zone = preset.zones[i];
@@ -2548,10 +2547,14 @@
                   break;
                 }
               }
-              await this.adjustZone(audioContext, zone).catch((ex) =>
-                console.log('adjustZone', ex),
-              );
-              return zone;
+              try {
+                return this.adjustZone(audioContext, zone).then(() => {
+                  return zone;
+                });
+              } catch (ex) {
+                console.log('adjustZone', ex);
+                return zone;
+              }
             };
             this.cancelQueue = function (audioContext) {
               for (var i = 0; i < this.envelopes.length; i++) {
