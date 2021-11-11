@@ -2527,7 +2527,7 @@
                       b = decoded.charCodeAt(i);
                       view[i] = b;
                     }
-                    audioContext.decodeAudioData(arraybuffer).then((audioBuffer) => {
+                    audioContext.decodeAudioData(arraybuffer, (audioBuffer) => {
                       zone.buffer = audioBuffer;
                     });
                   }

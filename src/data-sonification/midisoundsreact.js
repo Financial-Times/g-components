@@ -1324,7 +1324,12 @@ class MIDISounds extends React.Component {
   }
   cacheInstrument(n) {
     var info = this.player.loader.instrumentInfo(n);
-    if (window[info.variable]) {
+    if (
+      window[info.variable] &&
+      window[info.variable].zones &&
+      window[info.variable].zones[0] &&
+      window[info.variable].zones[0].buffer
+    ) {
       return;
     }
     this.player.loader.startLoad(this.audioContext, info.url, info.variable);
