@@ -101,7 +101,12 @@
             this.player = player;
             this.cached = [];
             this.startLoad = function (audioContext, filePath, variableName) {
-              if (window[variableName]) {
+              if (
+                window[variableName] &&
+                window[variableName].zones &&
+                window[variableName].zones[0] &&
+                window[variableName].zones[0].buffer
+              ) {
                 return;
               }
               for (var i = 0; i < this.cached.length; i++) {
