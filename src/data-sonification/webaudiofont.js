@@ -2297,73 +2297,72 @@
             ) {
               this.resumeContext(audioContext);
               volume = this.limitVolume(volume);
-              return this.findZone(audioContext, preset, pitch).then((zone) => {
-                if (!zone.buffer) {
-                  console.log('empty buffer ', zone);
-                  return;
+              var zone = this.findZone(audioContext, preset, pitch);
+              if (!zone.buffer) {
+                console.log('empty buffer ', zone);
+                return;
+              }
+              var baseDetune = zone.originalPitch - 100.0 * zone.coarseTune - zone.fineTune;
+              var playbackRate = 1.0 * Math.pow(2, (100.0 * pitch - baseDetune) / 1200.0);
+              var sampleRatio = zone.sampleRate / audioContext.sampleRate;
+              var startWhen = when;
+              if (startWhen < audioContext.currentTime) {
+                startWhen = audioContext.currentTime;
+              }
+              var waveDuration = duration + this.afterTime;
+              var loop = true;
+              if (zone.loopStart < 1 || zone.loopStart >= zone.loopEnd) {
+                loop = false;
+              }
+              if (!loop) {
+                if (waveDuration > zone.buffer.duration / playbackRate) {
+                  waveDuration = zone.buffer.duration / playbackRate;
                 }
-                var baseDetune = zone.originalPitch - 100.0 * zone.coarseTune - zone.fineTune;
-                var playbackRate = 1.0 * Math.pow(2, (100.0 * pitch - baseDetune) / 1200.0);
-                var sampleRatio = zone.sampleRate / audioContext.sampleRate;
-                var startWhen = when;
-                if (startWhen < audioContext.currentTime) {
-                  startWhen = audioContext.currentTime;
-                }
-                var waveDuration = duration + this.afterTime;
-                var loop = true;
-                if (zone.loopStart < 1 || zone.loopStart >= zone.loopEnd) {
-                  loop = false;
-                }
-                if (!loop) {
-                  if (waveDuration > zone.buffer.duration / playbackRate) {
-                    waveDuration = zone.buffer.duration / playbackRate;
+              }
+              var envelope = this.findEnvelope(audioContext, target, startWhen, waveDuration);
+              this.setupEnvelope(
+                audioContext,
+                envelope,
+                zone,
+                volume,
+                startWhen,
+                waveDuration,
+                duration,
+              );
+              envelope.audioBufferSourceNode = audioContext.createBufferSource();
+              envelope.audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, 0);
+              if (slides) {
+                if (slides.length > 0) {
+                  envelope.audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, when);
+                  for (var i = 0; i < slides.length; i++) {
+                    var newPlaybackRate =
+                      1.0 * Math.pow(2, (100.0 * slides[i].pitch - baseDetune) / 1200.0);
+                    var newWhen = when + slides[i].when;
+                    envelope.audioBufferSourceNode.playbackRate.linearRampToValueAtTime(
+                      newPlaybackRate,
+                      newWhen,
+                    );
                   }
                 }
-                var envelope = this.findEnvelope(audioContext, target, startWhen, waveDuration);
-                this.setupEnvelope(
-                  audioContext,
-                  envelope,
-                  zone,
-                  volume,
-                  startWhen,
-                  waveDuration,
-                  duration,
-                );
-                envelope.audioBufferSourceNode = audioContext.createBufferSource();
-                envelope.audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, 0);
-                if (slides) {
-                  if (slides.length > 0) {
-                    envelope.audioBufferSourceNode.playbackRate.setValueAtTime(playbackRate, when);
-                    for (var i = 0; i < slides.length; i++) {
-                      var newPlaybackRate =
-                        1.0 * Math.pow(2, (100.0 * slides[i].pitch - baseDetune) / 1200.0);
-                      var newWhen = when + slides[i].when;
-                      envelope.audioBufferSourceNode.playbackRate.linearRampToValueAtTime(
-                        newPlaybackRate,
-                        newWhen,
-                      );
-                    }
-                  }
-                }
-                envelope.audioBufferSourceNode.buffer = zone.buffer;
-                if (loop) {
-                  envelope.audioBufferSourceNode.loop = true;
-                  envelope.audioBufferSourceNode.loopStart =
-                    zone.loopStart / zone.sampleRate + zone.delay;
-                  envelope.audioBufferSourceNode.loopEnd =
-                    zone.loopEnd / zone.sampleRate + zone.delay;
-                } else {
-                  envelope.audioBufferSourceNode.loop = false;
-                }
-                envelope.audioBufferSourceNode.connect(envelope);
-                envelope.audioBufferSourceNode.start(startWhen, zone.delay);
-                envelope.audioBufferSourceNode.stop(startWhen + waveDuration);
-                envelope.when = startWhen;
-                envelope.duration = waveDuration;
-                envelope.pitch = pitch;
-                envelope.preset = preset;
-                return envelope;
-              });
+              }
+              envelope.audioBufferSourceNode.buffer = zone.buffer;
+              if (loop) {
+                envelope.audioBufferSourceNode.loop = true;
+                envelope.audioBufferSourceNode.loopStart =
+                  zone.loopStart / zone.sampleRate + zone.delay;
+                envelope.audioBufferSourceNode.loopEnd =
+                  zone.loopEnd / zone.sampleRate + zone.delay;
+              } else {
+                envelope.audioBufferSourceNode.loop = false;
+              }
+              envelope.audioBufferSourceNode.connect(envelope);
+              envelope.audioBufferSourceNode.start(startWhen, zone.delay);
+              envelope.audioBufferSourceNode.stop(startWhen + waveDuration);
+              envelope.when = startWhen;
+              envelope.duration = waveDuration;
+              envelope.pitch = pitch;
+              envelope.preset = preset;
+              return envelope;
             };
             this.noZeroVolume = function (n) {
               if (n > this.nearZero) {
@@ -2488,9 +2487,11 @@
               return envelope;
             };
             this.adjustPreset = function (audioContext, preset) {
-              preset.zones.map((zone) => this.adjustZone(audioContext, zone));
+              for (var i = 0; i < preset.zones.length; i++) {
+                this.adjustZone(audioContext, preset.zones[i]);
+              }
             };
-            this.adjustZone = async function (audioContext, zone) {
+            this.adjustZone = function (audioContext, zone) {
               if (zone.buffer) {
                 //
               } else {
@@ -2526,8 +2527,9 @@
                       b = decoded.charCodeAt(i);
                       view[i] = b;
                     }
-                    var audioBuffer = await audioContext.decodeAudioData(arraybuffer);
-                    zone.buffer = audioBuffer;
+                    audioContext.decodeAudioData(arraybuffer, (audioBuffer) => {
+                      zone.buffer = audioBuffer;
+                    });
                   }
                 }
                 zone.loopStart = this.numValue(zone.loopStart, 0);
@@ -2548,13 +2550,11 @@
                 }
               }
               try {
-                return this.adjustZone(audioContext, zone).then(() => {
-                  return zone;
-                });
+                this.adjustZone(audioContext, zone);
               } catch (ex) {
                 console.log('adjustZone', ex);
-                return zone;
               }
+              return zone;
             };
             this.cancelQueue = function (audioContext) {
               for (var i = 0; i < this.envelopes.length; i++) {
