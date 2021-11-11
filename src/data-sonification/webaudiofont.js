@@ -2297,7 +2297,7 @@
             ) {
               this.resumeContext(audioContext);
               volume = this.limitVolume(volume);
-              this.findZone(audioContext, preset, pitch).then((zone) => {
+              return this.findZone(audioContext, preset, pitch).then((zone) => {
                 if (!zone.buffer) {
                   console.log('empty buffer ', zone);
                   return;
