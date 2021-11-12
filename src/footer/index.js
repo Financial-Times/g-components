@@ -188,7 +188,7 @@ const Footer = () => {
                   </a>
                   <a
                     className="o-footer__matrix-link"
-                    href="https://transact.ft.com/en-gb/"
+                    href="https://transact.ft.com/"
                     data-trackable="FT Transact"
                   >
                     <span className="o-footer__matrix-link__copy">FT Transact</span>
