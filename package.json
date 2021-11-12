@@ -35,6 +35,9 @@
       }
     }
   },
+  "peerDependencies": {
+    "@storybook/react": "6.x"
+  },
   "dependencies": {
     "@financial-times/ft-date-format": "^2.0.0",
     "@financial-times/o-ads": "^19.0.1",
