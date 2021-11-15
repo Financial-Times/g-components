@@ -101,12 +101,7 @@
             this.player = player;
             this.cached = [];
             this.startLoad = function (audioContext, filePath, variableName) {
-              if (
-                window[variableName] &&
-                window[variableName].zones &&
-                window[variableName].zones[0] &&
-                window[variableName].zones[0].buffer
-              ) {
+              if (window[variableName]) {
                 return;
               }
               for (var i = 0; i < this.cached.length; i++) {
@@ -2305,8 +2300,48 @@
               var zone = this.findZone(audioContext, preset, pitch);
               if (!zone.buffer) {
                 console.log('empty buffer ', zone);
-                return;
+                setTimeout(() => {
+                  if (!zone.buffer) {
+                    return;
+                  } else {
+                    return this.queueWaveTableWithBuffer(
+                      audioContext,
+                      target,
+                      preset,
+                      when,
+                      pitch,
+                      duration,
+                      volume,
+                      slides,
+                      zone,
+                    );
+                  }
+                }, 100);
+              } else {
+                return this.queueWaveTableWithBuffer(
+                  audioContext,
+                  target,
+                  preset,
+                  when,
+                  pitch,
+                  duration,
+                  volume,
+                  slides,
+                  zone,
+                );
               }
+            };
+            this.queueWaveTableWithBuffer = function (
+              audioContext,
+              target,
+              preset,
+              when,
+              pitch,
+              duration,
+              volume,
+              slides,
+              zone,
+            ) {
               var baseDetune = zone.originalPitch - 100.0 * zone.coarseTune - zone.fineTune;
               var playbackRate = 1.0 * Math.pow(2, (100.0 * pitch - baseDetune) / 1200.0);
               var sampleRatio = zone.sampleRate / audioContext.sampleRate;
