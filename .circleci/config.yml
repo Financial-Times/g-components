@@ -1,8 +1,13 @@
-version: 2
+version: 2.1
+
+orbs: 
+  node: circleci/node@4.7.0
+
 references:
   default_container_config: &default_container_config
-    docker:
-      - image: circleci/node:14
+    executor:
+      name: node/default
+      tag: '14'
 
   attach_workspace: &attach_workspace
     attach_workspace:
@@ -40,13 +45,6 @@ jobs:
     <<: *default_container_config
     steps:
       - checkout
-      - run:
-          name: Install volta
-          command: |
-            curl https://get.volta.sh | bash
-            echo 'export VOLTA_HOME=$HOME/.volta' >> $BASH_ENV
-            echo 'export PATH=$VOLTA_HOME:$PATH' >> $BASH_ENV
-            source $BASH_ENV
       - save_cache:
           key: *ssh_cache_key
           paths:
