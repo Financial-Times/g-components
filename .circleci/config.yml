@@ -46,6 +46,7 @@ jobs:
             curl https://get.volta.sh | bash
             echo 'export VOLTA_HOME=$HOME/.volta' >> $BASH_ENV
             echo 'export PATH=$VOLTA_HOME:$PATH' >> $BASH_ENV
+            source $BASH_ENV
       - save_cache:
           key: *ssh_cache_key
           paths:
