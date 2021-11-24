@@ -2,7 +2,7 @@ version: 2
 references:
   default_container_config: &default_container_config
     docker:
-      - image: circleci/node:12
+      - image: circleci/node:14
 
   attach_workspace: &attach_workspace
     attach_workspace:
