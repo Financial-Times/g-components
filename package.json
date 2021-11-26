@@ -7,14 +7,18 @@
   "author": "Ændra Rininsland",
   "license": "ISC",
   "jest": {
+    "testEnvironment": "jsdom",
     "resolver": "<rootDir>/.jest/resolver.js",
     "transform": {
-      "^.+\\.[tj]sx?$": "babel-jest",
+      "^.+\\.[tj]sx?$": "<rootDir>/.jest/transform.js",
       "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
     },
     "moduleNameMapper": {
       "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    }
+    },
+    "transformIgnorePatterns": [
+      "/node_modules//(?!(@financial-times)/)"
+    ]
   },
   "babel": {
     "env": {
@@ -86,6 +90,8 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@financial-times/jest-browser-resolver": "^1.0.2",
     "@storybook/addon-a11y": "^6.3.12",
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-controls": "^6.3.12",
@@ -113,6 +119,7 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26",
+    "jest-esm-transformer": "^1.0.0",
     "jest-raw-loader": "^1.0.1",
     "node-fetch": "^2.6.6",
     "prettier": "^2.4.1",
