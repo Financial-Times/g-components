@@ -7,7 +7,7 @@ references:
   default_container_config: &default_container_config
     executor:
       name: node/default
-      tag: '14'
+      tag: '16.13'
 
   attach_workspace: &attach_workspace
     attach_workspace:
