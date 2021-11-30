@@ -3998,42 +3998,77 @@ exports[`Storyshots Core/Footer Example 1`] = `
                 data-trackable="View Site Tips"
                 href="/tour"
               >
-                View Site Tips
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  View Site Tips
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Help Centre"
                 href="https://help.ft.com"
               >
-                Help Centre
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Help Centre
+                </span>
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                data-trackable="Contact Us"
+                href="https://aboutus.ft.com/contact-us"
+              >
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Contact Us
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="About Us"
                 href="https://www.ft.com/aboutus"
               >
-                About Us
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  About Us
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Accessibility"
                 href="https://www.ft.com/accessibility"
               >
-                Accessibility
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Accessibility
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="myFT Tour"
                 href="https://www.ft.com/tour/myft"
               >
-                myFT Tour
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  myFT Tour
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Careers"
                 href="https://aboutus.ft.com/en-gb/careers/"
               >
-                Careers
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Careers
+                </span>
               </a>
             </div>
           </div>
@@ -4058,41 +4093,61 @@ exports[`Storyshots Core/Footer Example 1`] = `
                 data-trackable="Terms & Conditions"
                 href="https://help.ft.com/help/legal-privacy/terms-conditions/"
               >
-                Terms & Conditions
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Terms & Conditions
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
-                data-trackable="Privacy"
+                data-trackable="Privacy Policy"
                 href="https://help.ft.com/help/legal-privacy/privacy/"
               >
-                Privacy
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Privacy Policy
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Cookies"
                 href="https://help.ft.com/help/legal-privacy/cookies/"
               >
-                Cookies
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Cookies
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Copyright"
                 href="https://help.ft.com/help/legal-privacy/copyright/copyright-policy/"
               >
-                Copyright
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Copyright
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Slavery Statement & Policies"
                 href="https://help.ft.com/help/legal/slavery-statement/"
               >
-                Slavery Statement & Policies
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Slavery Statement & Policies
+                </span>
               </a>
             </div>
           </div>
         </div>
         <div
-          className="o-footer__matrix-group o-footer__matrix-group--2"
+          className="o-footer__matrix-group o-footer__matrix-group--1"
         >
           <h3
             aria-controls="o-footer-section-2"
@@ -4109,91 +4164,120 @@ exports[`Storyshots Core/Footer Example 1`] = `
             >
               <a
                 className="o-footer__matrix-link"
-                data-trackable="FT Live"
-                href="https://live.ft.com/"
-              >
-                FT Live
-              </a>
-              <a
-                className="o-footer__matrix-link"
                 data-o-tracking-do-not-track="true"
                 data-trackable="Share News Tips Securely"
                 href="https://www.ft.com/securedrop"
               >
-                Share News Tips Securely
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Share News Tips Securely
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Individual Subscriptions"
                 href="https://www.ft.com/products"
               >
-                Individual Subscriptions
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Individual Subscriptions
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Group Subscriptions"
                 href="https://enterprise.ft.com/en-gb/services/group-subscriptions/group-contact-us/?segmentId=383c7f63-abf4-b62d-cb33-4c278e6fdf61&cpccampaign=B2B_link_ft.com_footer"
               >
-                Group Subscriptions
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Group Subscriptions
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Republishing"
                 href="https://enterprise.ft.com/en-gb/services/republishing/"
               >
-                Republishing
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Republishing
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Contracts & Tenders"
                 href="https://www.businessesforsale.com/ft2/notices"
               >
-                Contracts & Tenders
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Contracts & Tenders
+                </span>
               </a>
-            </div>
-            <div
-              className="o-footer__matrix-column"
-            >
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Executive Job Search"
                 href="https://www.exec-appointments.com/"
               >
-                Executive Job Search
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Executive Job Search
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Advertise with the FT"
                 href="https://fttoolkit.co.uk/"
               >
-                Advertise with the FT
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Advertise with the FT
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Follow the FT on Twitter"
                 href="https://twitter.com/financialtimes"
               >
-                Follow the FT on Twitter
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Follow the FT on Twitter
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="FT Transact"
-                href="https://transact.ft.com/en-gb/"
+                href="https://transact.ft.com/"
               >
-                FT Transact
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  FT Transact
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Secondary Schools"
                 href="https://enterprise.ft.com/en-gb/services/group-subscriptions/education/"
               >
-                Secondary Schools
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Secondary Schools
+                </span>
               </a>
             </div>
           </div>
         </div>
         <div
-          className="o-footer__matrix-group o-footer__matrix-group--2"
+          className="o-footer__matrix-group o-footer__matrix-group--1"
         >
           <h3
             aria-controls="o-footer-section-3"
@@ -4213,75 +4297,175 @@ exports[`Storyshots Core/Footer Example 1`] = `
                 data-trackable="Portfolio"
                 href="https://markets.ft.com/data/portfolio/dashboard"
               >
-                Portfolio
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Portfolio
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Today's Newspaper (ePaper)"
                 href="https://www.ft.com/todaysnewspaper"
               >
-                Today's Newspaper (ePaper)
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Today's Newspaper (ePaper)
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Alerts Hub"
                 href="https://markets.ft.com/data/alerts/"
               >
-                Alerts Hub
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Alerts Hub
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
-                data-trackable="MBA Rankings"
-                href="https://rankings.ft.com/businessschoolrankings/global-mba-ranking-2019"
+                data-trackable="Business School Rankings"
+                href="https://rankings.ft.com"
               >
-                MBA Rankings
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Business School Rankings
+                </span>
               </a>
-            </div>
-            <div
-              className="o-footer__matrix-column"
-            >
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Enterprise Tools"
                 href="https://kat.ft.com/"
               >
-                Enterprise Tools
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Enterprise Tools
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="News feed"
                 href="https://www.ft.com/news-feed"
               >
-                News feed
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  News feed
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Newsletters"
                 href="https://www.ft.com/newsletters"
               >
-                Newsletters
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Newsletters
+                </span>
               </a>
               <a
                 className="o-footer__matrix-link"
                 data-trackable="Currency Converter"
                 href="https://markets.ft.com/research/Markets/Currencies?segid=70113"
               >
-                Currency Converter
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Currency Converter
+                </span>
               </a>
             </div>
           </div>
         </div>
-      </nav>
-      <div
-        className="o-footer__external-link o-footer__matrix-title"
-      >
-        <a
-          className="o-footer__more-from-ft o-footer__matrix-title"
-          href="https://www.ft.com/more-from-ft-group"
+        <div
+          className="o-footer__matrix-group o-footer__matrix-group--1"
         >
-          More from the FT Group
-        </a>
-      </div>
+          <h3
+            aria-controls="o-footer-section-4"
+            className="o-footer__matrix-title"
+          >
+            Community & Events
+          </h3>
+          <div
+            className="o-footer__matrix-content"
+            id="o-footer-section-4"
+          >
+            <div
+              className="o-footer__matrix-column"
+            >
+              <a
+                className="o-footer__matrix-link"
+                data-trackable="FT Community"
+                href="https://www.ft.com/tour/community"
+              >
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  FT Community
+                </span>
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                data-trackable="FT Live"
+                href="https://live.ft.com/"
+              >
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  FT Live
+                </span>
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                data-trackable="FT Forums"
+                href="https://forums.ft.com"
+              >
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  FT Forums
+                </span>
+              </a>
+              <a
+                className="o-footer__matrix-link"
+                data-trackable="Board Director Programme"
+                href="https://bdp.ft.com"
+              >
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  Board Director Programme
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          className="o-footer__matrix-group o-footer__matrix-group--1"
+        >
+          <h3
+            className="o-footer__matrix-title o-footer__matrix-title--link"
+          >
+            <a
+              className="o-footer__matrix-link o-footer__matrix-link--more"
+              href="https://ft.com/more-from-ft-group"
+              id="o-footer-section-5"
+            >
+              <span
+                className="o-footer__matrix-link__copy"
+              >
+                More from the FT Group
+              </span>
+            </a>
+          </h3>
+        </div>
+      </nav>
     </div>
     <div
       className="o-footer__copyright"
@@ -7540,142 +7724,140 @@ exports[`Storyshots Core/Sticky Basic example 1`] = `
     }
   }
 >
-  <div>
-    <div
-      className="sticky__container"
+  <div
+    className="sticky__container"
+  >
+    <article
+      className="sticky__text"
     >
-      <article
-        className="sticky__text"
-      >
-        <div
-          style={
-            Object {
-              "fontSize": "500%",
-            }
+      <div
+        style={
+          Object {
+            "fontSize": "500%",
           }
-        >
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-          <h1>
-            Lorem ipsum; pct:
-            1
-            ; inview:
-          </h1>
-        </div>
-      </article>
-      <figure
-        className="sticky__figure"
+        }
       >
-        <h1
-          style={
-            Object {
-              "backgroundColor": "#969696",
-              "padding": "1em",
-            }
-          }
-        >
-          Percentage: 
-          100.0
-          % 
-          <br />
-           In viewport: 
-          no
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
         </h1>
-      </figure>
-    </div>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+        <h1>
+          Lorem ipsum; pct:
+          0
+          ; inview:
+        </h1>
+      </div>
+    </article>
+    <figure
+      className="sticky__figure"
+    >
+      <h1
+        style={
+          Object {
+            "backgroundColor": "#969696",
+            "padding": "1em",
+          }
+        }
+      >
+        Percentage: 
+        0.0
+        % 
+        <br />
+         In viewport: 
+        no
+      </h1>
+    </figure>
   </div>
 </div>
 `;
@@ -7690,85 +7872,67 @@ exports[`Storyshots Core/Sticky Complex example 1`] = `
     }
   }
 >
-  <div>
-    <div
-      className="sticky__container"
+  <div
+    className="sticky__container"
+  >
+    <article
+      className="sticky__text"
     >
-      <article
-        className="sticky__text"
-      >
-        <div
-          style={
-            Object {
-              "fontSize": "500%",
-            }
+      <div
+        style={
+          Object {
+            "fontSize": "500%",
           }
-        >
-          <div>
-            <h1>
-              one
-            </h1>
-          </div>
-          <div>
-            <h1>
-              two
-            </h1>
-          </div>
-          <div>
-            <h1>
-              three
-            </h1>
-          </div>
-          <div>
-            <h1>
-              four
-            </h1>
-          </div>
-          <div>
-            <h1>
-              five
-            </h1>
-          </div>
-          <div>
-            <h1>
-              six
-            </h1>
-          </div>
-          <div>
-            <h1>
-              seven
-            </h1>
-          </div>
-          <div>
-            <h1>
-              eight
-            </h1>
-          </div>
-        </div>
-      </article>
-      <figure
-        className="sticky__figure"
+        }
       >
-        <h1
-          style={
-            Object {
-              "backgroundColor": "#969696",
-              "padding": "1em",
-            }
-          }
-        >
-          Percentage: 
-          100.0
-          % 
-          <br />
-           Frame is in viewport:
-           
-          no
-          <br />
-           Currently viewing line: 
+        <h1>
+          one
         </h1>
-      </figure>
-    </div>
+        <h1>
+          two
+        </h1>
+        <h1>
+          three
+        </h1>
+        <h1>
+          four
+        </h1>
+        <h1>
+          five
+        </h1>
+        <h1>
+          six
+        </h1>
+        <h1>
+          seven
+        </h1>
+        <h1>
+          eight
+        </h1>
+      </div>
+    </article>
+    <figure
+      className="sticky__figure"
+    >
+      <h1
+        style={
+          Object {
+            "backgroundColor": "#969696",
+            "padding": "1em",
+          }
+        }
+      >
+        Percentage: 
+        0.0
+        % 
+        <br />
+         Frame is in viewport:
+         
+        no
+        <br />
+         Currently viewing line: 
+      </h1>
+    </figure>
   </div>
 </div>
 `;
@@ -13813,42 +13977,77 @@ Array [
                   data-trackable="View Site Tips"
                   href="/tour"
                 >
-                  View Site Tips
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    View Site Tips
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Help Centre"
                   href="https://help.ft.com"
                 >
-                  Help Centre
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Help Centre
+                  </span>
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  data-trackable="Contact Us"
+                  href="https://aboutus.ft.com/contact-us"
+                >
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Contact Us
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="About Us"
                   href="https://www.ft.com/aboutus"
                 >
-                  About Us
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    About Us
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Accessibility"
                   href="https://www.ft.com/accessibility"
                 >
-                  Accessibility
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Accessibility
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="myFT Tour"
                   href="https://www.ft.com/tour/myft"
                 >
-                  myFT Tour
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    myFT Tour
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Careers"
                   href="https://aboutus.ft.com/en-gb/careers/"
                 >
-                  Careers
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Careers
+                  </span>
                 </a>
               </div>
             </div>
@@ -13873,41 +14072,61 @@ Array [
                   data-trackable="Terms & Conditions"
                   href="https://help.ft.com/help/legal-privacy/terms-conditions/"
                 >
-                  Terms & Conditions
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Terms & Conditions
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
-                  data-trackable="Privacy"
+                  data-trackable="Privacy Policy"
                   href="https://help.ft.com/help/legal-privacy/privacy/"
                 >
-                  Privacy
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Privacy Policy
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Cookies"
                   href="https://help.ft.com/help/legal-privacy/cookies/"
                 >
-                  Cookies
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Cookies
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Copyright"
                   href="https://help.ft.com/help/legal-privacy/copyright/copyright-policy/"
                 >
-                  Copyright
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Copyright
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Slavery Statement & Policies"
                   href="https://help.ft.com/help/legal/slavery-statement/"
                 >
-                  Slavery Statement & Policies
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Slavery Statement & Policies
+                  </span>
                 </a>
               </div>
             </div>
           </div>
           <div
-            className="o-footer__matrix-group o-footer__matrix-group--2"
+            className="o-footer__matrix-group o-footer__matrix-group--1"
           >
             <h3
               aria-controls="o-footer-section-2"
@@ -13924,91 +14143,120 @@ Array [
               >
                 <a
                   className="o-footer__matrix-link"
-                  data-trackable="FT Live"
-                  href="https://live.ft.com/"
-                >
-                  FT Live
-                </a>
-                <a
-                  className="o-footer__matrix-link"
                   data-o-tracking-do-not-track="true"
                   data-trackable="Share News Tips Securely"
                   href="https://www.ft.com/securedrop"
                 >
-                  Share News Tips Securely
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Share News Tips Securely
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Individual Subscriptions"
                   href="https://www.ft.com/products"
                 >
-                  Individual Subscriptions
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Individual Subscriptions
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Group Subscriptions"
                   href="https://enterprise.ft.com/en-gb/services/group-subscriptions/group-contact-us/?segmentId=383c7f63-abf4-b62d-cb33-4c278e6fdf61&cpccampaign=B2B_link_ft.com_footer"
                 >
-                  Group Subscriptions
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Group Subscriptions
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Republishing"
                   href="https://enterprise.ft.com/en-gb/services/republishing/"
                 >
-                  Republishing
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Republishing
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Contracts & Tenders"
                   href="https://www.businessesforsale.com/ft2/notices"
                 >
-                  Contracts & Tenders
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Contracts & Tenders
+                  </span>
                 </a>
-              </div>
-              <div
-                className="o-footer__matrix-column"
-              >
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Executive Job Search"
                   href="https://www.exec-appointments.com/"
                 >
-                  Executive Job Search
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Executive Job Search
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Advertise with the FT"
                   href="https://fttoolkit.co.uk/"
                 >
-                  Advertise with the FT
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Advertise with the FT
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Follow the FT on Twitter"
                   href="https://twitter.com/financialtimes"
                 >
-                  Follow the FT on Twitter
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Follow the FT on Twitter
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="FT Transact"
-                  href="https://transact.ft.com/en-gb/"
+                  href="https://transact.ft.com/"
                 >
-                  FT Transact
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    FT Transact
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Secondary Schools"
                   href="https://enterprise.ft.com/en-gb/services/group-subscriptions/education/"
                 >
-                  Secondary Schools
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Secondary Schools
+                  </span>
                 </a>
               </div>
             </div>
           </div>
           <div
-            className="o-footer__matrix-group o-footer__matrix-group--2"
+            className="o-footer__matrix-group o-footer__matrix-group--1"
           >
             <h3
               aria-controls="o-footer-section-3"
@@ -14028,75 +14276,175 @@ Array [
                   data-trackable="Portfolio"
                   href="https://markets.ft.com/data/portfolio/dashboard"
                 >
-                  Portfolio
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Portfolio
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Today's Newspaper (ePaper)"
                   href="https://www.ft.com/todaysnewspaper"
                 >
-                  Today's Newspaper (ePaper)
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Today's Newspaper (ePaper)
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Alerts Hub"
                   href="https://markets.ft.com/data/alerts/"
                 >
-                  Alerts Hub
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Alerts Hub
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
-                  data-trackable="MBA Rankings"
-                  href="https://rankings.ft.com/businessschoolrankings/global-mba-ranking-2019"
+                  data-trackable="Business School Rankings"
+                  href="https://rankings.ft.com"
                 >
-                  MBA Rankings
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Business School Rankings
+                  </span>
                 </a>
-              </div>
-              <div
-                className="o-footer__matrix-column"
-              >
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Enterprise Tools"
                   href="https://kat.ft.com/"
                 >
-                  Enterprise Tools
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Enterprise Tools
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="News feed"
                   href="https://www.ft.com/news-feed"
                 >
-                  News feed
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    News feed
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Newsletters"
                   href="https://www.ft.com/newsletters"
                 >
-                  Newsletters
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Newsletters
+                  </span>
                 </a>
                 <a
                   className="o-footer__matrix-link"
                   data-trackable="Currency Converter"
                   href="https://markets.ft.com/research/Markets/Currencies?segid=70113"
                 >
-                  Currency Converter
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Currency Converter
+                  </span>
                 </a>
               </div>
             </div>
           </div>
-        </nav>
-        <div
-          className="o-footer__external-link o-footer__matrix-title"
-        >
-          <a
-            className="o-footer__more-from-ft o-footer__matrix-title"
-            href="https://www.ft.com/more-from-ft-group"
+          <div
+            className="o-footer__matrix-group o-footer__matrix-group--1"
           >
-            More from the FT Group
-          </a>
-        </div>
+            <h3
+              aria-controls="o-footer-section-4"
+              className="o-footer__matrix-title"
+            >
+              Community & Events
+            </h3>
+            <div
+              className="o-footer__matrix-content"
+              id="o-footer-section-4"
+            >
+              <div
+                className="o-footer__matrix-column"
+              >
+                <a
+                  className="o-footer__matrix-link"
+                  data-trackable="FT Community"
+                  href="https://www.ft.com/tour/community"
+                >
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    FT Community
+                  </span>
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  data-trackable="FT Live"
+                  href="https://live.ft.com/"
+                >
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    FT Live
+                  </span>
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  data-trackable="FT Forums"
+                  href="https://forums.ft.com"
+                >
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    FT Forums
+                  </span>
+                </a>
+                <a
+                  className="o-footer__matrix-link"
+                  data-trackable="Board Director Programme"
+                  href="https://bdp.ft.com"
+                >
+                  <span
+                    className="o-footer__matrix-link__copy"
+                  >
+                    Board Director Programme
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div
+            className="o-footer__matrix-group o-footer__matrix-group--1"
+          >
+            <h3
+              className="o-footer__matrix-title o-footer__matrix-title--link"
+            >
+              <a
+                className="o-footer__matrix-link o-footer__matrix-link--more"
+                href="https://ft.com/more-from-ft-group"
+                id="o-footer-section-5"
+              >
+                <span
+                  className="o-footer__matrix-link__copy"
+                >
+                  More from the FT Group
+                </span>
+              </a>
+            </h3>
+          </div>
+        </nav>
       </div>
       <div
         className="o-footer__copyright"

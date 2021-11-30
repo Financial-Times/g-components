@@ -8,7 +8,6 @@ You can see what components are available in Storybook:
 $ npm run storybook
 ```
 
-
 # Development
 
 To test components during development:

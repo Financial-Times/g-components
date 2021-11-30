@@ -57,7 +57,7 @@ const Analytics = ({ id, tracking, flags }) => {
         OTracking.page(pageData);
 
         // Links
-        OTracking.link.init();
+        OTracking.click.init();
       } catch (e) {
         console.error(e);
       }

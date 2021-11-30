@@ -1,8 +1,13 @@
-version: 2
+version: 2.1
+
+orbs: 
+  node: circleci/node@4.7.0
+
 references:
   default_container_config: &default_container_config
-    docker:
-      - image: circleci/node:12
+    executor:
+      name: node/default
+      tag: '16.13'
 
   attach_workspace: &attach_workspace
     attach_workspace:

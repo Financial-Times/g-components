@@ -51,7 +51,7 @@ const LastUpdated = ({ live, dot, date }) => (
 LastUpdated.propTypes = {
   live: PropTypes.bool,
   dot: PropTypes.bool,
-  date: PropTypes.instanceOf(Date),
+  date: PropTypes.oneOfType([PropTypes.instanceOf(Date), PropTypes.bool]),
 };
 
 LastUpdated.defaultProps = {

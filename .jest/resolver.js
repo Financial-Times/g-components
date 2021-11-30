@@ -3,7 +3,8 @@ const path = require('path');
 
 module.exports = create((jestConfig) => {
   const baseConfig = getDefaultConfig(jestConfig);
-  baseConfig.mainFields = ['browser', 'main'];
+  baseConfig.aliasFields = ['browser'];
+  baseConfig.mainFields = ['main', 'browser'];
 
   baseConfig.alias = {
     ...(baseConfig.alias || {}),
