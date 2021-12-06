@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 const getEmbedUrl = (flourishUrl) => {
@@ -6,22 +6,22 @@ const getEmbedUrl = (flourishUrl) => {
 }
 
 const FlourishEmbed = ({ url, alt }) => {
+  const elRef = useRef(null);
+  
   useEffect(() => {
     window.addEventListener('message', event => {
       if (event.origin === 'https://flo.uri.sh') {
         const eventData = JSON.parse(event.data);
-        const iframes = document.querySelectorAll('iframe');
-        iframes.forEach(i => {
-          if (i.src === eventData.src.replace('#slide-0', '')) {
-            i.height = eventData.height;
-          }
-        });
+        if (elRef.current.src === eventData.src.replace('#slide-0', '')) {
+          elRef.current.height = eventData.height;
+        }
       }
     });
   }, []);
 
   return (
     <iframe
+      ref={elRef}
       src={getEmbedUrl(url)}
       title={alt}
       scrolling="no"
