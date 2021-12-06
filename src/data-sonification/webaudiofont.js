@@ -2300,8 +2300,48 @@
               var zone = this.findZone(audioContext, preset, pitch);
               if (!zone.buffer) {
                 console.log('empty buffer ', zone);
-                return;
+                setTimeout(() => {
+                  if (!zone.buffer) {
+                    return;
+                  } else {
+                    return this.queueWaveTableWithBuffer(
+                      audioContext,
+                      target,
+                      preset,
+                      when,
+                      pitch,
+                      duration,
+                      volume,
+                      slides,
+                      zone,
+                    );
+                  }
+                }, 100);
+              } else {
+                return this.queueWaveTableWithBuffer(
+                  audioContext,
+                  target,
+                  preset,
+                  when,
+                  pitch,
+                  duration,
+                  volume,
+                  slides,
+                  zone,
+                );
               }
+            };
+            this.queueWaveTableWithBuffer = function (
+              audioContext,
+              target,
+              preset,
+              when,
+              pitch,
+              duration,
+              volume,
+              slides,
+              zone,
+            ) {
               var baseDetune = zone.originalPitch - 100.0 * zone.coarseTune - zone.fineTune;
               var playbackRate = 1.0 * Math.pow(2, (100.0 * pitch - baseDetune) / 1200.0);
               var sampleRatio = zone.sampleRate / audioContext.sampleRate;
@@ -2527,7 +2567,7 @@
                       b = decoded.charCodeAt(i);
                       view[i] = b;
                     }
-                    audioContext.decodeAudioData(arraybuffer, function (audioBuffer) {
+                    audioContext.decodeAudioData(arraybuffer, (audioBuffer) => {
                       zone.buffer = audioBuffer;
                     });
                   }

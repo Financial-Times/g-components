@@ -4,7 +4,7 @@
  */
 
 import { useRef, useEffect, useState } from 'react';
-import OAds from '@financial-times/o-ads';
+import OAds from '@financial-times/ads-legacy-o-ads';
 import { isElement, registerLayoutChangeEvents, unregisterLayoutChangeEvents } from './helpers';
 
 /**

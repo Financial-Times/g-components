@@ -49,7 +49,7 @@ export const useOverlay = ({
       // overlay method below, this event listener catches any race
       // conditions where React does not set `isShowing` in time when
       // oOverlay is closed
-      oLayerContext.addEventListener('oLayers.close', () => {
+      oLayerContext.addEventListener('oOverlay.layerClose', () => {
         setIsShowing(false);
       });
 
