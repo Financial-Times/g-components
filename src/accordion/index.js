@@ -21,7 +21,7 @@ const AccordionSection = ({ isExpanded = false, children: [title, ...body], id =
         }`}
         aria-expanded={expanded}
         onClick={() => setExpanded(!expanded)}
-        {...(id ? id={id} : '')}
+        {...(id ? { id } : {})}
       >
         {title}
       </button>
