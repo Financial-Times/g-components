@@ -43,6 +43,7 @@ exports[`Storyshots Core/Accordion Example 1`] = `
     <button
       aria-expanded={false}
       className="g-accordion-section__header "
+      id="section-3"
       onClick={[Function]}
     >
       <h3>
