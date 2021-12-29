@@ -8,7 +8,7 @@ exports[`Storyshots Core/Accordion Example 1`] = `
     className="g-accordion-section"
   >
     <button
-      ariaExpanded={false}
+      aria-expanded={false}
       className="g-accordion-section__header "
       onClick={[Function]}
     >
@@ -21,7 +21,7 @@ exports[`Storyshots Core/Accordion Example 1`] = `
     className="g-accordion-section"
   >
     <button
-      ariaExpanded={true}
+      aria-expanded={true}
       className="g-accordion-section__header g-accordion-section__header--expanded"
       onClick={[Function]}
     >
@@ -41,7 +41,7 @@ exports[`Storyshots Core/Accordion Example 1`] = `
     className="g-accordion-section"
   >
     <button
-      ariaExpanded={false}
+      aria-expanded={false}
       className="g-accordion-section__header "
       onClick={[Function]}
     >
