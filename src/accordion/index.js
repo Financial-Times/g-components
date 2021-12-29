@@ -19,7 +19,7 @@ const AccordionSection = ({ isExpanded = false, children: [title, ...body] }) =>
         className={`g-accordion-section__header ${
           expanded ? 'g-accordion-section__header--expanded' : ''
         }`}
-        ariaExpanded={expanded}
+        aria-expanded={expanded}
         onClick={() => setExpanded(!expanded)}
       >
         {title}
