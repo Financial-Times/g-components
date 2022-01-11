@@ -1,3 +1,4 @@
-$o-forms-is-silent: false;
 @import '../shared/_globals.scss';
 @import 'o-forms/main.scss';
+
+@include oForms();

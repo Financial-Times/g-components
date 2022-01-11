@@ -9,12 +9,14 @@ const { writeFile } = require('fs/promises');
 const glob = require('glob');
 const camelcase = require('camelcase');
 
+const srcBase = join(__dirname, '..', 'src/')
+
 // Get list of all component indices
 const components = glob
-  .sync(join(__dirname, '..', 'src/**/index.js'))
-  .map((d) => [basename(dirname(d)), camelcase(basename(dirname(d)), { pascalCase: true })]);
+  .sync(join(srcBase, '**/index.js'))
+  .map((d) => [dirname(d).replace(srcBase, ''), camelcase(basename(dirname(d)), { pascalCase: true })]);
 
-writeFile(join(__dirname, '..', 'src', 'index.js'),
+writeFile(join(srcBase, 'index.js'),
 `/**
   * @file
   * Entry point (automatically generated)

@@ -1,3 +1,4 @@
-$o-overlay-is-silent: false;
 @import '../shared/_globals.scss';
 @import 'o-overlay/main';
+
+@include oOverlay();

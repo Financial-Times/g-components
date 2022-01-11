@@ -14,6 +14,7 @@ import {
   topicPropType,
   flagsPropType,
 } from '../shared/proptypes';
+import '../shared/_common.scss';
 import './styles.scss';
 
 const StoryTopper = ({

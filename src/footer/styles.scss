@@ -1,3 +1,4 @@
-$o-footer-is-silent: false;
 @import '../shared/_globals.scss';
 @import 'o-footer/main.scss';
+
+@include oFooter();

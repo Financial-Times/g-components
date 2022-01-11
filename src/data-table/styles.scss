@@ -1,3 +1,4 @@
-$o-table-is-silent: false;
 @import '../shared/_globals.scss';
 @import 'o-table/main.scss';
+
+@include oTable();

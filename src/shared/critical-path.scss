@@ -1,7 +1,3 @@
-$o-typography-is-silent: false;
-$o-editorial-typography-is-silent: false;
-$o-editorial-layout-is-silent: false;
-
 @import './_globals.scss';
 @import 'o-normalise/main.scss';
 @import 'o-colors/main.scss';
@@ -9,6 +5,10 @@ $o-editorial-layout-is-silent: false;
 @import 'o-typography/main';
 @import 'o-editorial-typography/main';
 @import 'o-editorial-layout/main';
+
+@include oTypography();
+@include oEditorialTypography();
+@include oEditorialLayout();
 
 @include oGridSurfaceLayoutSizes;
 @include oNormalise();

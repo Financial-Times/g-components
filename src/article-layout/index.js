@@ -12,8 +12,8 @@ import { TopAd } from '../ads';
 import OnwardJourney from '../onwardjourney';
 import Comments from '../comments';
 import Footer from '../footer';
-import './styles.scss';
 import { useAds, useLayoutChangeEvents } from '../shared/hooks';
+import '../shared/_common.scss';
 
 export const Context = createContext({});
 

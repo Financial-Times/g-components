@@ -1,7 +1,7 @@
-$o-teaser-is-silent: false;
-
 @import '../shared/_globals.scss';
 @import 'o-teaser/main';
+
+@include oTeaser();
 
 .onward-journey .o-teaser a {
   border-bottom: none;

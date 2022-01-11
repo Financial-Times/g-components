@@ -1,3 +1,4 @@
-$o-comments-is-silent: false;
 @import '../shared/_globals.scss';
 @import 'o-comments/main.scss';
+
+@include oComments();

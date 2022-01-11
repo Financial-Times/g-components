@@ -6,7 +6,6 @@
 import React, { Children } from 'react';
 import PropTypes from 'prop-types';
 import Card from '../card';
-import './styles.scss';
 
 const ListCard = ({ title, children }) => (
   <Card className="g-list-card">

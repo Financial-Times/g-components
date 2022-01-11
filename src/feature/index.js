@@ -11,10 +11,11 @@ import classnames from 'classnames';
 import { flagsPropType, StringBoolPropType } from '../shared/proptypes';
 import Header from '../header';
 import Analytics from '../analytics';
-import './styles.scss';
 import { useAds, useLayoutChangeEvents, useKeyboardShortcuts } from '../shared/hooks';
 import { Context } from '../article-layout';
 import Progress from '../progress';
+import './styles.scss';
+import '../shared/_common.scss';
 
 export { Context } from '../article-layout';
 
