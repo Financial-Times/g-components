@@ -5,9 +5,9 @@
 
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import OTable from '@financial-times/o-table';
 import classnames from 'classnames';
 import './styles.scss';
+import { useOrigami } from '../shared/hooks';
 
 const headerAttributes = (header, isSortable) => {
   const classes = header.columnType === 'number' ? 'o-table__cell--numeric' : '';
@@ -188,11 +188,7 @@ const DataTable = ({
   isCompact,
 }) => {
   const tableRef = useRef();
-  const tableOrigami = useRef();
-
-  useEffect(() => {
-    tableOrigami.current = OTable.init(tableRef.current);
-  }, []);
+  const tableOrigami = useOrigami('o-table', tableRef);
 
   useEffect(() => {
     tableOrigami.current.updateRows();

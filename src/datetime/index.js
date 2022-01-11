@@ -4,20 +4,16 @@
  */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import ODate from '@financial-times/o-date';
 import ftDateFormat from '@financial-times/ft-date-format';
+import { useOrigami } from '../shared/hooks';
 
 const DateTime = ({ datestamp }) => {
-  const elRef = useRef(null);
-  const dateRef = useRef(null);
-  useEffect(() => {
-    dateRef.current = ODate.init(elRef.current);
+  const ref = useRef(null);
+  const dateRef = useOrigami('o-date', ref)
 
-    return () => dateRef.current.destroy();
-  }, [datestamp]);
   return (
     <time
-      ref={elRef}
+      ref={ref}
       data-o-component="o-date"
       className="o-date"
       dateTime={datestamp.toISOString()}

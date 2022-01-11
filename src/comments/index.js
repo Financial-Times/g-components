@@ -5,25 +5,19 @@
 
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import OComments from '@financial-times/o-comments';
 import { flagsPropType } from '../shared/proptypes';
+import { useOrigami } from '../shared/hooks';
 import './styles.scss';
 
 const Comments = ({ id, url, linkPageUrl, flags }) => {
   const ref = useRef();
+  const oCommentsRef = useOrigami('o-comments', ref, {
+    articleUrl: linkPageUrl || url,
+    articleId: id,
+    title: id,
+  });
 
   const { dark } = flags;
-
-  useEffect(() => {
-    if ((id && linkPageUrl) || (id && url)) {
-      new OComments(ref.current, {
-        // eslint-disable-line no-new
-        articleUrl: linkPageUrl || url,
-        articleId: id,
-        title: id,
-      });
-    }
-  }, [id, url, linkPageUrl]);
 
   const comments = (
     <div className="o-grid-container">

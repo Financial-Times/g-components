@@ -3,21 +3,12 @@
  * Footer component
  */
 import React, { useEffect, useRef } from 'react';
-import OFooter from '@financial-times/o-footer';
+import { useOrigami } from '../shared/hooks';
 import './styles.scss';
 
 const Footer = () => {
   const ref = useRef();
-
-  useEffect(() => {
-    (async () => {
-      try {
-        new OFooter(ref.current);
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  }, []);
+  const oFooterRef = useOrigami('o-footer', ref);
 
   return (
     <footer

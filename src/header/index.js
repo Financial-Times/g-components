@@ -4,28 +4,19 @@
  */
 
 import React, { useEffect, useRef } from 'react';
-import OHeader from '@financial-times/o-header';
 import './styles.scss';
 import { flagsPropType } from '../shared/proptypes';
+import { useOrigami } from '../shared/hooks';
 
 const Header = ({ flags, ...props }) => {
   const ref = useRef();
+  const oHeaderRef = useOrigami('o-header', ref);
 
   const { dark } = flags;
 
   const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
     .filter((i) => i)
     .join(' ');
-
-  useEffect(() => {
-    (async () => {
-      try {
-        new OHeader(ref.current);
-      } catch (e) {
-        console.error(e);
-      }
-    })();
-  }, []);
 
   return (
     <header ref={ref} className={headerClasses} data-o-component="o-header" data-o-header--no-js="">

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import Overlay from '@financial-times/o-overlay';
 
 /**
  * Overlay hook to wrap oOverlay methods and state
@@ -30,30 +29,35 @@ export const useOverlay = ({
   const [isShowing, setIsShowing] = useState(false);
   const [overlay, setOverlay] = useState(null);
 
+  // Not using useOrigami here because behaviour is too complex
   useEffect(() => {
     // Only create the overlay once, otherwise oOverlay errors
     if (!overlay) {
-      const oOverlay = new Overlay(id, {
-        // Nothing in html, but will be replaced by a React portal to
-        // replace the contents
-        html: ' ', // Requires a non-empty value
-        heading: {
-          title: (visuallyHideTitle && !title && 'Overlay') || title,
-          visuallyhidetitle: visuallyHideTitle,
-          shaded: headingShaded,
-        },
-        ...oOverlayOptions,
-      });
+      (async () => {
+        const { default: Overlay } = await import('@financial-times/o-overlay');
 
-      // NOTE: In conjunction with setting `isShowing` in the hide
-      // overlay method below, this event listener catches any race
-      // conditions where React does not set `isShowing` in time when
-      // oOverlay is closed
-      oLayerContext.addEventListener('oOverlay.layerClose', () => {
-        setIsShowing(false);
-      });
+        const oOverlay = new Overlay(id, {
+          // Nothing in html, but will be replaced by a React portal to
+          // replace the contents
+          html: ' ', // Requires a non-empty value
+          heading: {
+            title: (visuallyHideTitle && !title && 'Overlay') || title,
+            visuallyhidetitle: visuallyHideTitle,
+            shaded: headingShaded,
+          },
+          ...oOverlayOptions,
+        });
 
-      setOverlay(oOverlay);
+        // NOTE: In conjunction with setting `isShowing` in the hide
+        // overlay method below, this event listener catches any race
+        // conditions where React does not set `isShowing` in time when
+        // oOverlay is closed
+        oLayerContext.addEventListener('oOverlay.layerClose', () => {
+          setIsShowing(false);
+        });
+
+        setOverlay(oOverlay);
+      })();
     }
   }, [headingShaded, id, oLayerContext, oOverlayOptions, overlay, title, visuallyHideTitle]);
 

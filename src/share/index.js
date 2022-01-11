@@ -4,10 +4,10 @@
  */
 
 import React, { useEffect, useRef } from 'react';
-import OShare from '@financial-times/o-share';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './styles.scss';
+import { useOrigami } from '../shared/hooks';
 
 const Share = ({
   url,
@@ -21,12 +21,7 @@ const Share = ({
   size,
 }) => {
   const ref = useRef();
-
-  useEffect(() => {
-    (async () => {
-      new OShare(ref.current); // eslint-disable-line no-new
-    })();
-  }, []);
+  const oShareRef = useOrigami('o-share', ref);
 
   const services = [
     {

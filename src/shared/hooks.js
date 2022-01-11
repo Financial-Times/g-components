@@ -4,7 +4,6 @@
  */
 
 import { useRef, useEffect, useState } from 'react';
-import OAds from '@financial-times/ads-legacy-o-ads';
 import { isElement, registerLayoutChangeEvents, unregisterLayoutChangeEvents } from './helpers';
 
 /**
@@ -63,6 +62,7 @@ export const useAds = (config, enabled = true) => {
   useEffect(() => {
     // Async side-effects should be in an IIFE in useEffect; don't make the CB async!
     (async () => {
+      const {default: OAds} = await import('@financial-times/ads-legacy-o-ads');
       try {
         if (enabled) {
           const initialised = await OAds.init({
@@ -149,9 +149,46 @@ export const useKeyboardShortcuts = (shortcuts) => {
   );
 };
 
+/**
+ * @function
+ * Safely instantiate an Origami component
+ *
+ * @param   {string}  oWhatever  Origami component; can leave off npm scope (e.g., 'o-date' will work)
+ * @param   {ref}     ref        Optional element ref
+ * @param   {object}  config     Config to pass to Origami constructor
+ *
+ * @return  {ref}             Ref containing the constructed Origami component JS
+ */
+export const useOrigami = (oWhatever, ref, config) => {
+  const componentRef = useRef(null);
+  
+  useEffect(() => {
+    if (componentRef.current || (ref && !ref.current)) return;
+
+    (async () => {
+      try {
+        const {default:OSomething} = await import(`@financial-times/${oWhatever.replace(/@financial-times\//i, '')}`);
+
+        if (ref) {
+          componentRef.current = new OSomething(ref.current, config);
+        } else {
+          componentRef.current = new OSomething(config);
+        }
+
+        return () => componentRef.current.destroy();
+      } catch (e) {
+        console.error(e); // eslint disable-line no-console
+      }
+    })();
+  }, [oWhatever, ref, config]);
+
+  return componentRef;
+}
+
 export default {
   usePortal,
   useAds,
   useLayoutChangeEvents,
   useKeyboardShortcuts,
+  useOrigami
 };

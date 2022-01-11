@@ -5,8 +5,8 @@
 
 import React, { Fragment, useRef, useEffect, forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import ODate from '@financial-times/o-date';
 import { bylinesPropType } from '../shared/proptypes';
+import { useOrigami } from '../shared/hooks';
 import './styles.scss';
 
 const NamesElement = ({ namesList }) => {
@@ -56,19 +56,7 @@ const DateElement = forwardRef(({ date }, ref) => {
 
 const Bylines = ({ prefix, names, date, dateFirst }) => {
   const dateElRef = useRef();
-  const oDateRef = useRef();
-
-  useEffect(() => {
-    if (oDateRef.current || !dateElRef.current) return;
-
-    (async () => {
-      try {
-        oDateRef.current = new ODate(dateElRef.current);
-      } catch (e) {
-        console.error(e); // eslint disable-line no-console
-      }
-    })();
-  });
+  const oDateRef = useOrigami('o-date');
 
   if (!names && !date) return null;
 
