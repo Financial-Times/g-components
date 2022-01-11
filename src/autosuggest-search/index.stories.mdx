@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { withKnobs, array, boolean } from '@storybook/addon-knobs';
+// import { withKnobs, array, boolean } from '@storybook/addon-knobs';
 import AutosuggestSearch from './';
 
 export const basicMpSearchList = [
@@ -113,10 +113,10 @@ function. The component takes these functions as (optional) props:
         validateInput={validateInputFunction}
         onClearFunction={() => console.log('clear')}
         usingSelectedValues={true}
-        selectedValues={array('Selected values', ['US', 'UK']).map((v) => ({
+        {/* selectedValues={array('Selected values', ['US', 'UK']).map((v) => ({
           display: v,
           value: v,
-        }))}
+        }))} */}
         onSelectedValueRemove={(value) => alert(`Removing ${value}`)}
         showSearchIcon={false}
         showDropdownIcon={true}
@@ -133,12 +133,12 @@ function. The component takes these functions as (optional) props:
         validateInput={validateInputFunction}
         onClearFunction={() => console.log('clear')}
         usingSelectedValues={true}
-        selectedValues={array('Selected values', ['US', 'UK', 'France', 'Germany', 'Spain']).map(
+        {/* selectedValues={array('Selected values', ['US', 'UK', 'France', 'Germany', 'Spain']).map(
           (v) => ({
             display: v,
             value: v,
           }),
-        )}
+        )} */}
         onSelectedValueRemove={(value) => alert(`Removing ${value}`)}
         showSearchIcon={false}
         showDropdownIcon={true}
@@ -171,7 +171,7 @@ function. The component takes these functions as (optional) props:
         searchList={basicMpSearchList}
         validateInput={validateInputFunction}
         onClearFunction={() => console.log('clear')}
-        disabled={boolean('Disabled input', false)}
+        {/* disabled={boolean('Disabled input', false)} */}
       />
       MP lookup example (with on click callback):
       <AutosuggestSearch
@@ -180,7 +180,7 @@ function. The component takes these functions as (optional) props:
         searchList={basicMpSearchList}
         validateInput={validateInputFunction}
         onClearFunction={() => console.log('clear')}
-        disabled={boolean('Disabled input', false)}
+        {/* disabled={boolean('Disabled input', false)} */}
         onClickCallback={() => alert('hello')}
       />
       MP lookup example (with no input blur on suggestion selection):
