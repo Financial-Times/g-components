@@ -100,7 +100,6 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26",
     "jest-esm-transformer": "^1.0.0",
@@ -109,7 +108,8 @@
     "prettier": "^2.4.1",
     "react-test-renderer": "^16.0.2",
     "sass": "^1.43.4",
-    "sass-loader": "^10.2.0"
+    "sass-loader": "^10.2.0",
+    "webpack": "^4.46.0"
   },
   "volta": {
     "node": "16.13.0",
