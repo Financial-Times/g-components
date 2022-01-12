@@ -11,7 +11,7 @@ const Accordion = ({ children }) => {
   return <div className="g-accordion">{children}</div>;
 };
 
-const AccordionSection = ({ isExpanded = false, children: [title, ...body] }) => {
+const AccordionSection = ({ isExpanded = false, children: [title, ...body], id = false }) => {
   const [expanded, setExpanded] = useState(isExpanded);
   return (
     <div className="g-accordion-section">
@@ -19,8 +19,9 @@ const AccordionSection = ({ isExpanded = false, children: [title, ...body] }) =>
         className={`g-accordion-section__header ${
           expanded ? 'g-accordion-section__header--expanded' : ''
         }`}
-        ariaExpanded={expanded}
+        aria-expanded={expanded}
         onClick={() => setExpanded(!expanded)}
+        {...(id ? { id } : {})}
       >
         {title}
       </button>
@@ -37,11 +38,13 @@ Accordion.displayName = 'GAccordion';
 
 AccordionSection.propTypes = {
   isExpanded: PropTypes.bool,
+  id: PropTypes.oneOfType([PropTypes.bool, PropTypes.string]),
   children: PropTypes.oneOfType([PropTypes.node, PropTypes.arrayOf(PropTypes.node)]).isRequired,
 };
 
 AccordionSection.defaultProps = {
   isExpanded: false,
+  id: false,
 };
 
 AccordionSection.displayName = 'GAccordionSection';
