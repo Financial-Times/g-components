@@ -1,11 +1,11 @@
 {
   "name": "@financial-times/g-components",
   "version": "0.0.0",
-  "description": "Page furniture used by FT IG's Starter Kit",
+  "description": "FT.com Page furniture used in interactive journalism projects, wrapped in React",
   "repository": "https://github.com/Financial-Times/g-components",
-  "keywords": [],
-  "author": "Ændra Rininsland",
   "license": "ISC",
+  "main": "build/g-components.js",
+  "module": "build/g-components.esm.js",
   "jest": {
     "testEnvironment": "jsdom",
     "resolver": "<rootDir>/.jest/resolver.js",
@@ -66,10 +66,10 @@
     "remove-markdown": "^0.3.0"
   },
   "scripts": {
-    "test": "DISABLE_ESLINT_PLUGIN=true jest",
-    "storybook": "DISABLE_ESLINT_PLUGIN=true start-storybook -p 9009",
-    "build-storybook": "DISABLE_ESLINT_PLUGIN=true build-storybook",
-    "chromatic": "DISABLE_ESLINT_PLUGIN=true chromatic",
+    "test": "jest",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic",
     "build": "node build.mjs"
   },
   "devDependencies": {
