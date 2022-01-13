@@ -1,5 +1,3 @@
-process.env.SASS_PATH = 'node_modules:node_modules/@financial-times';
-
 module.exports = {
   features: {
     postcss: false,
@@ -13,13 +11,23 @@ module.exports = {
   webpackFinal: async (config, { configType }) => {
     // Make whatever fine-grained changes you need below:
 
+    // console.log(config);
+
     // Resolve "browser" field in package.json (Origami)
-    config.resolve.aliasFields = ['browser'];
-    config.resolve.mainFields = ['main', 'browser'];
+    // config.resolve.mainFields = ['main', 'browser'];
 
     config.module.rules.push({
       test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
+      use: [
+        'style-loader',
+        'css-loader',
+        {
+          loader: 'sass-loader',
+          options: {
+            sassOptions: { includePaths: ['node_modules', 'node_modules/@financial-times'] },
+          },
+        },
+      ],
     });
 
     // Return the altered config

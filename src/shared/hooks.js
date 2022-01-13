@@ -62,7 +62,7 @@ export const useAds = (config, enabled = true) => {
   useEffect(() => {
     // Async side-effects should be in an IIFE in useEffect; don't make the CB async!
     (async () => {
-      const {default: OAds} = await import('@financial-times/ads-legacy-o-ads');
+      const { default: OAds } = await import('@financial-times/ads-legacy-o-ads');
       try {
         if (enabled) {
           const initialised = await OAds.init({
@@ -156,26 +156,30 @@ export const useKeyboardShortcuts = (shortcuts) => {
  * @param   {string}  oWhatever  Origami component; can leave off npm scope (e.g., 'o-date' will work)
  * @param   {ref}     ref        Optional element ref
  * @param   {object}  config     Config to pass to Origami constructor
+ * @param   {boolean} callInit   Call an init method instead of passing to the constructor
  *
  * @return  {ref}             Ref containing the constructed Origami component JS
  */
-export const useOrigami = (oWhatever, ref, config) => {
+export const useOrigami = (oWhatever, ref, config, callInit) => {
   const componentRef = useRef(null);
-  
+
   useEffect(() => {
     if (componentRef.current || (ref && !ref.current)) return;
 
     (async () => {
       try {
-        const {default:OSomething} = await import(`@financial-times/${oWhatever.replace(/@financial-times\//i, '')}`);
-
-        if (ref) {
+        const { default: OSomething } = await import(
+          `@financial-times/${oWhatever.replace(/@financial-times\//i, '')}`
+        );
+        if (callInit && ref) {
+          componentRef.current = OSomething.init(ref, config);
+        } else if (ref) {
           componentRef.current = new OSomething(ref.current, config);
         } else {
           componentRef.current = new OSomething(config);
         }
 
-        return () => componentRef.current.destroy();
+        return () => componentRef.current?.destroy && componentRef.current.destroy();
       } catch (e) {
         console.error(e); // eslint disable-line no-console
       }
@@ -183,12 +187,12 @@ export const useOrigami = (oWhatever, ref, config) => {
   }, [oWhatever, ref, config]);
 
   return componentRef;
-}
+};
 
 export default {
   usePortal,
   useAds,
   useLayoutChangeEvents,
   useKeyboardShortcuts,
-  useOrigami
+  useOrigami,
 };

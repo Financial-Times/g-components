@@ -56,7 +56,7 @@ const DateElement = forwardRef(({ date }, ref) => {
 
 const Bylines = ({ prefix, names, date, dateFirst }) => {
   const dateElRef = useRef();
-  const oDateRef = useOrigami('o-date');
+  const oDateRef = useOrigami('o-date', dateElRef, undefined, true);
 
   if (!names && !date) return null;
 

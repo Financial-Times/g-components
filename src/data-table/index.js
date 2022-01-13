@@ -188,10 +188,10 @@ const DataTable = ({
   isCompact,
 }) => {
   const tableRef = useRef();
-  const tableOrigami = useOrigami('o-table', tableRef);
+  const tableOrigami = useOrigami('o-table', tableRef, undefined, true);
 
   useEffect(() => {
-    tableOrigami.current.updateRows();
+    if (tableOrigami.current) tableOrigami.current.updateRows();
   }, [rows]);
 
   // @TODO fix this; private method OTable.prototype._duplicateHeaders

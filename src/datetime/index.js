@@ -9,15 +9,10 @@ import { useOrigami } from '../shared/hooks';
 
 const DateTime = ({ datestamp }) => {
   const ref = useRef(null);
-  const dateRef = useOrigami('o-date', ref)
+  const dateRef = useOrigami('o-date', ref, undefined, true);
 
   return (
-    <time
-      ref={ref}
-      data-o-component="o-date"
-      className="o-date"
-      dateTime={datestamp.toISOString()}
-    >
+    <time ref={ref} data-o-component="o-date" className="o-date" dateTime={datestamp.toISOString()}>
       {ftDateFormat.ftTime(datestamp)}
     </time>
   );
