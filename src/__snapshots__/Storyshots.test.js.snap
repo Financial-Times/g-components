@@ -3934,32 +3934,49 @@ exports[`Storyshots Core/DateTime Examples 1`] = `
 </time>
 `;
 
-exports[`Storyshots Core/Epilogue Example 1`] = `
-<div
-  className="o-grid-container"
->
+exports[`Storyshots Core/Epilogue Examples 1`] = `
+Array [
   <div
-    className="o-grid-row"
+    className="o-grid-container"
   >
     <div
-      data-o-grid-colspan="12 S11 Scenter M10 L9 XL8"
+      className="o-grid-row"
     >
-      <footer
-        className="g-epilogue-copyright"
+      <div
+        data-o-grid-colspan="12 S11 Scenter M10 L9 XL8"
       >
-        <a
-          data-trackable="link-copyright"
-          href="https://help.ft.com/help/legal-privacy/copyright/copyright-policy/"
+        <footer
+          className="g-epilogue-copyright"
         >
-          Copyright
-        </a>
-         The Financial Times Limited 
-        2019
-        . All rights reserved.
-      </footer>
+          <a
+            data-trackable="link-copyright"
+            href="https://help.ft.com/help/legal-privacy/copyright/copyright-policy/"
+          >
+            Copyright
+          </a>
+           
+          The Financial Times Limited 
+          2019
+          . All rights reserved.
+        </footer>
+      </div>
     </div>
-  </div>
-</div>
+  </div>,
+  <footer
+    className="g-epilogue-copyright"
+  >
+    <a
+      data-trackable="link-copyright"
+      href="https://help.ft.com/help/legal-privacy/copyright/copyright-policy/"
+    >
+      Copyright
+    </a>
+     
+    The Financial Times Limited 
+    2019
+    . All rights reserved.
+  </footer>,
+]
 `;
 
 exports[`Storyshots Core/FlourishEmbed Example 1`] = `
@@ -13922,7 +13939,8 @@ Array [
               >
                 Copyright
               </a>
-               The Financial Times Limited 
+               
+              The Financial Times Limited 
               2019
               . All rights reserved.
             </footer>
