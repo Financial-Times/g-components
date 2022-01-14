@@ -4,8 +4,8 @@
   "description": "FT.com Page furniture used in interactive journalism projects, wrapped in React",
   "repository": "https://github.com/Financial-Times/g-components",
   "license": "ISC",
-  "main": "build/g-components.js",
-  "module": "build/index.js",
+  "browser": "./build/g-components.js",
+  "module": "./build/index.js",
   "exports": {
     ".": "./build/index.js",
     "./*": "./build/*/index.js",

@@ -3,7 +3,7 @@ $o-editorial-typography-is-silent: false;
 $o-editorial-layout-is-silent: false;
 
 @import './globals';
-// @import '@financial-times/o-normalise/main';
+// @import '@financial-times/o-normalise/main.scss';
 @import '@financial-times/o-colors/main';
 @import '@financial-times/o-grid/main';
 @import '@financial-times/o-typography/main';

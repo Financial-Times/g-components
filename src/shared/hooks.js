@@ -169,7 +169,7 @@ export const useOrigami = (oWhatever, ref, config, callInit) => {
     (async () => {
       try {
         const { default: OSomething } = await import(
-          `@financial-times/${oWhatever.replace(/@financial-times\//i, '')}`
+          `@financial-times/${oWhatever.replace(/@financial-times\//i, '')}/main.js`
         );
         if (callInit && ref) {
           componentRef.current = OSomething.init(ref, config);

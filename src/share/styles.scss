@@ -1,7 +1,7 @@
 $o-share-is-silent: false;
 @import '../shared/_globals.scss';
-@import 'o-share/main.scss';
-@import 'o-grid/main';
+@import '@financial-times/o-share/main.scss';
+@import '@financial-times/o-grid/main';
 
 .g-share.g-share--separated li {
   margin-left: 16px;

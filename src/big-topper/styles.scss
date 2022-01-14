@@ -1,7 +1,7 @@
 $o-typography-is-silent: false;
 @import '../shared/_globals.scss';
-@import 'o-typography/main';
-@import 'o-grid/main';
+@import '@financial-times/o-typography/main';
+@import '@financial-times/o-grid/main';
 
 .big-topper {
   text-align: center;
@@ -53,16 +53,13 @@ $o-typography-is-silent: false;
 }
 
 @include oGridRespondTo($from: M, $until: L) {
-
   .big-topper h1 {
     font-size: 44px;
     line-height: 44px;
   }
-
 }
 
 @include oGridRespondTo($until: M) {
-
   .big-topper {
     text-align: left;
   }
@@ -91,5 +88,4 @@ $o-typography-is-silent: false;
     font-size: 20px;
     line-height: 1.33;
   }
-
 }

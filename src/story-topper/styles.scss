@@ -1,6 +1,6 @@
 $o-typography-is-silent: false;
 @import '../shared/_globals.scss';
-@import 'o-typography/main';
+@import '@financial-times/o-typography/main';
 
 .story-topper .topic {
   margin-top: 11px;

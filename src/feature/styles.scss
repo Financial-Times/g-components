@@ -1,8 +1,8 @@
 $o-typography-is-silent: false;
 $o-grid-is-silent: false;
 @import '../shared/_globals.scss';
-@import 'o-typography/main';
-@import 'o-grid/main';
+@import '@financial-times/o-typography/main';
+@import '@financial-times/o-grid/main';
 @include oGridSurfaceLayoutSizes;
 
 .g-feature {

@@ -1,5 +1,5 @@
 @import '../shared/_globals.scss';
-@import 'o-buttons/main';
+@import '@financial-times/o-buttons/main';
 
 // Copied from https://raw.githubusercontent.com/Financial-Times/o-buttons/master/demos/src/demo.scss
 
@@ -59,7 +59,7 @@ p {
     ),
     'icons': join($_o-buttons-icons, ('book')),
     // Also include the book icon, which is not in the defaut set.
-      'pagination': true,
+    'pagination': true,
     'groups': true,
   )
 );
