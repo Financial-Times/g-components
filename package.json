@@ -102,7 +102,7 @@
     "@storybook/addon-viewport": "^6.3.12",
     "@storybook/addons": "^6.3.12",
     "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.12",
+    "@storybook/react": "^6.4.13",
     "babel-plugin-require-context-hook": "^1.0.0",
     "chromatic": "^6.0.6",
     "enhanced-resolve-jest": "^1.1.0",
