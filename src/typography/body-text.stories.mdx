@@ -1,0 +1,22 @@
+import { Fragment, useRef, useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import '../shared/critical-path.scss';
+import { BodyText } from './body-text';
+
+<Meta title="Typography/Body Text" component={BodyText} />
+
+# Body Text
+
+> Output editorial styles for body text.
+
+[[source]](https://registry.origami.ft.com/components/o-editorial-typography@2.3.2/sassdoc?brand=core#mixin-oeditorialtypographybody)
+
+<Canvas>
+  <Story name="Lorem text">
+    <BodyText>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet earum libero at voluptatum illum
+      facere totam architecto eum porro exercitationem, ea, accusamus quia? Repellat beatae
+      similique ab? Reprehenderit, ullam quae?
+    </BodyText>
+  </Story>
+</Canvas>

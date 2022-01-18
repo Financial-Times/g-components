@@ -1,0 +1,5 @@
+@import 'o-editorial-typography/main';
+
+.body-text {
+  @include oEditorialTypographyBody();
+}

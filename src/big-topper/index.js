@@ -15,8 +15,8 @@ import {
   flagsPropType,
 } from '../shared/proptypes';
 import '../shared/_common.scss';
-import './styles.scss';
-
+import styles from './styles.scss';
+console.log(styles);
 const BigTopper = ({
   url,
   topic,
@@ -39,7 +39,7 @@ const BigTopper = ({
   const publishedDate = props.publishedDate || new Date().toISOString(); // eslint-disable-line
 
   return (
-    <div className="big-topper">
+    <div className={styles['big-topper']}>
       {flags.mainImage && (mainImage.url || mainImage.uuid) && (
         <figure className="graphic graphic-b-1 graphic-pad-1">
           <img alt={mainImage.description} src={getMainImage(mainImage)} />

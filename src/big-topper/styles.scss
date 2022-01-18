@@ -1,3 +1,4 @@
+@import '../shared/_common.scss';
 @import '../shared/_globals.scss';
 
 .big-topper {
@@ -50,16 +51,13 @@
 }
 
 @include oGridRespondTo($from: M, $until: L) {
-
   .big-topper h1 {
     font-size: 44px;
     line-height: 44px;
   }
-
 }
 
 @include oGridRespondTo($until: M) {
-
   .big-topper {
     text-align: left;
   }
@@ -88,5 +86,4 @@
     font-size: 20px;
     line-height: 1.33;
   }
-
 }

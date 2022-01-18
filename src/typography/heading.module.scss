@@ -1,0 +1,21 @@
+@import 'o-editorial-typography/main';
+
+.level-1 {
+  @include oEditorialTypographyHeading(1);
+}
+
+.level-2 {
+  @include oEditorialTypographyHeading(2);
+}
+
+.level-3 {
+  @include oEditorialTypographyHeading(3);
+}
+
+.level-4 {
+  @include oEditorialTypographyHeading(4);
+}
+
+.level-5 {
+  @include oEditorialTypographyHeading(5);
+}

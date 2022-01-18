@@ -1,0 +1,19 @@
+import { Fragment, useRef, useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import '../shared/critical-path.scss';
+import { Headline } from './headline';
+
+<Meta title="Typography/Headline" component={Headline} />
+
+# Headline
+
+> Output styles for large headline text. This style has high visual prominence.
+> Alternatively, you may prefer to use the level one heading style.
+
+[[source]](https://registry.origami.ft.com/components/o-editorial-typography@2.3.2/sassdoc?brand=core#mixin-oeditorialtypographyheadline)
+
+<Canvas>
+  <Story name="Defaults">
+    <Headline>Don’t settle for black and white</Headline>
+  </Story>
+</Canvas>

@@ -1,0 +1,18 @@
+import { Fragment, useRef, useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import '../shared/critical-path.scss';
+import { Caption } from './caption';
+
+<Meta title="Typography/Caption" component={Caption} />
+
+# Caption
+
+> Output styles for captions, e.g. for photo or video credit/caption.
+
+[[source]](https://registry.origami.ft.com/components/o-editorial-typography@2.3.2/sassdoc?brand=core#mixin-oeditorialtypographycaption)
+
+<Canvas>
+  <Story name="Lorem text">
+    <Caption>©Lorem John Doe</Caption>
+  </Story>
+</Canvas>

@@ -1,0 +1,18 @@
+import { Fragment, useRef, useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import '../shared/critical-path.scss';
+import { Topic } from './topic';
+
+<Meta title="Typography/Topic" component={Topic} />
+
+# Topic Tag
+
+> The style of a topic tag. The size is not set by o-editorial-typography, it is inherited from context as a topic tag may be used in many contexts.
+
+[[source]](https://registry.origami.ft.com/components/o-editorial-typography@2.3.2?brand=core#demo-topic-tag)
+
+<Canvas>
+  <Story name="With single child element">
+    <Topic href={'#'}>Data Journalism Development</Topic>
+  </Story>
+</Canvas>

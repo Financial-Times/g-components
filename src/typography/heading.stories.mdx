@@ -1,0 +1,22 @@
+import { Fragment, useRef, useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import '../shared/critical-path.scss';
+import { Heading, H1, H2, H3, H4, H5 } from './heading';
+
+<Meta title="Typography/Heading" component={Heading} />
+
+# Heading
+
+> Output styles for editorial page heading copy.
+
+[[source]](https://registry.origami.ft.com/components/o-editorial-typography@2.3.2/sassdoc?brand=core#mixin-oeditorialtypographyheading)
+
+<Canvas>
+  <Story name="Headings">
+    <H1>Heading level 1 — Don’t settle for black and white</H1>
+    <H2>Heading level 2 — Don’t settle for black and white</H2>
+    <H3>Heading level 3 — Don’t settle for black and white</H3>
+    <H4>Heading level 4 — Don’t settle for black and white</H4>
+    <H5>Heading level 5 — Don’t settle for black and white</H5>
+  </Story>
+</Canvas>

@@ -1,0 +1,23 @@
+import { Fragment, useRef, useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import '../shared/critical-path.scss';
+import { OrderedList } from './ordered-list';
+
+<Meta title="Typography/Ordered List" component={OrderedList} />
+
+# Ordered List
+
+> Output editorial styles for lists. Styles child li elements. Apply to a containing list element such as ul or ol. Does not output font styles, these are inherited (@see oEditorialTypographyBody).
+> Wraps an o-typography mixin so the two may diverge (@see oTypographyList)
+
+[[source]](https://registry.origami.ft.com/components/o-editorial-typography@2.3.2/sassdoc?brand=core#mixin-oeditorialtypographylist)
+
+<Canvas>
+  <Story name="Lorem Text">
+    <OrderedList>
+      <li>Lorem ipsum&#xA0;adipiscing elit.</li>
+      <li>Sed feugiat turpis at massa tristique.</li>
+      <li>Curabitu r accumsan elit luctus.</li>
+    </OrderedList>
+  </Story>
+</Canvas>
