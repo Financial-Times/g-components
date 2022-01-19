@@ -1,7 +1,7 @@
 /**
-  * @file
-  * Entry point (automatically generated)
-  */
+ * @file
+ * Entry point (automatically generated)
+ */
 
 export * as Accordion from './accordion';
 export * as Ads from './ads';
@@ -44,4 +44,5 @@ export * as Share from './share';
 export * as StickyHeader from './sticky-header';
 export * as Sticky from './sticky';
 export * as StoryTopper from './story-topper';
+export * as Typography from './typography';
 export * as VideoSet from './video-set';

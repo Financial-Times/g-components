@@ -14,9 +14,8 @@ import {
   bylinesPropType,
   flagsPropType,
 } from '../shared/proptypes';
-import '../shared/_common.scss';
-import styles from './styles.scss';
-console.log(styles);
+import styles from './styles.module.scss';
+
 const BigTopper = ({
   url,
   topic,

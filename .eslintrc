@@ -1,11 +1,5 @@
 {
-  "extends": [
-    "airbnb",
-    "airbnb/hooks",
-    "plugin:mdx/recommended",
-    "plugin:prettier/recommended",
-    "prettier/react"
-  ],
+  "extends": ["airbnb", "airbnb/hooks", "plugin:mdx/recommended", "plugin:prettier/recommended"],
   "root": true,
   "rules": {
     "import/no-extraneous-dependencies": [2, {}],
@@ -14,20 +8,13 @@
     "react/jsx-fragments": [2, "element"],
     "react/state-in-constructor": [0],
     "react/jsx-props-no-spreading": [0],
+    "react/function-component-definition": [2, { "namedComponents": "arrow-function" }],
     "no-nested-ternary": [0]
   },
   "env": {
     "browser": true,
     "jest": true
   },
-  "parser": "@babel/eslint-parser",
-    "parserOptions": {
-      "babelOptions": {
-        "presets": [
-          "@babel/preset-react"
-        ]
-      }
-    },
   "settings": {
     "import/resolver": {
       "node-browser": {
