@@ -5,11 +5,18 @@
 
 import React, { Fragment, useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
+import classNames from 'classnames';
+import styles from './styles.module.scss';
 
 const RadioFilter = ({ namedClass, isAllSelectable, text, setText, options }) => (
   <div className={namedClass} role="group">
-    <span className="o-forms-input o-forms-input--radio-round o-forms-input--inline">
+    <span
+      className={classNames(
+        styles['o-forms-input'],
+        styles['o-forms-input--radio-round'],
+        styles['o-forms-input--inline'],
+      )}
+    >
       {isAllSelectable === false ? null : (
         <label>
           <input
@@ -19,12 +26,12 @@ const RadioFilter = ({ namedClass, isAllSelectable, text, setText, options }) =>
             onChange={setText}
             id="g-data-filter-all"
           />
-          <span htmlFor="g-data-filter-all" className="o-forms-input__label">
+          <span htmlFor="g-data-filter-all" className={styles['o-forms-input__label']}>
             (All)
           </span>
         </label>
       )}
-      {options.map(option => (
+      {options.map((option) => (
         <label>
           <input
             type="radio"
@@ -33,7 +40,7 @@ const RadioFilter = ({ namedClass, isAllSelectable, text, setText, options }) =>
             onChange={setText}
             id={`g-data-filter-${option}`}
           />
-          <span htmlFor={`g-data-filter-${option}`} className="o-forms-input__label">
+          <span htmlFor={`g-data-filter-${option}`} className={styles['o-forms-input__label']}>
             {option}
           </span>
         </label>
@@ -44,7 +51,7 @@ const RadioFilter = ({ namedClass, isAllSelectable, text, setText, options }) =>
 
 const DropdownFilter = ({ namedClass, options, text, setText, isAllSelectable }) => (
   <div className={namedClass}>
-    <span className="o-forms-input o-forms-input--select">
+    <span className={classNames(styles['o-forms-input'], styles['o-forms-input--select'])}>
       {options.length === 0 ? null : (
         <select value={text} onChange={setText}>
           {isAllSelectable === false ? null : <option value="">(All)</option>}
@@ -84,19 +91,16 @@ const DataFilter = ({
     if (textNormalised === '') {
       set(data);
     } else if (selectFrom) {
-      const dataFiltered = data.filter(row => row[selectFrom] === text);
+      const dataFiltered = data.filter((row) => row[selectFrom] === text);
       set(dataFiltered);
     } else {
-      const keywords = textNormalised.split(/ +/).filter(x => x);
-      const dataFiltered = data.filter(row => {
+      const keywords = textNormalised.split(/ +/).filter((x) => x);
+      const dataFiltered = data.filter((row) => {
         const columns = searchOver.length > 0 ? searchOver : Object.keys(row);
-        return keywords.every(keyword =>
-          columns.some(column => {
+        return keywords.every((keyword) =>
+          columns.some((column) => {
             if (!row[column]) return false;
-            return row[column]
-              .toString()
-              .toLowerCase()
-              .includes(keyword);
+            return row[column].toString().toLowerCase().includes(keyword);
           }),
         );
       });
@@ -104,7 +108,7 @@ const DataFilter = ({
     }
   });
 
-  const setText = event => {
+  const setText = (event) => {
     event.stopPropagation();
     updateText(event.target.value);
   };
@@ -122,7 +126,7 @@ const DataFilter = ({
   if (selectFrom && searchOver.length > 0) {
     throw new Error('Cannot set selectFrom as well as searchOver!');
   }
-  if (selectFrom && initial && data.filter(row => row[selectFrom]) > 0) {
+  if (selectFrom && initial && data.filter((row) => row[selectFrom]) > 0) {
     throw new Error('Initial value not found in selectFrom options!');
   }
   if (selectFrom && searchPlaceholder) {
@@ -134,10 +138,12 @@ const DataFilter = ({
 
   if (!isLoaded) return null; // render nothing statically
 
-  const namedClass = [className, 'g-data-filter', 'o-forms-field'].filter(x => x).join(' ');
+  const namedClass = [className, 'g-data-filter', styles['o-forms-field']]
+    .filter((x) => x)
+    .join(' ');
 
   if (selectFrom) {
-    const options = Array.from(new Set(data.map(row => row[selectFrom])));
+    const options = Array.from(new Set(data.map((row) => row[selectFrom])));
 
     if (isRadioSelectable) {
       return (
@@ -164,7 +170,7 @@ const DataFilter = ({
 
   return (
     <div className={namedClass}>
-      <span className="o-forms-input o-forms-input--text">
+      <span className={classNames(styles['o-forms-input'], styles['o-forms-input--text'])}>
         <input type="text" value={text} placeholder={searchPlaceholder} onChange={setText} />
       </span>
     </div>

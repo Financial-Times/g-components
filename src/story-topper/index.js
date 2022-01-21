@@ -7,6 +7,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Share from '../share';
 import Bylines from '../bylines';
+import { Graphic } from '../graphic';
+import { Link } from '../typography/link';
+import { H1 } from '../typography/heading';
+import { Topic } from '../typography/topic';
 import { getMainImage } from '../shared/helpers';
 import {
   mainImagePropType,
@@ -14,10 +18,10 @@ import {
   topicPropType,
   flagsPropType,
 } from '../shared/proptypes';
-import '../shared/_common.scss';
-import './styles.scss';
+import { Standfirst } from '../typography/standfirst';
+import styles from './styles.module.scss';
 
-const StoryTopper = ({
+export const StoryTopper = ({
   url,
   topic,
   headline,
@@ -37,41 +41,29 @@ const StoryTopper = ({
   const publishedDate = props.publishedDate || new Date().toISOString(); // eslint-disable-line
 
   return (
-    <div className="story-topper">
+    <div className={styles['story-topper']}>
       {topic && (
         <div className="topic">
-          <a href={topic.url} className="o-editorial-typography-topic">
-            {topic.name}
-          </a>
+          <Topic href={topic.url}>{topic.name}</Topic>
         </div>
       )}
 
-      <h1 className="o-editorial-layout-heading-1" itemProp="headline">
-        {headline}
-      </h1>
+      <H1 itemProp="headline">{headline}</H1>
 
       {summary && (
-        <p className="o-editorial-typography-standfirst">
-          {summary}{' '}
-          {relatedArticle && (
-            <a href={relatedArticle.url} className="o-typography-link">
-              {relatedArticle.text}
-            </a>
-          )}
-        </p>
+        <Standfirst>
+          {summary} {relatedArticle && <Link href={relatedArticle.url}>{relatedArticle.text}</Link>}
+        </Standfirst>
       )}
 
       <meta itemProp="dateModified" content={buildTime} suppressHydrationWarning />
 
       {flags.mainImage && (mainImage.url || mainImage.uuid) && (
-        <figure className="graphic graphic-b-1 graphic-pad-1">
-          <img alt={mainImage.description} src={getMainImage(mainImage)} />
-          <figcaption className="o-typography-caption">
-            {mainImage.description}
-            {mainImage.description && mainImage.credit && ' '}
-            {mainImage.credit}
-          </figcaption>
-        </figure>
+        <Graphic
+          description={mainImage.description}
+          src={getMainImage(mainImage)}
+          credit={mainImage.credit}
+        />
       )}
 
       {flags.shareButtons && (

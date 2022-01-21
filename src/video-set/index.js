@@ -5,10 +5,10 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
+import styles from './styles.module.scss';
 
-const VideoSet = ({ alt, sources }) => (
-  <div className="g-videoset">
+export const VideoSet = ({ alt, sources }) => (
+  <div className={styles['g-videoset']}>
     {/* Large video */}
     <div className="g-videoset__large">
       <figure>
@@ -20,7 +20,7 @@ const VideoSet = ({ alt, sources }) => (
     </div>
 
     {/* Medium video */}
-    <div className="g-videoset__medium">
+    <div className={styles['g-videoset__medium']}>
       <figure>
         <video alt={alt} controls poster={sources.medium.poster}>
           <source src={sources.medium.url} type={sources.medium.type} />
@@ -30,7 +30,7 @@ const VideoSet = ({ alt, sources }) => (
     </div>
 
     {/* Small video */}
-    <div className="g-videoset__small">
+    <div className={styles['g-videoset__small']}>
       <figure>
         <video alt={alt} controls poster={sources.small.poster}>
           <source src={sources.small.url} type={sources.small.type} />

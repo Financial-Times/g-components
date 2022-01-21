@@ -1,6 +1,7 @@
 @import '../shared/_globals.scss';
 @import 'o-teaser/main';
 
+// I don't think it's possible to make this modular given page content comes from API
 @include oTeaser();
 
 .onward-journey .o-teaser a {
@@ -15,7 +16,7 @@
     font-weight: 600;
 
     &:after {
-      content: "";
+      content: '';
       display: block;
       width: 60px;
       margin-top: 5px;

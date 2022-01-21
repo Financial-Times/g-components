@@ -1,4 +1,5 @@
 @import '../shared/_globals.scss';
 @import 'o-overlay/main';
 
+// I don't think it's possible or desirable to make this modular.
 @include oOverlay();

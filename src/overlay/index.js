@@ -2,12 +2,11 @@
 
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import Button from '../button';
 import OverlayContents from './overlayContents';
 import { useOverlay } from './useOverlay';
 import './styles.scss';
 
-const Overlay = ({ children, isShowing, id, className }) => {
+export const Overlay = ({ children, isShowing, id, className }) => {
   // Initialise overlay
   const overlayState = useOverlay({
     id,

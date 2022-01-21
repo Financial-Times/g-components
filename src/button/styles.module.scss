@@ -1,3 +1,4 @@
-$o-buttons-is-silent: false;
 @import '../shared/_globals.scss';
 @import 'o-buttons/main.scss';
+
+@include oButtons();

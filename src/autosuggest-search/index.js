@@ -7,7 +7,7 @@ import React, { useRef, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Autosuggest from 'react-autosuggest';
 import classNames from 'classnames';
-import './styles.scss';
+import styles from './styles.module.scss';
 import Icon from '../icon';
 
 // Default get suggestions method
@@ -20,23 +20,25 @@ const defaultGetSuggestions = (value, searchList) => {
     ? []
     : searchList.filter(({ display }) => {
         const words = display.toLowerCase().split(' ');
-        return words.some(word => word.toLowerCase().slice(0, inputLength) === inputValue);
+        return words.some((word) => word.toLowerCase().slice(0, inputLength) === inputValue);
       });
 };
 
 // Default component/function to render suggestion
 const RenderSuggestion = ({ display, disabled }) => (
-  <div className={classNames('suggestion', disabled && 'suggestion--disabled')}>{display}</div>
+  <div className={classNames(styles['suggestion'], disabled && styles['suggestion--disabled'])}>
+    {display}
+  </div>
 );
 
 // Default mapping from suggestion to value
 const defaultGetSuggestionValue = ({ display }) => display;
 
 const SelectedValue = ({ className, display, value, onSelectedValueRemove }) => (
-  <div className={`${className}__selected-value`} key={`selected-value__${value}`}>
+  <div className={styles[`${className}__selected-value`]} key={`selected-value__${value}`}>
     <span id={`selected-value__${value}`}>{display}</span>
     <button
-      className={`${className}__selected-value-close-button`}
+      className={styles[`${className}__selected-value-close-button`]}
       aria-labelledby={`selected-value__${value}`}
       type="button"
       onClick={() => onSelectedValueRemove(value)}
@@ -120,7 +122,7 @@ const AutosuggestSearch = ({
   };
 
   // Run callback on submit (ENTER)
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     // Don't run this if the submit event is triggered from the dropdown
     if (!activeSuggestion) {
@@ -137,7 +139,7 @@ const AutosuggestSearch = ({
   };
 
   // Update search value state on input change
-  const onChange = event => {
+  const onChange = (event) => {
     const {
       target: { value },
     } = event;
@@ -146,7 +148,7 @@ const AutosuggestSearch = ({
   };
 
   // Handle key down event on input
-  const onKeyDownHandler = event => {
+  const onKeyDownHandler = (event) => {
     const { key } = event;
     if (searchValue === '' && key === 'Backspace') {
       onEmptyInputBackspace();
@@ -157,9 +159,9 @@ const AutosuggestSearch = ({
     }
   };
 
-  const onClickHandler = e => {
+  const onClickHandler = (e) => {
     // Don't run the callback if the user has clicked on the selected token remove/cross button
-    if (e.target.className !== 'remove-from-selection g-icon') {
+    if (e.target.className.includes('remove-from-selection')) {
       focusOnInput();
       const callbackReturn = onClickCallback();
       if (callbackReturn) setErrorState(callbackReturn);
@@ -177,7 +179,7 @@ const AutosuggestSearch = ({
   };
 
   // Wraps function so that error can be set
-  const onSelectedValueRemoveWrapper = value => {
+  const onSelectedValueRemoveWrapper = (value) => {
     const error = onSelectedValueRemove(value);
     if (error) setErrorState(error);
   };
@@ -188,20 +190,22 @@ const AutosuggestSearch = ({
 
   // Generate form classes
   const classes = classNames(
-    className,
-    isError && `${className}--error`,
-    showSearchIcon && searchIconPosition === 'right' && `${className}--with-search-icon-right`,
+    styles[className],
+    isError && styles[`${className}--error`],
+    showSearchIcon &&
+      searchIconPosition === 'right' &&
+      styles[`${className}--with-search-icon-right`],
   );
 
   return (
     <form onSubmit={onSubmit} style={{ width }} onClick={onClickHandler}>
       <div className={classes}>
         {showSearchIcon && searchIconPosition === 'left' && (
-          <div className={`${className}__search-icon`}>
+          <div className={styles[`${className}__search-icon`]}>
             <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
           </div>
         )}
-        <div className={`${className}__selected-values`}>
+        <div className={styles[`${className}__selected-values`]}>
           {selectedValues.length > 0 &&
             selectedValues.map(({ display, value }) =>
               selectedValueComponent({
@@ -238,19 +242,23 @@ const AutosuggestSearch = ({
           }}
         />
         {showClearButton && searchValue !== '' && (
-          <button className={`${className}__clear-button`} type="button" onClick={clearSearch}>
+          <button
+            className={styles[`${className}__clear-button`]}
+            type="button"
+            onClick={clearSearch}
+          >
             <Icon iconName="cross" iconColor="#33302e" width={20} height={20} />
           </button>
         )}
         {showSearchIcon &&
           searchIconPosition === 'right' &&
           !(showClearButton && searchValue !== '') && (
-            <div className={`${className}__search-icon-right`}>
+            <div className={styles[`${className}__search-icon-right`]}>
               <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
             </div>
           )}
       </div>
-      {isError && <div className={`${className}__error-message`}>{errorMessage}</div>}
+      {isError && <div className={styles[`${className}__error-message`]}>{errorMessage}</div>}
     </form>
   );
 };

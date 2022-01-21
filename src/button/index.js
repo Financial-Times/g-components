@@ -7,7 +7,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import validIcons from './icons';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 /* eslint-disable react/button-has-type */
 export const Button = ({
@@ -27,20 +27,21 @@ export const Button = ({
   <button
     className={classnames(
       className,
-      'o-buttons',
-      `o-buttons--${type}`,
-      theme && `o-buttons--${theme}`,
-      big && 'o-buttons--big',
-      icon && `o-buttons-icon o-buttons-icon--${icon}`,
-      icon && label && 'o-buttons-icon--icon-only',
-      inverse && 'o-buttons--inverse',
+      styles['o-buttons'],
+      styles[`o-buttons--${type}`],
+      theme && styles[`o-buttons--${theme}`],
+      big && styles['o-buttons--big'],
+      icon && styles[`o-buttons-icon`],
+      icon && styles[`o-buttons-icon--${icon}`],
+      icon && label && styles['o-buttons-icon--icon-only'],
+      inverse && styles['o-buttons--inverse'],
     )}
     type={buttonType}
     aria-pressed={selected}
     disabled={disabled}
     {...props}
   >
-    {label && icon ? <span className="o-buttons-icon__label">{label}</span> : children}
+    {label && icon ? <span className={styles['o-buttons-icon__label']}>{label}</span> : children}
   </button>
 );
 

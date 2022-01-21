@@ -6,8 +6,10 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import ODate from '@financial-times/o-date';
 import ftDateFormat from '@financial-times/ft-date-format';
+import classNames from 'classnames';
+import styles from './styles.module.scss';
 
-const DateTime = ({ datestamp }) => {
+export const DateTime = ({ datestamp }) => {
   const elRef = useRef(null);
   const dateRef = useRef(null);
   useEffect(() => {
@@ -18,8 +20,9 @@ const DateTime = ({ datestamp }) => {
   return (
     <time
       ref={elRef}
+      suppressHydrationWarning
       data-o-component="o-date"
-      className="o-date"
+      className={classNames(styles['date-time'])}
       dateTime={datestamp.toISOString()}
     >
       {ftDateFormat.ftTime(datestamp)}

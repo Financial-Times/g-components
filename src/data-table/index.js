@@ -7,10 +7,10 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import OTable from '@financial-times/o-table';
 import classnames from 'classnames';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 const headerAttributes = (header, isSortable) => {
-  const classes = header.columnType === 'number' ? 'o-table__cell--numeric' : '';
+  const classes = header.columnType === 'number' ? styles['o-table__cell--numeric'] : '';
   const attributes = [
     classes ? { className: classes } : {},
     header.columnType === 'number' ? { 'data-o-table-data-type': 'numeric' } : {},
@@ -25,8 +25,8 @@ const headerAttributes = (header, isSortable) => {
 
 const cellAttributes = (header, row) => {
   const className = classnames(
-    header.columnType === 'number' && 'o-table__cell--numeric',
-    header.columnIsVerticallyCentred && 'o-table__cell--vertically-center',
+    header.columnType === 'number' && styles['o-table__cell--numeric'],
+    header.columnIsVerticallyCentred && styles['o-table__cell--vertically-center'],
   );
   const attributes = [
     className ? { className } : {},
@@ -37,7 +37,7 @@ const cellAttributes = (header, row) => {
 };
 
 const footerAttributes = (header) => {
-  const classes = header.columnType === 'number' ? 'o-table__cell--numeric' : '';
+  const classes = header.columnType === 'number' ? styles['o-table__cell--numeric'] : '';
   const attributes = [
     classes ? { className: classes } : {},
     header.columnType === 'number' ? { 'data-o-table-data-type': 'numeric' } : {},
@@ -55,12 +55,12 @@ const tableAttributes = (
 ) => {
   const className = classnames(
     'o-table',
-    responsive === 'scroll' && 'o-table--responsive-scroll',
-    responsive === 'flat' && 'o-table--responsive-flat',
-    responsive === 'overflow' && 'o-table--responsive-overflow',
-    isStriped && 'o-table--row-stripes',
-    isLinedHorizontal && 'o-table--horizontal-lines',
-    isCompact && 'o-table--compact',
+    responsive === 'scroll' && styles['o-table--responsive-scroll'],
+    responsive === 'flat' && styles['o-table--responsive-flat'],
+    responsive === 'overflow' && styles['o-table--responsive-overflow'],
+    isStriped && styles['o-table--row-stripes'],
+    isLinedHorizontal && styles['o-table--horizontal-lines'],
+    isCompact && styles['o-table--compact'],
   );
   const attributes = [
     { className },
@@ -81,7 +81,7 @@ const Head = ({ headers, isSortable }) => (
         const attributes = headerAttributes(header, isSortable);
         if (header.secondary) {
           const secondary = (
-            <span className="o-table__cell--content-secondary">{header.secondary}</span>
+            <span className={styles['o-table__cell--content-secondary']}>{header.secondary}</span>
           );
           return (
             <th {...attributes}>
@@ -137,7 +137,7 @@ const Foot = ({ footers, headers }) => (
         if (!footer) return <th {...attributes} />;
         if (footer.secondary) {
           const secondary = (
-            <span className="o-table__cell--content-secondary">{footer.secondary}</span>
+            <span className={styles['o-table__cell--content-secondary']}>{footer.secondary}</span>
           );
           return (
             <th {...attributes}>
@@ -154,7 +154,7 @@ const Foot = ({ footers, headers }) => (
 const Footnote = ({ footnote, headers }) => (
   <tfoot>
     <tr>
-      <td colSpan={headers.length} className="o-table-footnote">
+      <td colSpan={headers.length} className={styles['o-table-footnote']}>
         {footnote}
       </td>
     </tr>
@@ -163,8 +163,8 @@ const Footnote = ({ footnote, headers }) => (
 
 const TableContainer = ({ responsive, className, children }) =>
   responsive ? (
-    <div className="o-table-container">
-      <div className="o-table-overlay-wrapper">
+    <div className={styles['o-table-container']}>
+      <div className={styles['o-table-overlay-wrapper']}>
         <div className={className}>{children}</div>
       </div>
     </div>

@@ -2,9 +2,9 @@ import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import useScrollPosition from './useScrollPosition';
-import './styles.scss';
+import styles from './styles.module.scss';
 
-const StickyHeader = ({ children, containerRef, offset }) => {
+export const StickyHeader = ({ children, containerRef, offset }) => {
   const [isSticky, setSticky] = useState(false);
   const [heightOfChildren, setHeightOfChildren] = useState(0);
   const [scrollDirection, setScrollDirection] = useState('down');
@@ -40,7 +40,11 @@ const StickyHeader = ({ children, containerRef, offset }) => {
       ref={stickyRef}
       style={{ minHeight: isSticky ? heightOfChildren : 'auto' }}
     >
-      <div className="sticky-header__children-wrapper" ref={childrenRef} style={{ top: offset }}>
+      <div
+        className={classNames(isSticky && styles['sticky-header--fixed__children-wrapper'])}
+        ref={childrenRef}
+        style={{ top: offset }}
+      >
         {childrenIsFunction ? children({ isSticky, scrollDirection }) : children}
       </div>
     </header>

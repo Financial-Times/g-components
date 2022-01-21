@@ -1,0 +1,5 @@
+@import '@financial-times/o-editorial-typography/main';
+
+.byline {
+  @include oEditorialTypographyByline();
+}

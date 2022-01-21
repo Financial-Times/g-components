@@ -2,7 +2,7 @@ import React, { useRef, useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { Context } from '../article-layout';
 import { NavigationHeaderMobileDropdown, NavigationHeaderMobileDropdownButton } from './dropdown';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 const NavigationHeader = ({
   title,
@@ -22,8 +22,8 @@ const NavigationHeader = ({
   const { text: currentText } = links.find(({ url }) => url === currentPage) || links[0];
 
   return (
-    <nav className="navigation-header" role="navigation" aria-label="Navigation menu">
-      {title && <div className="navigation-header__title">{title}</div>}
+    <nav className={styles['navigation-header']} role="navigation" aria-label="Navigation menu">
+      {title && <div className={styles['navigation-header__title']}>{title}</div>}
       {useDropdown ? (
         <NavigationHeaderMobileDropdownButton
           currentText={currentText}
@@ -33,11 +33,11 @@ const NavigationHeader = ({
           buttonRef={buttonRef}
         />
       ) : (
-        <ul className="navigation-header__list">
+        <ul className={styles['navigation-header__list']}>
           {links.map(({ text, url }) => (
-            <li key={url} className="navigation-header__item">
+            <li key={url} className={styles['navigation-header__item']}>
               <a
-                className="navigation-header__link"
+                className={styles['navigation-header__link']}
                 href={currentPage !== url ? url : '#'}
                 target={openLinksInNewTab ? '_blank' : null}
                 aria-current={currentPage === url ? 'page' : null}

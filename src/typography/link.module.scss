@@ -1,0 +1,9 @@
+@import 'o-typography/main';
+
+.link {
+  @include oTypographyLink();
+}
+
+.link-external {
+  @include oTypographyLink($external: true);
+}

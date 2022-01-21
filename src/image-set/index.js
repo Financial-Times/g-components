@@ -5,6 +5,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles.module.scss';
 
 function imageUUID(uuid, width) {
   return `https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fcom.ft.imagepublish.upp-prod-eu.s3.amazonaws.com%2F${uuid}?source=ig&amp;fit=scale-down&amp;quality=highest&amp;width=${width}`;
@@ -21,7 +22,7 @@ function getImageURL(imgString, width, skipImageService) {
 }
 
 const ImageSet = ({ alt, sources, skipImageService }) => (
-  <div className="g-imageset">
+  <div className={styles['g-imageset']}>
     <figure>
       <picture>
         {sources && sources.small && (

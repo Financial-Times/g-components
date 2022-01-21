@@ -6,13 +6,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 const Icon = ({ className, iconName, iconColor, width, height }) => {
   const colorHex = iconColor.replace('#', '');
   return (
     <i
-      className={classNames(className, 'g-icon')}
+      className={classNames(className, styles['g-icon'])}
       style={{
         backgroundImage: `url('https://www.ft.com/__origami/service/image/v2/images/raw/fticon-v1:${iconName}?source=o-icons&tint=%23${colorHex},%23${colorHex}&format=svg')`,
         width,

@@ -6,9 +6,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import styles from './styles.module.scss';
 
 export const GridRow = ({ compact, children, ...props }) => (
-  <div className={classnames('o-grid-row', compact && 'o-grid-row--compact')} {...props}>
+  <div
+    className={classnames(styles['o-grid-row'], compact && styles['o-grid-row--compact'])}
+    {...props}
+  >
     {children}
   </div>
 );

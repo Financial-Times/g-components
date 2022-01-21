@@ -1,0 +1,17 @@
+.g-accordion {
+  &-section__header {
+    display: block;
+    background: none;
+    margin: 0;
+    border: none;
+    padding: 0;
+    width: 100%;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+  }
+
+  &-section__header:focus {
+    outline: none;
+  }
+}

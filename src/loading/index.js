@@ -6,10 +6,16 @@
 import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 export const Loading = ({ size, theme }) => (
-  <div className={classNames('g-loading', `g-loading--${size}`, `g-loading--${theme}`)} />
+  <div
+    className={classNames(
+      styles['g-loading'],
+      styles[`g-loading--${size}`],
+      styles[`g-loading--${theme}`],
+    )}
+  />
 );
 
 Loading.propTypes = {

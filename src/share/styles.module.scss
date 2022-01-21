@@ -2,7 +2,16 @@
 @import 'o-share/main.scss';
 @import 'o-grid/main';
 
-@include oShare();
+@include oShare(
+  (
+    'icons': (
+      'twitter',
+      'facebook',
+      'linkedin',
+      'whatsapp',
+    ),
+  )
+);
 
 .g-share.g-share--separated li {
   margin-left: 16px;

@@ -7,6 +7,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Share from '../share';
 import Bylines from '../bylines';
+import { Graphic } from '../graphic';
+import { H1 } from '../typography/heading';
+import { Standfirst } from '../typography/standfirst';
 import { getMainImage } from '../shared/helpers';
 import {
   mainImagePropType,
@@ -40,27 +43,21 @@ const BigTopper = ({
   return (
     <div className={styles['big-topper']}>
       {flags.mainImage && (mainImage.url || mainImage.uuid) && (
-        <figure className="graphic graphic-b-1 graphic-pad-1">
-          <img alt={mainImage.description} src={getMainImage(mainImage)} />
-          <figcaption className="o-typography-caption">
-            {mainImage.description}
-            {mainImage.description && mainImage.credit && ' '}
-            {mainImage.credit}
-          </figcaption>
-        </figure>
+        <Graphic
+          alt={mainImage.description}
+          description={mainImage.description}
+          credit={mainImage.credit}
+          src={getMainImage(mainImage)}
+        />
       )}
 
       {topic && (
         <div className="topic">
-          <a href={topic.url} className="o-editorial-typography-topic">
-            {topic.name}
-          </a>
+          <Topic href={topic.url}>{topic.name}</Topic>
         </div>
       )}
 
-      <h1 className="o-editorial-layout-heading-1" itemProp="headline">
-        {headline}
-      </h1>
+      <H1 itemProp="headline">{headline}</H1>
 
       {flags.bylines && bylines && (
         <Bylines prefix="By" names={bylines} date={publishedDate} {...(byline || {})} />
@@ -78,14 +75,16 @@ const BigTopper = ({
       )}
 
       {flags.summary && summary && (
-        <p className="o-editorial-typography-standfirst">
-          {summary}{' '}
-          {relatedArticle && (
-            <a href={relatedArticle.url} className="o-typography-link">
-              {relatedArticle.text}
-            </a>
-          )}
-        </p>
+        <div className="standfirst">
+          <Standfirst>
+            {summary}{' '}
+            {relatedArticle && (
+              <a href={relatedArticle.url} className="standfirst-link">
+                {relatedArticle.text}
+              </a>
+            )}
+          </Standfirst>
+        </div>
       )}
 
       <meta itemProp="dateModified" content={buildTime} suppressHydrationWarning />

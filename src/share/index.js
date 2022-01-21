@@ -7,9 +7,10 @@ import React, { useEffect, useRef } from 'react';
 import OShare from '@financial-times/o-share';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import './styles.scss';
+import styles from './styles.module.scss';
+import classNames from 'classnames';
 
-const Share = ({
+export const Share = ({
   url,
   text,
   textTwitter,
@@ -57,17 +58,31 @@ const Share = ({
   ];
 
   return (
-    <div className={classnames('g-share', separated && 'g-share--separated', `g-share--${size}`)}>
-      <div className={classnames('o-share', dark && 'o-share--inverse')} data-o-component="o-share">
+    <div
+      className={classnames(
+        styles['g-share'],
+        separated && styles['g-share--separated'],
+        styles[`g-share--${size}`],
+      )}
+    >
+      <div
+        className={classnames(styles['o-share'], dark && styles['o-share--inverse'])}
+        data-o-component="o-share"
+      >
         <ul>
           {services.map(({ name, link }) => (
-            <li key={name} className="o-share__action">
+            <li key={name} className={styles['o-share__action']}>
               <a
-                className={`o-share__icon o-share__icon--${name.toLowerCase()}`}
+                className={classNames(
+                  styles['o-share__icon'],
+                  styles[`o-share__icon--${name.toLowerCase()}`],
+                )}
                 href={link}
                 rel="noopener"
               >
-                <span className="o-share__text">Share on {name}. Opens in a new window.</span>
+                <span className={styles['o-share__text']}>
+                  Share on {name}. Opens in a new window.
+                </span>
               </a>
             </li>
           ))}

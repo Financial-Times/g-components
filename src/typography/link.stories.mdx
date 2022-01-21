@@ -1,0 +1,21 @@
+import { Fragment, useRef, useState } from 'react';
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import '../shared/critical-path.scss';
+import { Link } from './link';
+
+<Meta title="Typography/Link" component={Link} />
+
+# Link
+
+> Output link styles.
+
+[[source]](https://registry.origami.ft.com/components/o-typography@7.2.2/sassdoc?brand=core#mixin-otypographylink)
+
+<Canvas>
+  <Story name="Internal link (default)">
+    <Link href="#">Standard Link</Link>
+  </Story>
+  <Story name="External link">
+    <Link href="https://www.example.com">External Link</Link>
+  </Story>
+</Canvas>

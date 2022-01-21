@@ -19,7 +19,7 @@ const OnwardJourney = ({ urlBase, layout, relatedContent }) => {
           relatedContent.map(({ list, rows = 1 }) => {
             const limit = rows * 4;
             const url = `${urlBase}${list}/html/${layout}?limit=${limit}`;
-            return fetch(url).then(res => res.text());
+            return fetch(url).then((res) => res.text());
           }),
         ),
       );

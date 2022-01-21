@@ -6,7 +6,7 @@
 import React, { Children, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import './styles.scss';
+import styles from './styles.module.scss';
 
 export const Expander = ({
   children,
@@ -35,20 +35,18 @@ export const Expander = ({
             ...childArray.slice(0, itemsToShow),
             hasNote ? childArray[childArray.length - 1] : null,
           ])}
-      <Tag className="g-expander__header" colSpan={tagName === 'td' ? 1000 : undefined}>
-        {
-          <button
-            className={classnames(
-              'g-expander__expand-button',
-              expanded && 'g-expander__expand-button--open',
-            )}
-            type="button"
-            onClick={() => setExpanded(!expanded)}
-          >
-            {showLabel && <span>{expanded ? showLessText : showMoreText}</span>}
-            <i />
-          </button>
-        }
+      <Tag className={styles['g-expander__header']} colSpan={tagName === 'td' ? 1000 : undefined}>
+        <button
+          className={classnames(
+            styles['g-expander__expand-button'],
+            expanded && styles['g-expander__expand-button--open'],
+          )}
+          type="button"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {showLabel && <span>{expanded ? showLessText : showMoreText}</span>}
+          <i />
+        </button>
       </Tag>
     </React.Fragment>
   );

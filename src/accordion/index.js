@@ -5,10 +5,11 @@
 
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import './styles.scss';
+import classNames from 'classnames';
+import styles from './styles.module.scss';
 
 const Accordion = ({ children }) => {
-  return <div className="g-accordion">{children}</div>;
+  return <div className={styles['g-accordion']}>{children}</div>;
 };
 
 const AccordionSection = ({ isExpanded = false, children: [title, ...body], id = false }) => {
@@ -16,16 +17,18 @@ const AccordionSection = ({ isExpanded = false, children: [title, ...body], id =
   return (
     <div className="g-accordion-section">
       <button
-        className={`g-accordion-section__header ${
-          expanded ? 'g-accordion-section__header--expanded' : ''
-        }`}
+        className={classNames(
+          styles['g-accordion-section__header'],
+          expanded && styles['g-accordion-section__header--expanded'],
+        )}
+        type="button"
         aria-expanded={expanded}
         onClick={() => setExpanded(!expanded)}
         {...(id ? { id } : {})}
       >
         {title}
       </button>
-      {expanded && <div className="g-accordion-section__body">{body}</div>}
+      {expanded && <div className={styles['g-accordion-section__body']}>{body}</div>}
     </div>
   );
 };

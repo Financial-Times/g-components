@@ -6,25 +6,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import './styles.scss';
+import styles from './styles.module.scss';
 
-const Progress = ({ value, steps }) => (
-  <ul className="g-progress">
+export const Progress = ({ value, steps }) => (
+  <ul className={styles['g-progress']}>
     {steps ? (
       (Array.isArray(steps) ? steps : Array(steps).fill()).map((step, i) => (
         <li
           key={i /* eslint-disable-line react/no-array-index-key */}
           className={classnames(
-            'g-progress__segment',
-            i / steps < value && 'g-progress__segment--active',
+            styles['g-progress__segment'],
+            i / steps < value && styles['g-progress__segment--active'],
           )}
         />
       ))
     ) : (
-      <li className="g-progress__segment">
+      <li className={styles['g-progress__segment']}>
         <div
           style={{ margin: 0, width: `${value * 100}%`, height: '100%' }}
-          className="g-progress__segment--active"
+          className={styles['g-progress__segment--active']}
         />
       </li>
     )}

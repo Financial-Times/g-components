@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import styles from './styles.module.scss';
+import classNames from 'classnames';
 
 const RefPropType = PropTypes.oneOfType([
   PropTypes.func,
@@ -14,9 +16,10 @@ export const NavigationHeaderMobileDropdownButton = ({
 }) => (
   <button
     ref={buttonRef}
-    className={`navigation-header__dropdown-button navigation-header__dropdown-button--${
-      isOpen ? 'open' : 'closed'
-    }`}
+    className={classNames(
+      styles['navigation-header__dropdown-button'],
+      styles[`navigation-header__dropdown-button--${isOpen ? 'open' : 'closed'}`],
+    )}
     onClick={onClick}
     aria-haspopup="true"
     aria-expanded={isOpen}
@@ -65,12 +68,17 @@ export const NavigationHeaderMobileDropdown = ({
   }, [closeDropdown, buttonRef]);
 
   return (
-    <ul className="navigation-header__dropdown" role="menu" id="dropwdown-menu" ref={dropdownRef}>
+    <ul
+      className={styles['navigation-header__dropdown']}
+      role="menu"
+      id="dropwdown-menu"
+      ref={dropdownRef}
+    >
       {links.map(({ text, url }) => (
         <li role="none">
           <a
             key={url}
-            className="navigation-header__dropdown-link"
+            className={styles['navigation-header__dropdown-link']}
             href={currentPage !== url ? url : '#'}
             target={openLinksInNewTab ? '_blank' : null}
             aria-current={currentPage === url ? 'page' : null}
