@@ -12,6 +12,8 @@ import styles from './styles.module.scss';
 export const DateTime = ({ datestamp }) => {
   const elRef = useRef(null);
   const dateRef = useRef(null);
+  const date = datestamp instanceof Date ? datestamp : new Date(datestamp);
+
   useEffect(() => {
     dateRef.current = ODate.init(elRef.current);
 
@@ -23,9 +25,9 @@ export const DateTime = ({ datestamp }) => {
       suppressHydrationWarning
       data-o-component="o-date"
       className={classNames(styles['date-time'])}
-      dateTime={datestamp.toISOString()}
+      dateTime={date.toISOString()}
     >
-      {ftDateFormat.ftTime(datestamp)}
+      {ftDateFormat.ftTime(date)}
     </time>
   );
 };

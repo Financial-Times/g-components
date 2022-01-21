@@ -9,8 +9,9 @@ exports[`Storyshots Core/Accordion Example 1`] = `
   >
     <button
       aria-expanded={false}
-      className="g-accordion-section__header "
+      className="g-accordion-section__header"
       onClick={[Function]}
+      type="button"
     >
       <h3>
         First section
@@ -24,6 +25,7 @@ exports[`Storyshots Core/Accordion Example 1`] = `
       aria-expanded={true}
       className="g-accordion-section__header g-accordion-section__header--expanded"
       onClick={[Function]}
+      type="button"
     >
       <h3>
         Second section
@@ -42,9 +44,10 @@ exports[`Storyshots Core/Accordion Example 1`] = `
   >
     <button
       aria-expanded={false}
-      className="g-accordion-section__header "
+      className="g-accordion-section__header"
       id="section-3"
       onClick={[Function]}
+      type="button"
     >
       <h3>
         Third section
@@ -1167,27 +1170,32 @@ exports[`Storyshots Core/Big Topper Basic 1`] = `
   className="big-topper"
 >
   <figure
-    className="graphic graphic-b-1 graphic-pad-1"
+    className="graphic"
   >
     <img
       src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8408723765-2qw52.png?source=ig"
     />
     <figcaption
-      className="o-typography-caption"
+      className="caption"
+      style={
+        Object {
+          "marginTop": "4px",
+        }
+      }
     />
   </figure>
   <div
     className="topic"
   >
     <a
-      className="o-editorial-typography-topic"
+      className="topic"
       href="https://www.ft.com/visual-and-data-journalism"
     >
       Visual & Data Journalism
     </a>
   </div>
   <h1
-    className="o-editorial-layout-heading-1"
+    className="level-1"
     itemProp="headline"
   >
     This is a headline
@@ -1198,21 +1206,20 @@ exports[`Storyshots Core/Big Topper Basic 1`] = `
     By 
     
     <a
-      className="o-editorial-typography-author"
+      className="byline"
       href="https://www.ft.com/"
     >
       Person One
     </a>
      and 
     <a
-      className="o-editorial-typography-author"
+      className="byline"
       href="https://www.ft.com/"
     >
       Person Two
     </a>
-     
     <time
-      className="o-date o-editorial-typography-byline-timestamp"
+      className="date-time"
       data-o-component="o-date"
       dateTime="2018-07-25T17:43:37.000Z"
       suppressHydrationWarning={true}
@@ -1220,12 +1227,16 @@ exports[`Storyshots Core/Big Topper Basic 1`] = `
       July 25 2018
     </time>
   </div>
-  <p
-    className="o-editorial-typography-standfirst"
+  <div
+    className="standfirst"
   >
-    This is a standfirst
-     
-  </p>
+    <p
+      className="standfirst"
+    >
+      This is a standfirst
+       
+    </p>
+  </div>
   <meta
     content="2018-07-25T17:43:37.000Z"
     itemProp="dateModified"
@@ -1239,27 +1250,32 @@ exports[`Storyshots Core/Big Topper With byline props 1`] = `
   className="big-topper"
 >
   <figure
-    className="graphic graphic-b-1 graphic-pad-1"
+    className="graphic"
   >
     <img
       src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8408723765-2qw52.png?source=ig"
     />
     <figcaption
-      className="o-typography-caption"
+      className="caption"
+      style={
+        Object {
+          "marginTop": "4px",
+        }
+      }
     />
   </figure>
   <div
     className="topic"
   >
     <a
-      className="o-editorial-typography-topic"
+      className="topic"
       href="https://www.ft.com/visual-and-data-journalism"
     >
       Visual & Data Journalism
     </a>
   </div>
   <h1
-    className="o-editorial-layout-heading-1"
+    className="level-1"
     itemProp="headline"
   >
     This is a headline
@@ -1268,9 +1284,8 @@ exports[`Storyshots Core/Big Topper With byline props 1`] = `
     className="bylines"
   >
     Updated 
-     
     <time
-      className="o-date o-editorial-typography-byline-timestamp"
+      className="date-time"
       data-o-component="o-date"
       dateTime="2018-07-25T17:43:37.000Z"
       suppressHydrationWarning={true}
@@ -1280,25 +1295,29 @@ exports[`Storyshots Core/Big Topper With byline props 1`] = `
      by 
     
     <a
-      className="o-editorial-typography-author"
+      className="byline"
       href="https://www.ft.com/"
     >
       Person One
     </a>
      and 
     <a
-      className="o-editorial-typography-author"
+      className="byline"
       href="https://www.ft.com/"
     >
       Person Two
     </a>
   </div>
-  <p
-    className="o-editorial-typography-standfirst"
+  <div
+    className="standfirst"
   >
-    This is a standfirst
-     
-  </p>
+    <p
+      className="standfirst"
+    >
+      This is a standfirst
+       
+    </p>
+  </div>
   <meta
     content="2018-07-25T17:43:37.000Z"
     itemProp="dateModified"
@@ -1312,27 +1331,32 @@ exports[`Storyshots Core/Big Topper With share props 1`] = `
   className="big-topper"
 >
   <figure
-    className="graphic graphic-b-1 graphic-pad-1"
+    className="graphic"
   >
     <img
       src="https://www.ft.com/__origami/service/image/v2/images/raw/http%3A%2F%2Fft-ig-images-prod.s3-website-eu-west-1.amazonaws.com%2Fv1%2F8408723765-2qw52.png?source=ig"
     />
     <figcaption
-      className="o-typography-caption"
+      className="caption"
+      style={
+        Object {
+          "marginTop": "4px",
+        }
+      }
     />
   </figure>
   <div
     className="topic"
   >
     <a
-      className="o-editorial-typography-topic"
+      className="topic"
       href="https://www.ft.com/visual-and-data-journalism"
     >
       Visual & Data Journalism
     </a>
   </div>
   <h1
-    className="o-editorial-layout-heading-1"
+    className="level-1"
     itemProp="headline"
   >
     This is a headline
@@ -1343,21 +1367,20 @@ exports[`Storyshots Core/Big Topper With share props 1`] = `
     By 
     
     <a
-      className="o-editorial-typography-author"
+      className="byline"
       href="https://www.ft.com/"
     >
       Person One
     </a>
      and 
     <a
-      className="o-editorial-typography-author"
+      className="byline"
       href="https://www.ft.com/"
     >
       Person Two
     </a>
-     
     <time
-      className="o-date o-editorial-typography-byline-timestamp"
+      className="date-time"
       data-o-component="o-date"
       dateTime="2018-07-25T17:43:37.000Z"
       suppressHydrationWarning={true}
@@ -1444,12 +1467,16 @@ exports[`Storyshots Core/Big Topper With share props 1`] = `
       </ul>
     </div>
   </div>
-  <p
-    className="o-editorial-typography-standfirst"
+  <div
+    className="standfirst"
   >
-    This is a standfirst
-     
-  </p>
+    <p
+      className="standfirst"
+    >
+      This is a standfirst
+       
+    </p>
+  </div>
   <meta
     content="2018-07-25T17:43:37.000Z"
     itemProp="dateModified"
@@ -2362,11 +2389,10 @@ Array [
       <span>
         FT reporters
       </span>
-       
       <time
-        className="o-date o-editorial-typography-byline-timestamp"
+        className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-07T00:00:00"
+        dateTime="2020-05-06T23:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2381,7 +2407,7 @@ Array [
       
       
       <a
-        className="o-editorial-typography-author"
+        className="byline"
         href="https://ft.com/max-harlow"
       >
         Max Harlow
@@ -2391,11 +2417,10 @@ Array [
         Hax Marlow
       </span>
        in San Serriffe
-       
       <time
-        className="o-date o-editorial-typography-byline-timestamp"
+        className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-07T00:00:00"
+        dateTime="2020-05-06T23:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2410,7 +2435,7 @@ Array [
       
       
       <a
-        className="o-editorial-typography-author"
+        className="byline"
         href="https://ft.com/max-harlow"
       >
         Max Harlow
@@ -2424,11 +2449,10 @@ Array [
       <span>
         Someone Else
       </span>
-       
       <time
-        className="o-date o-editorial-typography-byline-timestamp"
+        className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-07T00:00:00"
+        dateTime="2020-05-06T23:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2457,11 +2481,10 @@ Array [
       <span>
         FT Staff
       </span>
-       
       <time
-        className="o-date o-editorial-typography-byline-timestamp"
+        className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-07T00:00:00"
+        dateTime="2020-05-06T23:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2474,11 +2497,10 @@ Array [
       className="bylines"
     >
       Updated 
-       
       <time
-        className="o-date o-editorial-typography-byline-timestamp"
+        className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-07T00:00:00"
+        dateTime="2020-05-06T23:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2486,7 +2508,7 @@ Array [
        by 
       
       <a
-        className="o-editorial-typography-author"
+        className="byline"
         href="https://www.ft.com/visual-and-data-journalism"
       >
         FT Visual & Data Journalism team
@@ -3926,9 +3948,10 @@ Array [
 
 exports[`Storyshots Core/DateTime Examples 1`] = `
 <time
-  className="o-date"
+  className="date-time"
   data-o-component="o-date"
   dateTime="1987-01-05T00:00:00.000Z"
+  suppressHydrationWarning={true}
 >
   January 5 1987
 </time>
@@ -3953,7 +3976,8 @@ exports[`Storyshots Core/Epilogue Example 1`] = `
         >
           Copyright
         </a>
-         The Financial Times Limited 
+         
+        The Financial Times Limited 
         2019
         . All rights reserved.
       </footer>
@@ -4527,6 +4551,28 @@ exports[`Storyshots Core/Footer Example 1`] = `
     </div>
   </div>
 </footer>
+`;
+
+exports[`Storyshots Core/Graphic Example 1`] = `
+<figure
+  className="graphic"
+>
+  <img
+    alt="an alt"
+    src="http://placekitten.com/200/300"
+  />
+  <figcaption
+    className="caption"
+    style={
+      Object {
+        "marginTop": "4px",
+      }
+    }
+  >
+    an alternative description, used for alt if alt if not provided
+     Ændra Rininsland
+  </figcaption>
+</figure>
 `;
 
 exports[`Storyshots Core/Grid/Grid Default grid 1`] = `
@@ -5227,7 +5273,7 @@ Array [
     With container bleed:
   </p>,
   <div
-    className="o-grid-container  o-grid-container--bleed"
+    className="o-grid-container o-grid-container--bleed"
   >
     <div
       className="o-grid-row"
@@ -6009,7 +6055,7 @@ exports[`Storyshots Core/Grid/GridChild Overriding of default width 1`] = `
 
 exports[`Storyshots Core/Grid/GridContainer Full bleed grid container 1`] = `
 <div
-  className="o-grid-container  o-grid-container--bleed"
+  className="o-grid-container o-grid-container--bleed"
 >
   <div
     className="o-grid-row"
@@ -6377,9 +6423,10 @@ Array [
         <span>
           Last updated 
           <time
-            className="o-date"
+            className="date-time"
             data-o-component="o-date"
             dateTime="1987-01-05T00:00:00.000Z"
+            suppressHydrationWarning={true}
           >
             January 5 1987
           </time>
@@ -6427,9 +6474,10 @@ Array [
         <span>
           Last updated 
           <time
-            className="o-date"
+            className="date-time"
             data-o-component="o-date"
             dateTime="1987-01-05T00:00:00.000Z"
+            suppressHydrationWarning={true}
           >
             January 5 1987
           </time>
@@ -6488,9 +6536,10 @@ Array [
           </div>
           Last updated 
           <time
-            className="o-date"
+            className="date-time"
             data-o-component="o-date"
             dateTime="1987-01-05T00:00:00.000Z"
+            suppressHydrationWarning={true}
           >
             January 5 1987
           </time>
@@ -6527,9 +6576,10 @@ Array [
         >
           Last updated 
           <time
-            className="o-date"
+            className="date-time"
             data-o-component="o-date"
             dateTime="1987-01-05T00:00:00.000Z"
+            suppressHydrationWarning={true}
           >
             January 5 1987
           </time>
@@ -6588,9 +6638,10 @@ Array [
           </div>
           Last updated 
           <time
-            className="o-date"
+            className="date-time"
             data-o-component="o-date"
             dateTime="1987-01-05T00:00:00.000Z"
+            suppressHydrationWarning={true}
           >
             January 5 1987
           </time>
@@ -7979,7 +8030,7 @@ Array [
         }
       >
         <div
-          className="sticky-header__children-wrapper"
+          className=""
           style={
             Object {
               "top": 0,
@@ -8056,7 +8107,7 @@ Array [
       }
     >
       <div
-        className="sticky-header__children-wrapper"
+        className=""
         style={
           Object {
             "top": 0,
@@ -8117,7 +8168,7 @@ Array [
         }
       >
         <div
-          className="sticky-header__children-wrapper"
+          className=""
           style={
             Object {
               "top": 20,
@@ -8178,7 +8229,7 @@ exports[`Storyshots Core/Sticky Header With shadow on scroll up 1`] = `
       }
     >
       <div
-        className="sticky-header__children-wrapper"
+        className=""
         style={
           Object {
             "top": 0,
@@ -8234,7 +8285,7 @@ Array [
         }
       >
         <div
-          className="sticky-header__children-wrapper"
+          className=""
           style={
             Object {
               "top": 0,
@@ -8280,20 +8331,20 @@ exports[`Storyshots Core/Story Topper Example 1`] = `
     className="topic"
   >
     <a
-      className="o-editorial-typography-topic"
+      className="topic"
       href="https://www.ft.com/visual-and-data-journalism"
     >
       Examples
     </a>
   </div>
   <h1
-    className="o-editorial-layout-heading-1"
+    className="level-1"
     itemProp="headline"
   >
     This is a headline
   </h1>
   <p
-    className="o-editorial-typography-standfirst"
+    className="standfirst"
   >
     This is a standfirst
      
@@ -8304,18 +8355,22 @@ exports[`Storyshots Core/Story Topper Example 1`] = `
     suppressHydrationWarning={true}
   />
   <figure
-    className="graphic graphic-b-1 graphic-pad-1"
+    className="graphic"
   >
     <img
       alt="This is a main image description."
       src="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af07ccec8-7ded-11e8-af48-190d103e32a4?source=ig"
     />
     <figcaption
-      className="o-typography-caption"
+      className="caption"
+      style={
+        Object {
+          "marginTop": "4px",
+        }
+      }
     >
       This is a main image description.
-       
-      © Placeholder Images
+       © Placeholder Images
     </figcaption>
   </figure>
   <div
@@ -8403,14 +8458,13 @@ exports[`Storyshots Core/Story Topper Example 1`] = `
     
     
     <a
-      className="o-editorial-typography-author"
-      href="https://ft.com/ændrew-rininsland"
+      className="byline"
+      href="https://ft.com/ændra-rininsland"
     >
-      Ændrew Rininsland
+      Ændra Rininsland
     </a>
-     
     <time
-      className="o-date o-editorial-typography-byline-timestamp"
+      className="date-time"
       data-o-component="o-date"
       dateTime="2018-07-25T17:43:37.000Z"
       suppressHydrationWarning={true}
@@ -13726,20 +13780,20 @@ Array [
                 className="topic"
               >
                 <a
-                  className="o-editorial-typography-topic"
+                  className="topic"
                   href="https://www.ft.com/visual-and-data-journalism"
                 >
                   Examples
                 </a>
               </div>
               <h1
-                className="o-editorial-layout-heading-1"
+                className="level-1"
                 itemProp="headline"
               >
                 This is a headline
               </h1>
               <p
-                className="o-editorial-typography-standfirst"
+                className="standfirst"
               >
                 This is a standfirst
                  
@@ -13750,18 +13804,22 @@ Array [
                 suppressHydrationWarning={true}
               />
               <figure
-                className="graphic graphic-b-1 graphic-pad-1"
+                className="graphic"
               >
                 <img
                   alt="This is a main image description."
                   src="https://www.ft.com/__origami/service/image/v2/images/raw/ftcms%3Af07ccec8-7ded-11e8-af48-190d103e32a4?source=ig"
                 />
                 <figcaption
-                  className="o-typography-caption"
+                  className="caption"
+                  style={
+                    Object {
+                      "marginTop": "4px",
+                    }
+                  }
                 >
                   This is a main image description.
-                   
-                  © Placeholder Images
+                   © Placeholder Images
                 </figcaption>
               </figure>
               <div
@@ -13849,14 +13907,13 @@ Array [
                 
                 
                 <a
-                  className="o-editorial-typography-author"
-                  href="https://ft.com/ændrew-rininsland"
+                  className="byline"
+                  href="https://ft.com/ændra-rininsland"
                 >
-                  Ændrew Rininsland
+                  Ændra Rininsland
                 </a>
-                 
                 <time
-                  className="o-date o-editorial-typography-byline-timestamp"
+                  className="date-time"
                   data-o-component="o-date"
                   dateTime="2018-07-25T17:43:37.000Z"
                   suppressHydrationWarning={true}
@@ -13922,7 +13979,8 @@ Array [
               >
                 Copyright
               </a>
-               The Financial Times Limited 
+               
+              The Financial Times Limited 
               2019
               . All rights reserved.
             </footer>
@@ -14637,6 +14695,127 @@ exports[`Storyshots Layouts/Feature Example 1`] = `
     </main>
   </div>
 </div>
+`;
+
+exports[`Storyshots Typography/Body Text Lorem text 1`] = `
+<p
+  className="body-text"
+>
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet earum libero at voluptatum illum facere totam architecto eum porro exercitationem, ea, accusamus quia? Repellat beatae similique ab? Reprehenderit, ullam quae?
+</p>
+`;
+
+exports[`Storyshots Typography/Caption Lorem text 1`] = `
+<figcaption
+  className="caption"
+>
+  ©Lorem John Doe
+</figcaption>
+`;
+
+exports[`Storyshots Typography/Heading Headings 1`] = `
+Array [
+  <h1
+    className="level-1"
+  >
+    Heading level 1 — Don’t settle for black and white
+  </h1>,
+  <h2
+    className="level-2"
+  >
+    Heading level 2 — Don’t settle for black and white
+  </h2>,
+  <h3
+    className="level-3"
+  >
+    Heading level 3 — Don’t settle for black and white
+  </h3>,
+  <h4
+    className="level-4"
+  >
+    Heading level 4 — Don’t settle for black and white
+  </h4>,
+  <h5
+    className="level-5"
+  >
+    Heading level 5 — Don’t settle for black and white
+  </h5>,
+]
+`;
+
+exports[`Storyshots Typography/Headline Defaults 1`] = `
+<h1
+  className="headline"
+>
+  Don’t settle for black and white
+</h1>
+`;
+
+exports[`Storyshots Typography/Link External link 1`] = `
+<a
+  className="link-external"
+  href="https://www.example.com"
+>
+  External Link
+</a>
+`;
+
+exports[`Storyshots Typography/Link Internal link (default) 1`] = `
+<a
+  className="link"
+  href="#"
+>
+  Standard Link
+</a>
+`;
+
+exports[`Storyshots Typography/Ordered List Lorem Text 1`] = `
+<ol
+  className="ordered-list"
+>
+  <li>
+    Lorem ipsum adipiscing elit.
+  </li>
+  <li>
+    Sed feugiat turpis at massa tristique.
+  </li>
+  <li>
+    Curabitu r accumsan elit luctus.
+  </li>
+</ol>
+`;
+
+exports[`Storyshots Typography/Standfirst Lorem text 1`] = `
+<p
+  className="standfirst"
+>
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam autem dignissimos perspiciatis odio dolorum aut cumque eaque excepturi quia error.
+</p>
+`;
+
+exports[`Storyshots Typography/Topic With single child element 1`] = `
+<a
+  className="topic"
+  href="#"
+>
+  Data Journalism Development
+</a>
+`;
+
+exports[`Storyshots Typography/Unordered List Lorem Text 1`] = `
+<ul
+  className="unordered-list"
+>
+  <li>
+    Lorem ipsum adipiscing elit.
+  </li>
+  <li>
+    Sed feugiat turpis at massa tristique.
+  </li>
+  <li>
+    Curabitu r accumsan elit luctus.
+  </li>
+</ul>
 `;
 
 exports[`Storyshots core/Expander Examples 1`] = `

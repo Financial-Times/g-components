@@ -30,7 +30,7 @@ const NamesElement = ({ namesList }) => {
   }, []);
 };
 
-const Bylines = ({ prefix, names, date, dateFirst }) => {
+export const Bylines = ({ prefix, names, date, dateFirst }) => {
   if (!names && !date) return null;
 
   const namesList = Array.isArray(names) ? names : [{ name: names }];

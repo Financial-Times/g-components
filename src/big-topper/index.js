@@ -5,11 +5,12 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import Share from '../share';
-import Bylines from '../bylines';
+import { Share } from '../share';
+import { Bylines } from '../bylines';
 import { Graphic } from '../graphic';
 import { H1 } from '../typography/heading';
 import { Standfirst } from '../typography/standfirst';
+import { Topic } from '../typography/topic';
 import { getMainImage } from '../shared/helpers';
 import {
   mainImagePropType,
