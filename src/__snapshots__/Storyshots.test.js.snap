@@ -3978,7 +3978,7 @@ exports[`Storyshots Core/Epilogue Example 1`] = `
         </a>
          
         The Financial Times Limited 
-        2019
+        2022
         . All rights reserved.
       </footer>
     </div>
@@ -4516,7 +4516,7 @@ exports[`Storyshots Core/Footer Example 1`] = `
       <small>
         Markets data delayed by at least 15 minutes. © THE FINANCIAL TIMES LTD
          
-        2019
+        2022
         . 
         <abbr
           aria-label="F T"
@@ -13981,7 +13981,7 @@ Array [
               </a>
                
               The Financial Times Limited 
-              2019
+              2022
               . All rights reserved.
             </footer>
           </div>
@@ -14529,7 +14529,7 @@ Array [
         <small>
           Markets data delayed by at least 15 minutes. © THE FINANCIAL TIMES LTD
            
-          2019
+          2022
           . 
           <abbr
             aria-label="F T"

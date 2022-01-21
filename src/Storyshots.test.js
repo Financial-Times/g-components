@@ -1,7 +1,7 @@
 import initStoryshots, { snapshotWithOptions } from '@storybook/addon-storyshots';
 import fetch from 'node-fetch';
 
-jest.useFakeTimers('modern').setSystemTime(new Date('2020-05-07T00:00:00.000Z').getTime());
+jest.useFakeTimers('modern').setSystemTime(new Date('2022-01-01T00:00:00.000Z').getTime());
 
 global.getComputedStyle = jest.fn(() => {
   return {
