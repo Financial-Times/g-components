@@ -66,7 +66,7 @@
     "remove-markdown": "^0.3.0"
   },
   "scripts": {
-    "test": "jest",
+    "test": "TZ=Europe/London jest",
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic",

@@ -2392,7 +2392,7 @@ Array [
       <time
         className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-06T23:00:00.000Z"
+        dateTime="2020-05-07T00:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2420,7 +2420,7 @@ Array [
       <time
         className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-06T23:00:00.000Z"
+        dateTime="2020-05-07T00:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2452,7 +2452,7 @@ Array [
       <time
         className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-06T23:00:00.000Z"
+        dateTime="2020-05-07T00:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2484,7 +2484,7 @@ Array [
       <time
         className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-06T23:00:00.000Z"
+        dateTime="2020-05-07T00:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
@@ -2500,7 +2500,7 @@ Array [
       <time
         className="date-time"
         data-o-component="o-date"
-        dateTime="2020-05-06T23:00:00.000Z"
+        dateTime="2020-05-07T00:00:00.000Z"
         suppressHydrationWarning={true}
       >
         May 7 2020
