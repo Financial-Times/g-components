@@ -34,7 +34,11 @@ export let isPlaying = true;
 export const AudioContextFunc = window.AudioContext || window.webkitAudioContext;
 export const audioContext = new AudioContextFunc();
 
-<Meta title="Core/DataSonification" component={DataSonification} />
+<Meta
+  title="Core/DataSonification"
+  component={DataSonification}
+  parameters={{ chromatic: { disable: true } }}
+/>
 
 # DataSonification
 

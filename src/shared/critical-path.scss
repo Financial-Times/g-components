@@ -1,22 +1,24 @@
 @import './_globals.scss';
-@import 'o-normalise/main.scss';
-@import 'o-colors/main.scss';
-@import 'o-grid/main.scss';
-@import 'o-typography/main';
-@import 'o-editorial-typography/main';
-@import 'o-editorial-layout/main';
+@import '@financial-times/o-normalise/main.scss';
+@import '@financial-times/o-colors/main.scss';
+@import '@financial-times/o-grid/main.scss';
+@import '@financial-times/o-editorial-layout/main';
+@import '@financial-times/o-fonts/main';
 
-@include oTypography();
-@include oEditorialTypography();
-@include oEditorialLayout();
+@include oFonts(
+  $opts: (
+    'recommended': true,
+  )
+);
 
-@include oGridSurfaceLayoutSizes;
 @include oNormalise();
 
-// @TODO change to using o-fonts
-$font-sans: MetricWeb, sans-serif;
-$font-serif: Georgia, serif;
-$font-display: FinancierDisplayWeb, Georgia, serif;
+@include oEditorialLayout();
+@include oGridSurfaceLayoutSizes;
+
+$font-sans: oFontsGetFontFamilyWithFallbacks(MetricWeb);
+$font-serif: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
+$font-display: oFontsGetFontFamilyWithFallbacks(FinancierDisplayWeb);
 
 html {
   -ms-text-size-adjust: 100%;
@@ -26,7 +28,7 @@ html {
 html,
 body {
   background-color: #fff1e5;
-  font-family: MetricWeb, sans-serif;
+  font-family: $font-sans;
   margin: 0;
   padding: 0;
 }
@@ -76,16 +78,6 @@ body {
     margin-top: 18px;
     margin-bottom: 0;
   }
-
-  // This was in the original Starter Kit styles.scss but prevents
-  // doing things like full-bleed images/tables so disabling.
-  // &-body {
-  //   div[data-o-grid-colspan] {
-  //     & > div {
-  //       max-width: 700px;
-  //     }
-  //   }
-  // }
 }
 
 .graphic {
@@ -104,11 +96,11 @@ body {
   }
 
   &-b-0 {
-    max-width: 625px;
+    max-width: 625px; // shrug
   }
 
   &-b-1 {
-    max-width: 700px;
+    max-width: 700px; // shrug
   }
 }
 

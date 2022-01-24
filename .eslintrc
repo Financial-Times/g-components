@@ -4,6 +4,8 @@
   "rules": {
     "import/no-extraneous-dependencies": [2, {}],
     "import/extensions": [0],
+    "import/prefer-default-export": [0],
+    "import/no-anonymous-default-export": [0],
     "react/jsx-filename-extension": [0],
     "react/jsx-fragments": [2, "element"],
     "react/state-in-constructor": [0],

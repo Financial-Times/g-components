@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './ordered-list.module.scss';
-import classNames from 'classnames';
+import styles from './link.module.scss';
 
 export const Link = ({ href, children, ...props }) => (
   <a
@@ -12,3 +11,8 @@ export const Link = ({ href, children, ...props }) => (
     {children}
   </a>
 );
+
+Link.propTypes = {
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};

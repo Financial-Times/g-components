@@ -1,7 +1,23 @@
 .graphic {
-  &-b-1 {
-  } // IDK what this class attached in big-topper does
+  display: block;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: 100%;
 
-  &-pad-1 {
-  } // ditto
+  & > img,
+  & > svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  &-b-0 {
+    max-width: 625px;
+  }
+
+  &-b-1 {
+    max-width: 700px;
+  }
 }
