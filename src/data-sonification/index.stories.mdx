@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import DataSonification from './';
+// import DataSonification from './'; // Disabled due to #220
 import Button from '../button';
 
 export const dataSingle = [
@@ -40,9 +40,9 @@ export const audioContext = new AudioContextFunc();
 
 Sonifies data, giving control over instruments, volume, duration, pitch etc.
 
+<!--
 <Canvas>
   <Story name="Examples">
-    <>
       Single data series:
       <DataSonification
         audioContext={audioContext}
@@ -68,6 +68,7 @@ Sonifies data, giving control over instruments, volume, duration, pitch etc.
         instruments={[{ code: 1217, volume: 1 }]}
         isPlaying
       />
-    </>
+    </> */}
   </Story>
 </Canvas>
+-->

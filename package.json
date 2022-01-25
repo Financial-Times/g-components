@@ -1,11 +1,11 @@
 {
   "name": "@financial-times/g-components",
   "version": "0.0.0",
-  "description": "Page furniture used by FT IG's Starter Kit",
+  "description": "FT.com Page furniture used in interactive journalism projects, wrapped in React",
   "repository": "https://github.com/Financial-Times/g-components",
-  "keywords": [],
-  "author": "Ændra Rininsland",
   "license": "ISC",
+  "main": "build/g-components.js",
+  "module": "build/g-components.esm.js",
   "jest": {
     "testEnvironment": "jsdom",
     "resolver": "<rootDir>/.jest/resolver.js",
@@ -19,25 +19,6 @@
     "transformIgnorePatterns": [
       "/node_modules//(?!(@financial-times)/)"
     ]
-  },
-  "babel": {
-    "env": {
-      "test": {
-        "presets": [
-          [
-            "@babel/preset-env",
-            {
-              "targets": {
-                "node": "current"
-              },
-              "useBuiltIns": "usage",
-              "corejs": 3
-            }
-          ],
-          "@babel/preset-react"
-        ]
-      }
-    }
   },
   "peerDependencies": {
     "@storybook/react": "6.x"
@@ -65,11 +46,13 @@
     "@financial-times/o-teaser": "^6.2.0",
     "@financial-times/o-tracking": "^4.1.3",
     "@financial-times/o-typography": "^7.2.0",
+    "@financial-times/o-viewport": "^5.1.0",
     "@financial-times/politics": "^1.3.0",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "classnames": "^2.3.1",
+    "core-js": "^3.20.2",
     "d3-array": "^3.1.1",
     "d3-scale": "^4.0.2",
     "ftdomdelegate": "^5.0.0",
@@ -83,29 +66,29 @@
     "remove-markdown": "^0.3.0"
   },
   "scripts": {
-    "test": "DISABLE_ESLINT_PLUGIN=true jest",
-    "storybook": "DISABLE_ESLINT_PLUGIN=true start-storybook -p 9009 -s public",
-    "build-storybook": "DISABLE_ESLINT_PLUGIN=true build-storybook -s public",
-    "chromatic": "DISABLE_ESLINT_PLUGIN=true chromatic"
+    "test": "jest",
+    "storybook": "start-storybook -p 9009",
+    "build-storybook": "build-storybook",
+    "chromatic": "chromatic",
+    "build": "node build.mjs"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
     "@babel/plugin-transform-modules-commonjs": "^7.16.0",
+    "@babel/preset-env": "^7.16.8",
     "@financial-times/jest-browser-resolver": "^1.0.2",
-    "@storybook/addon-a11y": "^6.3.12",
-    "@storybook/addon-actions": "^6.3.12",
-    "@storybook/addon-controls": "^6.3.12",
-    "@storybook/addon-docs": "^6.3.12",
-    "@storybook/addon-knobs": "^6.3.1",
-    "@storybook/addon-links": "^6.3.12",
-    "@storybook/addon-storyshots": "^6.3.12",
-    "@storybook/addon-viewport": "^6.3.12",
-    "@storybook/addons": "^6.3.12",
-    "@storybook/preset-create-react-app": "^3.2.0",
-    "@storybook/react": "^6.3.12",
+    "@storybook/addon-a11y": "^6.4.12",
+    "@storybook/addon-docs": "^6.4.12",
+    "@storybook/addon-essentials": "^6.4.12",
+    "@storybook/addon-knobs": "^6.4.0",
+    "@storybook/addon-storyshots": "^6.4.12",
+    "@storybook/addons": "^6.4.12",
+    "@storybook/react": "^6.4.12",
     "babel-plugin-require-context-hook": "^1.0.0",
     "chromatic": "^6.0.6",
     "enhanced-resolve-jest": "^1.1.0",
+    "esbuild": "^0.14.11",
+    "esbuild-sass-plugin": "^2.0.3",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-prettier": "^8.3.0",
@@ -123,9 +106,10 @@
     "jest-raw-loader": "^1.0.1",
     "node-fetch": "^2.6.6",
     "prettier": "^2.4.1",
-    "react-scripts": "^4.0.3",
     "react-test-renderer": "^16.0.2",
-    "sass": "^1.43.4"
+    "sass": "^1.43.4",
+    "sass-loader": "^10.2.0",
+    "webpack": "^4.46.0"
   },
   "volta": {
     "node": "16.13.0",

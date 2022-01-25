@@ -1,4 +1,4 @@
-(function (f) {
+export default (function (f) {
   if (typeof exports === 'object' && typeof module !== 'undefined') {
     module.exports = f();
   } else if (typeof define === 'function' && define.amd) {
