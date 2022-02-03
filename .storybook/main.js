@@ -15,7 +15,7 @@ module.exports = {
 
     // Resolve "browser" field in package.json (Origami)
     config.resolve.aliasFields = ['browser'];
-    config.resolve.mainFields = ['main', 'browser'];
+    config.resolve.mainFields = ['browser', 'main'];
 
     config.module.rules.push({
       test: /\.scss$/,

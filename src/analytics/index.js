@@ -5,7 +5,7 @@
 
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import OTracking from '@financial-times/o-tracking';
+import * as nTracking from '@financial-times/n-tracking';
 import { flagsPropType } from '../shared/proptypes';
 import { spoorTrackingPixel } from '../shared/helpers';
 
@@ -44,20 +44,23 @@ const Analytics = ({ id, tracking, flags }) => {
         }
 
         // Setup
-        OTracking.init({
-          server: 'https://spoor-api.ft.com/px.gif',
-          system: {
-            is_live:
-              typeof properties.is_live === 'string' ? properties.is_live.toLowerCase() : false,
-          },
-          context: { product: properties.product || 'IG' },
+        const appContext = {
+          product: properties.product || 'IG',
+          ...pageData,
+        }
+
+        const oTracking = nTracking.init({
+          appContext,
         });
 
         // Page
-        OTracking.page(pageData);
+        oTracking.page(pageData);
 
         // Links
-        OTracking.click.init();
+        oTracking.click.init();
+
+        // Attention tracking
+        nTracking.trackers.pageAttention();
       } catch (e) {
         console.error(e);
       }
