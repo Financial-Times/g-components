@@ -12,7 +12,7 @@ import { spoorTrackingPixel } from '../shared/helpers';
 // Disables warning for dangerouslySetInnerHTML because we kiiiiinda need it here.
 /* eslint-disable react/no-danger */
 
-const Analytics = ({ id, tracking, flags }) => {
+const Analytics = ({ id, tracking, flags, scrollDepthTarget }) => {
   useEffect(() => {
     (async () => {
       try {
@@ -60,7 +60,7 @@ const Analytics = ({ id, tracking, flags }) => {
         oTracking.click.init();
 
         // Attention tracking
-        nTracking.trackers.pageAttention();
+        nTracking.trackers.pageAttention({ target: scrollDepthTarget });
       } catch (e) {
         console.error(e);
       }
@@ -132,12 +132,14 @@ Analytics.propTypes = {
   tracking: PropTypes.shape({
     micrositeName: PropTypes.string,
   }),
+  scrollDepthTarget: PropTypes.string,
 };
 
 Analytics.defaultProps = {
   tracking: {
     micrositeName: undefined,
   },
+  scrollDepthTarget: '.article-body'
 };
 
 export default Analytics;
