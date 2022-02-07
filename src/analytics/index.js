@@ -49,15 +49,10 @@ const Analytics = ({ id, tracking, flags, scrollDepthTarget }) => {
           ...pageData,
         }
 
+        // n-tracking's init function sets up page view and click event tracking
         const oTracking = nTracking.init({
           appContext,
         });
-
-        // Page
-        oTracking.page(pageData);
-
-        // Links
-        oTracking.click.init();
 
         // Attention tracking
         nTracking.trackers.pageAttention({ target: scrollDepthTarget });
