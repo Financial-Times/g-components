@@ -16,7 +16,7 @@ const FormattedNumber = ({ x, spellBelowTen }) => {
 
   if (Number.isNaN(num)) {
     setNumber(null);
-    return;
+    return null;
   }
 
   // Find if negative
@@ -66,10 +66,9 @@ const FormattedNumber = ({ x, spellBelowTen }) => {
 
   if (nAbs < 10 && spellBelowTen) {
     number = spellOutNumber(signedNumber);
-    return;
+  } else {
+    number = signedNumber;
   }
-
-  number = signedNumber;
 
   return number ? (
     <span>
