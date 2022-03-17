@@ -4548,12 +4548,92 @@ exports[`Storyshots Core/Footer Example 1`] = `
 
 exports[`Storyshots Core/FormattedNumber Examples 1`] = `
 Array [
+  <span>
+    3
+    
+    
+  </span>,
   <br />,
+  <span>
+    three
+    
+    
+  </span>,
   <br />,
+  <span>
+    1
+    <span
+      aria-hidden="true"
+    >
+      k
+    </span>
+    <span
+      className="sr-only"
+    >
+       
+      thousand
+    </span>
+  </span>,
   <br />,
+  <span>
+    1
+    <span
+      aria-hidden="true"
+    >
+      mn
+    </span>
+    <span
+      className="sr-only"
+    >
+       
+      million
+    </span>
+  </span>,
   <br />,
+  <span>
+    5.7
+    <span
+      aria-hidden="true"
+    >
+      bn
+    </span>
+    <span
+      className="sr-only"
+    >
+       
+      billion
+    </span>
+  </span>,
   <br />,
+  <span>
+    1
+    <span
+      aria-hidden="true"
+    >
+      tn
+    </span>
+    <span
+      className="sr-only"
+    >
+       
+      trillion
+    </span>
+  </span>,
   <br />,
+  <span>
+    1
+    <span
+      aria-hidden="true"
+    >
+       quadrillion
+    </span>
+    <span
+      className="sr-only"
+    >
+       
+      quadrillion
+    </span>
+  </span>,
   <br />,
 ]
 `;
