@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { round, n_spell as spellOutNumber } from '@financial-times/format-number';
 import './styles.scss';
