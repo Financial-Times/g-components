@@ -4546,6 +4546,18 @@ exports[`Storyshots Core/Footer Example 1`] = `
 </footer>
 `;
 
+exports[`Storyshots Core/FormattedNumber Examples 1`] = `
+Array [
+  <br />,
+  <br />,
+  <br />,
+  <br />,
+  <br />,
+  <br />,
+  <br />,
+]
+`;
+
 exports[`Storyshots Core/Grid/Grid Default grid 1`] = `
 Array [
   <div
