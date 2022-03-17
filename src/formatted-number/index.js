@@ -8,9 +8,9 @@ const trimNumber = (n) => {
 };
 
 const FormattedNumber = ({ x, spellBelowTen }) => {
-  const [number, setNumber] = useState(null);
-  const [shortSuffix, setShortSuffix] = useState('');
-  const [accessibleSuffix, setAccessibleSuffix] = useState('');
+  let number;
+  let shortSuffix;
+  let accessibleSuffix;
 
   useEffect(() => {
     const num = Number(x); // Ensure typed as Number
@@ -30,32 +30,32 @@ const FormattedNumber = ({ x, spellBelowTen }) => {
     let n;
 
     if (n_abs < 1e3) {
-      setShortSuffix('');
-      setAccessibleSuffix('');
+      shortSuffix = '';
+      accessibleSuffix = '';
       n = trimNumber(round(n_abs));
     } else if (n_abs < 1e6) {
-      setShortSuffix('k');
-      setAccessibleSuffix('thousand');
+      shortSuffix = 'k';
+      accessibleSuffix = 'thousand';
       n = trimNumber(round(n_abs / 1e3));
     } else if (n_abs < 1e9) {
-      setShortSuffix('mn');
-      setAccessibleSuffix('million');
+      shortSuffix = 'mn';
+      accessibleSuffix = 'million';
       n = trimNumber(round(n_abs / 1e6));
     } else if (n_abs < 1e12) {
-      setShortSuffix('bn');
-      setAccessibleSuffix('billion');
+      shortSuffix = 'bn';
+      accessibleSuffix = 'billion';
       n = trimNumber(round(n_abs / 1e9));
     } else if (n_abs < 1e15) {
-      setShortSuffix('tn');
-      setAccessibleSuffix('trillion');
+      shortSuffix = 'tn';
+      accessibleSuffix = 'trillion';
       n = trimNumber(round(n_abs / 1e12));
     } else if (n_abs < 1e18) {
-      setShortSuffix(' quadrillion');
-      setAccessibleSuffix('quadrillion');
+      shortSuffix = ' quadrillion';
+      accessibleSuffix = 'quadrillion';
       n = trimNumber(round(n_abs / 1e15));
     } else {
-      setShortSuffix('');
-      setAccessibleSuffix('');
+      shortSuffix = '';
+      accessibleSuffix = '';
       n = new Intl.NumberFormat('en-GB', {
         maximumSignificantDigits: 3,
         notation: 'scientific',
@@ -66,11 +66,11 @@ const FormattedNumber = ({ x, spellBelowTen }) => {
     const signed_number = n_sgn + n;
 
     if (n_abs < 10 && spellBelowTen) {
-      setNumber(spellOutNumber(signed_number));
+      number = spellOutNumber(signed_number);
       return;
     }
 
-    setNumber(signed_number);
+    number = signed_number;
   }, [x]);
 
   return number ? (
