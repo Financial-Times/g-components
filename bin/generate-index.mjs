@@ -10,7 +10,7 @@ import glob from 'glob';
 import camelcase from 'camelcase';
 
 const srcBase = join(process.cwd(), 'src/');
-console.log(srcBase);
+
 // Get list of all component indices
 const components = glob
   .sync(join(srcBase, '**/index.js'))
