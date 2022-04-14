@@ -31,7 +31,9 @@
     ]
   },
   "peerDependencies": {
-    "@storybook/react": "6.x"
+    "@storybook/react": "6.x",
+    "react": "^16",
+    "react-dom": "^16"
   },
   "dependencies": {
     "@financial-times/ads-legacy-o-ads": "^3.3.0",
@@ -69,9 +71,7 @@
     "d3-scale": "^4.0.2",
     "ftdomdelegate": "^5.0.0",
     "prop-types": "^15.7.2",
-    "react": "^16",
     "react-autosuggest": "^10.1.0",
-    "react-dom": "^16",
     "react-modal": "^3.14.4",
     "react-scroll-percentage": "^4.2.0",
     "remove-accents": "^0.4.2",
