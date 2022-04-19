@@ -13,20 +13,7 @@ references:
     attach_workspace:
       at: ~/project
 
-  npm_cache_key: &npm_cache_key v1-dependency-npm-{{ checksum "package-lock.json" }}
-
   ssh_cache_key: &ssh_cache_key gcomponents-rev{{ .Revision }}
-
-  restore_ssh: &restore_ssh
-    restore_cache:
-      keys:
-        - *ssh_cache_key
-
-  restore_node_modules: &restore_node_modules
-    restore_cache:
-      keys:
-        - *npm_cache_key
-        - v1-dependency-npm-
 
   cache_node_modules: &cache_node_modules
     save_cache:
@@ -49,11 +36,9 @@ jobs:
           key: *ssh_cache_key
           paths:
             - ~/.ssh
-      - *restore_node_modules
       - run:
           name: Install dependencies
           command: npm ci
-      - *cache_node_modules
       - persist_to_workspace:
           root: .
           paths:
@@ -78,19 +63,11 @@ jobs:
           name: Setup npm credentials
           command: echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ${HOME}/.npmrc
       - run:
+          name: Generate build
+          command: npm run build
+      - run:
           name: Publish npm package
           command: npx npm-prepublish --verbose && npm publish --access public
-
-  release_ghpr:
-    <<: *default_container_config
-    steps:
-      - *attach_workspace
-      - run:
-          name: Setup npm credentials
-          command: printf "registry=https://npm.pkg.github.com/\n//npm.pkg.github.com/:_authToken=${GHPR_AUTH_TOKEN}" > ${HOME}/.npmrc
-      - run:
-          name: Publish npm package
-          command: npx npm-prepublish --verbose && npm publish
 
 workflows:
   version: 2
