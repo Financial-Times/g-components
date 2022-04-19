@@ -11,6 +11,7 @@
       "node": "./build/g-components.js",
       "default": "./build/g-components.mjs"
     },
+    "./*/index.css": "./build/*/index.css",
     "./*": {
       "node": "./build/*/index.js",
       "default": "./build/*/index.mjs"
@@ -70,6 +71,7 @@
     "d3-array": "^3.1.1",
     "d3-scale": "^4.0.2",
     "ftdomdelegate": "^5.0.0",
+    "next": "^12.1.5",
     "prop-types": "^15.7.2",
     "react-autosuggest": "^10.1.0",
     "react-modal": "^3.14.4",
