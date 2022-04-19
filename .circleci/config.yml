@@ -15,12 +15,6 @@ references:
 
   ssh_cache_key: &ssh_cache_key gcomponents-rev{{ .Revision }}
 
-  cache_node_modules: &cache_node_modules
-    save_cache:
-      key: *npm_cache_key
-      paths:
-        - $HOME/.npm
-
   only_version_tags: &only_version_tags
     tags:
       only: /^v.*/
