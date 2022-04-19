@@ -14,7 +14,7 @@ const srcBase = join(process.cwd(), 'src/');
 // Get list of all component indices
 const components = glob
   .sync(join(srcBase, '**/index.js'))
-  .filter((d) => d !== srcBase)
+  .filter((d) => d !== `${srcBase}index.js`)
   .map((d) => [
     dirname(d).replace(srcBase, ''),
     camelcase(basename(dirname(d)), { pascalCase: true }),
