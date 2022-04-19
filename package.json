@@ -4,8 +4,19 @@
   "description": "FT.com Page furniture used in interactive journalism projects, wrapped in React",
   "repository": "https://github.com/Financial-Times/g-components",
   "license": "ISC",
-  "main": "build/g-components.js",
-  "module": "build/g-components.esm.js",
+  "main": "./build/g-components.js",
+  "module": "./build/g-components.mjs",
+  "exports": {
+    ".": {
+      "node": "./build/g-components.js",
+      "default": "./build/g-components.mjs"
+    },
+    "./*/index.css": "./build/*/index.css",
+    "./*": {
+      "node": "./build/*/index.js",
+      "default": "./build/*/index.mjs"
+    }
+  },
   "jest": {
     "testEnvironment": "jsdom",
     "resolver": "<rootDir>/.jest/resolver.js",
@@ -21,7 +32,9 @@
     ]
   },
   "peerDependencies": {
-    "@storybook/react": "6.x"
+    "@storybook/react": "6.x",
+    "react": "^16",
+    "react-dom": "^16"
   },
   "dependencies": {
     "@financial-times/ads-legacy-o-ads": "^3.3.0",
@@ -58,10 +71,9 @@
     "d3-array": "^3.1.1",
     "d3-scale": "^4.0.2",
     "ftdomdelegate": "^5.0.0",
+    "next": "^12.1.5",
     "prop-types": "^15.7.2",
-    "react": "^16",
     "react-autosuggest": "^10.1.0",
-    "react-dom": "^16",
     "react-modal": "^3.14.4",
     "react-scroll-percentage": "^4.2.0",
     "remove-accents": "^0.4.2",
@@ -72,7 +84,8 @@
     "storybook": "start-storybook -p 9009",
     "build-storybook": "build-storybook",
     "chromatic": "chromatic",
-    "build": "node build.mjs"
+    "build": "node bin/build.mjs",
+    "prebuild": "node bin/generate-index.mjs"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
@@ -102,6 +115,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "glob": "^8.0.1",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26",
     "jest-esm-transformer": "^1.0.0",

@@ -28,6 +28,7 @@ export * as Expander from './expander';
 export * as Feature from './feature';
 export * as FlourishEmbed from './flourish-embed';
 export * as Footer from './footer';
+export * as FormattedNumber from './formatted-number';
 export * as Grid from './grid';
 export * as Header from './header';
 export * as HtmlHead from './html-head';
