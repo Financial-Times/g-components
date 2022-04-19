@@ -8,9 +8,9 @@ module.exports = require('babel-jest').createTransformer({
         },
         useBuiltIns: 'usage',
         corejs: 3,
+        modules: 'auto'
       },
     ],
     '@babel/preset-react',
   ],
-  plugins: ['@babel/plugin-transform-modules-commonjs'],
 });

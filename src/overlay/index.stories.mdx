@@ -1,10 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-// import { withKnobs, boolean } from '@storybook/addon-knobs';
 import Overlay from './';
-
-export const defaultProps = (isShowing) => ({
-  isShowing: true,
-});
 
 <Meta title="Core/Overlay" component={Overlay} />
 
@@ -14,7 +9,7 @@ export const defaultProps = (isShowing) => ({
   <Story name="Example">
     <div>
       Use the Knobs toggle to show overlay
-      <Overlay {...defaultProps(false)}>Overlay content</Overlay>
+      <Overlay isShowing>Overlay content</Overlay>
     </div>
   </Story>
 </Canvas>

@@ -4,17 +4,17 @@
   "description": "FT.com Page furniture used in interactive journalism projects, wrapped in React",
   "repository": "https://github.com/Financial-Times/g-components",
   "license": "ISC",
-  "main": "./build/g-components.js",
-  "module": "./build/g-components.mjs",
+  "main": "./build/g-components.cjs",
+  "module": "./build/g-components.js",
   "exports": {
     ".": {
-      "node": "./build/g-components.js",
-      "default": "./build/g-components.mjs"
+      "node": "./build/g-components.cjs",
+      "default": "./build/g-components.js"
     },
     "./*/index.css": "./build/*/index.css",
     "./*": {
-      "node": "./build/*/index.js",
-      "default": "./build/*/index.mjs"
+      "node": "./build/*/index.cjs",
+      "default": "./build/*/index.js"
     }
   },
   "jest": {
@@ -33,8 +33,8 @@
   },
   "peerDependencies": {
     "@storybook/react": "6.x",
-    "react": "^16",
-    "react-dom": "^16"
+    "react": ">=16",
+    "react-dom": ">=16"
   },
   "dependencies": {
     "@financial-times/ads-legacy-o-ads": "^3.3.0",
@@ -89,17 +89,14 @@
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.3",
-    "@babel/plugin-transform-modules-commonjs": "^7.16.0",
     "@babel/preset-env": "^7.16.8",
     "@financial-times/jest-browser-resolver": "^1.0.2",
     "@storybook/addon-a11y": "^6.4.22",
     "@storybook/addon-docs": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-knobs": "^6.4.0",
     "@storybook/addon-storyshots": "^6.4.22",
     "@storybook/addons": "^6.4.22",
     "@storybook/react": "^6.4.22",
-    "babel-plugin-require-context-hook": "^1.0.0",
     "chromatic": "^6.0.6",
     "enhanced-resolve-jest": "^1.1.0",
     "esbuild": "^0.14.11",
@@ -122,7 +119,7 @@
     "jest-raw-loader": "^1.0.1",
     "node-fetch": "^2.6.6",
     "prettier": "^2.4.1",
-    "react-test-renderer": "^16.0.2",
+    "react-test-renderer": "*",
     "sass": "^1.43.4",
     "sass-loader": "^10.2.0",
     "webpack": "^4.46.0"
@@ -130,5 +127,13 @@
   "volta": {
     "node": "16.13.0",
     "npm": "8.1.4"
+  },
+  "overrides": {
+    "react": "$react",
+    "react-dom": "$react-dom",
+    "@financial-times/n-tracking": {
+      "react": "$react",
+      "react-dom": "$react-dom"
+    }
   }
 }

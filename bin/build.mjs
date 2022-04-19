@@ -22,7 +22,7 @@ for (const format of ['cjs', 'esm']) {
   // Build monolith bundle
   await build({
     ...baseConfig,
-    outfile: format === 'cjs' ? 'build/g-components.js' : 'build/g-components.mjs',
+    outfile: format === 'cjs' ? 'build/g-components.cjs' : 'build/g-components.js',
     entryPoints: ['src/index.js'],
   }).catch(() => process.exit(1));
 
@@ -35,7 +35,7 @@ for (const format of ['cjs', 'esm']) {
     await build({
       ...baseConfig,
       entryPoints: [componentPath],
-      outfile: format === 'cjs' ? `build/${component}/index.js` : `build/${component}/index.mjs`,
+      outfile: format === 'cjs' ? `build/${component}/index.cjs` : `build/${component}/index.js`,
     }).catch(() => process.exit(1));
   }
 }
