@@ -40,7 +40,7 @@
     "@financial-times/ads-legacy-o-ads": "^3.3.0",
     "@financial-times/format-number": "^1.0.0",
     "@financial-times/ft-date-format": "^2.1.0",
-    "@financial-times/n-tracking": "^4.3.0",
+    "@financial-times/n-tracking": "^5.1.0",
     "@financial-times/o-buttons": "^7.2.0",
     "@financial-times/o-colors": "^6.4.0",
     "@financial-times/o-comments": "^8.3.0",
@@ -105,7 +105,6 @@
     "eslint-config-airbnb": "^19.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-node-browser": "0.0.2",
-    "eslint-mdx": "^1.16.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-mdx": "^1.16.0",
@@ -119,7 +118,7 @@
     "jest-raw-loader": "^1.0.1",
     "node-fetch": "^2.6.6",
     "prettier": "^2.4.1",
-    "react-test-renderer": "*",
+    "react-test-renderer": "^17.0.2",
     "sass": "^1.43.4",
     "sass-loader": "^10.2.0",
     "webpack": "^4.46.0"
@@ -130,11 +129,7 @@
   },
   "overrides": {
     "react": "$react",
-    "react-dom": "$react-dom",
-    "@financial-times/n-tracking": {
-      "react": "$react",
-      "react-dom": "$react-dom"
-    }
+    "react-dom": "$react-dom"
   },
   "files": [
     "./build"
