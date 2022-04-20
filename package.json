@@ -132,6 +132,6 @@
     "react-dom": "$react-dom"
   },
   "files": [
-    "./build"
+    "./build/"
   ]
 }
