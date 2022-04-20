@@ -60,9 +60,9 @@ export const usePortal = (parent) => {
  */
 export const useAds = (config, enabled = true) => {
   useEffect(() => {
-    const { default: OAds } = await import('@financial-times/ads-legacy-o-ads');
     // Async side-effects should be in an IIFE in useEffect; don't make the CB async!
     (async () => {
+      const { default: OAds } = await import('@financial-times/ads-legacy-o-ads');
       try {
         if (enabled) {
           const initialised = await OAds.init({
