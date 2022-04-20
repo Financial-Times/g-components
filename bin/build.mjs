@@ -24,6 +24,7 @@ for (const format of ['cjs', 'esm']) {
     ...baseConfig,
     outfile: format === 'cjs' ? 'build/g-components.cjs' : 'build/g-components.js',
     entryPoints: ['src/index.js'],
+    format,
   }).catch(() => process.exit(1));
 
   // Build individual bundles
@@ -35,6 +36,7 @@ for (const format of ['cjs', 'esm']) {
     await build({
       ...baseConfig,
       entryPoints: [componentPath],
+      format,
       outfile: format === 'cjs' ? `build/${component}/index.cjs` : `build/${component}/index.js`,
     }).catch(() => process.exit(1));
   }
