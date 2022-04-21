@@ -4,7 +4,7 @@ import glob from 'glob';
 import { basename, dirname } from 'path';
 
 const baseConfig = {
-  minify: true,
+  minify: false,
   sourcemap: true,
   loader: {
     '.js': 'jsx',

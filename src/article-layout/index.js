@@ -19,7 +19,7 @@ export const Context = createContext({});
 
 const ArticleLayout = ({ flags, ads, children, ...props }) => {
   const breakpoint = useLayoutChangeEvents();
-  useAds(ads, flags.ads);
+  // useAds(ads, flags.ads);
 
   return (
     <Context.Provider
@@ -30,9 +30,9 @@ const ArticleLayout = ({ flags, ads, children, ...props }) => {
         ...props,
       }}
     >
-      {flags.analytics && <Analytics {...{ ...props, flags, breakpoint }} />}
+      {/* {flags.analytics && <Analytics {...{ ...props, flags, breakpoint }} />} */}
       {flags.ads && <TopAd />}
-      {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />}
+      {/* {flags.header && <Header key="header" {...{ ...props, flags, breakpoint }} />} */}
       {children}
       {flags.onwardjourney && <OnwardJourney key="oj" {...{ ...props, breakpoint }} />}
       {flags.comments && <Comments key="comments" {...{ ...props, flags, breakpoint }} />}

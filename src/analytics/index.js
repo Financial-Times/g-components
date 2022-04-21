@@ -5,7 +5,6 @@
 
 import React, { Fragment, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import * as nTracking from '@financial-times/n-tracking';
 import { flagsPropType } from '../shared/proptypes';
 import { spoorTrackingPixel } from '../shared/helpers';
 
@@ -15,6 +14,7 @@ import { spoorTrackingPixel } from '../shared/helpers';
 const Analytics = ({ id, tracking, flags, scrollDepthTarget }) => {
   useEffect(() => {
     (async () => {
+      const nTracking = await import('@financial-times/n-tracking');
       try {
         if (!window.cutsTheMustard) return;
         const pageData = {
@@ -47,7 +47,7 @@ const Analytics = ({ id, tracking, flags, scrollDepthTarget }) => {
         const appContext = {
           product: properties.product || 'IG',
           ...pageData,
-        }
+        };
 
         // n-tracking's init function sets up page view and click event tracking
         const oTracking = nTracking.init({
@@ -134,7 +134,7 @@ Analytics.defaultProps = {
   tracking: {
     micrositeName: undefined,
   },
-  scrollDepthTarget: '.article-body'
+  scrollDepthTarget: '.article-body',
 };
 
 export default Analytics;
