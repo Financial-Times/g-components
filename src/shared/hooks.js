@@ -79,7 +79,7 @@ export const useAds = (config, enabled = true) => {
           slots.forEach(initialised.slots.initSlot.bind(initialised.slots));
         }
       } catch (e) {
-        if (!global.STORYBOOK_ENV) console.error(e); // eslint-disable-line no-console
+        if (typeof global === 'undefined' || !global?.STORYBOOK_ENV) console.error(e); // eslint-disable-line no-console
       }
     })();
   }, [config, enabled]);
@@ -110,7 +110,7 @@ export const useLayoutChangeEvents = () => {
       };
     } catch (e) {
       // Suppress errors in Jest
-      if (!global.STORYBOOK_ENV) console.error(e); // eslint-disable-line no-console
+      if (typeof global === 'undefined' || !global?.STORYBOOK_ENV) console.error(e); // eslint-disable-line no-console
     }
   }, []);
 
