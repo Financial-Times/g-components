@@ -5,6 +5,7 @@
   "repository": "https://github.com/Financial-Times/g-components",
   "license": "ISC",
   "module": "./build/g-components.js",
+  "type": "module",
   "exports": {
     ".": "./build/g-components.js",
     "./*/index.css": "./build/*/index.css",
