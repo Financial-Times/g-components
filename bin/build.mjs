@@ -17,12 +17,12 @@ const baseConfig = {
     }),
   ],
 };
-
+/* eslint-disable no-restricted-syntax,no-await-in-loop */
 for (const format of ['cjs', 'esm']) {
   // Build monolith bundle
   await build({
     ...baseConfig,
-    outfile: format === 'cjs' ? 'build/g-components.cjs' : 'build/g-components.js',
+    outfile: format === 'cjs' ? 'build/g-components.js' : 'build/g-components.mjs',
     entryPoints: ['src/index.js'],
     format,
   }).catch(() => process.exit(1));
@@ -37,7 +37,7 @@ for (const format of ['cjs', 'esm']) {
       ...baseConfig,
       entryPoints: [componentPath],
       format,
-      outfile: format === 'cjs' ? `build/${component}/index.cjs` : `build/${component}/index.js`,
+      outfile: format === 'cjs' ? `build/${component}/index.js` : `build/${component}/index.mjs`,
     }).catch(() => process.exit(1));
   }
 }
