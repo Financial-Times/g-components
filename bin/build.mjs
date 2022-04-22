@@ -13,6 +13,7 @@ const baseConfig = {
   external: ['react', 'react-dom'],
   plugins: [
     sassPlugin({
+      type: 'style',
       loadPaths: ['node_modules', 'node_modules/@financial-times'],
     }),
   ],

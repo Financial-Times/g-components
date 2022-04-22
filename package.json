@@ -8,14 +8,15 @@
   "module": "./build/g-components.mjs",
   "main": "./build/g-components.js",
   "exports": {
-    ".": {
-      "default": "./build/g-components.mjs",
-      "require": "./build/g-components.js"
-    },
-    "./*/index.css": "./build/*/index.css",
     "./*": {
-      "default": "./build/*/index.mjs",
-      "require": "./build/*/index.js"
+      "require": "./build/*/index.js",
+      "import": "./build/*/index.js",
+      "default": "./build/*/index.js"
+    },
+    ".": {
+      "require": "./build/g-components.js",
+      "import": "./build/g-components.mjs",
+      "default": "./build/g-components.js"
     }
   },
   "jest": {
