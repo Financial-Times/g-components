@@ -8,6 +8,11 @@
   "module": "./build/g-components.mjs",
   "main": "./build/g-components.js",
   "exports": {
+    "./*/styles.css": {
+      "require": "./build/*/index.css",
+      "import": "./build/*/index.css",
+      "default": "./build/*/index.css"
+    },
     "./*": {
       "require": "./build/*/index.js",
       "import": "./build/*/index.js",

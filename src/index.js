@@ -1,9 +1,7 @@
 /**
- * @file
- * Entry point (automatically generated)
- */
-
-import './shared/critical-path.scss';
+  * @file
+  * Entry point (automatically generated)
+  */
 
 export * as Accordion from './accordion';
 export * as Ads from './ads';

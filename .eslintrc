@@ -19,7 +19,8 @@
     "requireConfigFile": false,
     "babelOptions": {
       "presets": ["@babel/preset-react"]
-    }
+    },
+    "plugins": ["importAssertions"]
   },
   "settings": {
     "import/resolver": {

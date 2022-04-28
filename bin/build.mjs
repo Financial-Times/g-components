@@ -2,6 +2,11 @@ import { sassPlugin } from 'esbuild-sass-plugin';
 import { build } from 'esbuild';
 import glob from 'glob';
 import { basename, dirname } from 'path';
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+
+const pkg = require('../package.json');
 
 const baseConfig = {
   minify: false,
@@ -10,10 +15,9 @@ const baseConfig = {
     '.js': 'jsx',
   },
   bundle: true,
-  external: ['react', 'react-dom'],
+  external: [...Object.keys(pkg.dependencies), ...Object.keys(pkg.peerDependencies)],
   plugins: [
     sassPlugin({
-      type: 'style',
       loadPaths: ['node_modules', 'node_modules/@financial-times'],
     }),
   ],
