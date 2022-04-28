@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import Overlay from '@financial-times/o-overlay/main.js';
+import Overlay from '@financial-times/o-overlay/main';
 
 /**
  * Overlay hook to wrap oOverlay methods and state
