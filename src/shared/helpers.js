@@ -5,7 +5,7 @@
 
 import React from 'react';
 import removeMarkdown from 'remove-markdown';
-import { getGridBreakpoints } from '@financial-times/o-grid/main';
+import { getGridBreakpoints } from '@financial-times/o-grid/main.js';
 
 export function plain(str, stripListLeaders = true) {
   return removeMarkdown(str, { stripListLeaders, gfm: true });

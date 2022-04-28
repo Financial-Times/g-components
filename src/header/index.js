@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useRef } from 'react';
-import OHeader from '@financial-times/o-header/main';
+import OHeader from '@financial-times/o-header/main.js';
 import './styles.scss';
 import { flagsPropType } from '../shared/proptypes';
 
