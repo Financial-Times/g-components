@@ -15,7 +15,7 @@
     },
     "./*": {
       "require": "./build/*/index.js",
-      "import": "./build/*/index.js",
+      "import": "./build/*/index.mjs",
       "default": "./build/*/index.js"
     },
     ".": {
