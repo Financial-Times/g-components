@@ -5,7 +5,7 @@
 
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import OComments from '@financial-times/o-comments';
+import OComments from '@financial-times/o-comments/main';
 import { flagsPropType } from '../shared/proptypes';
 import './styles.scss';
 

@@ -5,7 +5,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import OTable from '@financial-times/o-table';
+import OTable from '@financial-times/o-table/main';
 import classnames from 'classnames';
 import './styles.scss';
 

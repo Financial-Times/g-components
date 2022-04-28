@@ -5,7 +5,7 @@
 
 import React, { Fragment, useRef, useEffect, forwardRef } from 'react';
 import PropTypes from 'prop-types';
-import ODate from '@financial-times/o-date';
+import ODate from '@financial-times/o-date/main';
 import { bylinesPropType } from '../shared/proptypes';
 import './styles.scss';
 

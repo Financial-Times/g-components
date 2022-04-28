@@ -4,7 +4,7 @@
  */
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
-import ODate from '@financial-times/o-date';
+import ODate from '@financial-times/o-date/main';
 import ftDateFormat from '@financial-times/ft-date-format';
 
 const DateTime = ({ datestamp }) => {

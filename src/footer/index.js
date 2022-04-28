@@ -3,7 +3,7 @@
  * Footer component
  */
 import React, { useEffect, useRef } from 'react';
-import OFooter from '@financial-times/o-footer';
+import OFooter from '@financial-times/o-footer/main';
 import './styles.scss';
 
 const Footer = () => {
@@ -118,7 +118,9 @@ const Footer = () => {
                     href="https://help.ft.com/help/legal/slavery-statement/"
                     data-trackable="Slavery Statement &amp; Policies"
                   >
-                    <span className="o-footer__matrix-link__copy">Slavery Statement &amp; Policies</span>
+                    <span className="o-footer__matrix-link__copy">
+                      Slavery Statement &amp; Policies
+                    </span>
                   </a>
                 </div>
               </div>
@@ -307,7 +309,11 @@ const Footer = () => {
             </div>
             <div className="o-footer__matrix-group o-footer__matrix-group--1">
               <h3 className="o-footer__matrix-title o-footer__matrix-title--link">
-                <a className='o-footer__matrix-link o-footer__matrix-link--more' id="o-footer-section-5" href="https://ft.com/more-from-ft-group">
+                <a
+                  className="o-footer__matrix-link o-footer__matrix-link--more"
+                  id="o-footer-section-5"
+                  href="https://ft.com/more-from-ft-group"
+                >
                   <span className="o-footer__matrix-link__copy">More from the FT Group</span>
                 </a>
               </h3>
