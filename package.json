@@ -8,6 +8,7 @@
   "module": "./build/g-components.mjs",
   "main": "./build/g-components.js",
   "exports": {
+    "./package.json": "./package.json",
     "./*/styles.css": {
       "require": "./build/*/index.css",
       "import": "./build/*/index.css",
