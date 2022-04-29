@@ -9,6 +9,8 @@
   "main": "./build/g-components.js",
   "exports": {
     "./package.json": "./package.json",
+    "./critical-path.scss": "./src/shared/critical-path.scss",
+    "./shared/*": "./src/shared/*",
     "./*/styles.css": {
       "require": "./build/*/index.css",
       "import": "./build/*/index.css",
@@ -140,6 +142,7 @@
     "react-dom": "$react-dom"
   },
   "files": [
-    "build/"
+    "build/",
+    "src/shared/"
   ]
 }
