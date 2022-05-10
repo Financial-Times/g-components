@@ -3,6 +3,8 @@
   * Entry point (automatically generated)
   */
 
+  import './shared/critical-path.scss';
+
 export * as Accordion from './accordion';
 export * as Ads from './ads';
 export * as Analytics from './analytics';

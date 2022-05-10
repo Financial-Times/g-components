@@ -27,6 +27,8 @@ writeFile(
   * Entry point (automatically generated)
   */
 
+  import './shared/critical-path.scss';
+
 ${components
   .map(([path, identifier]) => `export * as ${identifier} from './${path}';`)
   .join('\n')}`,

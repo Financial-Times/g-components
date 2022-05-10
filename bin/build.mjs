@@ -23,7 +23,7 @@ const baseConfig = {
   ],
 };
 /* eslint-disable no-restricted-syntax,no-await-in-loop */
-for (const format of ['cjs', 'esm']) {
+for (const format of ['cjs' /*, 'esm'*/]) {
   // Build monolith bundle
   await build({
     ...baseConfig,

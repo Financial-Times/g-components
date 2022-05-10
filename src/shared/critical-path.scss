@@ -3,12 +3,12 @@ $o-editorial-typography-is-silent: false;
 $o-editorial-layout-is-silent: false;
 
 @import './_globals.scss';
-@import 'o-normalise/main.scss';
-@import 'o-colors/main.scss';
-@import 'o-grid/main.scss';
-@import 'o-typography/main';
-@import 'o-editorial-typography/main';
-@import 'o-editorial-layout/main';
+@import '@financial-times/o-normalise/main.scss';
+@import '@financial-times/o-colors/main.scss';
+@import '@financial-times/o-grid/main.scss';
+@import '@financial-times/o-typography/main';
+@import '@financial-times/o-editorial-typography/main';
+@import '@financial-times/o-editorial-layout/main';
 
 @include oGridSurfaceLayoutSizes;
 @include oNormalise();
