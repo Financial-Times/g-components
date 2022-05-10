@@ -11,6 +11,7 @@ const pkg = require('../package.json');
 const baseConfig = {
   minify: false,
   sourcemap: true,
+  target: 'es2016',
   loader: {
     '.js': 'jsx',
   },
