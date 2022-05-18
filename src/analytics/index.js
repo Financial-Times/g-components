@@ -3,7 +3,7 @@
  * Analytics code
  */
 
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { flagsPropType } from '../shared/proptypes';
 import { spoorTrackingPixel } from '../shared/helpers';
@@ -12,54 +12,59 @@ import { spoorTrackingPixel } from '../shared/helpers';
 /* eslint-disable react/no-danger */
 
 const Analytics = ({ id, tracking, flags, scrollDepthTarget }) => {
+  const [isInitialised, setIsInitialised] = useState(false);
+
   useEffect(() => {
-    (async () => {
-      const nTracking = await import('@financial-times/n-tracking');
-      try {
-        if (!window.cutsTheMustard) return;
-        const pageData = {
-          content: { asset_type: 'interactive' },
-        };
+    if (!isInitialised) {
+      (async () => {
+        setIsInitialised(true);
+        const nTracking = await import('@financial-times/n-tracking');
+        try {
+          if (!window.cutsTheMustard) return;
+          const pageData = {
+            content: { asset_type: 'interactive' },
+          };
 
-        const properties = [].reduce.call(
-          document.querySelectorAll('head meta[property^="ft.track:"]') || [],
-          (o, el) => {
-            if (!el) return o;
+          const properties = [].reduce.call(
+            document.querySelectorAll('head meta[property^="ft.track:"]') || [],
+            (o, el) => {
+              if (!el) return o;
 
-            const attName = el.getAttribute('property').replace('ft.track:', '');
-            o[attName] = el.getAttribute('content'); // eslint-disable-line no-param-reassign
-            return o;
-          },
-          {},
-        );
+              const attName = el.getAttribute('property').replace('ft.track:', '');
+              o[attName] = el.getAttribute('content'); // eslint-disable-line no-param-reassign
+              return o;
+            },
+            {},
+          );
 
-        const contentId = id || document.documentElement.getAttribute('data-content-id');
+          const contentId = id || document.documentElement.getAttribute('data-content-id');
 
-        if (contentId) {
-          pageData.content.uuid = contentId;
+          if (contentId) {
+            pageData.content.uuid = contentId;
+          }
+
+          if (properties.microsite_name) {
+            pageData.microsite_name = properties.microsite_name;
+          }
+
+          // Setup
+          const appContext = {
+            product: properties.product || 'IG',
+            ...pageData,
+          };
+
+          // n-tracking's init function sets up page view and click event tracking
+          const oTracking = nTracking.init({
+            appContext,
+          });
+
+          // Attention tracking
+          nTracking.trackers.pageAttention({ target: scrollDepthTarget });
+        } catch (e) {
+          console.error(e);
         }
-
-        if (properties.microsite_name) {
-          pageData.microsite_name = properties.microsite_name;
-        }
-
-        // Setup
-        const appContext = {
-          product: properties.product || 'IG',
-          ...pageData,
-        };
-
-        // n-tracking's init function sets up page view and click event tracking
-        const oTracking = nTracking.init({
-          appContext,
-        });
-
-        // Attention tracking
-        nTracking.trackers.pageAttention({ target: scrollDepthTarget });
-      } catch (e) {
-        console.error(e);
-      }
-    })();
+      })();
+    }
   }, [id]);
 
   return (
