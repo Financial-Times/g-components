@@ -16,6 +16,11 @@
       "import": "./build/*/index.css",
       "default": "./build/*/index.css"
     },
+    "./*/index.css": {
+      "require": "./build/*/index.css",
+      "import": "./build/*/index.css",
+      "default": "./build/*/index.css"
+    },
     "./*": "./build/*/index.js",
     ".": "./build/g-components.js"
   },
