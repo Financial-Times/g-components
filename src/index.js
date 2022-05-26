@@ -44,6 +44,7 @@ export * as Onwardjourney from './onwardjourney';
 export * as Overlay from './overlay';
 export * as Progress from './progress';
 export * as Share from './share';
+export * as Shared from './shared';
 export * as StickyHeader from './sticky-header';
 export * as Sticky from './sticky';
 export * as StoryTopper from './story-topper';
