@@ -2,17 +2,20 @@ import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
 const getEmbedUrl = (flourishUrl) => {
-  return flourishUrl.replace(/https:\/\/public\.flourish\.studio\/(visualisation|story)\/(\d+)\//g, 'https://flo.uri.sh/$1/$2/embed?auto=1');
-}
+  return flourishUrl.replace(
+    /https:\/\/public\.flourish\.studio\/(visualisation|story)\/(\d+)\//g,
+    'https://flo.uri.sh/$1/$2/embed?auto=1',
+  );
+};
 
 const FlourishEmbed = ({ url, alt }) => {
   const elRef = useRef(null);
-  
+
   useEffect(() => {
-    window.addEventListener('message', event => {
+    window.addEventListener('message', (event) => {
       if (event.origin === 'https://flo.uri.sh') {
         const eventData = JSON.parse(event.data);
-        if (elRef.current.src === eventData.src.replace('#slide-0', '')) {
+        if (eventData.src && elRef.current.src === eventData.src.replace('#slide-0', '')) {
           elRef.current.height = eventData.height;
         }
       }
