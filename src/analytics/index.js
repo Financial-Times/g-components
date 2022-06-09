@@ -5,6 +5,10 @@
 
 import React, { Fragment, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+import core from '@financial-times/o-tracking/src/javascript/core';
+import { merge } from '@financial-times/o-tracking/src/javascript/utils';
+import { get } from '@financial-times/o-tracking/src/javascript/core/settings';
+import customFlourishAnalytics from '@financial-times/flourish-receive-custom-analytics';
 import { flagsPropType } from '../shared/proptypes';
 import { spoorTrackingPixel } from '../shared/helpers';
 
@@ -56,6 +60,12 @@ const Analytics = ({ id, tracking, flags, scrollDepthTarget }) => {
           // n-tracking's init function sets up page view and click event tracking
           const oTracking = nTracking.init({
             appContext,
+          });
+
+          customFlourishAnalytics.init((data) => {
+            // Merge the event data into the "parent" config data
+            const config = merge(get('config'), data);
+            core.track(config);
           });
 
           // Attention tracking
