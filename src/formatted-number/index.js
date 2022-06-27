@@ -15,7 +15,6 @@ const FormattedNumber = ({ x, spellBelowTen }) => {
   const num = Number(x); // Ensure typed as Number
 
   if (Number.isNaN(num)) {
-    setNumber(null);
     return null;
   }
 
