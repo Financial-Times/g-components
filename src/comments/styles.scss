@@ -1,3 +1,9 @@
-$o-comments-is-silent: false;
+$system-code: 'ig-content';
 @import '../shared/_globals.scss';
 @import '@financial-times/o-comments/main.scss';
+
+@include oComments(
+  $opts: (
+    'coral-talk-iframe': false,
+  )
+);
