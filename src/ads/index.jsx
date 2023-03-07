@@ -65,33 +65,33 @@ Ad.defaultProps = {
 
 Ad.displayName = 'GAd';
 
-// export const TopAd = () => (
-//   <Ad
-//     name="top-ad"
-//     targeting="pos=top;"
-//     reserve="90"
-//     defaultFormat={false}
-//     smallFormat={false}
-//     mediumFormat="Leaderboard,Responsive"
-//     largeFormat="SuperLeaderboard,Leaderboard,Responsive"
-//     extraFormat="Billboard,SuperLeaderboard,Leaderboard,Responsive"
-//   />
-// );
+export const TopAd = () => (
+  <Ad
+    name="top-ad"
+    targeting="pos=top;"
+    reserve="90"
+    defaultFormat={false}
+    smallFormat={false}
+    mediumFormat="Leaderboard,Responsive"
+    largeFormat="SuperLeaderboard,Leaderboard,Responsive"
+    extraFormat="Billboard,SuperLeaderboard,Leaderboard,Responsive"
+  />
+);
 
-// TopAd.displayName = 'GTopAd';
+TopAd.displayName = 'GTopAd';
 
-// export const MiddleAd = () => (
-//   <Ad
-//     name="mid-ad"
-//     targeting="pos=mid;"
-//     reserve="250"
-//     showAdsLabel
-//     defaultFormat="Responsive"
-//     smallFormat="MediumRectangle,Responsive"
-//     mediumFormat="MediumRectangle,Responsive"
-//     largeFormat="MediumRectangle,Responsive"
-//     extraFormat="MediumRectangle,Responsive"
-//   />
-// );
+export const MiddleAd = () => (
+  <Ad
+    name="mid-ad"
+    targeting="pos=mid;"
+    reserve="250"
+    showAdsLabel
+    defaultFormat="Responsive"
+    smallFormat="MediumRectangle,Responsive"
+    mediumFormat="MediumRectangle,Responsive"
+    largeFormat="MediumRectangle,Responsive"
+    extraFormat="MediumRectangle,Responsive"
+  />
+);
 
-// MiddleAd.displayName = 'GMiddleAd';
+MiddleAd.displayName = 'GMiddleAd';

@@ -1,4 +1,5 @@
 import { GridContainer, GridRow, GridChild } from './';
+import './_stories.scss';
 
 export default {
   title: 'Core/Grid/GridRow',
@@ -34,8 +35,4 @@ export const CompactAndGutterlessColumns = {
   ),
 
   name: 'Compact and gutterless columns',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };

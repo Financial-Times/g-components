@@ -1,4 +1,5 @@
 import { GridContainer, GridRow, GridChild } from './';
+import './_stories.scss';
 
 export default {
   title: 'Core/Grid/GridChild',
@@ -78,10 +79,6 @@ export const DefaultUnresponsiveColumns = {
   ),
 
   name: 'Default unresponsive columns',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };
 
 export const OverridabilityOfDefaultAndLayoutSpecificStylesByOtherLayouts = {
@@ -156,10 +153,6 @@ export const OverridabilityOfDefaultAndLayoutSpecificStylesByOtherLayouts = {
   ),
 
   name: 'Overridability of default and layout specific styles by other layouts',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };
 
 export const OverridingOfDefaultWidth = {
@@ -189,10 +182,6 @@ export const OverridingOfDefaultWidth = {
   ),
 
   name: 'Overriding of default width',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };
 
 export const FlexboxInteraction = {
@@ -244,10 +233,6 @@ export const FlexboxInteraction = {
   ),
 
   name: 'Flexbox interaction',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };
 
 export const NestedGrids = {
@@ -294,10 +279,6 @@ export const NestedGrids = {
   ),
 
   name: 'Nested grids',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };
 
 export const Keywords = {
@@ -361,8 +342,4 @@ export const Keywords = {
   ),
 
   name: 'Keywords',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };

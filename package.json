@@ -8,7 +8,7 @@
     "react-dom": ">=17"
   },
   "dependencies": {
-    "@financial-times/ads-legacy-o-ads": "^3.3.0",
+    "@financial-times/ads-legacy-o-ads": "^5.2.2",
     "@financial-times/flourish-receive-custom-analytics": "^1.2.0",
     "@financial-times/format-number": "^1.0.0",
     "@financial-times/ft-date-format": "^2.1.0",

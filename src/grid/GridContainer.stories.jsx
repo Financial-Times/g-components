@@ -1,4 +1,5 @@
 import { GridContainer, GridRow, GridChild } from './';
+import './_stories.scss';
 
 export default {
   title: 'Core/Grid/GridContainer',
@@ -34,10 +35,6 @@ export const FullBleedGridContainer = {
   ),
 
   name: 'Full bleed grid container',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };
 
 export const SnappyContainer = {
@@ -73,8 +70,4 @@ export const SnappyContainer = {
   ),
 
   name: 'Snappy container',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };

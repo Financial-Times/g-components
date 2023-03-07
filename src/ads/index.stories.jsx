@@ -1,6 +1,6 @@
-import { Ad } from '.';
+import { Ad, TopAd, MiddleAd } from '.';
 
-export const GenericAd = {
+export const GenericAdStory = {
   render: () => (
     <Ad
       name="generic-ad"
@@ -23,7 +23,7 @@ export const GenericAd = {
   },
 };
 
-export const GenericAdSlate = {
+export const GenericAdSlateStory = {
   render: () => <Ad name="generic-ad" targeting="pos=top;version=1" background="slate" />,
   name: 'GenericAdSlate',
 
@@ -34,7 +34,29 @@ export const GenericAdSlate = {
   },
 };
 
+export const TopAdStory = {
+  render: () => <TopAd />,
+  name: 'TopAd',
+
+  parameters: {
+    chromatic: {
+      disable: true,
+    },
+  },
+};
+
+export const MiddleAdStory = {
+  render: () => <MiddleAd />,
+  name: 'MiddleAd',
+
+  parameters: {
+    chromatic: {
+      disable: true,
+    },
+  },
+};
+
 export default {
-  title: 'Ads',
+  title: 'Core/Ads',
   component: Ad,
 };
