@@ -1,0 +1,40 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+export const dataSingle = [
+  [
+    { x: 1, y: 1 },
+    { x: 2, y: 3 },
+    { x: 3, y: 5 },
+    { x: 4, y: 4 },
+    { x: 5, y: 2 },
+  ],
+];
+
+export const dataMulti = [
+  [
+    { x: 1, y: 1 },
+    { x: 2, y: 3 },
+    { x: 3, y: 5 },
+    { x: 4, y: 4 },
+    { x: 5, y: 2 },
+  ],
+  [
+    { x: 1, y: 5 },
+    { x: 2, y: 3 },
+    { x: 3, y: 1 },
+    { x: 4, y: 2 },
+    { x: 5, y: 4 },
+  ],
+];
+
+export let isPlaying = true;
+
+export const AudioContextFunc = window.AudioContext || window.webkitAudioContext;
+export const audioContext = new AudioContextFunc();
+
+<Meta title="Core/DataSonification" component={DataSonification} />
+
+# DataSonification
+
+Sonifies data, giving control over instruments, volume, duration, pitch etc.

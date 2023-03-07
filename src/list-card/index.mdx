@@ -1,0 +1,15 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# ListCard component
+
+This allows the creation of lists, much like the
+deprecated "Latest Changes" Rich Journalism component.
+
+You can provide an array as children:
+
+<Canvas>
+  <Story of={IndexStories.Examples} />
+</Canvas>

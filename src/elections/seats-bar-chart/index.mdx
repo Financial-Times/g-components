@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { formatResultsData } from '../sample-data/utils.js';
+import resultsStart from '../sample-data/results/start.json';
+import resultsMiddle from '../sample-data/results/middle.json';
+import resultsEnd from '../sample-data/results/end.json';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# Seats Bar Chart component
+
+Shows the seat distribution in Parliament.
+
+<Canvas>
+  <Story of={IndexStories.Examples} />
+</Canvas>

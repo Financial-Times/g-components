@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# ArticleLayout component
+
+`ArticleLayout` sets up the basic structure of an article page.
+
+The first child will be treated specially as a topper. All children should be wrapped within grid components.
+
+<Canvas>
+  <Story of={IndexStories.StarterKitDefaultBody} />
+</Canvas>

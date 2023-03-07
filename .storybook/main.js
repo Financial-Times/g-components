@@ -1,28 +1,17 @@
-process.env.SASS_PATH = 'node_modules:node_modules/@financial-times';
-
-module.exports = {
-  features: {
-    postcss: false,
+/** @type { import('@storybook/react-vite').StorybookConfig } */
+const config = {
+  stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    '@storybook/addon-interactions',
+  ],
+  framework: {
+    name: '@storybook/react-vite',
+    options: {},
   },
-  stories: ['../src/**/*.stories.@(mdx|js)'],
-  addons: ['@storybook/addon-essentials', '@storybook/addon-a11y'],
-
-  // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
-  // You can change the configuration based on that.
-  // 'PRODUCTION' is used when building the static version of storybook.
-  webpackFinal: async (config, { configType }) => {
-    // Make whatever fine-grained changes you need below:
-
-    // Resolve "browser" field in package.json (Origami)
-    config.resolve.aliasFields = ['browser'];
-    config.resolve.mainFields = ['browser', 'main'];
-
-    config.module.rules.push({
-      test: /\.scss$/,
-      use: ['style-loader', 'css-loader', 'sass-loader'],
-    });
-
-    // Return the altered config
-    return config;
+  docs: {
+    autodocs: 'tag',
   },
 };
+export default config;

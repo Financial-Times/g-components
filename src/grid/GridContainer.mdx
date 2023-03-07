@@ -1,0 +1,23 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as GridContainerStories from './GridContainer.stories';
+
+<Meta of={GridContainerStories} />
+
+# GridContainer component
+
+`<GridContainer />` holds groups of `<GridRow>` rows of `<GridChild>` columns.
+
+You must wrap use one at the top level of your grid or else everything sort of blows up.
+
+It has two config options:
+
+- `snappy`, which means the grid will snap to the preconfigured `o-grid` breakpoints
+- `bleed`, which removes exterior margins.
+
+<Canvas>
+  <Story of={GridContainerStories.FullBleedGridContainer} />
+</Canvas>
+
+<Canvas>
+  <Story of={GridContainerStories.SnappyContainer} />
+</Canvas>

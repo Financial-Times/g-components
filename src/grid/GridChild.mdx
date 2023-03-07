@@ -1,0 +1,59 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as GridChildStories from './GridChild.stories';
+
+<Meta of={GridChildStories} />
+
+# GridChild component
+
+`<GridChild />` is an atomic child column from o-grid.
+
+You supply it a `colspan` prop in one of the following formats:
+
+- A `Number`
+  - How many columns to span on all breakpoints
+- A formatted `String`
+  - Using numbers:
+    - `{0-12}` - number of columns to span by default
+    - `S{0-12}` - number of columns to span at the small layout and up
+    - `M{0-12}` - number of columns to span at the medium layout and up
+    - `L{0-12}` - number of columns to span at the large layout and up
+    - `XL{0-12}` - number of columns to span at the extra large layout and up
+  - Using keywords:
+    - `{S,M,L,XL}hide`
+    - `{S,M,L,XL}one-half`
+    - `{S,M,L,XL}one-third`, `{S,M,L,XL}two-thirds`
+    - `{S,M,L,XL}one-quarter`, `{S,M,L,XL}three-quarters`
+- An `Object`:
+  - ```
+    {
+      default: <either a Number or string as per the above>,
+      s: <either a Number or string as per the above>,
+      m: <either a Number or string as per the above>,
+      l: <either a Number or string as per the above>,
+      xl: <either a Number or string as per the above>,
+    }
+    ```
+
+<Canvas>
+  <Story of={GridChildStories.DefaultUnresponsiveColumns} />
+</Canvas>
+
+<Canvas>
+  <Story of={GridChildStories.OverridabilityOfDefaultAndLayoutSpecificStylesByOtherLayouts} />
+</Canvas>
+
+<Canvas>
+  <Story of={GridChildStories.OverridingOfDefaultWidth} />
+</Canvas>
+
+<Canvas>
+  <Story of={GridChildStories.FlexboxInteraction} />
+</Canvas>
+
+<Canvas>
+  <Story of={GridChildStories.NestedGrids} />
+</Canvas>
+
+<Canvas>
+  <Story of={GridChildStories.Keywords} />
+</Canvas>

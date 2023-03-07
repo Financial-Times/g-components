@@ -1,0 +1,18 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# Last Updated component
+
+Shows when story was last updated. It has three variants:
+
+- Basic
+- Dot (ongoing story)
+- Live (ongoing liveblog story)
+
+If you don't provide a date, you won't see anything.
+
+<Canvas>
+  <Story of={IndexStories.Examples} />
+</Canvas>

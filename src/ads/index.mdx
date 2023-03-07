@@ -1,0 +1,24 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# Ads component
+
+This component wraps [Origami's o-ads](https://github.com/Financial-Times/o-ads). The default props for `<Ad />` mimic the top ad.
+
+Related files/configs for ads are also found in `useAds` in `shared/hooks.js` (sets lazy loading, for example).
+
+There are several ad types:
+
+### Generic ad
+
+<Canvas>
+  <Story of={IndexStories.GenericAd} />
+</Canvas>
+
+### Generic ad on slate
+
+<Canvas>
+  <Story of={IndexStories.GenericAdSlate} />
+</Canvas>

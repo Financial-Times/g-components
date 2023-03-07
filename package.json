@@ -3,44 +3,9 @@
   "version": "0.0.0",
   "description": "FT.com Page furniture used in interactive journalism projects, wrapped in React",
   "repository": "https://github.com/Financial-Times/g-components",
-  "license": "ISC",
-  "type": "commonjs",
-  "main": "./build/g-components.js",
-  "exports": {
-    "./package.json": "./package.json",
-    "./critical-path.css": "./build/g-components.css",
-    "./critical-path.scss": "./src/shared/critical-path.scss",
-    "./shared/*": "./src/shared/*",
-    "./*/styles.css": {
-      "require": "./build/*/index.css",
-      "import": "./build/*/index.css",
-      "default": "./build/*/index.css"
-    },
-    "./*/index.css": {
-      "require": "./build/*/index.css",
-      "import": "./build/*/index.css",
-      "default": "./build/*/index.css"
-    },
-    "./*": "./build/*/index.js",
-    ".": "./build/g-components.js"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "resolver": "<rootDir>/.jest/resolver.js",
-    "transform": {
-      "^.+\\.[tj]sx?$": "<rootDir>/.jest/transform.js",
-      "^.+\\.mdx?$": "@storybook/addon-docs/jest-transform-mdx"
-    },
-    "moduleNameMapper": {
-      "\\.(css|less|scss|sass)$": "identity-obj-proxy"
-    },
-    "transformIgnorePatterns": [
-      "/node_modules//(?!(@financial-times)/)"
-    ]
-  },
   "peerDependencies": {
-    "react": ">=16",
-    "react-dom": ">=16"
+    "react": ">=17",
+    "react-dom": ">=17"
   },
   "dependencies": {
     "@financial-times/ads-legacy-o-ads": "^3.3.0",
@@ -56,7 +21,6 @@
     "@financial-times/o-date": "^5.2.0",
     "@financial-times/o-editorial-layout": "^2.3.0",
     "@financial-times/o-editorial-typography": "^2.3.0",
-    "@financial-times/o-errors": "^5.1.1",
     "@financial-times/o-fonts": "^5.2.0",
     "@financial-times/o-footer": "^9.2.1",
     "@financial-times/o-forms": "^9.2.0",
@@ -77,10 +41,8 @@
     "@financial-times/o-visual-effects": "^4.2.0",
     "@financial-times/politics": "^1.3.0",
     "classnames": "^2.3.1",
-    "core-js": "^3.20.2",
     "d3-array": "^3.1.1",
     "d3-scale": "^4.0.2",
-    "ftdomdelegate": "^5.0.0",
     "prop-types": "^15.7.2",
     "react-autosuggest": "^10.1.0",
     "react-modal": "^3.14.4",
@@ -90,59 +52,22 @@
   },
   "scripts": {
     "test": "jest",
-    "storybook": "start-storybook -p 9009",
-    "build-storybook": "build-storybook",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
     "chromatic": "chromatic",
     "build": "node bin/build.mjs",
     "prebuild": "node bin/generate-index.mjs"
   },
   "devDependencies": {
-    "@babel/eslint-parser": "^7.16.3",
-    "@babel/preset-env": "^7.16.8",
-    "@financial-times/jest-browser-resolver": "^1.0.2",
-    "@storybook/addon-a11y": "^6.5.0-beta.7",
-    "@storybook/addon-docs": "^6.5.0-beta.7",
-    "@storybook/addon-essentials": "^6.5.0-beta.7",
-    "@storybook/addon-storyshots": "^6.5.0-beta.7",
-    "@storybook/addons": "^6.5.0-beta.7",
-    "@storybook/react": "^6.5.0-beta.7",
-    "@testing-library/jest-dom": "^5.15.1",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "chromatic": "^6.0.6",
-    "enhanced-resolve-jest": "^1.1.0",
-    "esbuild": "^0.14.11",
-    "esbuild-sass-plugin": "2.0.3",
-    "eslint": "^7.32.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-import-resolver-node-browser": "0.0.2",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-plugin-mdx": "^1.16.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.27.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "glob": "^8.0.1",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^26",
-    "jest-esm-transformer": "^1.0.0",
-    "jest-raw-loader": "^1.0.1",
-    "node-fetch": "^2.6.6",
-    "prettier": "^2.4.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-test-renderer": "^17.0.2",
-    "sass": "^1.43.4",
-    "sass-loader": "^10.2.0",
-    "webpack": "^4.46.0"
-  },
-  "volta": {
-    "node": "16.13.0",
-    "npm": "8.1.4"
-  },
-  "files": [
-    "build/",
-    "src/shared/"
-  ]
+    "@storybook/addon-essentials": "^7.0.0-beta.59",
+    "@storybook/addon-interactions": "^7.0.0-beta.59",
+    "@storybook/addon-links": "^7.0.0-beta.59",
+    "@storybook/blocks": "^7.0.0-alpha.8",
+    "@storybook/react": "^7.0.0-beta.59",
+    "@storybook/react-vite": "^7.0.0-beta.59",
+    "@storybook/testing-library": "^0.0.14-next.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.0.0-beta.59"
+  }
 }
