@@ -236,8 +236,4 @@ export const Examples = {
   ),
 
   name: 'Examples',
-
-  parameters: {
-    styles: [Promise.resolve(require('./_stories.scss'))],
-  },
 };

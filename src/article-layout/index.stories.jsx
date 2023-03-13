@@ -1,45 +1,8 @@
 import StoryTopper from '../story-topper';
 import Epilogue from '../epilogue';
 import { GridContainer, GridRow, GridChild } from '../grid';
+import { props } from './props';
 import ArticleLayout from './';
-
-const props = {
-  id: 'e8e6e017-d06b-3cfa-8cb6-0b9e30bc847e', // Lorem Ipsum page
-  flags: {
-    prod: false,
-    errorReporting: true,
-    analytics: false,
-    googleAnalytics: false,
-    ads: false,
-    mainImage: true,
-    summary: true,
-    bylines: true,
-    onwardjourney: true,
-    shareButtons: true,
-    header: true,
-    footer: true,
-    comments: true,
-    data: false,
-    dark: false,
-  },
-  url: 'https://www.ft.com/',
-  summary: 'This is a standfirst',
-  topic: {
-    url: 'https://www.ft.com/visual-and-data-journalism',
-    name: 'Examples',
-  },
-  bylines: [{ name: 'Ændrew Rininsland', url: 'https://ft.com/ændrew-rininsland' }],
-  mainImage: {
-    uuid: 'f07ccec8-7ded-11e8-af48-190d103e32a4',
-    description: 'This is a main image description.',
-    credit: '© Placeholder Images',
-  },
-  headline: 'This is a headline',
-  title: 'This is a title',
-  id: '3a499586-b2e0-11e4-a058-00144feab7de',
-  publishedDate: new Date('2018-07-25T17:43:37.00Z').toISOString(),
-  buildTime: new Date('2018-07-25T17:43:37.00Z').toISOString(),
-};
 
 export default {
   title: 'Layouts/Article',

@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { scaleLinear } from 'd3-scale';
 import { min, max, extent } from 'd3-array';
-import MIDISounds from './midisoundsreact';
+import { MIDISounds } from './midisoundsreact';
 import './styles.scss';
 
 const DEFAULT_INSTRUMENTS = [

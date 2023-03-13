@@ -61,11 +61,11 @@ export const Examples = {
       >
         <ul>
           <li>
-            Labour -> The Speaker
+            {`Labour -> The Speaker`}
             <RaceResult breakpoint="S" incumbent="Labour" winner="The Speaker" />
           </li>
           <li>
-            The Speaker -> Conservative
+            {`The Speaker -> Conservative`}
             <RaceResult breakpoint="S" incumbent="The Speaker" winner="Conservative" />
           </li>
         </ul>

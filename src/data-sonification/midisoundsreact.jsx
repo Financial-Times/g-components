@@ -55,7 +55,7 @@ const STYLE = {
     height: '0.2cm',
   },
 };
-class MIDISounds extends React.Component {
+export class MIDISounds extends React.Component {
   constructor(props) {
     super(props);
     console.log('MIDISounds v1.2.48');

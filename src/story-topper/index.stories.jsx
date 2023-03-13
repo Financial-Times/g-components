@@ -1,4 +1,4 @@
-import { props } from '../article-layout/index.stories.mdx';
+import { props } from '../article-layout/props';
 import StoryTopper from './';
 
 export default {

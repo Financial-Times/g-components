@@ -13,8 +13,8 @@ const srcBase = join(process.cwd(), 'src/');
 
 // Get list of all component indices
 const components = glob
-  .sync(join(srcBase, '**/index.js'))
-  .filter((d) => d !== `${srcBase}index.js`)
+  .sync(join(srcBase, '**/index.jsx'))
+  .filter((d) => d !== `${srcBase}index.jsx`)
   .map((d) => [
     dirname(d).replace(srcBase, ''),
     camelcase(basename(dirname(d)), { pascalCase: true }),
@@ -27,7 +27,7 @@ writeFile(
   * Entry point (automatically generated)
   */
 
-  import './shared/critical-path.scss';
+import './shared/critical-path.scss';
 
 ${components
   .map(([path, identifier]) => `export * as ${identifier} from './${path}';`)

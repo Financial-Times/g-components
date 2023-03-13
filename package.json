@@ -1,6 +1,23 @@
 {
   "name": "@financial-times/g-components",
   "version": "0.0.0",
+  "type": "module",
+  "files": [
+    "dist/",
+    "src/shared/"
+  ],
+  "main": "./dist/g-components.cjs",
+  "module": "./dist/g-components.js",
+  "exports": {
+    "./package.json": "./package.json",
+    "./critical-path.css": "./dist/style.css",
+    "./critical-path.scss": "./src/shared/critical-path.scss",
+    "./shared/*": "./src/shared/*",
+    "./*/styles.css": "./dist/style.css",
+    "./*/index.css": "./dist/style.css",
+    "./*": "./dist/*/index.js",
+    ".": "./dist/g-components.js"
+  },
   "description": "FT.com Page furniture used in interactive journalism projects, wrapped in React",
   "repository": "https://github.com/Financial-Times/g-components",
   "peerDependencies": {
@@ -8,7 +25,7 @@
     "react-dom": ">=17"
   },
   "dependencies": {
-    "@financial-times/ads-legacy-o-ads": "^5.2.2",
+    "@financial-times/ads-legacy-o-ads": "5.2.2",
     "@financial-times/flourish-receive-custom-analytics": "^1.2.0",
     "@financial-times/format-number": "^1.0.0",
     "@financial-times/ft-date-format": "^2.1.0",
@@ -51,23 +68,32 @@
     "remove-markdown": "^0.3.0"
   },
   "scripts": {
-    "test": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "chromatic",
-    "build": "node bin/build.mjs",
+    "build": "vite build",
+    "test-storybook": "test-storybook",
+    "test": "npx concurrently -k -s first -n \"SB,TEST\" -c \"magenta,blue\" \"npx http-server storybook-static --port 6006 --silent\" \"npx wait-on tcp:6006 && yarn test-storybook\"",
     "prebuild": "node bin/generate-index.mjs"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.0.0-beta.59",
     "@storybook/addon-interactions": "^7.0.0-beta.59",
     "@storybook/addon-links": "^7.0.0-beta.59",
+    "@storybook/addon-storyshots": "^7.0.0-beta.62",
     "@storybook/blocks": "^7.0.0-alpha.8",
     "@storybook/react": "^7.0.0-beta.59",
     "@storybook/react-vite": "^7.0.0-beta.59",
+    "@storybook/test-runner": "^0.10.0-next.10",
     "@storybook/testing-library": "^0.0.14-next.1",
+    "@storybook/testing-react": "^2.0.0-next.0",
+    "@testing-library/jest-dom": "^5.16.5",
+    "glob": "^8.1.0",
+    "jsdom": "^21.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "storybook": "^7.0.0-beta.59"
+    "sass": "^1.58.3",
+    "storybook": "^7.0.0-beta.59",
+    "vitest": "^0.29.2"
   }
 }

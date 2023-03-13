@@ -1,4 +1,4 @@
-import { props } from '../article-layout/props.js';
+import { props } from '../article-layout/props';
 import Analytics from './';
 
 export default {
