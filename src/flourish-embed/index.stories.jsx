@@ -3,12 +3,6 @@ import FlourishEmbed from './';
 export default {
   title: 'Core/FlourishEmbed',
   component: FlourishEmbed,
-
-  parameters: {
-    chromatic: {
-      disable: true,
-    },
-  },
 };
 
 export const Example = {
@@ -19,4 +13,10 @@ export const Example = {
     />
   ),
   name: 'Example',
+
+  parameters: {
+    chromatic: {
+      disable: true,
+    },
+  },
 };
