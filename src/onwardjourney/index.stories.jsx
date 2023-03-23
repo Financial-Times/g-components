@@ -11,7 +11,7 @@ export const Example = {
       relatedContent={[
         {
           rows: 2,
-          list: 'thing/adae44ca-4ea7-3cf8-8332-bf85ec89a558',
+          list: 'thing/a39873a9-37fd-4501-b9e1-d98da1677e99',
         },
       ]}
     />
