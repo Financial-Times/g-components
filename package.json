@@ -15,6 +15,7 @@
     "./shared/*": "./src/shared/*",
     "./*/styles.css": "./dist/style.css",
     "./*/index.css": "./dist/style.css",
+    "./styles.css": "./dist/style.css",
     "./*": "./dist/*/index.js",
     ".": "./dist/g-components.js"
   },
