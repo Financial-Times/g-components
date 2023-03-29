@@ -9,7 +9,7 @@ export default {
 export const Example = {
   render: () => (
     <>
-      <h4>You won't see anything here as "Analytics" has no visual output</h4>,
+      <h4>You won't see anything here as "Analytics" has no visual output</h4>
       <Analytics
         id="e8e6e017-d06b-3cfa-8cb6-0b9e30bc847e"
         flags={props.flags}

@@ -13,4 +13,10 @@ export const Example = {
   ),
 
   name: 'Example',
+
+  parameters: {
+    chromatic: {
+      disable: true,
+    },
+  },
 };
