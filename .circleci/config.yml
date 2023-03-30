@@ -33,6 +33,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm ci
+      - run:
+          name: Build Storybook
+          command: npm run build-storybook
       - persist_to_workspace:
           root: .
           paths:
