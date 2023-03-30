@@ -1,4 +1,6 @@
 /** @type { import('@storybook/react').Preview } */
+import '../src/shared/critical-path.scss';
+
 const preview = {
   parameters: {
     backgrounds: {
