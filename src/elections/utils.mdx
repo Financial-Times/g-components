@@ -1,0 +1,33 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import { uk } from '@financial-times/politics';
+export const { getPartyInfo } = uk;
+import * as UtilsStories from './utils.stories';
+
+export const parties = [
+  'Conservative',
+  'Labour',
+  'Liberal Democrats',
+  'Green',
+  'ChangeUK',
+  'Brexit',
+  'UKIP',
+  'Plaid Cymru',
+  'SNP',
+  'DUP',
+  'Sinn Féin',
+  'UUP',
+  'SDLP',
+  'Alliance',
+  'Independent/Other',
+];
+
+<Meta of={UtilsStories} />
+
+# Election utilitity functions
+
+`getPartyInfo(string)` returns an object with party `color`, `shortName` and
+`formattedName` for a given UK political party.
+
+<Canvas>
+  <Story of={UtilsStories.GetPartyInfoPartyString} />
+</Canvas>

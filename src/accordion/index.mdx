@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# Accordion
+
+An accordion; first element in each section becomes the title, subsequent elements become the body
+
+<Canvas>
+  <Story of={IndexStories.Example} />
+</Canvas>

@@ -1,0 +1,42 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# Navigation header component
+
+`<NavigationHeader />` can be used to add extra navigation to a page. Includes a dropdown for small devices
+
+Props:
+
+- `title` (string - optional): navigation title to be displayed to the left of the links
+- `links` (array): a list of links for navigation each with a `text` and `url` attribute
+- `currentPage` (string - optional): if this matches the url of an item in the links array, this will
+  be highlighted in the navigation
+- `useDropdown` (boolean - optional): an override to enable/disable the dropdown. If this prop is undefined, the
+  dropdown is automatically displayed at the `default` breakpoint
+- `openLinksInNewTab` (boolean - optional): adds `target="_blank"` to all links so they open in another tab
+
+<Canvas>
+  <Story of={IndexStories.WithTitle} />
+</Canvas>
+
+<Canvas>
+  <Story of={IndexStories.WithoutTitle} />
+</Canvas>
+
+<Canvas>
+  <Story of={IndexStories.WithCurrentPage} />
+</Canvas>
+
+<Canvas>
+  <Story of={IndexStories.WithLinksOpeningInNewTab} />
+</Canvas>
+
+<Canvas>
+  <Story of={IndexStories.UsingDropdown} />
+</Canvas>
+
+<Canvas>
+  <Story of={IndexStories.UsingDropdownWithNoCurrentPage} />
+</Canvas>

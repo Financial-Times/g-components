@@ -1,0 +1,16 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# Video set
+
+Component for displaying different videos at different breakpoints.
+
+Breakpoints are the S, M and L [Origami o-grid](https://github.com/Financial-Times/o-grid) breakpoints.
+
+_Chromatic testing is disabled because the renderer won't show videos._
+
+<Canvas>
+  <Story of={IndexStories.Example} />
+</Canvas>

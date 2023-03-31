@@ -1,0 +1,46 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+export const basicHeaders = [
+  {
+    contents: 'Year',
+    columnType: 'number',
+    columnName: 'appointed',
+  },
+  {
+    contents: 'Editor',
+    columnName: 'name',
+  },
+];
+
+export const headersWithDefaultSortIcon = [
+  {
+    contents: 'Year',
+    columnType: 'number',
+    columnName: 'appointed',
+    defaultSortIcon: 'descending',
+  },
+  {
+    contents: 'Editor',
+    columnName: 'name',
+  },
+];
+
+export const basicRows = [
+  { appointed: '2020', name: 'Roula Khalaf' },
+  { appointed: '2006', name: 'Lionel Barber' },
+  { appointed: '2001', name: 'Andrew Gowers' },
+  { appointed: '1991', name: 'Richard Lambert' },
+  { appointed: '1981', name: 'Sir Geoffrey Owen' },
+  { appointed: '1973', name: 'Fredy Fisher' },
+  { appointed: '1949', name: 'Sir Gordon Newton' },
+  { appointed: '1945', name: 'Hargreaves Parkinson' },
+];
+
+<Meta of={IndexStories} />
+
+# Table component
+
+<Canvas>
+  <Story of={IndexStories.Examples} />
+</Canvas>

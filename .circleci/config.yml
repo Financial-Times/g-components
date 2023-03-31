@@ -7,7 +7,8 @@ references:
   default_container_config: &default_container_config
     executor:
       name: node/default
-      tag: '16.13'
+      tag: 'lts-browsers'
+    resource_class: 'large'
 
   attach_workspace: &attach_workspace
     attach_workspace:
@@ -33,6 +34,9 @@ jobs:
       - run:
           name: Install dependencies
           command: npm ci
+      - run:
+          name: Build Storybook
+          command: npm run build-storybook
       - persist_to_workspace:
           root: .
           paths:
@@ -42,6 +46,9 @@ jobs:
     <<: *default_container_config
     steps:
       - *attach_workspace
+      - run:
+          name: Install Playwright
+          command: npx playwright install
       - run:
           name: Run tests
           command: npm test

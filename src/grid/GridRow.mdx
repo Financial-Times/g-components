@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as GridRowStories from './GridRow.stories';
+
+<Meta of={GridRowStories} />
+
+# GridRow component
+
+`<GridRow />` is used to create responsive groups of `<GridChild />` columns.
+
+It has one config option: `compact`, which will remove gutters from columns
+
+<Canvas>
+  <Story of={GridRowStories.CompactAndGutterlessColumns} />
+</Canvas>

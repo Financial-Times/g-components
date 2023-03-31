@@ -2,6 +2,51 @@
 
 Reusable React components for building IG pages.
 
+## Adding to a project
+
+There are two ways you can consume g-components:
+
+1. The full bundle
+
+```
+import { Accordion } from "@financial-times/g-components";
+import from "@financial-times/g-components/styles.css";
+```
+
+This is the new way. It's easier and about as performant as the old way.
+
+2. Individual components
+
+```
+import Accordion from "@financial-times/g-components/accordion";
+import from "@financial-times/g-components/styles.css";
+```
+
+If you're having performance issues, please try the old way of importing individual components.
+
+## Migrating to g-components v9
+
+g-components v9 is lighter than previous versions and has a few significant API differences:
+
+1. You only need to import one CSS file regardless of whether you import individual components or the whole bundle:
+
+```
+import from "@financial-times/g-components/styles.css";
+```
+
+2. The following components have been removed:
+
+- data-sonification
+- feature
+- html-head
+- progress
+- sticky-header
+- sticky
+
+Please stay on v8 if you use any of these components.
+
+## Running the Storybook
+
 You can see what components are available in Storybook:
 
 ```bash

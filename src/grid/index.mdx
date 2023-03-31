@@ -1,0 +1,12 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# Grid demos
+
+These replicate the Origami layout demos originally found [here](https://github.com/Financial-Times/o-grid/blob/master/demos/src/layout.mustache).
+
+<Canvas>
+  <Story of={IndexStories.DefaultGrid} />
+</Canvas>

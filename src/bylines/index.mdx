@@ -1,0 +1,14 @@
+import { Meta, Story, Canvas } from '@storybook/blocks';
+import * as IndexStories from './index.stories';
+
+<Meta of={IndexStories} />
+
+# Bylines component
+
+This will render bylines in FT style.
+
+It requires a `names` or `date` prop to render; otherwise it displays nothing.
+
+<Canvas>
+  <Story of={IndexStories.BylineExamples} />
+</Canvas>
