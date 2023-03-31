@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { GridContainer, GridRow, GridChild } from './';
+import './_stories.scss';
 
 export default {
   title: 'Core/Grid/Grid',
