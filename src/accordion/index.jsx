@@ -52,3 +52,5 @@ AccordionSection.defaultProps = {
 };
 
 AccordionSection.displayName = 'GAccordionSection';
+
+export default { Accordion, AccordionSection };
