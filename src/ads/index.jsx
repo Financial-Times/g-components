@@ -95,3 +95,5 @@ export const MiddleAd = () => (
 );
 
 MiddleAd.displayName = 'GMiddleAd';
+
+export default { Ad, TopAd, MiddleAd };

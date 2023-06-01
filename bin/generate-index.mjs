@@ -30,6 +30,8 @@ writeFile(
 import './shared/critical-path.scss';
 
 ${components
-  .map(([path, identifier]) => `export * as ${identifier} from './${path}';`)
-  .join('\n')}`,
+  .map(([path, identifier]) => `export { default as ${identifier} } from './${path}';`)
+  .join('\n')}
+
+export { Context } from './article-layout';`,
 );
