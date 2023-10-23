@@ -35,7 +35,7 @@ const Share = ({
         'https://twitter.com/intent/tweet' +
         `?url=${url}` +
         `&text=${textTwitter || text}` +
-        '&via=FT',
+        '&via=ft',
     },
     {
       name: 'Facebook',
