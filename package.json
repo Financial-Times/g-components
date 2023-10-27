@@ -31,7 +31,7 @@
     "@financial-times/format-number": "^1.0.0",
     "@financial-times/ft-date-format": "^2.1.0",
     "@financial-times/math": "^1.1.0",
-    "@financial-times/n-tracking": "^5.1.0",
+    "@financial-times/n-tracking": "^7.2.1",
     "@financial-times/o-brand": "^4.2.1",
     "@financial-times/o-buttons": "^7.5.0",
     "@financial-times/o-colors": "^6.4.2",
