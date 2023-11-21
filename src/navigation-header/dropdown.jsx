@@ -1,9 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 
+// 'Element' isn't available on the server, so we need a more generic return value for SSR builds
+const IsomorphicElement = typeof Element === 'undefined' ? Function : Element;
+
 const RefPropType = PropTypes.oneOfType([
   PropTypes.func,
-  PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  PropTypes.shape({ current: PropTypes.instanceOf(IsomorphicElement) }),
 ]);
 
 export const NavigationHeaderMobileDropdownButton = ({
