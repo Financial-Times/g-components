@@ -20,10 +20,12 @@ export const Context = createContext({});
 
 const ArticleLayout = ({ flags, ads, children, ...props }) => {
   useEffect(() => {
-    initSourcepointCmp({
-      propertyConfig: properties.FT_DOTCOM_PROD,
-      useConsentStore: false // (set to false e.g for non-FT.com properties or websites)
-    });
+    if (flags.prod) {
+      initSourcepointCmp({
+        propertyConfig: properties.FT_DOTCOM_PROD,
+        useConsentStore: false // (set to false e.g for non-FT.com properties or websites)
+      });
+    }
   }, []);
 
   const breakpoint = useLayoutChangeEvents();
