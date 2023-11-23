@@ -23,7 +23,6 @@ const ArticleLayout = ({ flags, ads, children, ...props }) => {
     if (flags.prod) {
       initSourcepointCmp({
         propertyConfig: properties.FT_DOTCOM_PROD,
-        useConsentStore: false // (set to false e.g for non-FT.com properties or websites)
       });
     }
   }, []);
