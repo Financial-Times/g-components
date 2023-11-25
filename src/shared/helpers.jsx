@@ -22,7 +22,7 @@ export function encodedJSON(_data) {
 
 export function spoorTrackingPixel(data) {
   const jsonString = encodedJSON(data);
-  if (document) {
+  if (typeof document !== 'undefined') {
     const ieVersion = document.documentMode ? document.documentMode : 99; // eslint-disable-line
     const img = `<img src="https://spoor-api.ft.com/px.gif?data=${jsonString}" height="1" width="1" />`;
     return ieVersion < 9 ? img : <noscript data-o-component="o-tracking">{img}</noscript>;
