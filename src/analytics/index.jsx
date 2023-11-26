@@ -117,7 +117,8 @@ const Analytics = ({ id, tracking, flags, scrollDepthTarget }) => {
       <script
         dangerouslySetInnerHTML={{
           __html: `
-        var spoorId = /spoor-id=([^;]+)/.exec(document.cookie)[1] || 'cj5y2utdx00003i5z6l6po8c1';
+        var spoorCookie = /spoor-id=([^;]+)/.exec(document.cookie);
+        var spoorId = (spoorCookie && spoorCookie[1]) || 'cj5y2utdx00003i5z6l6po8c1';
         var endpoint = 'https://4235225.fls.doubleclick.net/activityi;src=4235225;type=homeo886;cat=ft-ne000;u10=' + spoorId + ';dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=' + Date.now() + ';num=1';
         var img = document.createElement('img');
         img.setAttribute('width', 1);
