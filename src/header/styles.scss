@@ -1,3 +1,18 @@
 $o-header-is-silent: false;
 @import '../shared/_globals.scss';
 @import '@financial-times/o-header/main.scss';
+
+// Position header absolutely so that video bleeds behind FT header
+.o-header--video {
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+  mix-blend-mode: normal;
+  // opacity: 0.8;
+  opacity: 1;
+
+  .o-header__top-logo {
+    background-image: url(https://www.ft.com/__origami/service/image/v2/images/raw/ftlogo:brand-ft-masthead?source=ig-projects&tint=%23ffffff,%23ffffff&format=svg);
+  }
+}

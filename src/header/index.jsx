@@ -8,12 +8,17 @@ import OHeader from '@financial-times/o-header/main';
 import './styles.scss';
 import { flagsPropType } from '../shared/proptypes';
 
-const Header = ({ flags, ...props }) => {
+const Header = ({ flags, isVideoTopper, ...props }) => {
   const ref = useRef();
 
   const { dark } = flags;
 
-  const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
+  const headerClasses = [
+    'o-header',
+    'o-header--simple',
+    dark && 'o-header--transparent',
+    isVideoTopper && 'o-header--video',
+  ]
     .filter((i) => i)
     .join(' ');
 
@@ -52,12 +57,14 @@ Header.displayName = 'GHeader';
 
 Header.propTypes = {
   flags: flagsPropType,
+  isVideoTopper: PropTypes.bool,
 };
 
 Header.defaultProps = {
   flags: {
     dark: false,
   },
+  isVideoTopper: false,
 };
 
 export default Header;
