@@ -13,24 +13,28 @@ import './styles.scss';
 const { getPartyInfo } = uk;
 
 const RaceResult = ({ incumbent, winner, backgroundColor, breakpoint: breakpointProp }) => {
-  const { breakpoint = breakpointProp || 'default' } = useContext(Context) || {};
+  const backupBreakpoint = {breakpoint: breakpointProp || 'default'}
+  const { breakpoint = backupBreakpoint } = useContext(Context) || {};
+
   if (!incumbent) return null;
 
   const incumbentParty = getPartyInfo(incumbent);
   const winnerParty = winner ? getPartyInfo(winner) : null;
+
+  const isBigScreen =  !['default', 's', 'm'].includes(breakpoint.breakpoint.toLowerCase())
   /* eslint-disable no-nested-ternary */
   // I am so sorry for the following expression: -æ.
   const text = winner
     ? winner !== incumbent
       ? `${
-          !['default', 's', 'm'].includes(breakpoint.toLowerCase())
+        isBigScreen
             ? winnerParty.formattedName.length <= 20
               ? winnerParty.formattedName
               : winnerParty.shortName
             : winnerParty.shortName
         } gain`
       : `${
-          !['default', 's', 'm'].includes(breakpoint.toLowerCase())
+        isBigScreen
             ? winnerParty.formattedName.length <= 20
               ? winnerParty.formattedName
               : winnerParty.shortName

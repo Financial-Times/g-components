@@ -91,7 +91,7 @@ export const useAds = (config, enabled = true) => {
  * then returns the current breakpoint.
  */
 export const useLayoutChangeEvents = () => {
-  const [breakpoint, setBreakpoint] = useState('default');
+  const [breakpoint, setBreakpoint] = useState({breakpoint:'default'});
 
   const listenersRef = useRef();
 

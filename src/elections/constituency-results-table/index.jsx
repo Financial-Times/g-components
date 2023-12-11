@@ -39,7 +39,9 @@ export const ConstituencyResultsTable = ({
   sortFunction,
   expander: showExpander,
 }) => {
-  const { breakpoint = 'default' } = useContext(Context);
+  const defaultBreakpoint = {breakpoint: 'default'}
+  const { breakpoint = defaultBreakpoint } = useContext(Context);
+
   const sortedData = sortFunction
     ? data.sort((a, b) => sortFunction(a, b))
     : data.sort((a, b) =>
@@ -66,7 +68,7 @@ export const ConstituencyResultsTable = ({
         </thead>
 
         <tbody>
-          {['l', 'xl'].includes(breakpoint.toLowerCase()) || showExpander ? (
+          {['l', 'xl'].includes(breakpoint.breakpoint.toLowerCase()) || showExpander ? (
             <Expander hasNote tagName="tr">
               {rows}
               <tr>
