@@ -4,16 +4,22 @@
  */
 
 import React, { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import OHeader from '@financial-times/o-header/main';
 import './styles.scss';
 import { flagsPropType } from '../shared/proptypes';
 
-const Header = ({ flags, ...props }) => {
+const Header = ({ flags, isVisualTopper, ...props }) => {
   const ref = useRef();
 
   const { dark } = flags;
 
-  const headerClasses = ['o-header', 'o-header--simple', dark && 'o-header--transparent']
+  const headerClasses = [
+    'o-header',
+    'o-header--simple',
+    (dark || isVisualTopper) && 'o-header--transparent',
+    isVisualTopper && 'o-header--visual',
+  ]
     .filter((i) => i)
     .join(' ');
 
@@ -52,12 +58,14 @@ Header.displayName = 'GHeader';
 
 Header.propTypes = {
   flags: flagsPropType,
+  isVisualTopper: PropTypes.bool,
 };
 
 Header.defaultProps = {
   flags: {
     dark: false,
   },
+  isVisualTopper: false,
 };
 
 export default Header;

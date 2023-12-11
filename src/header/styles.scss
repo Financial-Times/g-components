@@ -1,3 +1,12 @@
 $o-header-is-silent: false;
 @import '../shared/_globals.scss';
 @import '@financial-times/o-header/main.scss';
+
+// Position header absolutely so that video bleeds behind FT header
+.o-header--visual {
+  position: absolute;
+  width: 100%;
+  z-index: 999;
+  mix-blend-mode: normal;
+  opacity: 1;
+}
