@@ -54,11 +54,11 @@ const SeatsBarChart = ({
         ? b.seatsCeiling - a.seatsCeiling
         : b.voteShare - a.voteShare,
     );
-  const tableData = [...sortedFiltered, sortedFiltered.length && othersData].filter(d => d);
+  const tableData = [...sortedFiltered, sortedFiltered.length && othersData].filter((d) => d);
 
   const maxSeats = tableData.reduce((acc, { seatsCeiling }) => Math.max(acc, seatsCeiling), 0);
   const maxValue = Math.max(majority, maxSeats);
-  const calcPercentage = seats => (seats / maxValue) * 100;
+  const calcPercentage = (seats) => (seats / maxValue) * 100;
 
   return (
     <div className={className}>
@@ -97,7 +97,7 @@ const SeatsBarChart = ({
 
         <thead>
           <tr>
-            {tableHeaders.map(tableHeader => (
+            {tableHeaders.map((tableHeader) => (
               <th key={`th_${tableHeader}`}>{tableHeader}</th>
             ))}
           </tr>
@@ -182,7 +182,7 @@ SeatsBarChart.propTypes = {
       seats: PropTypes.number,
       projectedSeats: PropTypes.number,
       voteShare: PropTypes.number,
-      isOthers: PropTypes.bool.isOptional,
+      isOthers: PropTypes.bool,
       isInTable: PropTypes.bool,
     }),
   ).isRequired,
