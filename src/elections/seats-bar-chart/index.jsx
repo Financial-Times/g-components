@@ -81,7 +81,7 @@ const SeatsBarChart = ({
         )}
       </div>
 
-      <table className={`${className}__table`}>
+      <div className={`${className}__table-wrapper`}>
         <span className={`${className}__majority-line-container`}>
           <span
             className={`${className}__majority-line`}
@@ -95,64 +95,67 @@ const SeatsBarChart = ({
           </span>
         </span>
 
-        <thead>
-          <tr>
-            {tableHeaders.map((tableHeader) => (
-              <th key={`th_${tableHeader}`}>{tableHeader}</th>
-            ))}
-          </tr>
-        </thead>
+        <table className={`${className}__table`}>
+          <thead>
+            <tr>
+              {tableHeaders.map((tableHeader) => (
+                <th key={`th_${tableHeader}`}>{tableHeader}</th>
+              ))}
+            </tr>
+          </thead>
 
-        <tbody>
-          {tableData.map(
-            ({ party, seats, seatsCeiling, projectedSeatsOverWon, voteShare, isOthers }) => {
-              const { formattedName, shortName, color, whiteOverlayOpacity } = getPartyInfo(party);
-              return (
-                <tr className={`row${isOthers ? ' row--others' : ''}`} key={`row_${party}`}>
-                  <td className={`party${isOthers ? ' party--others' : ''}`}>
-                    <span className="party-badge" style={{ backgroundColor: color }} />
-                    <span className="party-bar-container">
-                      <span
-                        className="party-bar"
-                        style={{
-                          backgroundColor: color,
-                          width: `${calcPercentage(seatsCeiling)}%`,
-                        }}
-                      />
-                      {projectedSeatsOverWon !== 0 && (
+          <tbody>
+            {tableData.map(
+              ({ party, seats, seatsCeiling, projectedSeatsOverWon, voteShare, isOthers }) => {
+                const { formattedName, shortName, color, whiteOverlayOpacity } =
+                  getPartyInfo(party);
+                return (
+                  <tr className={`row${isOthers ? ' row--others' : ''}`} key={`row_${party}`}>
+                    <td className={`party${isOthers ? ' party--others' : ''}`}>
+                      <span className="party-badge" style={{ backgroundColor: color }} />
+                      <span className="party-bar-container">
                         <span
-                          className="party-bar party-bar--projected"
+                          className="party-bar"
                           style={{
-                            backgroundImage: `repeating-linear-gradient(50deg, transparent, transparent 3px, ${'#fff1e5'} 3px, ${'#fff1e5'} 5px)`,
-                            width: `${calcPercentage(projectedSeatsOverWon)}%`,
-                            left: `${calcPercentage(seats)}%`,
+                            backgroundColor: color,
+                            width: `${calcPercentage(seatsCeiling)}%`,
                           }}
                         />
-                      )}
-                      <span
-                        className="party-bar party-bar--overlay"
-                        style={{
-                          width: `${calcPercentage(seatsCeiling)}%`,
-                          backgroundColor:
-                            whiteOverlayOpacity !== undefined
-                              ? `rgba(255, 255, 255, ${whiteOverlayOpacity})`
-                              : 'rgba(255, 255, 255, 0.3)',
-                        }}
-                      />
-                      <span className="party-name party-name--desktop">
-                        {showShortPartyNames ? shortName : formattedName}
+                        {projectedSeatsOverWon !== 0 && (
+                          <span
+                            className="party-bar party-bar--projected"
+                            style={{
+                              backgroundImage: `repeating-linear-gradient(50deg, transparent, transparent 3px, ${'#fff1e5'} 3px, ${'#fff1e5'} 5px)`,
+                              width: `${calcPercentage(projectedSeatsOverWon)}%`,
+                              left: `${calcPercentage(seats)}%`,
+                            }}
+                          />
+                        )}
+                        <span
+                          className="party-bar party-bar--overlay"
+                          style={{
+                            width: `${calcPercentage(seatsCeiling)}%`,
+                            backgroundColor:
+                              whiteOverlayOpacity !== undefined
+                                ? `rgba(255, 255, 255, ${whiteOverlayOpacity})`
+                                : 'rgba(255, 255, 255, 0.3)',
+                          }}
+                        />
+                        <span className="party-name party-name--desktop">
+                          {showShortPartyNames ? shortName : formattedName}
+                        </span>
+                        <span className="party-name party-name--mobile">{shortName}</span>
                       </span>
-                      <span className="party-name party-name--mobile">{shortName}</span>
-                    </span>
-                  </td>
-                  <td className="seats">{seats}</td>
-                  <td className="voteshare">{voteShare ? voteShare.toFixed(1) : '-'}</td>
-                </tr>
-              );
-            },
-          )}
-        </tbody>
-      </table>
+                    </td>
+                    <td className="seats">{seats}</td>
+                    <td className="voteshare">{voteShare ? voteShare.toFixed(1) : '-'}</td>
+                  </tr>
+                );
+              },
+            )}
+          </tbody>
+        </table>
+      </div>
 
       <div className={`${className}__footnote`}>
         {footnoteData.map(({ party, seats }, index, arr) => {
