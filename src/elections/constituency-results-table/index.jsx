@@ -39,7 +39,7 @@ export const ConstituencyResultsTable = ({
   sortFunction,
   expander: showExpander,
 }) => {
-  const defaultBreakpoint = {breakpoint: 'default'}
+  const defaultBreakpoint = { breakpoint: 'default' };
   const { breakpoint = defaultBreakpoint } = useContext(Context);
 
   const sortedData = sortFunction
@@ -104,7 +104,7 @@ ConstituencyResultsTable.propTypes = {
       party: PropTypes.string,
       candidate: PropTypes.string,
       votes: PropTypes.number,
-      showAsterick: PropTypes.bool.isOptional,
+      showAsterick: PropTypes.bool,
     }),
   ).isRequired,
   tableHeaders: PropTypes.arrayOf(PropTypes.string).isRequired,

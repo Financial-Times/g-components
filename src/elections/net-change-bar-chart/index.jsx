@@ -142,7 +142,7 @@ NetChangeBarChart.propTypes = {
     PropTypes.shape({
       party: PropTypes.string,
       seatChange: PropTypes.number,
-      isOthers: PropTypes.bool.isOptional,
+      isOthers: PropTypes.bool,
       isInTable: PropTypes.bool,
     }),
   ).isRequired,
