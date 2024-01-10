@@ -15,13 +15,13 @@ export const Examples = {
           {
             party: 'Green',
             candidate: 'Caroline Lucas',
-            votes: 30149,
+            votes: "-",
             showAsterick: true,
           },
           {
             party: 'Labour',
             candidate: 'Solomon Curtis',
-            votes: 15450,
+            votes: "15450",
           },
           {
             party: 'Conservative',

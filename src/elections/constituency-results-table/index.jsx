@@ -103,7 +103,7 @@ ConstituencyResultsTable.propTypes = {
     PropTypes.shape({
       party: PropTypes.string,
       candidate: PropTypes.string,
-      votes: PropTypes.number,
+      votes: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
       showAsterick: PropTypes.bool,
     }),
   ).isRequired,
