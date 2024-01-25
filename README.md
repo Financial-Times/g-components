@@ -63,7 +63,14 @@ $ npm link ../g-components
 
 # Releasing
 
-First make sure your local is up to date with the origin. Then update the snapshots:
+First make sure your local is up to date with the origin and that you're on the `main` branch:
+
+```bash
+$ git pull
+$ git checkout main
+```
+
+Then update the snapshots:
 
 ```bash
 $ npm run test -- -u
@@ -72,18 +79,20 @@ $ git commit -m 'Update snapshots'
 $ git push
 ```
 
-Check the last version number that was released:
+Next, run `npm version [major|minor|patch]` to increment the version based on the type of changes in this release. We use [Semantic Versioning](https://semver.org/) to increment versions:
 
-```bash
-$ git describe --tags
-```
+- Breaking (non-backwards-compatible) changes should be a `major` release
+- New features (that are backwards-compatible) should be `minor`
+- Bug fixes should be a `patch`
+- Alternatively, you can use `npm version vX.X.X` to set the version yourself.
 
-Then release the next version, replacing v9.9.9 with the actual number:
+Finally, run `git push --follow-tags` to push the new version to GitHub, which will trigger the CircleCI pipeline that publishes the new version on NPM.
 
-```bash
-$ git tag v9.9.9
-$ git push origin v9.9.9
-```
+### Pre-release ("canary") versions
+
+If you'd like to release a pre-release version (e.g. to test or gradually roll out a new feature), you can create a new version like `npm version v1.0.0-canary.0`. The version number should represent the ultimate release this change will land in, while the final `0` can be incremented to make subsequent prerelease builds.
+
+NPM can also generate this automatically for you, with `npm version pre[major|minor|patch] --preid canary`.
 
 # Licence
 

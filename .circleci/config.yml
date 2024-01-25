@@ -67,9 +67,6 @@ jobs:
           name: Generate build
           command: npm run build
       - run:
-          name: Set package version from git
-          command: npx npm-prepublish --verbose
-      - run:
           name: Publish to NPM
           command: |
             if [[ $CIRCLE_TAG =~ canary ]]
