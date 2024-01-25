@@ -20,21 +20,17 @@ const Comments = ({ id, url, linkPageUrl, flags, openCommentsAt }) => {
     if (id && (url || linkPageUrl)) {
       const openTime = new Date(openCommentsAt || 0);
       // Switch to staging if comments are scheduled to go live in the future
-      const useStagingEnvironment = openTime > new Date();
-
-      if (useStagingEnvironment) {
+      if (openTime > new Date()) {
         setOpensAt(openTime);
       } else {
         setOpensAt(null);
+        new OComments(ref.current, {
+          // eslint-disable-line no-new
+          articleUrl: linkPageUrl || url,
+          articleId: id,
+          title: id,
+        });
       }
-
-      new OComments(ref.current, {
-        // eslint-disable-line no-new
-        articleUrl: linkPageUrl || url,
-        articleId: id,
-        title: id,
-        useStagingEnvironment,
-      });
     }
   }, [id, url, linkPageUrl, openCommentsAt]);
 
@@ -44,7 +40,7 @@ const Comments = ({ id, url, linkPageUrl, flags, openCommentsAt }) => {
         <div data-o-grid-colspan="12 S11 Scenter M9 L8 XL7">
           {opensAt && (
             <p className="g-comments__scheduled">
-              The live comments are scheduled to open on {format(opensAt)}.
+              The comments are scheduled to open on {format(opensAt)}.
             </p>
           )}
           <div ref={ref} data-o-component="o-comments" id="comments">
