@@ -1,6 +1,6 @@
 version: 2.1
 
-orbs: 
+orbs:
   node: circleci/node@4.7.0
 
 references:
@@ -67,8 +67,14 @@ jobs:
           name: Generate build
           command: npm run build
       - run:
-          name: Publish npm package
-          command: npx npm-prepublish --verbose && npm publish --access public
+          name: Publish to NPM
+          command: |
+            if [[ $CIRCLE_TAG =~ canary ]]
+            then
+              npm publish --access public --tag canary
+            else
+              npm publish --access public --tag latest
+            fi
 
 workflows:
   version: 2
@@ -92,4 +98,3 @@ workflows:
               only: /^v.*/
             branches:
               ignore: /.*/
-
