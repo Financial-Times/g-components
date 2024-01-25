@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/g-components",
-  "version": "9.1.5",
+  "version": "9.2.0-canary.2",
   "type": "module",
   "files": [
     "dist/",
