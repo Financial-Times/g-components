@@ -22,7 +22,7 @@ const ArticleLayout = ({ flags, ads, children, ...props }) => {
   useEffect(() => {
     if (flags.prod && flags.ads) {
       initSourcepointCmp({
-        propertyConfig: properties.FT_DOTCOM_TEST,
+        propertyConfig: properties.FT_DOTCOM_PROD,
       });
     }
   }, []);
