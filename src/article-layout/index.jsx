@@ -20,9 +20,9 @@ export const Context = createContext({});
 
 const ArticleLayout = ({ flags, ads, children, ...props }) => {
   useEffect(() => {
-    if (flags.prod) {
+    if (flags.prod && flags.ads) {
       initSourcepointCmp({
-        propertyConfig: properties.FT_DOTCOM_PROD,
+        propertyConfig: properties.FT_DOTCOM_TEST,
       });
     }
   }, []);
