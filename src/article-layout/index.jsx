@@ -3,8 +3,9 @@
  * Article layout
  */
 
-import React, { createContext } from 'react';
+import React, { createContext, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { initSourcepointCmp, properties } from "@financial-times/cmp-client";
 import { flagsPropType, StringBoolPropType } from '../shared/proptypes';
 import Header from '../header';
 import Analytics from '../analytics';
@@ -18,6 +19,14 @@ import { useAds, useLayoutChangeEvents } from '../shared/hooks';
 export const Context = createContext({});
 
 const ArticleLayout = ({ flags, ads, children, ...props }) => {
+  useEffect(() => {
+    if (flags.prod && flags.ads) {
+      initSourcepointCmp({
+        propertyConfig: properties.FT_DOTCOM_PROD,
+      });
+    }
+  }, []);
+
   const breakpoint = useLayoutChangeEvents();
   useAds(ads, flags.ads);
 
