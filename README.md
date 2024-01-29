@@ -70,15 +70,6 @@ $ git pull
 $ git checkout main
 ```
 
-Then update the snapshots:
-
-```bash
-$ npm run test -- -u
-$ git add src/__snapshots__/*
-$ git commit -m 'Update snapshots'
-$ git push
-```
-
 Next, run `npm version [major|minor|patch]` to increment the version based on the type of changes in this release. We use [Semantic Versioning](https://semver.org/) to increment versions:
 
 - Breaking (non-backwards-compatible) changes should be a `major` release
