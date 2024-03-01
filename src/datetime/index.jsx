@@ -21,6 +21,7 @@ const DateTime = ({ datestamp }) => {
       data-o-component="o-date"
       className="o-date"
       dateTime={datestamp.toISOString()}
+      suppressHydrationWarning
     >
       {ftDateFormat.ftTime(datestamp)}
     </time>
