@@ -11,13 +11,14 @@ import FTTimeFormat from '@financial-times/ft-date-format';
 const { format, ftTime } = FTTimeFormat;
 import './styles.scss';
 
-const Comments = ({ id, url, linkPageUrl, flags, openCommentsAt }) => {
+const Comments = ({ id, url, linkPageUrl, flags, openCommentsAt, commentsId }) => {
   const ref = useRef();
   const { dark } = flags;
   const [opensAt, setOpensAt] = useState(null);
 
   useEffect(() => {
-    if (id && (url || linkPageUrl)) {
+    const cid = commentsId || id;
+    if (cid && (url || linkPageUrl)) {
       const openTime = new Date(openCommentsAt || 0);
       // Switch to staging if comments are scheduled to go live in the future
       if (openTime > new Date()) {
@@ -27,12 +28,12 @@ const Comments = ({ id, url, linkPageUrl, flags, openCommentsAt }) => {
         new OComments(ref.current, {
           // eslint-disable-line no-new
           articleUrl: linkPageUrl || url,
-          articleId: id,
-          title: id,
+          articleId: cid,
+          title: cid,
         });
       }
     }
-  }, [id, url, linkPageUrl, openCommentsAt]);
+  }, [id, commentsId, url, linkPageUrl, openCommentsAt]);
 
   const comments = (
     <div className="o-grid-container">
@@ -67,6 +68,7 @@ Comments.displayName = 'GComments';
 Comments.propTypes = {
   title: PropTypes.string,
   id: PropTypes.string.isRequired,
+  commentsId: PropTypes.string,
   url: PropTypes.string.isRequired,
   flags: flagsPropType,
   openCommentsAt: PropTypes.string,
@@ -78,6 +80,7 @@ Comments.defaultProps = {
     dark: false,
   },
   openCommentsAt: null,
+  commentsId: null,
 };
 
 export default Comments;
