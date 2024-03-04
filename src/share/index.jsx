@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useRef } from 'react';
-// import OShare from '@financial-times/o-share/main';
+import OShare from '@financial-times/o-share/main';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import './styles.scss';
@@ -87,7 +87,7 @@ const Share = ({
                 href={link}
                 rel="noopener"
               >
-                <div class="o-share__icon__image">{icon}</div>
+                <div className="o-share__icon__image">{icon}</div>
                 <span className="o-share__text">Share on {name}. Opens in a new window.</span>
               </a>
             </li>
