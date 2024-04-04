@@ -196,7 +196,7 @@ const AutosuggestSearch = ({
     <form onSubmit={onSubmit} style={{ width }} onClick={onClickHandler}>
       <div className={classes}>
         {showSearchIcon && searchIconPosition === 'left' && (
-          <div className={`${className}__search-icon`}>
+          <div className={`${className}__search-icon`} onClick={focusOnInput}>
             <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
           </div>
         )}
@@ -244,7 +244,7 @@ const AutosuggestSearch = ({
         {showSearchIcon &&
           searchIconPosition === 'right' &&
           !(showClearButton && searchValue !== '') && (
-            <div className={`${className}__search-icon-right`}>
+            <div className={`${className}__search-icon-right`} onClick={focusOnInput}>
               <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
             </div>
           )}
