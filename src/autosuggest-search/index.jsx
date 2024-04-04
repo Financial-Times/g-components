@@ -20,7 +20,7 @@ const defaultGetSuggestions = (value, searchList) => {
     ? []
     : searchList.filter(({ display }) => {
         const words = display.toLowerCase().split(' ');
-        return words.some(word => word.toLowerCase().slice(0, inputLength) === inputValue);
+        return words.some((word) => word.toLowerCase().slice(0, inputLength) === inputValue);
       });
 };
 
@@ -120,7 +120,7 @@ const AutosuggestSearch = ({
   };
 
   // Run callback on submit (ENTER)
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     // Don't run this if the submit event is triggered from the dropdown
     if (!activeSuggestion) {
@@ -137,7 +137,7 @@ const AutosuggestSearch = ({
   };
 
   // Update search value state on input change
-  const onChange = event => {
+  const onChange = (event) => {
     const {
       target: { value },
     } = event;
@@ -146,7 +146,7 @@ const AutosuggestSearch = ({
   };
 
   // Handle key down event on input
-  const onKeyDownHandler = event => {
+  const onKeyDownHandler = (event) => {
     const { key } = event;
     if (searchValue === '' && key === 'Backspace') {
       onEmptyInputBackspace();
@@ -157,10 +157,9 @@ const AutosuggestSearch = ({
     }
   };
 
-  const onClickHandler = e => {
+  const onClickHandler = (e) => {
     // Don't run the callback if the user has clicked on the selected token remove/cross button
     if (e.target.className !== 'remove-from-selection g-icon') {
-      focusOnInput();
       const callbackReturn = onClickCallback();
       if (callbackReturn) setErrorState(callbackReturn);
     }
@@ -177,7 +176,7 @@ const AutosuggestSearch = ({
   };
 
   // Wraps function so that error can be set
-  const onSelectedValueRemoveWrapper = value => {
+  const onSelectedValueRemoveWrapper = (value) => {
     const error = onSelectedValueRemove(value);
     if (error) setErrorState(error);
   };
