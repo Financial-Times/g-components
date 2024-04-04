@@ -192,13 +192,17 @@ const AutosuggestSearch = ({
     showSearchIcon && searchIconPosition === 'right' && `${className}--with-search-icon-right`,
   );
 
+  const SearchIcon = ({ className }) => (
+    <div className={className} onClick={focusOnInput}>
+      <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
+    </div>
+  );
+
   return (
     <form onSubmit={onSubmit} style={{ width }} onClick={onClickHandler}>
       <div className={classes}>
         {showSearchIcon && searchIconPosition === 'left' && (
-          <div className={`${className}__search-icon`} onClick={focusOnInput}>
-            <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
-          </div>
+          <SearchIcon className={`${className}__search-icon`} />
         )}
         <div className={`${className}__selected-values`}>
           {selectedValues.length > 0 &&
@@ -244,9 +248,7 @@ const AutosuggestSearch = ({
         {showSearchIcon &&
           searchIconPosition === 'right' &&
           !(showClearButton && searchValue !== '') && (
-            <div className={`${className}__search-icon-right`} onClick={focusOnInput}>
-              <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
-            </div>
+            <SearchIcon className={`${className}__search-icon-right`} />
           )}
       </div>
       {isError && <div className={`${className}__error-message`}>{errorMessage}</div>}
