@@ -20,7 +20,7 @@ const defaultGetSuggestions = (value, searchList) => {
     ? []
     : searchList.filter(({ display }) => {
         const words = display.toLowerCase().split(' ');
-        return words.some(word => word.toLowerCase().slice(0, inputLength) === inputValue);
+        return words.some((word) => word.toLowerCase().slice(0, inputLength) === inputValue);
       });
 };
 
@@ -120,7 +120,7 @@ const AutosuggestSearch = ({
   };
 
   // Run callback on submit (ENTER)
-  const onSubmit = event => {
+  const onSubmit = (event) => {
     event.preventDefault();
     // Don't run this if the submit event is triggered from the dropdown
     if (!activeSuggestion) {
@@ -137,7 +137,7 @@ const AutosuggestSearch = ({
   };
 
   // Update search value state on input change
-  const onChange = event => {
+  const onChange = (event) => {
     const {
       target: { value },
     } = event;
@@ -146,7 +146,7 @@ const AutosuggestSearch = ({
   };
 
   // Handle key down event on input
-  const onKeyDownHandler = event => {
+  const onKeyDownHandler = (event) => {
     const { key } = event;
     if (searchValue === '' && key === 'Backspace') {
       onEmptyInputBackspace();
@@ -157,10 +157,9 @@ const AutosuggestSearch = ({
     }
   };
 
-  const onClickHandler = e => {
+  const onClickHandler = (e) => {
     // Don't run the callback if the user has clicked on the selected token remove/cross button
     if (e.target.className !== 'remove-from-selection g-icon') {
-      focusOnInput();
       const callbackReturn = onClickCallback();
       if (callbackReturn) setErrorState(callbackReturn);
     }
@@ -177,7 +176,7 @@ const AutosuggestSearch = ({
   };
 
   // Wraps function so that error can be set
-  const onSelectedValueRemoveWrapper = value => {
+  const onSelectedValueRemoveWrapper = (value) => {
     const error = onSelectedValueRemove(value);
     if (error) setErrorState(error);
   };
@@ -193,13 +192,17 @@ const AutosuggestSearch = ({
     showSearchIcon && searchIconPosition === 'right' && `${className}--with-search-icon-right`,
   );
 
+  const SearchIcon = ({ className }) => (
+    <div className={className} onClick={focusOnInput}>
+      <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
+    </div>
+  );
+
   return (
     <form onSubmit={onSubmit} style={{ width }} onClick={onClickHandler}>
       <div className={classes}>
         {showSearchIcon && searchIconPosition === 'left' && (
-          <div className={`${className}__search-icon`}>
-            <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
-          </div>
+          <SearchIcon className={`${className}__search-icon`} />
         )}
         <div className={`${className}__selected-values`}>
           {selectedValues.length > 0 &&
@@ -245,9 +248,7 @@ const AutosuggestSearch = ({
         {showSearchIcon &&
           searchIconPosition === 'right' &&
           !(showClearButton && searchValue !== '') && (
-            <div className={`${className}__search-icon-right`}>
-              <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
-            </div>
+            <SearchIcon className={`${className}__search-icon-right`} />
           )}
       </div>
       {isError && <div className={`${className}__error-message`}>{errorMessage}</div>}
