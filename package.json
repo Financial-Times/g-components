@@ -80,13 +80,14 @@
     "prebuild": "node bin/generate-index.mjs"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^7.0.0-beta.59",
-    "@storybook/addon-interactions": "^7.0.0-beta.59",
-    "@storybook/addon-links": "^7.0.0-beta.59",
-    "@storybook/addon-storyshots": "^7.0.0-beta.62",
-    "@storybook/blocks": "^7.0.0-alpha.8",
-    "@storybook/react": "^7.0.0-beta.59",
-    "@storybook/react-vite": "^7.0.0-beta.59",
+    "@storybook/addon-controls": "^7.0.7",
+    "@storybook/addon-essentials": "^7.0.7",
+    "@storybook/addon-interactions": "^7.0.7",
+    "@storybook/addon-links": "^7.0.7",
+    "@storybook/addon-storyshots": "^7.0.7",
+    "@storybook/blocks": "^7.0.7",
+    "@storybook/react": "^7.0.7",
+    "@storybook/react-vite": "^7.0.7",
     "@storybook/test-runner": "^0.10.0-next.10",
     "@storybook/testing-library": "^0.0.14-next.1",
     "@storybook/testing-react": "^2.0.0-next.0",
@@ -96,7 +97,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sass": "^1.58.3",
-    "storybook": "^7.0.0-beta.59",
+    "storybook": "^7.0.7",
     "vitest": "^0.29.2"
   }
 }

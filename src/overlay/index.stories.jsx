@@ -3,12 +3,16 @@ import Overlay from './';
 export default {
   title: 'Core/Overlay',
   component: Overlay,
+  argTypes: {
+    isShowing: { control: 'boolean' },
+  },
 };
 
 export const Example = {
-  render: () => (
+  render: ({ ...args }) => (
     <div>
-      Use the Knobs toggle to show overlay<Overlay isShowing>Overlay content</Overlay>
+      Use isShowing in the Controls to show overlay
+      <Overlay {...args}>Overlay content</Overlay>
     </div>
   ),
 
@@ -20,3 +24,5 @@ export const Example = {
     },
   },
 };
+
+Overlay.args = { isShowing: false };
