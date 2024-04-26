@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Tooltip from './';
 
 export default {
@@ -14,5 +15,33 @@ export const Examples = {
     </>
   ),
 
-  name: 'Examples',
+  name: 'Basic example',
+};
+
+const ToggleTooltipButton = ({ openTooltip, closeTooltip }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleOpen = () => {
+    console.log(isOpen);
+    if (isOpen) {
+      closeTooltip();
+    } else {
+      openTooltip();
+    }
+
+    setIsOpen(!isOpen);
+  };
+
+  return <button onClick={toggleOpen}>Toggle tooltip</button>;
+};
+
+export const Imperative = {
+  render: () => (
+    <>
+      <Tooltip showOnHover={false} position="below" content="Tooltip!">
+        <ToggleTooltipButton />
+      </Tooltip>
+    </>
+  ),
+
+  name: 'Callback example',
 };
