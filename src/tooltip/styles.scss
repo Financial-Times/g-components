@@ -1,0 +1,4 @@
+@import '../shared/_globals.scss';
+@import '@financial-times/o-tooltip/main.scss';
+
+@include oTooltip();
