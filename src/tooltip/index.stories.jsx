@@ -12,6 +12,9 @@ export const Examples = {
       <Tooltip position="below" content="Tooltip!">
         <button>I'm a button</button>
       </Tooltip>
+      <Tooltip position="above" content="Tooltip!">
+        <button>I'm a button with position above</button>
+      </Tooltip>
     </>
   ),
 

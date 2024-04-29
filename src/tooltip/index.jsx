@@ -15,7 +15,7 @@ const Tooltip = ({
 
   useEffect(() => {
     tooltip.current = new OTooltip(ref.current, {
-      target: crypto.randomUUID(),
+      target: ref.current,
       content,
       showOnHover,
       showOnClick,
