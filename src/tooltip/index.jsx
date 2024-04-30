@@ -21,7 +21,7 @@ const Tooltip = ({
       showOnClick,
       position,
     });
-  }, []);
+  }, [content, position, showOnHover, showOnClick]);
 
   // Add open/close functions to children
   const childrenWithProps = React.Children.map(children, (child) => {
