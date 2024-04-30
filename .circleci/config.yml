@@ -1,7 +1,8 @@
 version: 2.1
 
 orbs:
-  node: circleci/node@4.7.0
+  doppler-circleci: ft-circleci-orbs/doppler-circleci@1.5.3
+  node: circleci/node@5.2.0
 
 references:
   default_container_config: &default_container_config
@@ -60,12 +61,15 @@ jobs:
     <<: *default_container_config
     steps:
       - *attach_workspace
+      - doppler-circleci/install
+      - doppler-circleci/load_secrets
       - run:
           name: Setup npm credentials
-          command: echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ${HOME}/.npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ${HOME}/.npmrc
       - run:
           name: Generate build
           command: npm run build
+      - run: npm version from-git --no-git-tag-version
       - run:
           name: Publish to NPM
           command: |
@@ -91,6 +95,8 @@ workflows:
             tags:
               only: /.*/
       - release_npm:
+          context:
+            - djd-npm-publish
           requires:
             - test
           filters:
