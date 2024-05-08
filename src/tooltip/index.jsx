@@ -1,11 +1,12 @@
 import React, { useRef, useEffect } from 'react';
-import OTooltip from '@financial-times/o-tooltip';
+import OTooltip from '@financial-times/o-tooltip/main';
 import PropTypes from 'prop-types';
 import './styles.scss';
 
 const Tooltip = ({
   children,
   content,
+  target = null,
   showOnHover = true,
   showOnClick = false,
   position = 'below',
@@ -15,7 +16,7 @@ const Tooltip = ({
 
   useEffect(() => {
     tooltip.current = new OTooltip(ref.current, {
-      target: ref.current,
+      target: target || ref.current,
       content,
       showOnHover,
       showOnClick,
