@@ -120,14 +120,14 @@ const AutosuggestSearch = ({
   };
 
   // Run callback on submit (ENTER)
-  const onSubmit = (event) => {
+  const onSubmit = async (event) => {
     event.preventDefault();
     // Don't run this if the submit event is triggered from the dropdown
     if (!activeSuggestion) {
       const validateInputResult = validateInput(searchValue);
       if (validateInput && validateInputResult.isError) setErrorState(validateInputResult);
       if (onSubmitCallback && !validateInputResult.isError) {
-        const callbackReturn = onSubmitCallback(searchValue);
+        const callbackReturn = await onSubmitCallback(searchValue);
         if (callbackReturn) setErrorState(callbackReturn);
         // If using selected values tokens, reset the search value
         if (usingSelectedValues) setSearchValue('');
