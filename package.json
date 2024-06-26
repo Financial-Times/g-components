@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/g-components",
-  "version": "0.0.0-SET-BY-CIRCLE-CI-DO-NOT-EDIT",
+  "version": "9.6.1",
   "type": "module",
   "files": [
     "dist/",
