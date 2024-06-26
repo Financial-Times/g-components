@@ -47,6 +47,7 @@ const SelectedValue = ({ className, display, value, onSelectedValueRemove }) => 
         iconColor="ffffff"
         width={20}
         height={20}
+        accessibleLabel="Remove from selection"
       />
     </button>
   </div>
@@ -194,7 +195,7 @@ const AutosuggestSearch = ({
 
   const SearchIcon = ({ className }) => (
     <div className={className} onClick={focusOnInput}>
-      <Icon iconName="search" iconColor="#66605C" width={30} height={30} />
+      <Icon iconName="search" iconColor="#66605C" width={30} height={30} accessibleLabel="Search" />
     </div>
   );
 
@@ -242,7 +243,13 @@ const AutosuggestSearch = ({
         />
         {showClearButton && searchValue !== '' && (
           <button className={`${className}__clear-button`} type="button" onClick={clearSearch}>
-            <Icon iconName="cross" iconColor="#33302e" width={20} height={20} />
+            <Icon
+              iconName="cross"
+              iconColor="#33302e"
+              width={20}
+              height={20}
+              accessibleLabel="Clear search"
+            />
           </button>
         )}
         {showSearchIcon &&

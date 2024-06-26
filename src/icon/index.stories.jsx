@@ -25,10 +25,28 @@ export const Examples = {
           padding: '1em',
         }}
       >
-        <Icon iconName="arrow-down" iconColor="#990F3D" width={50} height={50} />
-        <Icon iconName="arrow-left" iconColor="#0F5499" width={50} height={50} />
-        <Icon iconName="arrow-right" iconColor="#0D7680" width={50} height={50} />
-        <Icon iconName="arrow-up" iconColor="#593380" width={50} height={50} />
+        <Icon
+          iconName="arrow-down"
+          iconColor="#990F3D"
+          width={50}
+          height={50}
+          accessibleLabel="Down"
+        />
+        <Icon
+          iconName="arrow-left"
+          iconColor="#0F5499"
+          width={50}
+          height={50}
+          accessibleLabel="Left"
+        />
+        <Icon
+          iconName="arrow-right"
+          iconColor="#0D7680"
+          width={50}
+          height={50}
+          accessibleLabel="Right"
+        />
+        <Icon iconName="arrow-up" iconColor="#593380" width={50} height={50} accessibleLabel="Up" />
       </div>
     </>
   ),
